@@ -1,12 +1,13 @@
 // Your Firebase configuration (replace with your Firebase project config)
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+  apiKey: "AIzaSyCrSS4lsxgSFA7SEtseW1KoiruQbUwR_xA",
+  authDomain: "aipex-6d63b.firebaseapp.com",
   databaseURL: "https://YOUR_PROJECT_ID.firebaseio.com",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_PROJECT_ID.appspot.com",
-  messagingSenderId: "YOUR_SENDER_ID",
-  appId: "YOUR_APP_ID"
+  projectId: "aipex-6d63b",
+  storageBucket: "aipex-6d63b.firebasestorage.app",
+  messagingSenderId: "356818143159",
+  appId: "1:356818143159:web:49222b5a85629c4630ca32"
+  measurementId: "G-D32Z47WHQ4"
 };
 
 // Initialize Firebase
