@@ -30,21 +30,7 @@
 
         // Form Handling
         document.addEventListener('DOMContentLoaded', function () {
-            const passwordPrompt = document.getElementById('passwordPrompt');
-            const adminContent = document.getElementById('adminContent');
-            const passwordInput = document.getElementById('passwordInput');
-            const submitPasswordButton = document.getElementById('submitPassword');
-
-            submitPasswordButton.addEventListener('click', function () {
-                const password = passwordInput.value;
-                if (password === "your_admin_password") { // Set your password here
-                    passwordPrompt.style.display = 'none';
-                    adminContent.style.display = 'block';
-                    loadModels(); // Load models when access is granted
-                } else {
-                    alert('Incorrect password. Please try again.');
-                }
-            });
+            loadModels(); // Load models when page is loaded
 
             document.getElementById('addModelForm').addEventListener('submit', async function (e) {
                 e.preventDefault();
@@ -162,15 +148,7 @@
     </header>
 
     <main>
-        <!-- Password Protection Section -->
-        <section id="passwordPrompt">
-            <h2>Enter Admin Password</h2>
-            <input type="password" id="passwordInput" placeholder="Enter password" required>
-            <button id="submitPassword">Submit</button>
-        </section>
-
-        <!-- Admin Content Section (Hidden by default) -->
-        <section id="adminContent" style="display:none;">
+        <section id="adminContent">
             <h2>Add a New Model</h2>
             <form id="addModelForm">
                 <div class="form-group">
