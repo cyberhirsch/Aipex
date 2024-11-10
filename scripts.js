@@ -1,17 +1,19 @@
-// Your Firebase configuration (replace with your Firebase project config)
+// Your Firebase configuration (make sure all properties are correct)
 const firebaseConfig = {
-  apiKey: "AIzaSyCrSS4lsxgSFA7SEtseW1KoiruQbUwR_xA",
-  authDomain: "aipex-6d63b.firebaseapp.com",
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
   databaseURL: "https://YOUR_PROJECT_ID.firebaseio.com",
-  projectId: "aipex-6d63b",
-  storageBucket: "aipex-6d63b.firebasestorage.app",
-  messagingSenderId: "356818143159",
-  appId: "1:356818143159:web:49222b5a85629c4630ca32"
-  measurementId: "G-D32Z47WHQ4"
+  projectId: "YOUR_PROJECT_ID",
+  storageBucket: "YOUR_PROJECT_ID.appspot.com",
+  messagingSenderId: "YOUR_SENDER_ID",
+  appId: "YOUR_APP_ID",
+  measurementId: "YOUR_MEASUREMENT_ID" // Optional, remove if not needed
 };
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
+
+// Get a reference to the database
 const db = firebase.database();
 
 // Add Model Form Handling
@@ -20,10 +22,15 @@ document.getElementById('addModelForm').addEventListener('submit', function(e) {
   const modelName = document.getElementById('modelName').value;
   const modelCategory = document.getElementById('modelCategory').value;
 
+  // Push the new model to the database
   db.ref('models/').push({
     name: modelName,
     category: modelCategory,
     votes: 0
+  }).then(() => {
+    console.log("Model added successfully");
+  }).catch((error) => {
+    console.error("Error adding model:", error);
   });
 
   document.getElementById('addModelForm').reset();
@@ -51,7 +58,13 @@ function vote(modelId) {
   modelRef.get().then(function(snapshot) {
     if (snapshot.exists()) {
       const currentVotes = snapshot.val().votes;
-      modelRef.update({ votes: currentVotes + 1 });
+      modelRef.update({ votes: currentVotes + 1 }).then(() => {
+        console.log("Vote added successfully");
+      }).catch((error) => {
+        console.error("Error updating votes:", error);
+      });
     }
+  }).catch((error) => {
+    console.error("Error fetching model:", error);
   });
 }
