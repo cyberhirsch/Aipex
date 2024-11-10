@@ -89,9 +89,19 @@ button:hover {
     border-bottom: none;
 }
 
+.model-row .model-info {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.model-row .model-info > * {
+    margin-right: 10px;
+    margin-bottom: 5px;
+}
+
 .model-index {
     font-weight: bold;
-    margin-right: 10px;
 }
 
 .model-name {
@@ -105,16 +115,14 @@ button:hover {
 }
 
 .model-license, .model-votes {
-    display: inline-block;
-    margin-right: 10px;
     color: #666;
 }
 
 .model-tags {
     display: block;
-    margin-top: 5px;
     font-size: 0.9em;
     color: #555;
+    margin-left: 20px;
 }
 
 .vote-button {
@@ -195,8 +203,19 @@ input[type="checkbox"], input[type="radio"] {
 .form-group div div {
     margin-right: 15px;
     margin-bottom: 5px;
+    flex: 0 0 30%;
+    box-sizing: border-box;
 }
 
 .category-checkbox, .tag-checkbox {
-    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.category-checkbox label, .tag-checkbox label {
+    margin: 0;
+}
+
+.category-checkbox input, .tag-checkbox input {
+    margin-right: 5px;
 }
