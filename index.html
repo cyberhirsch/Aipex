@@ -37,113 +37,127 @@
         }
 
         // Add Model Form Handling
-        document.getElementById('addModelForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
-            try {
-                const modelName = document.getElementById('modelName').value.trim();
-                const modelCategory = document.getElementById('modelCategory').value.trim();
-                
-                if (!modelName || !modelCategory) {
-                    throw new Error('Please fill in all fields');
-                }
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('addModelForm').addEventListener('submit', async function (e) {
+                e.preventDefault();
+                try {
+                    const modelName = document.getElementById('modelName').value.trim();
+                    const modelCategory = document.getElementById('modelCategory').value.trim();
 
-                const timestamp = new Date().toISOString();
-                await push(ref(db, 'models/'), {
-                    name: modelName,
-                    category: modelCategory,
-                    votes: 0,
-                    createdAt: timestamp,
-                    lastUpdated: timestamp
-                });
+                    if (!modelName || !modelCategory) {
+                        throw new Error('Please fill in all fields');
+                    }
 
-                document.getElementById('addModelForm').reset();
-                showNotification('Model added successfully!');
-            } catch (error) {
-                handleError(error, 'Failed to add model');
-            }
-        });
-
-        // Display Models with Real-time Updates
-        onValue(ref(db, 'models/'), (snapshot) => {
-            try {
-                const modelsList = document.getElementById('modelsList');
-                modelsList.innerHTML = '';
-                
-                if (!snapshot.exists()) {
-                    modelsList.innerHTML = '<p>No models added yet.</p>';
-                    return;
-                }
-
-                // Convert to array and sort by votes
-                const models = [];
-                snapshot.forEach((childSnapshot) => {
-                    models.push({
-                        id: childSnapshot.key,
-                        ...childSnapshot.val()
+                    const timestamp = new Date().toISOString();
+                    await push(ref(db, 'models/'), {
+                        name: modelName,
+                        category: modelCategory,
+                        votes: 0,
+                        createdAt: timestamp,
+                        lastUpdated: timestamp
                     });
-                });
 
-                models.sort((a, b) => b.votes - a.votes);
+                    document.getElementById('addModelForm').reset();
+                    showNotification('Model added successfully!');
+                } catch (error) {
+                    handleError(error, 'Failed to add model');
+                }
+            });
 
-                models.forEach((model) => {
-                    const modelElement = document.createElement('div');
-                    modelElement.className = 'model-card';
-                    modelElement.innerHTML = `
-                        <div class="model-info">
-                            <h3>${model.name}</h3>
-                            <span class="category">${model.category}</span>
-                            <span class="votes">Votes: ${model.votes}</span>
-                            <span class="timestamp">Added: ${new Date(model.createdAt).toLocaleDateString()}</span>
-                        </div>
-                        <button onclick="window.voteForModel('${model.id}')" 
-                                class="vote-button" 
-                                data-model-id="${model.id}">
-                            Vote
-                        </button>
-                    `;
-                    modelsList.appendChild(modelElement);
-                });
-            } catch (error) {
-                handleError(error, 'Failed to load models');
+            // Display Models with Real-time Updates
+            onValue(ref(db, 'models/'), (snapshot) => {
+                try {
+                    const modelsList = document.getElementById('modelsList');
+                    modelsList.innerHTML = '';
+
+                    if (!snapshot.exists()) {
+                        modelsList.innerHTML = '<p>No models added yet.</p>';
+                        return;
+                    }
+
+                    // Convert to array and sort by votes
+                    const models = [];
+                    snapshot.forEach((childSnapshot) => {
+                        models.push({
+                            id: childSnapshot.key,
+                            ...childSnapshot.val()
+                        });
+                    });
+
+                    models.sort((a, b) => b.votes - a.votes);
+
+                    models.forEach((model) => {
+                        const modelElement = document.createElement('div');
+                        modelElement.className = 'model-card';
+                        modelElement.innerHTML = `
+                            <div class="model-info">
+                                <h3>${model.name}</h3>
+                                <span class="category">${model.category}</span>
+                                <span class="votes">Votes: ${model.votes}</span>
+                                <span class="timestamp">Added: ${new Date(model.createdAt).toLocaleDateString()}</span>
+                            </div>
+                            <button onclick="voteForModel('${model.id}')"
+                                    class="vote-button">
+                                Vote
+                            </button>
+                        `;
+                        modelsList.appendChild(modelElement);
+                    });
+                } catch (error) {
+                    handleError(error, 'Failed to load models');
+                }
+            });
+
+            // Voting Function
+            window.voteForModel = async function (modelId) {
+                try {
+                    // Check if the user has already voted for this model using local storage
+                    const votedModels = JSON.parse(localStorage.getItem('votedModels')) || [];
+                    if (votedModels.includes(modelId)) {
+                        showNotification('You have already voted for this model.');
+                        return;
+                    }
+
+                    // Proceed with voting logic
+                    const modelRef = ref(db, `models/${modelId}`);
+                    const snapshot = await get(modelRef);
+
+                    if (!snapshot.exists()) {
+                        throw new Error('Model not found');
+                    }
+
+                    const currentVotes = snapshot.val().votes;
+                    await update(modelRef, {
+                        votes: currentVotes + 1,
+                        lastUpdated: new Date().toISOString()
+                    });
+
+                    // Store modelId in Local Storage to mark as voted
+                    votedModels.push(modelId);
+                    localStorage.setItem('votedModels', JSON.stringify(votedModels));
+
+                    showNotification('Vote recorded!');
+                } catch (error) {
+                    handleError(error, 'Failed to record vote');
+                }
+            };
+
+            // Notification system
+            function showNotification(message) {
+                const notification = document.createElement('div');
+                notification.className = 'notification';
+                notification.textContent = message;
+                document.body.appendChild(notification);
+
+                setTimeout(() => {
+                    notification.classList.add('fade-out');
+                    setTimeout(() => notification.remove(), 500);
+                }, 2000);
             }
         });
-
-        // Voting Function
-        window.voteForModel = async function(modelId) {
-            try {
-                const modelRef = ref(db, `models/${modelId}`);
-                const snapshot = await get(modelRef);
-                
-                if (!snapshot.exists()) {
-                    throw new Error('Model not found');
-                }
-
-                const currentVotes = snapshot.val().votes;
-                await update(modelRef, { 
-                    votes: currentVotes + 1,
-                    lastUpdated: new Date().toISOString()
-                });
-                
-                showNotification('Vote recorded!');
-            } catch (error) {
-                handleError(error, 'Failed to record vote');
-            }
-        };
-
-        // Notification system
-        function showNotification(message) {
-            const notification = document.createElement('div');
-            notification.className = 'notification';
-            notification.textContent = message;
-            document.body.appendChild(notification);
-            
-            setTimeout(() => {
-                notification.classList.add('fade-out');
-                setTimeout(() => notification.remove(), 500);
-            }, 2000);
-        }
     </script>
 </head>
+
 <body>
     <header>
         <h1>Aipex - AI Model Rankings</h1>
@@ -180,4 +194,5 @@
         <p>Aipex Version: v0.0.7</p>
     </footer>
 </body>
+
 </html>
