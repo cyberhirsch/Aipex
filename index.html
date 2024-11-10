@@ -28,7 +28,21 @@
         const analytics = getAnalytics(app);
         const db = getDatabase();
 
-        document.addEventListener('DOMContentLoaded', function () {
+        $1
+            // Toggle Editor's Choice Function
+            window.toggleEditorChoice = async function (modelId, isChecked) {
+                try {
+                    const modelRef = ref(db, `models/${modelId}`);
+                    await update(modelRef, {
+                        editorChoice: isChecked,
+                        lastUpdated: new Date().toISOString()
+                    });
+                    alert('Editor\'s Choice updated successfully!');
+                } catch (error) {
+                    console.error('Failed to update Editor\'s Choice:', error);
+                    alert('Failed to update Editor\'s Choice. Please try again.');
+                }
+            };
             // Real-time database listener for models
             onValue(ref(db, 'models/'), (snapshot) => {
                 try {
@@ -73,7 +87,7 @@
                                 <span class="model-license">${model.license}</span>
                                 <span class="model-votes">${model.votes} votes</span>
                                 <button onclick="voteForModel('${model.id}')" class="vote-button">Vote</button>
-                                <input type="checkbox" id="editorChoice-${model.id}" ${model.editorChoice ? 'checked' : ''}> <label for="editorChoice-${model.id}">Editor's Choice</label>
+                                <input type="checkbox" id="editorChoice-$1" $2 onchange="toggleEditorChoice('$1', this.checked)"> <label for="editorChoice-$1">Editor's Choice</label>
                             `;
                             categoryElement.appendChild(modelElement);
                         });
