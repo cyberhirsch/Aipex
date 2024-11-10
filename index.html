@@ -30,52 +30,19 @@
         const analytics = getAnalytics(app);
         const db = getDatabase();
 
-        // Error handling function
-        function handleError(error, message) {
-            console.error(message, error);
-            alert(`Error: ${message}. Please try again.`);
-        }
-
-        // Add Model Form Handling
         document.addEventListener('DOMContentLoaded', function () {
-            document.getElementById('addModelForm').addEventListener('submit', async function (e) {
-                e.preventDefault();
-                try {
-                    const modelName = document.getElementById('modelName').value.trim();
-                    const modelCategory = document.getElementById('modelCategory').value.trim();
-
-                    if (!modelName || !modelCategory) {
-                        throw new Error('Please fill in all fields');
-                    }
-
-                    const timestamp = new Date().toISOString();
-                    await push(ref(db, 'models/'), {
-                        name: modelName,
-                        category: modelCategory,
-                        votes: 0,
-                        createdAt: timestamp,
-                        lastUpdated: timestamp
-                    });
-
-                    document.getElementById('addModelForm').reset();
-                    showNotification('Model added successfully!');
-                } catch (error) {
-                    handleError(error, 'Failed to add model');
-                }
-            });
-
-            // Display Models with Real-time Updates
+            // Real-time database listener for models
             onValue(ref(db, 'models/'), (snapshot) => {
                 try {
                     const modelsList = document.getElementById('modelsList');
                     modelsList.innerHTML = '';
 
                     if (!snapshot.exists()) {
-                        modelsList.innerHTML = '<p>No models added yet.</p>';
+                        modelsList.innerHTML = '<p>No models available yet.</p>';
                         return;
                     }
 
-                    // Convert to array and sort by votes
+                    // Convert to array and group models by category
                     const models = [];
                     snapshot.forEach((childSnapshot) => {
                         models.push({
@@ -84,115 +51,61 @@
                         });
                     });
 
-                    models.sort((a, b) => b.votes - a.votes);
+                    const groupedModels = models.reduce((acc, model) => {
+                        if (!acc[model.category]) acc[model.category] = [];
+                        acc[model.category].push(model);
+                        return acc;
+                    }, {});
 
-                    models.forEach((model) => {
-                        const modelElement = document.createElement('div');
-                        modelElement.className = 'model-card';
-                        modelElement.innerHTML = `
-                            <div class="model-info">
-                                <h3>${model.name}</h3>
-                                <span class="category">${model.category}</span>
-                                <span class="votes">Votes: ${model.votes}</span>
-                                <span class="timestamp">Added: ${new Date(model.createdAt).toLocaleDateString()}</span>
-                            </div>
-                            <button onclick="voteForModel('${model.id}')"
-                                    class="vote-button">
-                                Vote
-                            </button>
-                        `;
-                        modelsList.appendChild(modelElement);
+                    // Display top ten models for each category
+                    Object.keys(groupedModels).forEach(category => {
+                        const categoryModels = groupedModels[category];
+                        categoryModels.sort((a, b) => b.votes - a.votes);
+
+                        const categoryElement = document.createElement('div');
+                        categoryElement.className = 'category-section';
+                        categoryElement.innerHTML = `<h2>Top 10 in ${category}</h2>`;
+                        
+                        const topTenModels = categoryModels.slice(0, 10);
+                        topTenModels.forEach(model => {
+                            const modelElement = document.createElement('div');
+                            modelElement.className = 'model-card';
+                            modelElement.innerHTML = `
+                                <div class="model-info">
+                                    <h3>${model.name}</h3>
+                                    <span class="license">License: ${model.license}</span>
+                                    <span class="votes">Votes: ${model.votes}</span>
+                                    <span class="timestamp">Added: ${new Date(model.createdAt).toLocaleDateString()}</span>
+                                </div>
+                            `;
+                            categoryElement.appendChild(modelElement);
+                        });
+
+                        modelsList.appendChild(categoryElement);
                     });
                 } catch (error) {
-                    handleError(error, 'Failed to load models');
+                    console.error('Failed to load models:', error);
+                    alert('Failed to load model rankings. Please try again later.');
                 }
             });
-
-            // Voting Function
-            window.voteForModel = async function (modelId) {
-                try {
-                    // Check if the user has already voted for this model using local storage
-                    const votedModels = JSON.parse(localStorage.getItem('votedModels')) || [];
-                    if (votedModels.includes(modelId)) {
-                        showNotification('You have already voted for this model.');
-                        return;
-                    }
-
-                    // Proceed with voting logic
-                    const modelRef = ref(db, `models/${modelId}`);
-                    const snapshot = await get(modelRef);
-
-                    if (!snapshot.exists()) {
-                        throw new Error('Model not found');
-                    }
-
-                    const currentVotes = snapshot.val().votes;
-                    await update(modelRef, {
-                        votes: currentVotes + 1,
-                        lastUpdated: new Date().toISOString()
-                    });
-
-                    // Store modelId in Local Storage to mark as voted
-                    votedModels.push(modelId);
-                    localStorage.setItem('votedModels', JSON.stringify(votedModels));
-
-                    showNotification('Vote recorded!');
-                } catch (error) {
-                    handleError(error, 'Failed to record vote');
-                }
-            };
-
-            // Notification system
-            function showNotification(message) {
-                const notification = document.createElement('div');
-                notification.className = 'notification';
-                notification.textContent = message;
-                document.body.appendChild(notification);
-
-                setTimeout(() => {
-                    notification.classList.add('fade-out');
-                    setTimeout(() => notification.remove(), 500);
-                }, 2000);
-            }
         });
     </script>
 </head>
 
 <body>
     <header>
-        <h1>Aipex - AI Model Rankings</h1>
+        <h1>Aipex Rankings - Top AI Models</h1>
     </header>
     <main>
-        <section id="introduction">
-            <p>Welcome to Aipex - Your platform for ranking AI models. Add new models or vote for your favorites below.</p>
-        </section>
-
-        <section id="addModel">
-            <h2>Add a New Model</h2>
-            <form id="addModelForm">
-                <div class="form-group">
-                    <label for="modelName">Model Name:</label>
-                    <input type="text" id="modelName" placeholder="e.g., GPT-4, DALL-E 3" required>
-                </div>
-                <div class="form-group">
-                    <label for="modelCategory">Category:</label>
-                    <input type="text" id="modelCategory" placeholder="e.g., NLP, Vision, Audio" required>
-                </div>
-                <button type="submit">Add Model</button>
-            </form>
-        </section>
-
         <section id="ranking">
-            <h2>Model Rankings</h2>
             <div id="modelsList" class="models-grid">
-                <!-- Dynamic list of models will appear here -->
+                <!-- Top 10 models by category will appear here -->
             </div>
         </section>
+        <footer>
+            <a href="admin.html">Admin Page</a>
+        </footer>
     </main>
-    <footer>
-        <p>Updated: November 2024</p>
-        <p>Aipex Version: v0.0.7</p>
-    </footer>
 </body>
 
 </html>
