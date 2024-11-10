@@ -34,12 +34,24 @@ form {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-input[type="text"], select {
+input[type="text"], select, select[multiple] {
     width: calc(100% - 20px);
     padding: 10px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 4px;
+}
+
+select[multiple] {
+    height: auto;
+    min-height: 100px;
+}
+
+small {
+    display: block;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    color: #666;
 }
 
 button {
@@ -63,27 +75,84 @@ button:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+.category-section {
+    margin-bottom: 20px;
+}
+
+.category-section h2 {
+    background-color: #eee;
+    padding: 10px;
+    border-radius: 4px;
+}
+
 .model-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     padding: 10px;
     border-bottom: 1px solid #eee;
 }
 
+.model-row:last-child {
+    border-bottom: none;
+}
+
+.model-index {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
 .model-name {
     font-weight: bold;
-    flex: 2;
+    color: #333;
+    text-decoration: none;
+}
+
+.model-name:hover {
+    text-decoration: underline;
 }
 
 .model-license, .model-votes {
-    flex: 1;
-    text-align: center;
+    display: inline-block;
+    margin-right: 10px;
+    color: #666;
+}
+
+.model-tags {
+    display: block;
+    margin-top: 5px;
+    font-size: 0.9em;
+    color: #555;
 }
 
 .vote-button {
-    flex: 0.5;
+    background-color: #28a745;
+    color: #fff;
     padding: 5px 10px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+}
+
+.vote-button:hover {
+    background-color: #218838;
+}
+
+#tagFilters {
+    margin: 20px 0;
+}
+
+#tagsFilterContainer {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tag-filter {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.tag-filter input {
+    margin-right: 5px;
 }
 
 footer {
@@ -96,7 +165,29 @@ footer {
     width: 100%;
 }
 
-p {
-    margin: 0;
-    line-height: 1.4;
+footer p {
+    margin: 5px 0;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+footer a:hover {
+    color: #ddd;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="checkbox"], input[type="radio"] {
+    margin-right: 5px;
 }
