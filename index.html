@@ -322,14 +322,16 @@
                         const modelElement = document.createElement('div');
                         modelElement.className = 'model-row';
                         modelElement.innerHTML = `
-                            <span class="model-index">${index + 1}.</span>
-                            <a href="${model.weblink}" target="_blank" class="model-name">${model.name}</a>
-                            <span class="model-license">${model.license}</span>
-                            <span class="model-votes">${model.votes} votes</span>
+                            <div class="model-info">
+                                <span class="model-index">${index + 1}.</span>
+                                <a href="${model.weblink}" target="_blank" class="model-name">${model.name}</a>
+                                <span class="model-license">${model.license}</span>
+                                <span class="model-votes">${model.votes} votes</span>
+                                <button onclick="voteForModel('${model.id}')" class="vote-button">Vote</button>
+                                <input type="checkbox" id="editorChoice-${model.id}" ${model.editorChoice ? 'checked' : ''}>
+                                <label for="editorChoice-${model.id}">Editor's Choice</label>
+                            </div>
                             <span class="model-tags">Tags: ${model.tags && Array.isArray(model.tags) ? model.tags.join(', ') : 'No tags available'}</span>
-                            <button onclick="voteForModel('${model.id}')" class="vote-button">Vote</button>
-                            <input type="checkbox" id="editorChoice-${model.id}" ${model.editorChoice ? 'checked' : ''}>
-                            <label for="editorChoice-${model.id}">Editor's Choice</label>
                         `;
                         // Add event listener for Editor's Choice checkbox
                         setTimeout(() => {
@@ -432,7 +434,7 @@
     </main>
     <footer>
         <p>Updated: November 2024</p>
-        <p>Aipex Version: v0.1.3</p>
+        <p>Aipex Version: v0.0.8</p>
         <a href="admin.html">Admin Page</a>
     </footer>
 </body>
