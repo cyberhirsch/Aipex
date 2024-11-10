@@ -165,6 +165,24 @@
                     });
                 }
             });
+
+            // Add new category function
+            document.getElementById('addCategoryForm').addEventListener('submit', async function (e) {
+                e.preventDefault();
+                try {
+                    const categoryName = document.getElementById('categoryName').value.trim();
+                    if (!categoryName) {
+                        throw new Error('Please enter a category name');
+                    }
+
+                    await push(ref(db, 'categories/'), categoryName);
+                    document.getElementById('addCategoryForm').reset();
+                    alert('Category added successfully!');
+                } catch (error) {
+                    console.error('Error adding category:', error);
+                    alert('Error: Failed to add category. Please try again.');
+                }
+            });
         });
     </script>
 </head>
@@ -202,6 +220,16 @@
                     </select>
                 </div>
                 <button type="submit">Add Model</button>
+            </form>
+        </section>
+        <section id="addCategory">
+            <h2>Add a New Category</h2>
+            <form id="addCategoryForm">
+                <div class="form-group">
+                    <label for="categoryName">Category Name:</label>
+                    <input type="text" id="categoryName" placeholder="e.g., NLP, Vision" required>
+                </div>
+                <button type="submit">Add Category</button>
             </form>
         </section>
         <footer>
