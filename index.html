@@ -3,12 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My AI Model Rankings</title>
+    <title>Aipex - AI Model Rankings</title>
     <link rel="stylesheet" href="style.css">
+    
+    <!-- Firebase SDK Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.0.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.0.1/firebase-database.js"></script>
+
+    <!-- Initialize Firebase -->
+    <script>
+        // Your Firebase configuration
+        const firebaseConfig = {
+            apiKey: "YOUR_API_KEY",
+            authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+            databaseURL: "https://YOUR_PROJECT_ID.firebaseio.com",
+            projectId: "YOUR_PROJECT_ID",
+            storageBucket: "YOUR_PROJECT_ID.appspot.com",
+            messagingSenderId: "YOUR_SENDER_ID",
+            appId: "YOUR_APP_ID",
+            measurementId: "YOUR_MEASUREMENT_ID" // Optional
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+    </script>
 </head>
 <body>
     <header>
-        <h1>AI Model Rankings - Personal Favorites</h1>
+        <h1>Aipex - AI Model Rankings</h1>
     </header>
     <main>
         <section id="introduction">
@@ -33,32 +57,8 @@
     </main>
     <footer>
         <p>Updated: November 2024</p>
-        <p>Version: v0.02</p>
+        <p>Aipex Version: v1.0</p> <!-- Version number added -->
     </footer>
-
-    <!-- Firebase SDKs -->
-    <script src="https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/11.0.1/firebase-analytics.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/11.0.1/firebase-database.js"></script>
-
-    <!-- Firebase Initialization -->
-    <script>
-      // Your Firebase configuration
-      const firebaseConfig = {
-        apiKey: "AIzaSyCrSS4lsxgSFA7SEtseW1KoiruQbUwR_xA",
-        authDomain: "aipex-6d63b.firebaseapp.com",
-        databaseURL: "https://aipex-6d63b.firebaseio.com",
-        projectId: "aipex-6d63b",
-        storageBucket: "aipex-6d63b.appspot.com",
-        messagingSenderId: "356818143159",
-        appId: "1:356818143159:web:49222b5a85629c4630ca32",
-        measurementId: "G-D32Z47WHQ4"
-      };
-
-      // Initialize Firebase
-      firebase.initializeApp(firebaseConfig);
-      firebase.analytics();
-    </script>
 
     <!-- Your custom JavaScript file -->
     <script src="scripts.js"></script>
