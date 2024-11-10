@@ -34,17 +34,12 @@ form {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-input[type="text"], select, select[multiple] {
+input[type="text"], select {
     width: calc(100% - 20px);
     padding: 10px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 4px;
-}
-
-select[multiple] {
-    height: auto;
-    min-height: 100px;
 }
 
 small {
@@ -190,4 +185,18 @@ label {
 
 input[type="checkbox"], input[type="radio"] {
     margin-right: 5px;
+}
+
+.form-group div {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.form-group div div {
+    margin-right: 15px;
+    margin-bottom: 5px;
+}
+
+.category-checkbox, .tag-checkbox {
+    margin-bottom: 5px;
 }
