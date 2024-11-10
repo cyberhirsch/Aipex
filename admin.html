@@ -40,6 +40,7 @@
                 if (password === "your_admin_password") { // Set your password here
                     passwordPrompt.style.display = 'none';
                     adminContent.style.display = 'block';
+                    loadModels(); // Load models when access is granted
                 } else {
                     alert('Incorrect password. Please try again.');
                 }
@@ -62,17 +63,82 @@
                         category: modelCategory,
                         license: modelLicense,
                         votes: 0,
+                        editorChoice: false,
                         createdAt: timestamp,
                         lastUpdated: timestamp
                     });
 
                     document.getElementById('addModelForm').reset();
                     showNotification('Model added successfully!');
+                    loadModels(); // Reload models after adding
                 } catch (error) {
                     console.error('Error adding model:', error);
                     alert('Error: Failed to add model. Please try again.');
                 }
             });
+
+            // Load all models for management
+            async function loadModels() {
+                const modelsList = document.getElementById('modelsList');
+                modelsList.innerHTML = '';
+
+                onValue(ref(db, 'models/'), (snapshot) => {
+                    if (!snapshot.exists()) {
+                        modelsList.innerHTML = '<p>No models available yet.</p>';
+                        return;
+                    }
+
+                    // Convert to array for display
+                    const models = [];
+                    snapshot.forEach((childSnapshot) => {
+                        models.push({
+                            id: childSnapshot.key,
+                            ...childSnapshot.val()
+                        });
+                    });
+
+                    // Display each model with controls to update
+                    models.forEach((model) => {
+                        const modelElement = document.createElement('div');
+                        modelElement.className = 'model-card';
+                        modelElement.innerHTML = `
+                            <div class="model-info">
+                                <h3>${model.name}</h3>
+                                <label>Category:</label>
+                                <input type="text" value="${model.category}" id="category-${model.id}">
+                                <label>License:</label>
+                                <span>${model.license}</span>
+                                <div>
+                                    <input type="checkbox" id="editorChoice-${model.id}" ${model.editorChoice ? 'checked' : ''}>
+                                    <label for="editorChoice-${model.id}">Editor's Choice</label>
+                                </div>
+                                <button onclick="updateModel('${model.id}')">Update</button>
+                            </div>
+                        `;
+                        modelsList.appendChild(modelElement);
+                    });
+                });
+            }
+
+            // Update model function
+            window.updateModel = async function (modelId) {
+                try {
+                    const updatedCategory = document.getElementById(`category-${modelId}`).value.trim();
+                    const editorChoiceChecked = document.getElementById(`editorChoice-${modelId}`).checked;
+
+                    const modelRef = ref(db, `models/${modelId}`);
+                    await update(modelRef, {
+                        category: updatedCategory,
+                        editorChoice: editorChoiceChecked,
+                        lastUpdated: new Date().toISOString()
+                    });
+
+                    showNotification('Model updated successfully!');
+                } catch (error) {
+                    console.error('Failed to update model:', error);
+                    alert('Failed to update model. Please try again.');
+                }
+            };
 
             // Notification system
             function showNotification(message) {
@@ -92,7 +158,7 @@
 
 <body>
     <header>
-        <h1>Aipex Admin - Add AI Models</h1>
+        <h1>Aipex Admin - Manage AI Models</h1>
     </header>
 
     <main>
@@ -134,6 +200,12 @@
                 </div>
                 <button type="submit">Add Model</button>
             </form>
+
+            <h2>Manage Existing Models</h2>
+            <div id="modelsList" class="models-grid">
+                <!-- List of models for management will appear here -->
+            </div>
+
             <br><br>
             <a href="index.html">Back to Rankings Page</a>
         </section>
