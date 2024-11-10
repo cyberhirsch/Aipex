@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My AI Model Rankings</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>AI Model Rankings - Personal Favorites</h1>
+    </header>
+    <main>
+        <section id="introduction">
+            <p>Welcome to my personal AI model ranking website. Add new models or vote for your favorites below.</p>
+        </section>
+
+        <section id="addModel">
+            <h2>Add a New Model</h2>
+            <form id="addModelForm">
+                <input type="text" id="modelName" placeholder="Model Name" required>
+                <input type="text" id="modelCategory" placeholder="Category (e.g., NLP, Vision)" required>
+                <button type="submit">Add Model</button>
+            </form>
+        </section>
+
+        <section id="ranking">
+            <h2>Model Rankings</h2>
+            <div id="modelsList">
+                <!-- Dynamic list of models -->
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>Updated: November 2024</p>
+    </footer>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>
