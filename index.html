@@ -133,6 +133,21 @@
                     alert('Error: Failed to add model. Please try again.');
                 }
             });
+
+            // Populate categories from database
+            const modelCategorySelect = document.getElementById('modelCategory');
+            onValue(ref(db, 'categories/'), (snapshot) => {
+                modelCategorySelect.innerHTML = '<option value="" disabled selected>Select a category</option>';
+                if (snapshot.exists()) {
+                    snapshot.forEach((childSnapshot) => {
+                        const category = childSnapshot.val();
+                        const optionElement = document.createElement('option');
+                        optionElement.value = category;
+                        optionElement.textContent = category;
+                        modelCategorySelect.appendChild(optionElement);
+                    });
+                }
+            });
         });
     </script>
 </head>
@@ -158,12 +173,6 @@
                     <label for="modelCategory">Category:</label>
                     <select id="modelCategory" required>
                         <option value="" disabled selected>Select a category</option>
-                        <option value="NLP">NLP</option>
-                        <option value="Vision">Vision</option>
-                        <option value="Audio">Audio</option>
-                        <option value="Robotics">Robotics</option>
-                        <option value="Generative">Generative</option>
-                        <option value="Multimodal">Multimodal</option>
                     </select>
                 </div>
                 <div class="form-group">
