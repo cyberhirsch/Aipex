@@ -125,6 +125,37 @@
                     alert('Failed to record vote. Please try again.');
                 }
             };
+
+            // Add new model function
+            document.getElementById('addModelForm').addEventListener('submit', async function (e) {
+                e.preventDefault();
+                try {
+                    const modelName = document.getElementById('modelName').value.trim();
+                    const modelCategory = document.getElementById('modelCategory').value;
+                    const modelLicense = document.getElementById('modelLicense').value;
+
+                    if (!modelName || !modelCategory || !modelLicense) {
+                        throw new Error('Please fill in all fields');
+                    }
+
+                    const timestamp = new Date().toISOString();
+                    await push(ref(db, 'models/'), {
+                        name: modelName,
+                        category: modelCategory,
+                        license: modelLicense,
+                        votes: 0,
+                        editorChoice: false,
+                        createdAt: timestamp,
+                        lastUpdated: timestamp
+                    });
+
+                    document.getElementById('addModelForm').reset();
+                    alert('Model added successfully!');
+                } catch (error) {
+                    console.error('Error adding model:', error);
+                    alert('Error: Failed to add model. Please try again.');
+                }
+            });
         });
     </script>
 </head>
@@ -138,6 +169,37 @@
             <div id="modelsList" class="models-grid">
                 <!-- Top 10 models by category will appear here -->
             </div>
+        </section>
+        <section id="addModel">
+            <h2>Add a New Model</h2>
+            <form id="addModelForm">
+                <div class="form-group">
+                    <label for="modelName">Model Name:</label>
+                    <input type="text" id="modelName" placeholder="e.g., GPT-4, DALL-E 3" required>
+                </div>
+                <div class="form-group">
+                    <label for="modelCategory">Category:</label>
+                    <select id="modelCategory" required>
+                        <option value="" disabled selected>Select a category</option>
+                        <option value="NLP">NLP</option>
+                        <option value="Vision">Vision</option>
+                        <option value="Audio">Audio</option>
+                        <option value="Robotics">Robotics</option>
+                        <option value="Generative">Generative</option>
+                        <option value="Multimodal">Multimodal</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="modelLicense">License:</label>
+                    <select id="modelLicense" required>
+                        <option value="" disabled selected>Select a license type</option>
+                        <option value="Open Source">Open Source</option>
+                        <option value="Commercial">Commercial</option>
+                        <option value="Freemium">Freemium</option>
+                    </select>
+                </div>
+                <button type="submit">Add Model</button>
+            </form>
         </section>
         <footer>
             <p>Updated: November 2024</p>
