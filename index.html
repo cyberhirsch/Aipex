@@ -9,7 +9,7 @@
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
         import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-analytics.js";
-        import { getDatabase, ref, onValue, get, update } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-database.js";
+        import { getDatabase, ref, onValue, get, update, push } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-database.js";
 
         // Firebase configuration (use your credentials)
         const firebaseConfig = {
@@ -40,7 +40,7 @@
                         return;
                     }
 
-                    // Convert to array and group models by category
+                    // Convert to array and display models in a compact format
                     const models = [];
                     snapshot.forEach((childSnapshot) => {
                         models.push({
@@ -49,41 +49,18 @@
                         });
                     });
 
-                    const groupedModels = models.reduce((acc, model) => {
-                        if (!acc[model.category]) acc[model.category] = [];
-                        acc[model.category].push(model);
-                        return acc;
-                    }, {});
+                    models.sort((a, b) => b.votes - a.votes);
 
-                    // Display top ten models for each category
-                    Object.keys(groupedModels).forEach(category => {
-                        const categoryModels = groupedModels[category];
-                        categoryModels.sort((a, b) => b.votes - a.votes);
-
-                        const categoryElement = document.createElement('div');
-                        categoryElement.className = 'category-section';
-                        categoryElement.innerHTML = `<h2>Top 10 in ${category}</h2>`;
-                        
-                        const topTenModels = categoryModels.slice(0, 10);
-                        topTenModels.forEach(model => {
-                            const modelElement = document.createElement('div');
-                            modelElement.className = 'model-card';
-                            modelElement.innerHTML = `
-                                <div class="model-info">
-                                    <h3>${model.name}</h3>
-                                    <span class="license">License: ${model.license}</span>
-                                    <span class="votes">Votes: ${model.votes}</span>
-                                    <span class="timestamp">Added: ${new Date(model.createdAt).toLocaleDateString()}</span>
-                                </div>
-                                <button onclick="voteForModel('${model.id}')"
-                                        class="vote-button">
-                                    Vote
-                                </button>
-                            `;
-                            categoryElement.appendChild(modelElement);
-                        });
-
-                        modelsList.appendChild(categoryElement);
+                    models.forEach(model => {
+                        const modelElement = document.createElement('div');
+                        modelElement.className = 'model-row';
+                        modelElement.innerHTML = `
+                            <span class="model-name">${model.name}</span>
+                            <span class="model-license">${model.license}</span>
+                            <span class="model-votes">${model.votes} votes</span>
+                            <button onclick="voteForModel('${model.id}')" class="vote-button">Vote</button>
+                        `;
+                        modelsList.appendChild(modelElement);
                     });
                 } catch (error) {
                     console.error('Failed to load models:', error);
@@ -167,7 +144,7 @@
     <main>
         <section id="ranking">
             <div id="modelsList" class="models-grid">
-                <!-- Top 10 models by category will appear here -->
+                <!-- Top models will appear here in a compact format -->
             </div>
         </section>
         <section id="addModel">
