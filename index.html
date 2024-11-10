@@ -28,6 +28,7 @@
         const analytics = getAnalytics(app);
         const db = getDatabase();
 
+        // Main Script
         document.addEventListener('DOMContentLoaded', function () {
             // Real-time database listener for models
             onValue(ref(db, 'models/'), (snapshot) => {
@@ -69,12 +70,20 @@
                             modelElement.className = 'model-row';
                             modelElement.innerHTML = `
                                 <span class="model-index">${index + 1}.</span>
-                                <span class="model-name">${model.name}</span>
+                                <a href="${model.weblink}" target="_blank" class="model-name">${model.name}</a>
                                 <span class="model-license">${model.license}</span>
                                 <span class="model-votes">${model.votes} votes</span>
                                 <button onclick="voteForModel('${model.id}')" class="vote-button">Vote</button>
-                                <input type="checkbox" id="editorChoice-${model.id}" ${model.editorChoice ? 'checked' : ''}> <label for="editorChoice-${model.id}">Editor's Choice</label>
+                                <input type="checkbox" id="editorChoice-${model.id}" ${model.editorChoice ? 'checked' : ''}>
+                                <label for="editorChoice-${model.id}">Editor's Choice</label>
                             `;
+                            // Add event listener for Editor's Choice checkbox
+                            setTimeout(() => {
+                                const editorCheckbox = document.getElementById(`editorChoice-${model.id}`);
+                                editorCheckbox.addEventListener('change', function(e) {
+                                    updateEditorChoice(model.id, e.target.checked);
+                                });
+                            }, 0);
                             categoryElement.appendChild(modelElement);
                         });
 
@@ -120,6 +129,22 @@
                     alert('Failed to record vote. Please try again.');
                 }
             };
+
+            // Function to update Editor's Choice
+            async function updateEditorChoice(modelId, isChecked) {
+                try {
+                    // Optionally, check if the user has admin privileges
+                    const modelRef = ref(db, `models/${modelId}`);
+                    await update(modelRef, {
+                        editorChoice: isChecked,
+                        lastUpdated: new Date().toISOString()
+                    });
+                    alert('Editor\'s Choice updated!');
+                } catch (error) {
+                    console.error('Failed to update Editor\'s Choice:', error);
+                    alert('Failed to update Editor\'s Choice. Please try again.');
+                }
+            }
 
             // Add new model function
             document.getElementById('addModelForm').addEventListener('submit', async function (e) {
@@ -239,12 +264,11 @@
                 <button type="submit">Add Category</button>
             </form>
         </section>
-        <footer>
-            <p>Updated: November 2024</p>
-            <p>Aipex Version: v0.0.8</p>
-            <a href="admin.html">Admin Page</a>
-        </footer>
     </main>
+    <footer>
+        <p>Updated: November 2024</p>
+        <p>Aipex Version: v0.0.8</p>
+        <a href="admin.html">Admin Page</a>
+    </footer>
 </body>
-
 </html>
