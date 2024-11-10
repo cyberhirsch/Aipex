@@ -79,12 +79,10 @@
                                 <div class="model-tags">Tags: ${model.tags ? model.tags.join(', ') : 'None'}</div>
                             `;
                             // Add event listener for Editor's Choice checkbox
-                            setTimeout(() => {
-                                const editorCheckbox = document.getElementById(`editorChoice-${model.id}`);
-                                editorCheckbox.addEventListener('change', function(e) {
-                                    updateEditorChoice(model.id, e.target.checked);
-                                });
-                            }, 0);
+                            const editorCheckbox = document.getElementById(`editorChoice-${model.id}`);
+editorCheckbox.addEventListener('change', function(e) {
+    updateEditorChoice(model.id, e.target.checked);
+});
                             categoryElement.appendChild(modelElement);
                         });
 
