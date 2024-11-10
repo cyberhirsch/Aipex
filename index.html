@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Aipex - Generative AI Ranking with Tags</title>
+    <title>Aipex - Generative AI Ranking with Tags and Multiple Categories</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Firebase SDKs -->
+    <!-- Firebase SDKs and JavaScript Code -->
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
         import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-analytics.js";
@@ -12,14 +12,14 @@
 
         // Firebase configuration (use your credentials)
         const firebaseConfig = {
-            apiKey: "AIzaSyCrSS4lsxgSFA7SEtseW1KoiruQbUwR_xA",
-            authDomain: "aipex-6d63b.firebaseapp.com",
-            databaseURL: "https://aipex-6d63b-default-rtdb.europe-west1.firebasedatabase.app/",
-            projectId: "aipex-6d63b",
-            storageBucket: "aipex-6d63b.appspot.com",
-            messagingSenderId: "356818143159",
-            appId: "1:356818143159:web:49222b5a85629c4630ca32",
-            measurementId: "G-D32Z47WHQ4"
+            apiKey: "YOUR_API_KEY",
+            authDomain: "YOUR_AUTH_DOMAIN",
+            databaseURL: "YOUR_DATABASE_URL",
+            projectId: "YOUR_PROJECT_ID",
+            storageBucket: "YOUR_STORAGE_BUCKET",
+            messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+            appId: "YOUR_APP_ID",
+            measurementId: "YOUR_MEASUREMENT_ID"
         };
 
         // Initialize Firebase
@@ -31,29 +31,39 @@
         document.addEventListener('DOMContentLoaded', function () {
             let models = []; // Declare models array globally
 
+            // Fetch categories from database
+            const modelCategoriesContainer = document.getElementById('modelCategoriesContainer');
+
+            function populateCategories() {
+                onValue(ref(db, 'categories/'), (snapshot) => {
+                    modelCategoriesContainer.innerHTML = ''; // Clear existing categories
+                    if (snapshot.exists()) {
+                        snapshot.forEach((childSnapshot) => {
+                            const category = childSnapshot.val();
+                            const categoryElement = document.createElement('div');
+                            categoryElement.className = 'category-checkbox';
+                            categoryElement.innerHTML = `
+                                <input type="checkbox" id="modelCategory-${category}" value="${category}" class="model-category-checkbox">
+                                <label for="modelCategory-${category}">${category}</label>
+                            `;
+                            modelCategoriesContainer.appendChild(categoryElement);
+                        });
+                    }
+                });
+            }
+            populateCategories();
+
             // Fetch tags from database
-            const modelTagsSelect = document.getElementById('modelTags');
             const tagsFilterContainer = document.getElementById('tagsFilterContainer');
-            const modelTagsContainer = document.getElementById('modelTagsContainer'); // For checkboxes, if used
+            const modelTagsContainer = document.getElementById('modelTagsContainer');
 
             function populateTags() {
                 onValue(ref(db, 'tags/'), (snapshot) => {
-                    // Clear existing tags
-                    modelTagsSelect.innerHTML = '';
                     tagsFilterContainer.innerHTML = '';
-                    // modelTagsContainer.innerHTML = ''; // For checkboxes, if used
-
+                    modelTagsContainer.innerHTML = '';
                     if (snapshot.exists()) {
-                        const tags = [];
                         snapshot.forEach((childSnapshot) => {
                             const tag = childSnapshot.val();
-                            tags.push(tag);
-
-                            // Populate modelTagsSelect
-                            const optionElement = document.createElement('option');
-                            optionElement.value = tag;
-                            optionElement.textContent = tag;
-                            modelTagsSelect.appendChild(optionElement);
 
                             // Populate tagsFilterContainer
                             const tagElement = document.createElement('div');
@@ -64,17 +74,17 @@
                             `;
                             tagsFilterContainer.appendChild(tagElement);
 
-                            // If using checkboxes in the Add Model form
-                            // const tagCheckbox = document.createElement('div');
-                            // tagCheckbox.className = 'tag-checkbox';
-                            // tagCheckbox.innerHTML = `
-                            //     <input type="checkbox" id="modelTag-${tag}" value="${tag}" class="model-tag-checkbox">
-                            //     <label for="modelTag-${tag}">${tag}</label>
-                            // `;
-                            // modelTagsContainer.appendChild(tagCheckbox);
+                            // Populate modelTagsContainer
+                            const tagCheckbox = document.createElement('div');
+                            tagCheckbox.className = 'tag-checkbox';
+                            tagCheckbox.innerHTML = `
+                                <input type="checkbox" id="modelTag-${tag}" value="${tag}" class="model-tag-checkbox">
+                                <label for="modelTag-${tag}">${tag}</label>
+                            `;
+                            modelTagsContainer.appendChild(tagCheckbox);
                         });
 
-                        // Add event listener to checkboxes
+                        // Add event listener to tag filter checkboxes
                         const tagCheckboxes = document.querySelectorAll('.tag-checkbox');
                         tagCheckboxes.forEach(checkbox => {
                             checkbox.addEventListener('change', applyTagFilters);
@@ -169,31 +179,30 @@
                 e.preventDefault();
                 try {
                     const modelName = document.getElementById('modelName').value.trim();
-                    const modelCategory = document.getElementById('modelCategory').value;
                     const modelLicense = document.getElementById('modelLicense').value;
                     const modelWeblink = document.getElementById('modelWeblink').value.trim();
 
-                    // Get selected tags from multi-select
-                    const selectedOptions = Array.from(modelTagsSelect.selectedOptions);
-                    const modelTags = selectedOptions.map(option => option.value);
+                    // Get selected categories from checkboxes
+                    const selectedCategoryCheckboxes = document.querySelectorAll('.model-category-checkbox:checked');
+                    const modelCategories = Array.from(selectedCategoryCheckboxes).map(cb => cb.value);
 
-                    // If using checkboxes
-                    // const selectedTagCheckboxes = document.querySelectorAll('.model-tag-checkbox:checked');
-                    // const modelTags = Array.from(selectedTagCheckboxes).map(cb => cb.value);
+                    // Get selected tags from checkboxes
+                    const selectedTagCheckboxes = document.querySelectorAll('.model-tag-checkbox:checked');
+                    const modelTags = Array.from(selectedTagCheckboxes).map(cb => cb.value);
 
-                    if (!modelName || !modelCategory || !modelLicense || !modelWeblink || modelTags.length === 0) {
+                    if (!modelName || modelCategories.length === 0 || !modelLicense || !modelWeblink || modelTags.length === 0) {
                         throw new Error('Please fill in all fields');
                     }
 
                     const timestamp = new Date().toISOString();
                     await push(ref(db, 'models/'), {
                         name: modelName,
-                        category: modelCategory,
+                        categories: modelCategories, // Now an array
                         license: modelLicense,
                         weblink: modelWeblink,
                         votes: 0,
                         editorChoice: false,
-                        tags: modelTags, // Add tags here
+                        tags: modelTags,
                         createdAt: timestamp,
                         lastUpdated: timestamp
                     });
@@ -258,21 +267,6 @@
                 }
             });
 
-            // Populate categories from database
-            const modelCategorySelect = document.getElementById('modelCategory');
-            onValue(ref(db, 'categories/'), (snapshot) => {
-                modelCategorySelect.innerHTML = '<option value="" disabled selected>Select a category</option>';
-                if (snapshot.exists()) {
-                    snapshot.forEach((childSnapshot) => {
-                        const category = childSnapshot.val();
-                        const optionElement = document.createElement('option');
-                        optionElement.value = category;
-                        optionElement.textContent = category;
-                        modelCategorySelect.appendChild(optionElement);
-                    });
-                }
-            });
-
             // Function to apply tag filters
             function applyTagFilters() {
                 // Get selected tags
@@ -287,24 +281,32 @@
                     return;
                 }
 
+                // Collect all unique categories from models
+                const allCategoriesSet = new Set();
+                models.forEach(model => {
+                    if (model.categories && Array.isArray(model.categories)) {
+                        model.categories.forEach(cat => allCategoriesSet.add(cat));
+                    }
+                });
+                const allCategories = Array.from(allCategoriesSet);
+
                 // Group models by category
-                const groupedModels = models.reduce((acc, model) => {
-                    if (!acc[model.category]) acc[model.category] = [];
-                    acc[model.category].push(model);
-                    return acc;
-                }, {});
+                const groupedModels = {};
+                allCategories.forEach(category => {
+                    groupedModels[category] = models.filter(model => {
+                        // Check if model belongs to this category
+                        const inCategory = model.categories && model.categories.includes(category);
+                        // Filter models based on selected tags
+                        const hasSelectedTags = selectedTags.length === 0 || (model.tags && model.tags.some(tag => selectedTags.includes(tag)));
+                        return inCategory && hasSelectedTags;
+                    });
+                });
 
                 // Display models grouped by category
                 Object.keys(groupedModels).forEach(category => {
                     const categoryModels = groupedModels[category];
 
-                    // Filter models based on selected tags
-                    const filteredModels = categoryModels.filter(model => {
-                        if (selectedTags.length === 0) return true; // No tags selected, include all
-                        return model.tags && model.tags.some(tag => selectedTags.includes(tag));
-                    });
-
-                    if (filteredModels.length === 0) {
+                    if (categoryModels.length === 0) {
                         // Skip categories with no models after filtering
                         return;
                     }
@@ -315,8 +317,8 @@
                     categoryElement.innerHTML = `<h2>${category}</h2>`;
 
                     // Sort and display models
-                    filteredModels.sort((a, b) => b.votes - a.votes);
-                    filteredModels.forEach((model, index) => {
+                    categoryModels.sort((a, b) => b.votes - a.votes);
+                    categoryModels.forEach((model, index) => {
                         const modelElement = document.createElement('div');
                         modelElement.className = 'model-row';
                         modelElement.innerHTML = `
@@ -374,10 +376,11 @@
                     <input type="text" id="modelName" placeholder="e.g., GPT-4, DALL-E 3" required>
                 </div>
                 <div class="form-group">
-                    <label for="modelCategory">Category:</label>
-                    <select id="modelCategory" required>
-                        <option value="" disabled selected>Select a category</option>
-                    </select>
+                    <label>Categories:</label>
+                    <div id="modelCategoriesContainer">
+                        <!-- Category checkboxes will be populated dynamically -->
+                    </div>
+                    <small>Select one or more categories.</small>
                 </div>
                 <div class="form-group">
                     <label for="modelLicense">License:</label>
@@ -392,22 +395,13 @@
                     <label for="modelWeblink">Weblink:</label>
                     <input type="text" id="modelWeblink" placeholder="e.g., https://model-link.com" required>
                 </div>
-                <!-- Modified Tags Section -->
                 <div class="form-group">
-                    <label for="modelTags">Tags:</label>
-                    <select id="modelTags" multiple required>
-                        <!-- Options will be populated dynamically -->
-                    </select>
-                    <small>Select one or more tags.</small>
-                </div>
-                <!-- If using checkboxes instead of multi-select -->
-                <!-- <div class="form-group">
                     <label>Tags:</label>
                     <div id="modelTagsContainer">
                         <!-- Tag checkboxes will be populated dynamically -->
-                    <!-- </div>
+                    </div>
                     <small>Select one or more tags.</small>
-                </div> -->
+                </div>
                 <button type="submit">Add Model</button>
             </form>
         </section>
@@ -438,7 +432,7 @@
     </main>
     <footer>
         <p>Updated: November 2024</p>
-        <p>Aipex Version: v0.1.2</p>
+        <p>Aipex Version: v0.0.8</p>
         <a href="admin.html">Admin Page</a>
     </footer>
 </body>
