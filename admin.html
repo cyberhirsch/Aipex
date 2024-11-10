@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aipex Admin - Add AI Models</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-analytics.js";
+        import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-database.js";
+
+        // Firebase configuration (use your credentials)
+        const firebaseConfig = {
+            apiKey: "YOUR_API_KEY_HERE",
+            authDomain: "YOUR_AUTH_DOMAIN_HERE",
+            databaseURL: "YOUR_DATABASE_URL_HERE",
+            projectId: "YOUR_PROJECT_ID_HERE",
+            storageBucket: "YOUR_STORAGE_BUCKET_HERE",
+            messagingSenderId: "YOUR_MESSAGING_SENDER_ID_HERE",
+            appId: "YOUR_APP_ID_HERE",
+            measurementId: "YOUR_MEASUREMENT_ID_HERE"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+        const db = getDatabase();
+
+        // Form Handling
+        document.addEventListener('DOMContentLoaded', function () {
+            const passwordPrompt = document.getElementById('passwordPrompt');
+            const adminContent = document.getElementById('adminContent');
+            const passwordInput = document.getElementById('passwordInput');
+            const submitPasswordButton = document.getElementById('submitPassword');
+
+            submitPasswordButton.addEventListener('click', function () {
+                const password = passwordInput.value;
+                if (password === "your_admin_password") { // Set your password here
+                    passwordPrompt.style.display = 'none';
+                    adminContent.style.display = 'block';
+                } else {
+                    alert('Incorrect password. Please try again.');
+                }
+            });
+
+            document.getElementById('addModelForm').addEventListener('submit', async function (e) {
+                e.preventDefault();
+                try {
+                    const modelName = document.getElementById('modelName').value.trim();
+                    const modelCategory = document.getElementById('modelCategory').value;
+                    const modelLicense = document.getElementById('modelLicense').value;
+
+                    if (!modelName || !modelCategory || !modelLicense) {
+                        throw new Error('Please fill in all fields');
+                    }
+
+                    const timestamp = new Date().toISOString();
+                    await push(ref(db, 'models/'), {
+                        name: modelName,
+                        category: modelCategory,
+                        license: modelLicense,
+                        votes: 0,
+                        createdAt: timestamp,
+                        lastUpdated: timestamp
+                    });
+
+                    document.getElementById('addModelForm').reset();
+                    showNotification('Model added successfully!');
+                } catch (error) {
+                    console.error('Error adding model:', error);
+                    alert('Error: Failed to add model. Please try again.');
+                }
+            });
+
+            // Notification system
+            function showNotification(message) {
+                const notification = document.createElement('div');
+                notification.className = 'notification';
+                notification.textContent = message;
+                document.body.appendChild(notification);
+
+                setTimeout(() => {
+                    notification.classList.add('fade-out');
+                    setTimeout(() => notification.remove(), 500);
+                }, 2000);
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1>Aipex Admin - Add AI Models</h1>
+    </header>
+
+    <main>
+        <!-- Password Protection Section -->
+        <section id="passwordPrompt">
+            <h2>Enter Admin Password</h2>
+            <input type="password" id="passwordInput" placeholder="Enter password" required>
+            <button id="submitPassword">Submit</button>
+        </section>
+
+        <!-- Admin Content Section (Hidden by default) -->
+        <section id="adminContent" style="display:none;">
+            <h2>Add a New Model</h2>
+            <form id="addModelForm">
+                <div class="form-group">
+                    <label for="modelName">Model Name:</label>
+                    <input type="text" id="modelName" placeholder="e.g., GPT-4, DALL-E 3" required>
+                </div>
+                <div class="form-group">
+                    <label for="modelCategory">Category:</label>
+                    <select id="modelCategory" required>
+                        <option value="" disabled selected>Select a category</option>
+                        <option value="NLP">NLP</option>
+                        <option value="Vision">Vision</option>
+                        <option value="Audio">Audio</option>
+                        <option value="Robotics">Robotics</option>
+                        <option value="Generative">Generative</option>
+                        <option value="Multimodal">Multimodal</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="modelLicense">License:</label>
+                    <select id="modelLicense" required>
+                        <option value="" disabled selected>Select a license type</option>
+                        <option value="Open Source">Open Source</option>
+                        <option value="Commercial">Commercial</option>
+                        <option value="Freemium">Freemium</option>
+                    </select>
+                </div>
+                <button type="submit">Add Model</button>
+            </form>
+            <br><br>
+            <a href="index.html">Back to Rankings Page</a>
+        </section>
+    </main>
+</body>
+
+</html>
