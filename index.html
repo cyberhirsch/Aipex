@@ -6,27 +6,142 @@
     <title>Aipex - AI Model Rankings</title>
     <link rel="stylesheet" href="style.css">
     
-    <!-- Firebase SDK Scripts -->
-    <script src="https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/11.0.1/firebase-analytics.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/11.0.1/firebase-database.js"></script>
+    <!-- Updated Firebase SDK - using modular v9 -->
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.x.x/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.x.x/firebase-analytics.js";
+        import { getDatabase, ref, push, onValue, get, update } from "https://www.gstatic.com/firebasejs/9.x.x/firebase-database.js";
 
-    <!-- Initialize Firebase -->
-    <script>
+        // Using your existing Firebase configuration
         const firebaseConfig = {
             apiKey: "AIzaSyCrSS4lsxgSFA7SEtseW1KoiruQbUwR_xA",
             authDomain: "aipex-6d63b.firebaseapp.com",
             databaseURL: "https://aipex-6d63b-default-rtdb.europe-west1.firebasedatabase.app/",
             projectId: "aipex-6d63b",
-            storageBucket: "aipex-6d63b.appspot.com",  // Correcting the URL here
+            storageBucket: "aipex-6d63b.appspot.com",
             messagingSenderId: "356818143159",
             appId: "1:356818143159:web:49222b5a85629c4630ca32",
             measurementId: "G-D32Z47WHQ4"
         };
-    
+
         // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-        firebase.analytics();
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+        const db = getDatabase();
+
+        // Error handling function
+        function handleError(error, message) {
+            console.error(message, error);
+            alert(`Error: ${message}. Please try again.`);
+        }
+
+        // Add Model Form Handling
+        document.getElementById('addModelForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            try {
+                const modelName = document.getElementById('modelName').value.trim();
+                const modelCategory = document.getElementById('modelCategory').value.trim();
+                
+                if (!modelName || !modelCategory) {
+                    throw new Error('Please fill in all fields');
+                }
+
+                const timestamp = new Date().toISOString();
+                await push(ref(db, 'models/'), {
+                    name: modelName,
+                    category: modelCategory,
+                    votes: 0,
+                    createdAt: timestamp,
+                    lastUpdated: timestamp
+                });
+
+                document.getElementById('addModelForm').reset();
+                showNotification('Model added successfully!');
+            } catch (error) {
+                handleError(error, 'Failed to add model');
+            }
+        });
+
+        // Display Models with Real-time Updates
+        onValue(ref(db, 'models/'), (snapshot) => {
+            try {
+                const modelsList = document.getElementById('modelsList');
+                modelsList.innerHTML = '';
+                
+                if (!snapshot.exists()) {
+                    modelsList.innerHTML = '<p>No models added yet.</p>';
+                    return;
+                }
+
+                // Convert to array and sort by votes
+                const models = [];
+                snapshot.forEach((childSnapshot) => {
+                    models.push({
+                        id: childSnapshot.key,
+                        ...childSnapshot.val()
+                    });
+                });
+
+                models.sort((a, b) => b.votes - a.votes);
+
+                models.forEach((model) => {
+                    const modelElement = document.createElement('div');
+                    modelElement.className = 'model-card';
+                    modelElement.innerHTML = `
+                        <div class="model-info">
+                            <h3>${model.name}</h3>
+                            <span class="category">${model.category}</span>
+                            <span class="votes">Votes: ${model.votes}</span>
+                            <span class="timestamp">Added: ${new Date(model.createdAt).toLocaleDateString()}</span>
+                        </div>
+                        <button onclick="window.voteForModel('${model.id}')" 
+                                class="vote-button" 
+                                data-model-id="${model.id}">
+                            Vote
+                        </button>
+                    `;
+                    modelsList.appendChild(modelElement);
+                });
+            } catch (error) {
+                handleError(error, 'Failed to load models');
+            }
+        });
+
+        // Voting Function
+        window.voteForModel = async function(modelId) {
+            try {
+                const modelRef = ref(db, `models/${modelId}`);
+                const snapshot = await get(modelRef);
+                
+                if (!snapshot.exists()) {
+                    throw new Error('Model not found');
+                }
+
+                const currentVotes = snapshot.val().votes;
+                await update(modelRef, { 
+                    votes: currentVotes + 1,
+                    lastUpdated: new Date().toISOString()
+                });
+                
+                showNotification('Vote recorded!');
+            } catch (error) {
+                handleError(error, 'Failed to record vote');
+            }
+        };
+
+        // Notification system
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.className = 'notification';
+            notification.textContent = message;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.classList.add('fade-out');
+                setTimeout(() => notification.remove(), 500);
+            }, 2000);
+        }
     </script>
 </head>
 <body>
@@ -35,31 +150,34 @@
     </header>
     <main>
         <section id="introduction">
-            <p>Welcome to my personal AI model ranking website. Add new models or vote for your favorites below.</p>
+            <p>Welcome to Aipex - Your platform for ranking AI models. Add new models or vote for your favorites below.</p>
         </section>
 
         <section id="addModel">
             <h2>Add a New Model</h2>
             <form id="addModelForm">
-                <input type="text" id="modelName" placeholder="Model Name" required>
-                <input type="text" id="modelCategory" placeholder="Category (e.g., NLP, Vision)" required>
+                <div class="form-group">
+                    <label for="modelName">Model Name:</label>
+                    <input type="text" id="modelName" placeholder="e.g., GPT-4, DALL-E 3" required>
+                </div>
+                <div class="form-group">
+                    <label for="modelCategory">Category:</label>
+                    <input type="text" id="modelCategory" placeholder="e.g., NLP, Vision, Audio" required>
+                </div>
                 <button type="submit">Add Model</button>
             </form>
         </section>
 
         <section id="ranking">
             <h2>Model Rankings</h2>
-            <div id="modelsList">
+            <div id="modelsList" class="models-grid">
                 <!-- Dynamic list of models will appear here -->
             </div>
         </section>
     </main>
     <footer>
         <p>Updated: November 2024</p>
-        <p>Aipex Version: v0.05</p> <!-- Version number added -->
+        <p>Aipex Version: v0.0.6</p>
     </footer>
-
-    <!-- Your custom JavaScript file -->
-    <script src="scripts.js"></script>
 </body>
 </html>
