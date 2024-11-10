@@ -29,22 +29,6 @@
         const db = getDatabase();
 
         document.addEventListener('DOMContentLoaded', function () {
-            // Close DOMContentLoaded listener
-        });
-        // Toggle Editor's Choice Function
-            window.toggleEditorChoice = async function (modelId, isChecked) {
-                try {
-                    const modelRef = ref(db, `models/${modelId}`);
-                    await update(modelRef, {
-                        editorChoice: isChecked,
-                        lastUpdated: new Date().toISOString()
-                    });
-                    alert('Editor\'s Choice updated successfully!');
-                } catch (error) {
-                    console.error('Failed to update Editor\'s Choice:', error);
-                    alert('Failed to update Editor\'s Choice. Please try again.');
-                }
-            };
             // Real-time database listener for models
             onValue(ref(db, 'models/'), (snapshot) => {
                 try {
@@ -89,7 +73,7 @@
                                 <span class="model-license">${model.license}</span>
                                 <span class="model-votes">${model.votes} votes</span>
                                 <button onclick="voteForModel('${model.id}')" class="vote-button">Vote</button>
-                                <input type="checkbox" id="editorChoice-${model.id}" ${model.editorChoice ? 'checked' : ''} onchange="toggleEditorChoice('${model.id}', this.checked)"> <label for="editorChoice-${model.id}">Editor's Choice</label>
+                                <input type="checkbox" id="editorChoice-${model.id}" ${model.editorChoice ? 'checked' : ''}> <label for="editorChoice-${model.id}">Editor's Choice</label>
                             `;
                             categoryElement.appendChild(modelElement);
                         });
@@ -257,7 +241,7 @@
         </section>
         <footer>
             <p>Updated: November 2024</p>
-            <p>Aipex Version: v$1.$2.${3 + 1}</p>
+            <p>Aipex Version: v0.0.8</p>
             <a href="admin.html">Admin Page</a>
         </footer>
     </main>
