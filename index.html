@@ -28,20 +28,8 @@
         const analytics = getAnalytics(app);
         const db = getDatabase();
 
-        $1
-            // Toggle Editor's Choice Function
-            window.toggleEditorChoice = async function (modelId, isChecked) {
-                try {
-                    const modelRef = ref(db, `models/${modelId}`);
-                    await update(modelRef, {
-                        editorChoice: isChecked,
-                        lastUpdated: new Date().toISOString()
-                    });
-                } catch (error) {
-                    console.error('Failed to update Editor\'s Choice:', error);
-                    alert('Failed to update Editor\'s Choice. Please try again.');
-                }
-            };
+        document.addEventListener('DOMContentLoaded', function () {
+                        };
             // Toggle Editor's Choice Function
             window.toggleEditorChoice = async function (modelId, isChecked) {
                 try {
@@ -268,7 +256,7 @@
         </section>
         <footer>
             <p>Updated: November 2024</p>
-            <p>Aipex Version: v0.0.8</p>
+            <p>Aipex Version: v0.1.0</p>
             <a href="admin.html">Admin Page</a>
         </footer>
     </main>
