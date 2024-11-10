@@ -76,6 +76,7 @@
                                 <button onclick="voteForModel('${model.id}')" class="vote-button">Vote</button>
                                 <input type="checkbox" id="editorChoice-${model.id}" ${model.editorChoice ? 'checked' : ''}>
                                 <label for="editorChoice-${model.id}">Editor's Choice</label>
+                                <div class="model-tags">Tags: ${model.tags ? model.tags.join(', ') : 'None'}</div>
                             `;
                             // Add event listener for Editor's Choice checkbox
                             setTimeout(() => {
@@ -139,10 +140,10 @@
                         editorChoice: isChecked,
                         lastUpdated: new Date().toISOString()
                     });
-                    alert('Editor\'s Choice updated!');
+                    alert('Editor's Choice updated!');
                 } catch (error) {
-                    console.error('Failed to update Editor\'s Choice:', error);
-                    alert('Failed to update Editor\'s Choice. Please try again.');
+                    console.error('Failed to update Editor's Choice:', error);
+                    alert('Failed to update Editor's Choice. Please try again.');
                 }
             }
 
@@ -154,6 +155,7 @@
                     const modelCategory = document.getElementById('modelCategory').value;
                     const modelLicense = document.getElementById('modelLicense').value;
                     const modelWeblink = document.getElementById('modelWeblink').value.trim();
+                    const modelTags = document.getElementById('modelTags').value.trim().split(',').map(tag => tag.trim());
 
                     if (!modelName || !modelCategory || !modelLicense || !modelWeblink) {
                         throw new Error('Please fill in all fields');
@@ -167,6 +169,7 @@
                         weblink: modelWeblink,
                         votes: 0,
                         editorChoice: false,
+                        tags: modelTags,
                         createdAt: timestamp,
                         lastUpdated: timestamp
                     });
@@ -250,6 +253,10 @@
                 <div class="form-group">
                     <label for="modelWeblink">Weblink:</label>
                     <input type="text" id="modelWeblink" placeholder="e.g., https://model-link.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="modelTags">Tags:</label>
+                    <input type="text" id="modelTags" placeholder="e.g., NLP, Vision, Inpainting">
                 </div>
                 <button type="submit">Add Model</button>
             </form>
