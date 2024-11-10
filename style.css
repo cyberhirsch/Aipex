@@ -1,221 +1,129 @@
-/* Minimalistic and Modern Style for Aipex Project */
-
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-    line-height: 1.6;
     margin: 0;
     padding: 0;
 }
 
+/* Header */
 header {
     background-color: #333;
     color: #fff;
-    padding: 1.5em 0;
-    text-align: center;
-    font-size: 1.5em;
+    padding: 10px;
 }
 
+header h1 {
+    margin: 0;
+    display: inline-block;
+}
+
+#authSection {
+    float: right;
+}
+
+#authSection button {
+    margin-left: 10px;
+}
+
+/* Main Content */
 main {
     padding: 20px;
-    max-width: 800px;
-    margin: 0 auto;
 }
 
+/* Sections */
 section {
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 }
 
-form {
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-input[type="text"], select {
-    width: calc(100% - 20px);
-    padding: 10px;
+/* Forms */
+.form-group {
     margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
 }
 
-small {
+.form-group label {
     display: block;
-    margin-top: -10px;
-    margin-bottom: 10px;
-    color: #666;
-}
-
-button {
-    background-color: #333;
-    color: #fff;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: #555;
-}
-
-#modelsList {
-    background: #fff;
-    padding: 10px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.category-section {
-    margin-bottom: 20px;
-}
-
-.category-section h2 {
-    background-color: #eee;
-    padding: 10px;
-    border-radius: 4px;
-}
-
-.model-row {
-    padding: 10px;
-    border-bottom: 1px solid #eee;
-}
-
-.model-row:last-child {
-    border-bottom: none;
-}
-
-.model-row .model-info {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-}
-
-.model-row .model-info > * {
-    margin-right: 10px;
     margin-bottom: 5px;
 }
 
+.form-group input[type="text"],
+.form-group select {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+/* Models List */
+.models-grid {
+    display: flex;
+    flex-direction: column;
+}
+
+.category-section {
+    margin-bottom: 30px;
+}
+
+.model-row {
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+}
+
+.model-info {
+    display: flex;
+    align-items: center;
+}
+
 .model-index {
-    font-weight: bold;
+    width: 30px;
 }
 
 .model-name {
     font-weight: bold;
-    color: #333;
-    text-decoration: none;
+    margin-right: 10px;
 }
 
-.model-name:hover {
-    text-decoration: underline;
-}
-
-.model-license, .model-votes {
-    color: #666;
-}
-
-.model-tags {
-    display: block;
-    font-size: 0.9em;
-    color: #555;
-    margin-left: 20px;
+.model-license,
+.model-votes {
+    margin-right: 10px;
 }
 
 .vote-button {
-    background-color: #28a745;
-    color: #fff;
     padding: 5px 10px;
-    border-radius: 4px;
-    border: none;
-    cursor: pointer;
+    margin-right: 10px;
 }
 
-.vote-button:hover {
-    background-color: #218838;
+.editor-choice-checkbox,
+.editor-choice-label {
+    display: none;
 }
 
-#tagFilters {
-    margin: 20px 0;
-}
-
+/* Tag Filters */
 #tagsFilterContainer {
     display: flex;
     flex-wrap: wrap;
 }
 
 .tag-filter {
-    display: inline-flex;
-    align-items: center;
     margin-right: 10px;
-    margin-bottom: 10px;
 }
 
-.tag-filter input {
-    margin-right: 5px;
+.tag-checkbox label {
+    margin-left: 5px;
 }
 
+/* Footer */
 footer {
-    text-align: center;
-    padding: 20px;
     background-color: #333;
     color: #fff;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+    padding: 10px;
+    text-align: center;
 }
 
-footer p {
-    margin: 5px 0;
+/* Admin Only Sections */
+.admin-only {
+    display: none;
 }
 
-footer a {
-    color: #fff;
-    text-decoration: underline;
-}
-
-footer a:hover {
-    color: #ddd;
-}
-
-.form-group {
-    margin-bottom: 15px;
-}
-
-label {
-    font-weight: bold;
+/* Non-Admin Only Sections */
+.non-admin-only {
     display: block;
-    margin-bottom: 5px;
-}
-
-input[type="checkbox"], input[type="radio"] {
-    margin-right: 5px;
-}
-
-.form-group div {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.form-group div div {
-    margin-right: 15px;
-    margin-bottom: 5px;
-    flex: 0 0 30%;
-    box-sizing: border-box;
-}
-
-.category-checkbox, .tag-checkbox {
-    display: flex;
-    align-items: center;
-}
-
-.category-checkbox label, .tag-checkbox label {
-    margin: 0;
-}
-
-.category-checkbox input, .tag-checkbox input {
-    margin-right: 5px;
 }
