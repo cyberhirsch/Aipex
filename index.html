@@ -73,6 +73,7 @@
                                 <span class="model-license">${model.license}</span>
                                 <span class="model-votes">${model.votes} votes</span>
                                 <button onclick="voteForModel('${model.id}')" class="vote-button">Vote</button>
+                                <input type="checkbox" id="editorChoice-${model.id}" ${model.editorChoice ? 'checked' : ''}> <label for="editorChoice-${model.id}">Editor's Choice</label>
                             `;
                             categoryElement.appendChild(modelElement);
                         });
@@ -127,8 +128,9 @@
                     const modelName = document.getElementById('modelName').value.trim();
                     const modelCategory = document.getElementById('modelCategory').value;
                     const modelLicense = document.getElementById('modelLicense').value;
+                    const modelWeblink = document.getElementById('modelWeblink').value.trim();
 
-                    if (!modelName || !modelCategory || !modelLicense) {
+                    if (!modelName || !modelCategory || !modelLicense || !modelWeblink) {
                         throw new Error('Please fill in all fields');
                     }
 
@@ -137,6 +139,7 @@
                         name: modelName,
                         category: modelCategory,
                         license: modelLicense,
+                        weblink: modelWeblink,
                         votes: 0,
                         editorChoice: false,
                         createdAt: timestamp,
@@ -218,6 +221,10 @@
                         <option value="Commercial">Commercial</option>
                         <option value="Freemium">Freemium</option>
                     </select>
+                </div>
+                <div class="form-group">
+                    <label for="modelWeblink">Weblink:</label>
+                    <input type="text" id="modelWeblink" placeholder="e.g., https://model-link.com" required>
                 </div>
                 <button type="submit">Add Model</button>
             </form>
