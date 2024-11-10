@@ -40,7 +40,7 @@
                         return;
                     }
 
-                    // Convert to array and display models in a compact format
+                    // Convert to array and group models by category
                     const models = [];
                     snapshot.forEach((childSnapshot) => {
                         models.push({
@@ -49,18 +49,35 @@
                         });
                     });
 
-                    models.sort((a, b) => b.votes - a.votes);
+                    const groupedModels = models.reduce((acc, model) => {
+                        if (!acc[model.category]) acc[model.category] = [];
+                        acc[model.category].push(model);
+                        return acc;
+                    }, {});
 
-                    models.forEach(model => {
-                        const modelElement = document.createElement('div');
-                        modelElement.className = 'model-row';
-                        modelElement.innerHTML = `
-                            <span class="model-name">${model.name}</span>
-                            <span class="model-license">${model.license}</span>
-                            <span class="model-votes">${model.votes} votes</span>
-                            <button onclick="voteForModel('${model.id}')" class="vote-button">Vote</button>
-                        `;
-                        modelsList.appendChild(modelElement);
+                    // Display models grouped by category
+                    Object.keys(groupedModels).forEach(category => {
+                        const categoryElement = document.createElement('div');
+                        categoryElement.className = 'category-section';
+                        categoryElement.innerHTML = `<h2>${category}</h2>`;
+
+                        const categoryModels = groupedModels[category];
+                        categoryModels.sort((a, b) => b.votes - a.votes);
+
+                        categoryModels.forEach((model, index) => {
+                            const modelElement = document.createElement('div');
+                            modelElement.className = 'model-row';
+                            modelElement.innerHTML = `
+                                <span class="model-index">${index + 1}.</span>
+                                <span class="model-name">${model.name}</span>
+                                <span class="model-license">${model.license}</span>
+                                <span class="model-votes">${model.votes} votes</span>
+                                <button onclick="voteForModel('${model.id}')" class="vote-button">Vote</button>
+                            `;
+                            categoryElement.appendChild(modelElement);
+                        });
+
+                        modelsList.appendChild(categoryElement);
                     });
                 } catch (error) {
                     console.error('Failed to load models:', error);
