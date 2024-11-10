@@ -1,17 +1,5 @@
-// Your Firebase configuration (make sure all properties are correct)
-const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-  databaseURL: "https://YOUR_PROJECT_ID.firebaseio.com",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_PROJECT_ID.appspot.com",
-  messagingSenderId: "YOUR_SENDER_ID",
-  appId: "YOUR_APP_ID",
-  measurementId: "YOUR_MEASUREMENT_ID" // Optional, remove if not needed
-};
-
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+// Aipex Project - Firebase Configuration
+// Note: Configuration is already initialized in HTML, so we don't need to redeclare it here
 
 // Get a reference to the database
 const db = firebase.database();
