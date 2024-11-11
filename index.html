@@ -4,120 +4,14 @@
     <meta charset="UTF-8">
     <title>Aipex - Generative AI Ranking</title>
     <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header>
-        <h1>Aipex - Generative AI Ranking</h1>
-        <!-- Authentication Buttons -->
-        <div id="authSection">
-            <button id="signInBtn">Sign In with Google</button>
-            <button id="signOutBtn" style="display: none;">Sign Out</button>
-        </div>
-    </header>
-    <main>
-        <!-- Tag Filters Section -->
-        <section id="tagFilters">
-            <h2>Filter by Tags</h2>
-            <div id="tagsFilterContainer">
-                <!-- Tag checkboxes will be populated here -->
-            </div>
-        </section>
 
-        <!-- Ranking Section -->
-        <section id="ranking">
-            <div id="toolsList" class="tools-grid">
-                <!-- Top tools will appear here in a compact format -->
-            </div>
-        </section>
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.0.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.0.1/firebase-database.js"></script>
 
-        <!-- Add Tool Section (Admin Only) -->
-        <section id="addTool" class="admin-only" style="display: none;">
-            <h2>Add a New Tool</h2>
-            <form id="addToolForm">
-                <div class="form-group">
-                    <label for="toolName">Tool Name:</label>
-                    <input type="text" id="toolName" placeholder="e.g., GPT-4, DALL-E 3" required>
-                </div>
-                <div class="form-group">
-                    <label>Categories:</label>
-                    <div id="toolCategoriesContainer">
-                        <!-- Category checkboxes will be populated dynamically -->
-                    </div>
-                    <small>Select one or more categories.</small>
-                </div>
-                <div class="form-group">
-                    <label for="toolLicense">License:</label>
-                    <select id="toolLicense" required>
-                        <option value="" disabled selected>Select a license type</option>
-                        <option value="Open Source">Open Source</option>
-                        <option value="Commercial">Commercial</option>
-                        <option value="Freemium">Freemium</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="toolWeblink">Weblink:</label>
-                    <input type="text" id="toolWeblink" placeholder="e.g., https://tool-link.com" required>
-                </div>
-                <div class="form-group">
-                    <label>Tags:</label>
-                    <div id="toolTagsContainer">
-                        <!-- Tag checkboxes will be populated dynamically -->
-                    </div>
-                    <small>Select one or more tags.</small>
-                </div>
-                <button type="submit">Add Tool</button>
-            </form>
-        </section>
-
-        <!-- Suggest Tool Section (Non-Admin Users) -->
-        <section id="suggestTool" class="non-admin-only suggestion-section">
-            <h2>Suggest a New Tool</h2>
-            <p>Log in to make a suggestion.</p>
-        </section>
-
-        <!-- Add Category Section (Admin Only) -->
-        <section id="addCategory" class="admin-only" style="display: none;">
-            <h2>Add a New Category</h2>
-            <form id="addCategoryForm">
-                <div class="form-group">
-                    <label for="categoryName">Category Name:</label>
-                    <input type="text" id="categoryName" placeholder="e.g., NLP, Vision" required>
-                </div>
-                <button type="submit">Add Category</button>
-            </form>
-        </section>
-
-        <!-- Suggest Category Section (Non-Admin Users) -->
-        <section id="suggestCategory" class="non-admin-only suggestion-section">
-            <h2>Suggest a New Category</h2>
-            <p>Log in to make a suggestion.</p>
-        </section>
-
-        <!-- Add Tag Section (Admin Only) -->
-        <section id="addTag" class="admin-only" style="display: none;">
-            <h2>Add a New Tag</h2>
-            <form id="addTagForm">
-                <div class="form-group">
-                    <label for="tagName">Tag Name:</label>
-                    <input type="text" id="tagName" placeholder="e.g., NLP, Transformer" required>
-                </div>
-                <button type="submit">Add Tag</button>
-            </form>
-        </section>
-
-        <!-- Suggest Tag Section (Non-Admin Users) -->
-        <section id="suggestTag" class="non-admin-only suggestion-section">
-            <h2>Suggest a New Tag</h2>
-            <p>Log in to make a suggestion.</p>
-        </section>
-    </main>
-    <footer>
-        <p>Updated: November 2024</p>
-        <p>Aipex Version: v0.1.7</p>
-        <a href="admin.html" class="admin-link" style="display: none;">Admin Page</a>
-    </footer>
-
-    <!-- Firebase and Main Script -->
+    <!-- Main Script -->
     <script type="module">
         // Import Firebase modules
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
@@ -125,7 +19,7 @@
         import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
         import { getDatabase, ref, onValue, get, update, push } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-database.js";
 
-        // Firebase configuration
+        // Firebase configuration (use your credentials)
         const firebaseConfig = {
             apiKey: "AIzaSyCrSS4lsxgSFA7SEtseW1KoiruQbUwR_xA",
             authDomain: "aipex-6d63b.firebaseapp.com",
@@ -145,15 +39,12 @@
 
         let isAdmin = false;
         let currentUser = null;
-        let tools = []; // Declare tools array globally
+        let models = []; // Declare models array globally
 
         // Authentication Functions
-        window.addEventListener('load', function () {
+        document.addEventListener('DOMContentLoaded', function () {
             // Sign-In Function
-            const signInBtn = document.getElementById('signInBtn');
-            const signOutBtn = document.getElementById('signOutBtn');
-
-            signInBtn.addEventListener('click', () => {
+            document.getElementById('signInBtn').addEventListener('click', () => {
                 const provider = new GoogleAuthProvider();
                 signInWithPopup(auth, provider)
                     .then((result) => {
@@ -166,7 +57,7 @@
             });
 
             // Sign-Out Function
-            signOutBtn.addEventListener('click', () => {
+            document.getElementById('signOutBtn').addEventListener('click', () => {
                 signOut(auth).then(() => {
                     console.log('User signed out');
                 }).catch((error) => {
@@ -179,14 +70,14 @@
             onAuthStateChanged(auth, (user) => {
                 if (user) {
                     currentUser = user;
-                    signInBtn.style.display = 'none';
-                    signOutBtn.style.display = 'block';
+                    document.getElementById('signInBtn').style.display = 'none';
+                    document.getElementById('signOutBtn').style.display = 'block';
                     checkIfAdmin(user.uid);
                 } else {
                     currentUser = null;
                     isAdmin = false;
-                    signInBtn.style.display = 'block';
-                    signOutBtn.style.display = 'none';
+                    document.getElementById('signInBtn').style.display = 'block';
+                    document.getElementById('signOutBtn').style.display = 'none';
                     updateUIForRole();
                 }
             });
@@ -214,41 +105,10 @@
                     section.style.display = isAdmin ? 'none' : 'block';
                 });
 
-                // Update Editor's Choice checkboxes and icons
+                // Update Editor's Choice checkboxes
                 const editorChoiceCheckboxes = document.querySelectorAll('.editor-choice-checkbox');
                 editorChoiceCheckboxes.forEach(checkbox => {
-                    const icon = checkbox.parentElement.querySelector('.editor-choice-icon');
-                    if (isAdmin) {
-                        checkbox.style.display = 'inline-block';
-                        if (icon) icon.style.display = 'none';
-                    } else {
-                        checkbox.style.display = 'none';
-                        if (checkbox.checked && icon) {
-                            icon.style.display = 'inline-block';
-                        } else if (icon) {
-                            icon.style.display = 'none';
-                        }
-                    }
-                });
-
-                // Update Suggestion Sections
-                const suggestionSections = document.querySelectorAll('.suggestion-section');
-                suggestionSections.forEach(section => {
-                    if (currentUser) {
-                        const form = section.querySelector('form');
-                        if (form) {
-                            form.style.display = 'block';
-                        } else {
-                            // Re-insert the form if it's missing
-                            // You may need to store the form HTML elsewhere
-                        }
-                        section.querySelector('p').style.display = 'none';
-                    } else {
-                        const form = section.querySelector('form');
-                        if (form) form.style.display = 'none';
-                        const message = section.querySelector('p');
-                        if (message) message.style.display = 'block';
-                    }
+                    checkbox.style.display = isAdmin ? 'inline-block' : 'none';
                 });
 
                 // Update Admin Page link visibility
@@ -258,27 +118,30 @@
                 });
             }
 
+            // Rest of your existing code for fetching categories, tags, and models
+            // Modify the model rendering function to check for isAdmin
+
             // Fetch categories from database
-            const toolCategoriesContainer = document.getElementById('toolCategoriesContainer');
-            const suggestToolCategoriesContainer = document.getElementById('suggestToolCategoriesContainer');
+            const modelCategoriesContainer = document.getElementById('modelCategoriesContainer');
+            const suggestModelCategoriesContainer = document.getElementById('suggestModelCategoriesContainer');
 
             function populateCategories() {
                 onValue(ref(db, 'categories/'), (snapshot) => {
-                    toolCategoriesContainer.innerHTML = ''; // Clear existing categories
-                    suggestToolCategoriesContainer.innerHTML = ''; // Clear existing categories
+                    modelCategoriesContainer.innerHTML = ''; // Clear existing categories
+                    suggestModelCategoriesContainer.innerHTML = ''; // Clear existing categories
                     if (snapshot.exists()) {
                         snapshot.forEach((childSnapshot) => {
                             const category = childSnapshot.val();
                             const categoryElement = document.createElement('div');
                             categoryElement.className = 'category-checkbox';
                             categoryElement.innerHTML = `
-                                <input type="checkbox" id="toolCategory-${category}" value="${category}" class="tool-category-checkbox">
-                                <label for="toolCategory-${category}">${category}</label>
+                                <input type="checkbox" id="modelCategory-${category}" value="${category}" class="model-category-checkbox">
+                                <label for="modelCategory-${category}">${category}</label>
                             `;
-                            toolCategoriesContainer.appendChild(categoryElement);
+                            modelCategoriesContainer.appendChild(categoryElement);
 
                             const suggestCategoryElement = categoryElement.cloneNode(true);
-                            suggestToolCategoriesContainer.appendChild(suggestCategoryElement);
+                            suggestModelCategoriesContainer.appendChild(suggestCategoryElement);
                         });
                     }
                 });
@@ -287,14 +150,14 @@
 
             // Fetch tags from database
             const tagsFilterContainer = document.getElementById('tagsFilterContainer');
-            const toolTagsContainer = document.getElementById('toolTagsContainer');
-            const suggestToolTagsContainer = document.getElementById('suggestToolTagsContainer');
+            const modelTagsContainer = document.getElementById('modelTagsContainer');
+            const suggestModelTagsContainer = document.getElementById('suggestModelTagsContainer');
 
             function populateTags() {
                 onValue(ref(db, 'tags/'), (snapshot) => {
                     tagsFilterContainer.innerHTML = '';
-                    toolTagsContainer.innerHTML = '';
-                    suggestToolTagsContainer.innerHTML = '';
+                    modelTagsContainer.innerHTML = '';
+                    suggestModelTagsContainer.innerHTML = '';
                     if (snapshot.exists()) {
                         snapshot.forEach((childSnapshot) => {
                             const tag = childSnapshot.val();
@@ -308,18 +171,18 @@
                             `;
                             tagsFilterContainer.appendChild(tagElement);
 
-                            // Populate toolTagsContainer (Admin Form)
+                            // Populate modelTagsContainer (Admin Form)
                             const tagCheckbox = document.createElement('div');
                             tagCheckbox.className = 'tag-checkbox';
                             tagCheckbox.innerHTML = `
-                                <input type="checkbox" id="toolTag-${tag}" value="${tag}" class="tool-tag-checkbox">
-                                <label for="toolTag-${tag}">${tag}</label>
+                                <input type="checkbox" id="modelTag-${tag}" value="${tag}" class="model-tag-checkbox">
+                                <label for="modelTag-${tag}">${tag}</label>
                             `;
-                            toolTagsContainer.appendChild(tagCheckbox);
+                            modelTagsContainer.appendChild(tagCheckbox);
 
-                            // Populate suggestToolTagsContainer (Suggestion Form)
+                            // Populate suggestModelTagsContainer (Suggestion Form)
                             const suggestTagCheckbox = tagCheckbox.cloneNode(true);
-                            suggestToolTagsContainer.appendChild(suggestTagCheckbox);
+                            suggestModelTagsContainer.appendChild(suggestTagCheckbox);
                         });
 
                         // Add event listener to tag filter checkboxes
@@ -332,21 +195,21 @@
             }
             populateTags();
 
-            // Real-time database listener for tools
-            onValue(ref(db, 'tools/'), (snapshot) => {
+            // Real-time database listener for models
+            onValue(ref(db, 'models/'), (snapshot) => {
                 try {
-                    const toolsList = document.getElementById('toolsList');
-                    toolsList.innerHTML = '';
+                    const modelsList = document.getElementById('modelsList');
+                    modelsList.innerHTML = '';
 
                     if (!snapshot.exists()) {
-                        toolsList.innerHTML = '<p>No tools available yet.</p>';
+                        modelsList.innerHTML = '<p>No models available yet.</p>';
                         return;
                     }
 
                     // Convert to array
-                    tools = [];
+                    models = [];
                     snapshot.forEach((childSnapshot) => {
-                        tools.push({
+                        models.push({
                             id: childSnapshot.key,
                             ...childSnapshot.val()
                         });
@@ -356,38 +219,38 @@
                     applyTagFilters();
 
                 } catch (error) {
-                    console.error('Failed to load tools:', error);
-                    alert('Failed to load tool rankings. Please try again later.');
+                    console.error('Failed to load models:', error);
+                    alert('Failed to load model rankings. Please try again later.');
                 }
             });
 
             // Voting Function
-            window.voteForTool = async function (toolId) {
+            window.voteForModel = async function (modelId) {
                 try {
-                    // Check if the user has already voted for this tool using local storage
-                    const votedTools = JSON.parse(localStorage.getItem('votedTools')) || [];
-                    if (votedTools.includes(toolId)) {
-                        alert('You have already voted for this tool.');
+                    // Check if the user has already voted for this model using local storage
+                    const votedModels = JSON.parse(localStorage.getItem('votedModels')) || [];
+                    if (votedModels.includes(modelId)) {
+                        alert('You have already voted for this model.');
                         return;
                     }
 
                     // Proceed with voting logic
-                    const toolRef = ref(db, `tools/${toolId}`);
-                    const snapshot = await get(toolRef);
+                    const modelRef = ref(db, `models/${modelId}`);
+                    const snapshot = await get(modelRef);
 
                     if (!snapshot.exists()) {
-                        throw new Error('Tool not found');
+                        throw new Error('Model not found');
                     }
 
                     const currentVotes = snapshot.val().votes;
-                    await update(toolRef, {
+                    await update(modelRef, {
                         votes: currentVotes + 1,
                         lastUpdated: new Date().toISOString()
                     });
 
-                    // Store toolId in Local Storage to mark as voted
-                    votedTools.push(toolId);
-                    localStorage.setItem('votedTools', JSON.stringify(votedTools));
+                    // Store modelId in Local Storage to mark as voted
+                    votedModels.push(modelId);
+                    localStorage.setItem('votedModels', JSON.stringify(votedModels));
 
                     alert('Vote recorded!');
                 } catch (error) {
@@ -397,14 +260,14 @@
             };
 
             // Function to update Editor's Choice
-            async function updateEditorChoice(toolId, isChecked) {
+            async function updateEditorChoice(modelId, isChecked) {
                 if (!isAdmin) {
                     alert('You do not have permission to update Editor\'s Choice.');
                     return;
                 }
                 try {
-                    const toolRef = ref(db, `tools/${toolId}`);
-                    await update(toolRef, {
+                    const modelRef = ref(db, `models/${modelId}`);
+                    await update(modelRef, {
                         editorChoice: isChecked,
                         lastUpdated: new Date().toISOString()
                     });
@@ -415,95 +278,239 @@
                 }
             }
 
-            // Add new tool function (Admin)
-            const addToolForm = document.getElementById('addToolForm');
-            if (addToolForm) {
-                addToolForm.addEventListener('submit', async function (e) {
-                    e.preventDefault();
-                    if (!isAdmin) {
-                        alert('You do not have permission to add tools.');
+            // Add new model function (Admin)
+            document.getElementById('addModelForm').addEventListener('submit', async function (e) {
+                e.preventDefault();
+                if (!isAdmin) {
+                    alert('You do not have permission to add models.');
+                    return;
+                }
+                try {
+                    const modelName = document.getElementById('modelName').value.trim();
+                    const modelLicense = document.getElementById('modelLicense').value;
+                    const modelWeblink = document.getElementById('modelWeblink').value.trim();
+
+                    // Get selected categories from checkboxes
+                    const selectedCategoryCheckboxes = document.querySelectorAll('.model-category-checkbox:checked');
+                    const modelCategories = Array.from(selectedCategoryCheckboxes).map(cb => cb.value);
+
+                    // Get selected tags from checkboxes
+                    const selectedTagCheckboxes = document.querySelectorAll('.model-tag-checkbox:checked');
+                    const modelTags = Array.from(selectedTagCheckboxes).map(cb => cb.value);
+
+                    if (!modelName || modelCategories.length === 0 || !modelLicense || !modelWeblink || modelTags.length === 0) {
+                        throw new Error('Please fill in all fields');
+                    }
+
+                    const timestamp = new Date().toISOString();
+                    await push(ref(db, 'models/'), {
+                        name: modelName,
+                        categories: modelCategories,
+                        license: modelLicense,
+                        weblink: modelWeblink,
+                        votes: 0,
+                        editorChoice: false,
+                        tags: modelTags,
+                        createdAt: timestamp,
+                        lastUpdated: timestamp
+                    });
+
+                    document.getElementById('addModelForm').reset();
+                    alert('Model added successfully!');
+                } catch (error) {
+                    console.error('Error adding model:', error);
+                    alert('Error: Failed to add model. Please try again.');
+                }
+            });
+
+            // Suggest new model function (Non-Admin)
+            document.getElementById('suggestModelForm').addEventListener('submit', async function (e) {
+                e.preventDefault();
+                try {
+                    const modelName = document.getElementById('suggestModelName').value.trim();
+                    const modelLicense = document.getElementById('suggestModelLicense').value;
+                    const modelWeblink = document.getElementById('suggestModelWeblink').value.trim();
+
+                    // Get selected categories from checkboxes
+                    const selectedCategoryCheckboxes = document.querySelectorAll('#suggestModelCategoriesContainer .model-category-checkbox:checked');
+                    const modelCategories = Array.from(selectedCategoryCheckboxes).map(cb => cb.value);
+
+                    // Get selected tags from checkboxes
+                    const selectedTagCheckboxes = document.querySelectorAll('#suggestModelTagsContainer .model-tag-checkbox:checked');
+                    const modelTags = Array.from(selectedTagCheckboxes).map(cb => cb.value);
+
+                    if (!modelName || modelCategories.length === 0 || !modelLicense || !modelWeblink || modelTags.length === 0) {
+                        throw new Error('Please fill in all fields');
+                    }
+
+                    const timestamp = new Date().toISOString();
+                    await push(ref(db, 'suggestions/models'), {
+                        name: modelName,
+                        categories: modelCategories,
+                        license: modelLicense,
+                        weblink: modelWeblink,
+                        tags: modelTags,
+                        suggestedBy: currentUser ? currentUser.uid : 'anonymous',
+                        createdAt: timestamp
+                    });
+
+                    document.getElementById('suggestModelForm').reset();
+                    alert('Model suggestion submitted successfully!');
+                } catch (error) {
+                    console.error('Error suggesting model:', error);
+                    alert('Error: Failed to submit model suggestion. Please try again.');
+                }
+            });
+
+            // Add new category function (Admin)
+            document.getElementById('addCategoryForm').addEventListener('submit', async function (e) {
+                e.preventDefault();
+                if (!isAdmin) {
+                    alert('You do not have permission to add categories.');
+                    return;
+                }
+                try {
+                    const categoryName = document.getElementById('categoryName').value.trim();
+                    if (!categoryName) {
+                        throw new Error('Please enter a category name');
+                    }
+
+                    await push(ref(db, 'categories/'), categoryName);
+                    document.getElementById('addCategoryForm').reset();
+                    alert('Category added successfully!');
+                } catch (error) {
+                    console.error('Error adding category:', error);
+                    alert('Error: Failed to add category. Please try again.');
+                }
+            });
+
+            // Suggest new category function (Non-Admin)
+            document.getElementById('suggestCategoryForm').addEventListener('submit', async function (e) {
+                e.preventDefault();
+                try {
+                    const categoryName = document.getElementById('suggestCategoryName').value.trim();
+                    if (!categoryName) {
+                        throw new Error('Please enter a category name');
+                    }
+
+                    const timestamp = new Date().toISOString();
+                    await push(ref(db, 'suggestions/categories'), {
+                        name: categoryName,
+                        suggestedBy: currentUser ? currentUser.uid : 'anonymous',
+                        createdAt: timestamp
+                    });
+
+                    document.getElementById('suggestCategoryForm').reset();
+                    alert('Category suggestion submitted successfully!');
+                } catch (error) {
+                    console.error('Error suggesting category:', error);
+                    alert('Error: Failed to submit category suggestion. Please try again.');
+                }
+            });
+
+            // Add new tag function (Admin)
+            document.getElementById('addTagForm').addEventListener('submit', async function (e) {
+                e.preventDefault();
+                if (!isAdmin) {
+                    alert('You do not have permission to add tags.');
+                    return;
+                }
+                try {
+                    const tagName = document.getElementById('tagName').value.trim();
+                    if (!tagName) {
+                        throw new Error('Please enter a tag name');
+                    }
+
+                    // Check if tag already exists
+                    const tagsSnapshot = await get(ref(db, 'tags/'));
+                    let tagExists = false;
+                    if (tagsSnapshot.exists()) {
+                        tagsSnapshot.forEach((childSnapshot) => {
+                            if (childSnapshot.val().toLowerCase() === tagName.toLowerCase()) {
+                                tagExists = true;
+                            }
+                        });
+                    }
+
+                    if (tagExists) {
+                        alert('Tag already exists.');
                         return;
                     }
-                    try {
-                        const toolName = document.getElementById('toolName').value.trim();
-                        const toolLicense = document.getElementById('toolLicense').value;
-                        const toolWeblink = document.getElementById('toolWeblink').value.trim();
 
-                        // Get selected categories from checkboxes
-                        const selectedCategoryCheckboxes = document.querySelectorAll('.tool-category-checkbox:checked');
-                        const toolCategories = Array.from(selectedCategoryCheckboxes).map(cb => cb.value);
+                    await push(ref(db, 'tags/'), tagName);
+                    document.getElementById('addTagForm').reset();
+                    alert('Tag added successfully!');
+                } catch (error) {
+                    console.error('Error adding tag:', error);
+                    alert('Error: Failed to add tag. Please try again.');
+                }
+            });
 
-                        // Get selected tags from checkboxes
-                        const selectedTagCheckboxes = document.querySelectorAll('.tool-tag-checkbox:checked');
-                        const toolTags = Array.from(selectedTagCheckboxes).map(cb => cb.value);
-
-                        if (!toolName || toolCategories.length === 0 || !toolLicense || !toolWeblink || toolTags.length === 0) {
-                            throw new Error('Please fill in all fields');
-                        }
-
-                        const timestamp = new Date().toISOString();
-                        await push(ref(db, 'tools/'), {
-                            name: toolName,
-                            categories: toolCategories,
-                            license: toolLicense,
-                            weblink: toolWeblink,
-                            votes: 0,
-                            editorChoice: false,
-                            tags: toolTags,
-                            createdAt: timestamp,
-                            lastUpdated: timestamp
-                        });
-
-                        addToolForm.reset();
-                        alert('Tool added successfully!');
-                    } catch (error) {
-                        console.error('Error adding tool:', error);
-                        alert('Error: Failed to add tool. Please try again.');
+            // Suggest new tag function (Non-Admin)
+            document.getElementById('suggestTagForm').addEventListener('submit', async function (e) {
+                e.preventDefault();
+                try {
+                    const tagName = document.getElementById('suggestTagName').value.trim();
+                    if (!tagName) {
+                        throw new Error('Please enter a tag name');
                     }
-                });
-            }
+
+                    const timestamp = new Date().toISOString();
+                    await push(ref(db, 'suggestions/tags'), {
+                        name: tagName,
+                        suggestedBy: currentUser ? currentUser.uid : 'anonymous',
+                        createdAt: timestamp
+                    });
+
+                    document.getElementById('suggestTagForm').reset();
+                    alert('Tag suggestion submitted successfully!');
+                } catch (error) {
+                    console.error('Error suggesting tag:', error);
+                    alert('Error: Failed to submit tag suggestion. Please try again.');
+                }
+            });
 
             // Function to apply tag filters
             function applyTagFilters() {
                 // Get selected tags
                 const selectedTags = Array.from(document.querySelectorAll('.tag-checkbox:checked')).map(cb => cb.value);
 
-                // Update tools display
-                const toolsList = document.getElementById('toolsList');
-                toolsList.innerHTML = '';
+                // Update models display
+                const modelsList = document.getElementById('modelsList');
+                modelsList.innerHTML = '';
 
-                if (tools.length === 0) {
-                    toolsList.innerHTML = '<p>No tools available yet.</p>';
+                if (models.length === 0) {
+                    modelsList.innerHTML = '<p>No models available yet.</p>';
                     return;
                 }
 
-                // Collect all unique categories from tools
+                // Collect all unique categories from models
                 const allCategoriesSet = new Set();
-                tools.forEach(tool => {
-                    if (tool.categories && Array.isArray(tool.categories)) {
-                        tool.categories.forEach(cat => allCategoriesSet.add(cat));
+                models.forEach(model => {
+                    if (model.categories && Array.isArray(model.categories)) {
+                        model.categories.forEach(cat => allCategoriesSet.add(cat));
                     }
                 });
                 const allCategories = Array.from(allCategoriesSet);
 
-                // Group tools by category
-                const groupedTools = {};
+                // Group models by category
+                const groupedModels = {};
                 allCategories.forEach(category => {
-                    groupedTools[category] = tools.filter(tool => {
-                        // Check if tool belongs to this category
-                        const inCategory = tool.categories && tool.categories.includes(category);
-                        // Filter tools based on selected tags
-                        const hasSelectedTags = selectedTags.length === 0 || (tool.tags && tool.tags.some(tag => selectedTags.includes(tag)));
+                    groupedModels[category] = models.filter(model => {
+                        // Check if model belongs to this category
+                        const inCategory = model.categories && model.categories.includes(category);
+                        // Filter models based on selected tags
+                        const hasSelectedTags = selectedTags.length === 0 || (model.tags && model.tags.some(tag => selectedTags.includes(tag)));
                         return inCategory && hasSelectedTags;
                     });
                 });
 
-                // Display tools grouped by category
-                Object.keys(groupedTools).forEach(category => {
-                    const categoryTools = groupedTools[category];
+                // Display models grouped by category
+                Object.keys(groupedModels).forEach(category => {
+                    const categoryModels = groupedModels[category];
 
-                    if (categoryTools.length === 0) {
-                        // Skip categories with no tools after filtering
+                    if (categoryModels.length === 0) {
+                        // Skip categories with no models after filtering
                         return;
                     }
 
@@ -512,36 +519,35 @@
                     categoryElement.className = 'category-section';
                     categoryElement.innerHTML = `<h2>${category}</h2>`;
 
-                    // Sort and display tools
-                    categoryTools.sort((a, b) => b.votes - a.votes);
-                    categoryTools.forEach((tool, index) => {
-                        const toolElement = document.createElement('div');
-                        toolElement.className = 'tool-row';
-                        toolElement.innerHTML = `
-                            <div class="tool-info">
-                                <span class="tool-index">${index + 1}.</span>
-                                <a href="${tool.weblink}" target="_blank" class="tool-name">${tool.name}</a>
-                                <span class="tool-license">${tool.license}</span>
-                                <span class="tool-votes">${tool.votes} votes</span>
-                                <button onclick="voteForTool('${tool.id}')" class="vote-button">Vote</button>
-                                <input type="checkbox" id="editorChoice-${tool.id}" ${tool.editorChoice ? 'checked' : ''} class="editor-choice-checkbox">
-                                <label for="editorChoice-${tool.id}" class="editor-choice-label">Editor's Choice</label>
-                                <img src="thumbs.png" alt="Editor's Choice" class="editor-choice-icon" style="display: none;">
+                    // Sort and display models
+                    categoryModels.sort((a, b) => b.votes - a.votes);
+                    categoryModels.forEach((model, index) => {
+                        const modelElement = document.createElement('div');
+                        modelElement.className = 'model-row';
+                        modelElement.innerHTML = `
+                            <div class="model-info">
+                                <span class="model-index">${index + 1}.</span>
+                                <a href="${model.weblink}" target="_blank" class="model-name">${model.name}</a>
+                                <span class="model-license">${model.license}</span>
+                                <span class="model-votes">${model.votes} votes</span>
+                                <button onclick="voteForModel('${model.id}')" class="vote-button">Vote</button>
+                                <input type="checkbox" id="editorChoice-${model.id}" ${model.editorChoice ? 'checked' : ''} class="editor-choice-checkbox" style="display: none;">
+                                <label for="editorChoice-${model.id}" class="editor-choice-label" style="display: none;">Editor's Choice</label>
                             </div>
-                            <span class="tool-tags">Tags: ${tool.tags && Array.isArray(tool.tags) ? tool.tags.join(', ') : 'No tags available'}</span>
+                            <span class="model-tags">Tags: ${model.tags && Array.isArray(model.tags) ? model.tags.join(', ') : 'No tags available'}</span>
                         `;
-                        categoryElement.appendChild(toolElement);
+                        categoryElement.appendChild(modelElement);
 
                         // Add event listener for Editor's Choice checkbox
                         setTimeout(() => {
-                            const editorCheckbox = document.getElementById(`editorChoice-${tool.id}`);
+                            const editorCheckbox = document.getElementById(`editorChoice-${model.id}`);
                             editorCheckbox.addEventListener('change', function(e) {
-                                updateEditorChoice(tool.id, e.target.checked);
+                                updateEditorChoice(model.id, e.target.checked);
                             });
                         }, 0);
                     });
 
-                    toolsList.appendChild(categoryElement);
+                    modelsList.appendChild(categoryElement);
                 });
 
                 // Update UI for role-based elements
@@ -549,5 +555,162 @@
             }
         });
     </script>
+</head>
+<body>
+    <header>
+        <h1>Aipex - Generative AI Ranking</h1>
+        <!-- Authentication Buttons -->
+        <div id="authSection">
+            <button id="signInBtn">Sign In with Google</button>
+            <button id="signOutBtn" style="display: none;">Sign Out</button>
+        </div>
+    </header>
+    <main>
+        <!-- Tag Filters Section -->
+        <section id="tagFilters">
+            <h2>Filter by Tags</h2>
+            <div id="tagsFilterContainer">
+                <!-- Tag checkboxes will be populated here -->
+            </div>
+        </section>
+
+        <!-- Ranking Section -->
+        <section id="ranking">
+            <div id="modelsList" class="models-grid">
+                <!-- Top models will appear here in a compact format -->
+            </div>
+        </section>
+
+        <!-- Add Model Section (Admin Only) -->
+        <section id="addModel" class="admin-only" style="display: none;">
+            <h2>Add a New Model</h2>
+            <form id="addModelForm">
+                <div class="form-group">
+                    <label for="modelName">Model Name:</label>
+                    <input type="text" id="modelName" placeholder="e.g., GPT-4, DALL-E 3" required>
+                </div>
+                <div class="form-group">
+                    <label>Categories:</label>
+                    <div id="modelCategoriesContainer">
+                        <!-- Category checkboxes will be populated dynamically -->
+                    </div>
+                    <small>Select one or more categories.</small>
+                </div>
+                <div class="form-group">
+                    <label for="modelLicense">License:</label>
+                    <select id="modelLicense" required>
+                        <option value="" disabled selected>Select a license type</option>
+                        <option value="Open Source">Open Source</option>
+                        <option value="Commercial">Commercial</option>
+                        <option value="Freemium">Freemium</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="modelWeblink">Weblink:</label>
+                    <input type="text" id="modelWeblink" placeholder="e.g., https://model-link.com" required>
+                </div>
+                <div class="form-group">
+                    <label>Tags:</label>
+                    <div id="modelTagsContainer">
+                        <!-- Tag checkboxes will be populated dynamically -->
+                    </div>
+                    <small>Select one or more tags.</small>
+                </div>
+                <button type="submit">Add Model</button>
+            </form>
+        </section>
+
+        <!-- Suggest Model Section (Non-Admin Users) -->
+        <section id="suggestModel" class="non-admin-only">
+            <h2>Suggest a New Model</h2>
+            <form id="suggestModelForm">
+                <div class="form-group">
+                    <label for="suggestModelName">Model Name:</label>
+                    <input type="text" id="suggestModelName" placeholder="e.g., GPT-4, DALL-E 3" required>
+                </div>
+                <div class="form-group">
+                    <label>Categories:</label>
+                    <div id="suggestModelCategoriesContainer">
+                        <!-- Category checkboxes will be populated dynamically -->
+                    </div>
+                    <small>Select one or more categories.</small>
+                </div>
+                <div class="form-group">
+                    <label for="suggestModelLicense">License:</label>
+                    <select id="suggestModelLicense" required>
+                        <option value="" disabled selected>Select a license type</option>
+                        <option value="Open Source">Open Source</option>
+                        <option value="Commercial">Commercial</option>
+                        <option value="Freemium">Freemium</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="suggestModelWeblink">Weblink:</label>
+                    <input type="text" id="suggestModelWeblink" placeholder="e.g., https://model-link.com" required>
+                </div>
+                <div class="form-group">
+                    <label>Tags:</label>
+                    <div id="suggestModelTagsContainer">
+                        <!-- Tag checkboxes will be populated dynamically -->
+                    </div>
+                    <small>Select one or more tags.</small>
+                </div>
+                <button type="submit">Suggest Model</button>
+            </form>
+        </section>
+
+        <!-- Add Category Section (Admin Only) -->
+        <section id="addCategory" class="admin-only" style="display: none;">
+            <h2>Add a New Category</h2>
+            <form id="addCategoryForm">
+                <div class="form-group">
+                    <label for="categoryName">Category Name:</label>
+                    <input type="text" id="categoryName" placeholder="e.g., NLP, Vision" required>
+                </div>
+                <button type="submit">Add Category</button>
+            </form>
+        </section>
+
+        <!-- Suggest Category Section (Non-Admin Users) -->
+        <section id="suggestCategory" class="non-admin-only">
+            <h2>Suggest a New Category</h2>
+            <form id="suggestCategoryForm">
+                <div class="form-group">
+                    <label for="suggestCategoryName">Category Name:</label>
+                    <input type="text" id="suggestCategoryName" placeholder="e.g., NLP, Vision" required>
+                </div>
+                <button type="submit">Suggest Category</button>
+            </form>
+        </section>
+
+        <!-- Add Tag Section (Admin Only) -->
+        <section id="addTag" class="admin-only" style="display: none;">
+            <h2>Add a New Tag</h2>
+            <form id="addTagForm">
+                <div class="form-group">
+                    <label for="tagName">Tag Name:</label>
+                    <input type="text" id="tagName" placeholder="e.g., NLP, Transformer" required>
+                </div>
+                <button type="submit">Add Tag</button>
+            </form>
+        </section>
+
+        <!-- Suggest Tag Section (Non-Admin Users) -->
+        <section id="suggestTag" class="non-admin-only">
+            <h2>Suggest a New Tag</h2>
+            <form id="suggestTagForm">
+                <div class="form-group">
+                    <label for="suggestTagName">Tag Name:</label>
+                    <input type="text" id="suggestTagName" placeholder="e.g., NLP, Transformer" required>
+                </div>
+                <button type="submit">Suggest Tag</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>Updated: November 2024</p>
+        <p>Aipex Version: v0.1.7</p>
+        <a href="admin.html" class="admin-link" style="display: none;">Admin Page</a>
+    </footer>
 </body>
 </html>
