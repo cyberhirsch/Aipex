@@ -17,7 +17,8 @@
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
         import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-analytics.js";
         import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
-        import { getDatabase, ref, onValue, get, update, push } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-database.js";
+        import { getDatabase, ref, onValue, get, update, set, push } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-database.js";
+        import { runTransaction } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-database.js";
 
         // Firebase configuration (use your credentials)
         const firebaseConfig = {
@@ -72,7 +73,9 @@
                     currentUser = user;
                     document.getElementById('signInBtn').style.display = 'none';
                     document.getElementById('signOutBtn').style.display = 'block';
-                    checkIfAdmin(user.uid);
+
+                    // Check if user is admin
+                    checkIfAdmin(user);
                 } else {
                     currentUser = null;
                     isAdmin = false;
@@ -82,17 +85,19 @@
                 }
             });
 
-            // Check if user is admin
-            function checkIfAdmin(uid) {
-                const adminRef = ref(db, `admins/${uid}`);
-                onValue(adminRef, (snapshot) => {
-                    isAdmin = snapshot.exists();
-                    console.log('Admin status:', isAdmin);
-                    updateUIForRole();
-                });
+            // Check if user is admin using custom claims
+            function checkIfAdmin(user) {
+                user.getIdTokenResult()
+                    .then((idTokenResult) => {
+                        isAdmin = !!idTokenResult.claims.admin;
+                        updateUIForRole();
+                    })
+                    .catch((error) => {
+                        console.error('Error checking admin status:', error);
+                    });
             }
 
-            // Update UI based on user role
+            // Update UI based on user role and authentication status
             function updateUIForRole() {
                 // Show or hide admin-only sections
                 const adminSections = document.querySelectorAll('.admin-only');
@@ -106,10 +111,34 @@
                     section.style.display = isAdmin ? 'none' : 'block';
                 });
 
-                // Update Editor's Choice checkboxes
+                // Show or hide suggestion areas based on authentication status
+                const suggestionSections = document.querySelectorAll('.suggestion-section');
+                const loginToSuggestMessages = document.querySelectorAll('.login-to-suggest');
+                if (currentUser) {
+                    suggestionSections.forEach(section => {
+                        section.style.display = 'block';
+                    });
+                    loginToSuggestMessages.forEach(message => {
+                        message.style.display = 'none';
+                    });
+                } else {
+                    suggestionSections.forEach(section => {
+                        section.style.display = 'none';
+                    });
+                    loginToSuggestMessages.forEach(message => {
+                        message.style.display = 'block';
+                    });
+                }
+
+                // Update Editor's Choice checkboxes and labels
                 const editorChoiceCheckboxes = document.querySelectorAll('.editor-choice-checkbox');
                 editorChoiceCheckboxes.forEach(checkbox => {
                     checkbox.style.display = isAdmin ? 'inline-block' : 'none';
+                });
+
+                const editorChoiceImages = document.querySelectorAll('.editor-choice-image');
+                editorChoiceImages.forEach(image => {
+                    image.style.display = isAdmin || image.dataset.selected === "true" ? 'inline-block' : 'none';
                 });
 
                 // Update Admin Page link visibility
@@ -119,9 +148,7 @@
                 });
             }
 
-            // Rest of your existing code for fetching categories, tags, and models
-            // Modify the model rendering function to check for isAdmin
-
+            // Fetch categories, tags, and models (same as before)
             // Fetch categories from database
             const modelCategoriesContainer = document.getElementById('modelCategoriesContainer');
             const suggestModelCategoriesContainer = document.getElementById('suggestModelCategoriesContainer');
@@ -225,7 +252,7 @@
                 }
             });
 
-            // Voting Function
+            // Voting Function (Updated)
             window.voteForModel = async function (modelId) {
                 try {
                     // Check if the user has already voted for this model using local storage
@@ -236,17 +263,9 @@
                     }
 
                     // Proceed with voting logic
-                    const modelRef = ref(db, `models/${modelId}`);
-                    const snapshot = await get(modelRef);
-
-                    if (!snapshot.exists()) {
-                        throw new Error('Model not found');
-                    }
-
-                    const currentVotes = snapshot.val().votes;
-                    await update(modelRef, {
-                        votes: currentVotes + 1,
-                        lastUpdated: new Date().toISOString()
+                    const votesRef = ref(db, `models/${modelId}/votes`);
+                    await runTransaction(votesRef, (currentVotes) => {
+                        return (currentVotes || 0) + 1;
                     });
 
                     // Store modelId in Local Storage to mark as voted
@@ -327,6 +346,10 @@
             // Suggest new model function (Non-Admin)
             document.getElementById('suggestModelForm').addEventListener('submit', async function (e) {
                 e.preventDefault();
+                if (!currentUser) {
+                    alert('You must be logged in to make a suggestion.');
+                    return;
+                }
                 try {
                     const modelName = document.getElementById('suggestModelName').value.trim();
                     const modelLicense = document.getElementById('suggestModelLicense').value;
@@ -388,6 +411,10 @@
             // Suggest new category function (Non-Admin)
             document.getElementById('suggestCategoryForm').addEventListener('submit', async function (e) {
                 e.preventDefault();
+                if (!currentUser) {
+                    alert('You must be logged in to make a suggestion.');
+                    return;
+                }
                 try {
                     const categoryName = document.getElementById('suggestCategoryName').value.trim();
                     if (!categoryName) {
@@ -450,6 +477,10 @@
             // Suggest new tag function (Non-Admin)
             document.getElementById('suggestTagForm').addEventListener('submit', async function (e) {
                 e.preventDefault();
+                if (!currentUser) {
+                    alert('You must be logged in to make a suggestion.');
+                    return;
+                }
                 try {
                     const tagName = document.getElementById('suggestTagName').value.trim();
                     if (!tagName) {
@@ -533,7 +564,9 @@
                                 <span class="model-votes">${model.votes} votes</span>
                                 <button onclick="voteForModel('${model.id}')" class="vote-button">Vote</button>
                                 <input type="checkbox" id="editorChoice-${model.id}" ${model.editorChoice ? 'checked' : ''} class="editor-choice-checkbox" style="display: none;">
-                                <label for="editorChoice-${model.id}" class="editor-choice-label" style="display: none;">Editor's Choice</label>
+                                <label for="editorChoice-${model.id}" class="editor-choice-label" style="display: none;">
+                                    <img src="thumbs.png" alt="Editor's Choice" class="editor-choice-image" data-selected="${model.editorChoice}" style="display: ${model.editorChoice ? 'inline-block' : 'none'};">
+                                </label>
                             </div>
                             <span class="model-tags">Tags: ${model.tags && Array.isArray(model.tags) ? model.tags.join(', ') : 'No tags available'}</span>
                         `;
@@ -582,6 +615,11 @@
             </div>
         </section>
 
+        <!-- Suggestion Sections -->
+        <div class="login-to-suggest" style="display: none;">
+            <p>Please login to make a suggestion.</p>
+        </div>
+
         <!-- Add Model Section (Admin Only) -->
         <section id="addModel" class="admin-only" style="display: none;">
             <h2>Add a New Model</h2>
@@ -622,7 +660,7 @@
         </section>
 
         <!-- Suggest Model Section (Non-Admin Users) -->
-        <section id="suggestModel" class="non-admin-only">
+        <section id="suggestModel" class="suggestion-section">
             <h2>Suggest a New Model</h2>
             <form id="suggestModelForm">
                 <div class="form-group">
@@ -673,7 +711,7 @@
         </section>
 
         <!-- Suggest Category Section (Non-Admin Users) -->
-        <section id="suggestCategory" class="non-admin-only">
+        <section id="suggestCategory" class="suggestion-section">
             <h2>Suggest a New Category</h2>
             <form id="suggestCategoryForm">
                 <div class="form-group">
@@ -697,7 +735,7 @@
         </section>
 
         <!-- Suggest Tag Section (Non-Admin Users) -->
-        <section id="suggestTag" class="non-admin-only">
+        <section id="suggestTag" class="suggestion-section">
             <h2>Suggest a New Tag</h2>
             <form id="suggestTagForm">
                 <div class="form-group">
@@ -710,8 +748,7 @@
     </main>
     <footer>
         <p>Updated: November 2024</p>
-        <p>Aipex Version: v0.1.7</p>
-        <a href="admin.html" class="admin-link" style="display: none;">Admin Page</a>
+        <p>Aipex Version: v0.1.8</p>
     </footer>
 </body>
 </html>
