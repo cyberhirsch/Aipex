@@ -4,21 +4,11 @@
     <meta charset="UTF-8">
     <title>Aipex - Generative AI Ranking</title>
     <link rel="stylesheet" href="style.css">
-
-    <!-- Firebase SDKs -->
-    <script src="https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/11.0.1/firebase-analytics.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/11.0.1/firebase-database.js"></script>
-
-    <!-- Main Script -->
+    <!-- Firebase SDKs and JavaScript Code -->
     <script type="module">
-        // Import Firebase modules
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
         import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-analytics.js";
-        import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
-        import { getDatabase, ref, onValue, get, update, set, push } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-database.js";
-        import { runTransaction } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-database.js";
+        import { getDatabase, ref, onValue, get, update, push } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-database.js";
 
         // Firebase configuration (use your credentials)
         const firebaseConfig = {
@@ -35,130 +25,28 @@
         // Initialize Firebase
         const app = initializeApp(firebaseConfig);
         const analytics = getAnalytics(app);
-        const auth = getAuth();
         const db = getDatabase();
 
-        let isAdmin = false;
-        let currentUser = null;
-        let models = []; // Declare models array globally
-
-        // Authentication Functions
+        // Main Script
         document.addEventListener('DOMContentLoaded', function () {
-            // Sign-In Function
-            document.getElementById('signInBtn').addEventListener('click', () => {
-                const provider = new GoogleAuthProvider();
-                signInWithPopup(auth, provider)
-                    .then((result) => {
-                        console.log('User signed in:', result.user);
-                    })
-                    .catch((error) => {
-                        console.error('Error during sign-in:', error);
-                        alert('Error during sign-in. Please try again.');
-                    });
-            });
+            let models = []; // Declare models array globally
 
-            // Sign-Out Function
-            document.getElementById('signOutBtn').addEventListener('click', () => {
-                signOut(auth).then(() => {
-                    console.log('User signed out');
-                }).catch((error) => {
-                    console.error('Error during sign-out:', error);
-                    alert('Error during sign-out. Please try again.');
-                });
-            });
-
-            // Authentication State Listener
-            onAuthStateChanged(auth, (user) => {
-                if (user) {
-                    currentUser = user;
-                    document.getElementById('signInBtn').style.display = 'none';
-                    document.getElementById('signOutBtn').style.display = 'block';
-
-                    // Check if user is admin
-                    checkIfAdmin(user);
-                } else {
-                    currentUser = null;
-                    isAdmin = false;
-                    document.getElementById('signInBtn').style.display = 'block';
-                    document.getElementById('signOutBtn').style.display = 'none';
-                    updateUIForRole();
-                }
-            });
-
-            // Check if user is admin using custom claims
-            function checkIfAdmin(user) {
-                user.getIdTokenResult()
-                    .then((idTokenResult) => {
-                        isAdmin = !!idTokenResult.claims.admin;
-                        updateUIForRole();
-                        if (isAdmin) {
-                            fetchSuggestions();
-                        }
-                    })
-                    .catch((error) => {
-                        console.error('Error checking admin status:', error);
-                    });
-            }
-
-            // Update UI based on user role and authentication status
-            function updateUIForRole() {
-                // Show or hide admin-only sections
-                const adminSections = document.querySelectorAll('.admin-only');
-                adminSections.forEach(section => {
-                    section.style.display = isAdmin ? 'block' : 'none';
-                });
-
-                // Show or hide suggestion areas based on authentication status
-                const suggestionSections = document.querySelectorAll('.suggestion-section');
-                if (currentUser) {
-                    suggestionSections.forEach(section => {
-                        section.style.display = 'block';
-                    });
-                } else {
-                    suggestionSections.forEach(section => {
-                        section.style.display = 'none';
-                    });
-                }
-
-                // Update Editor's Choice checkboxes and images
-                const editorChoiceCheckboxes = document.querySelectorAll('.editor-choice-checkbox');
-                editorChoiceCheckboxes.forEach(checkbox => {
-                    checkbox.style.display = isAdmin ? 'inline-block' : 'none';
-                });
-
-                const editorChoiceImages = document.querySelectorAll('.editor-choice-image');
-                editorChoiceImages.forEach(image => {
-                    image.style.display = isAdmin || image.dataset.selected === "true" ? 'inline-block' : 'none';
-                });
-
-                // Update Admin Page link visibility
-                const adminLinks = document.querySelectorAll('.admin-link');
-                adminLinks.forEach(link => {
-                    link.style.display = isAdmin ? 'inline' : 'none';
-                });
-            }
-
-            // Fetch categories, tags, and models
+            // Fetch categories from database
             const modelCategoriesContainer = document.getElementById('modelCategoriesContainer');
-            const suggestModelCategoriesContainer = document.getElementById('suggestModelCategoriesContainer');
 
             function populateCategories() {
                 onValue(ref(db, 'categories/'), (snapshot) => {
                     modelCategoriesContainer.innerHTML = ''; // Clear existing categories
-                    suggestModelCategoriesContainer.innerHTML = ''; // Clear existing categories
                     if (snapshot.exists()) {
                         snapshot.forEach((childSnapshot) => {
                             const category = childSnapshot.val();
                             const categoryElement = document.createElement('div');
-                            categoryElement.className = 'checkbox-item';
+                            categoryElement.className = 'category-checkbox';
                             categoryElement.innerHTML = `
                                 <input type="checkbox" id="modelCategory-${category}" value="${category}" class="model-category-checkbox">
                                 <label for="modelCategory-${category}">${category}</label>
                             `;
                             modelCategoriesContainer.appendChild(categoryElement);
-
-                            const suggestCategoryElement = categoryElement.cloneNode(true);
-                            suggestModelCategoriesContainer.appendChild(suggestCategoryElement);
                         });
                     }
                 });
@@ -168,38 +56,32 @@
             // Fetch tags from database
             const tagsFilterContainer = document.getElementById('tagsFilterContainer');
             const modelTagsContainer = document.getElementById('modelTagsContainer');
-            const suggestModelTagsContainer = document.getElementById('suggestModelTagsContainer');
 
             function populateTags() {
                 onValue(ref(db, 'tags/'), (snapshot) => {
                     tagsFilterContainer.innerHTML = '';
                     modelTagsContainer.innerHTML = '';
-                    suggestModelTagsContainer.innerHTML = '';
                     if (snapshot.exists()) {
                         snapshot.forEach((childSnapshot) => {
                             const tag = childSnapshot.val();
 
                             // Populate tagsFilterContainer
                             const tagElement = document.createElement('div');
-                            tagElement.className = 'tag-filter checkbox-item';
+                            tagElement.className = 'tag-filter';
                             tagElement.innerHTML = `
                                 <input type="checkbox" id="tagFilter-${tag}" value="${tag}" class="tag-checkbox">
                                 <label for="tagFilter-${tag}">${tag}</label>
                             `;
                             tagsFilterContainer.appendChild(tagElement);
 
-                            // Populate modelTagsContainer (Admin Form)
+                            // Populate modelTagsContainer
                             const tagCheckbox = document.createElement('div');
-                            tagCheckbox.className = 'checkbox-item';
+                            tagCheckbox.className = 'tag-checkbox';
                             tagCheckbox.innerHTML = `
                                 <input type="checkbox" id="modelTag-${tag}" value="${tag}" class="model-tag-checkbox">
                                 <label for="modelTag-${tag}">${tag}</label>
                             `;
                             modelTagsContainer.appendChild(tagCheckbox);
-
-                            // Populate suggestModelTagsContainer (Suggestion Form)
-                            const suggestTagCheckbox = tagCheckbox.cloneNode(true);
-                            suggestModelTagsContainer.appendChild(suggestTagCheckbox);
                         });
 
                         // Add event listener to tag filter checkboxes
@@ -241,7 +123,7 @@
                 }
             });
 
-            // Voting Function (Updated)
+            // Voting Function
             window.voteForModel = async function (modelId) {
                 try {
                     // Check if the user has already voted for this model using local storage
@@ -252,9 +134,17 @@
                     }
 
                     // Proceed with voting logic
-                    const votesRef = ref(db, `models/${modelId}/votes`);
-                    await runTransaction(votesRef, (currentVotes) => {
-                        return (currentVotes || 0) + 1;
+                    const modelRef = ref(db, `models/${modelId}`);
+                    const snapshot = await get(modelRef);
+
+                    if (!snapshot.exists()) {
+                        throw new Error('Model not found');
+                    }
+
+                    const currentVotes = snapshot.val().votes;
+                    await update(modelRef, {
+                        votes: currentVotes + 1,
+                        lastUpdated: new Date().toISOString()
                     });
 
                     // Store modelId in Local Storage to mark as voted
@@ -270,11 +160,8 @@
 
             // Function to update Editor's Choice
             async function updateEditorChoice(modelId, isChecked) {
-                if (!isAdmin) {
-                    alert('You do not have permission to update Editor\'s Choice.');
-                    return;
-                }
                 try {
+                    // Optionally, check if the user has admin privileges
                     const modelRef = ref(db, `models/${modelId}`);
                     await update(modelRef, {
                         editorChoice: isChecked,
@@ -287,13 +174,9 @@
                 }
             }
 
-            // Add new model function (Admin)
+            // Add new model function
             document.getElementById('addModelForm').addEventListener('submit', async function (e) {
                 e.preventDefault();
-                if (!isAdmin) {
-                    alert('You do not have permission to add models.');
-                    return;
-                }
                 try {
                     const modelName = document.getElementById('modelName').value.trim();
                     const modelLicense = document.getElementById('modelLicense').value;
@@ -314,7 +197,7 @@
                     const timestamp = new Date().toISOString();
                     await push(ref(db, 'models/'), {
                         name: modelName,
-                        categories: modelCategories,
+                        categories: modelCategories, // Now an array
                         license: modelLicense,
                         weblink: modelWeblink,
                         votes: 0,
@@ -332,56 +215,9 @@
                 }
             });
 
-            // Suggest new model function (Non-Admin)
-            document.getElementById('suggestModelForm').addEventListener('submit', async function (e) {
-                e.preventDefault();
-                if (!currentUser) {
-                    alert('You must be logged in to make a suggestion.');
-                    return;
-                }
-                try {
-                    const modelName = document.getElementById('suggestModelName').value.trim();
-                    const modelLicense = document.getElementById('suggestModelLicense').value;
-                    const modelWeblink = document.getElementById('suggestModelWeblink').value.trim();
-
-                    // Get selected categories from checkboxes
-                    const selectedCategoryCheckboxes = document.querySelectorAll('#suggestModelCategoriesContainer .model-category-checkbox:checked');
-                    const modelCategories = Array.from(selectedCategoryCheckboxes).map(cb => cb.value);
-
-                    // Get selected tags from checkboxes
-                    const selectedTagCheckboxes = document.querySelectorAll('#suggestModelTagsContainer .model-tag-checkbox:checked');
-                    const modelTags = Array.from(selectedTagCheckboxes).map(cb => cb.value);
-
-                    if (!modelName || modelCategories.length === 0 || !modelLicense || !modelWeblink || modelTags.length === 0) {
-                        throw new Error('Please fill in all fields');
-                    }
-
-                    const timestamp = new Date().toISOString();
-                    await push(ref(db, 'suggestions/models'), {
-                        name: modelName,
-                        categories: modelCategories,
-                        license: modelLicense,
-                        weblink: modelWeblink,
-                        tags: modelTags,
-                        suggestedBy: currentUser ? currentUser.uid : 'anonymous',
-                        createdAt: timestamp
-                    });
-
-                    document.getElementById('suggestModelForm').reset();
-                    alert('Model suggestion submitted successfully!');
-                } catch (error) {
-                    console.error('Error suggesting model:', error);
-                    alert('Error: Failed to submit model suggestion. Please try again.');
-                }
-            });
-
-            // Add new category function (Admin)
+            // Add new category function
             document.getElementById('addCategoryForm').addEventListener('submit', async function (e) {
                 e.preventDefault();
-                if (!isAdmin) {
-                    alert('You do not have permission to add categories.');
-                    return;
-                }
                 try {
                     const categoryName = document.getElementById('categoryName').value.trim();
                     if (!categoryName) {
@@ -397,41 +233,9 @@
                 }
             });
 
-            // Suggest new category function (Non-Admin)
-            document.getElementById('suggestCategoryForm').addEventListener('submit', async function (e) {
-                e.preventDefault();
-                if (!currentUser) {
-                    alert('You must be logged in to make a suggestion.');
-                    return;
-                }
-                try {
-                    const categoryName = document.getElementById('suggestCategoryName').value.trim();
-                    if (!categoryName) {
-                        throw new Error('Please enter a category name');
-                    }
-
-                    const timestamp = new Date().toISOString();
-                    await push(ref(db, 'suggestions/categories'), {
-                        name: categoryName,
-                        suggestedBy: currentUser ? currentUser.uid : 'anonymous',
-                        createdAt: timestamp
-                    });
-
-                    document.getElementById('suggestCategoryForm').reset();
-                    alert('Category suggestion submitted successfully!');
-                } catch (error) {
-                    console.error('Error suggesting category:', error);
-                    alert('Error: Failed to submit category suggestion. Please try again.');
-                }
-            });
-
-            // Add new tag function (Admin)
+            // Add new tag function
             document.getElementById('addTagForm').addEventListener('submit', async function (e) {
                 e.preventDefault();
-                if (!isAdmin) {
-                    alert('You do not have permission to add tags.');
-                    return;
-                }
                 try {
                     const tagName = document.getElementById('tagName').value.trim();
                     if (!tagName) {
@@ -460,34 +264,6 @@
                 } catch (error) {
                     console.error('Error adding tag:', error);
                     alert('Error: Failed to add tag. Please try again.');
-                }
-            });
-
-            // Suggest new tag function (Non-Admin)
-            document.getElementById('suggestTagForm').addEventListener('submit', async function (e) {
-                e.preventDefault();
-                if (!currentUser) {
-                    alert('You must be logged in to make a suggestion.');
-                    return;
-                }
-                try {
-                    const tagName = document.getElementById('suggestTagName').value.trim();
-                    if (!tagName) {
-                        throw new Error('Please enter a tag name');
-                    }
-
-                    const timestamp = new Date().toISOString();
-                    await push(ref(db, 'suggestions/tags'), {
-                        name: tagName,
-                        suggestedBy: currentUser ? currentUser.uid : 'anonymous',
-                        createdAt: timestamp
-                    });
-
-                    document.getElementById('suggestTagForm').reset();
-                    alert('Tag suggestion submitted successfully!');
-                } catch (error) {
-                    console.error('Error suggesting tag:', error);
-                    alert('Error: Failed to submit tag suggestion. Please try again.');
                 }
             });
 
@@ -552,15 +328,11 @@
                                 <span class="model-license">${model.license}</span>
                                 <span class="model-votes">${model.votes} votes</span>
                                 <button onclick="voteForModel('${model.id}')" class="vote-button">Vote</button>
-                                <input type="checkbox" id="editorChoice-${model.id}" ${model.editorChoice ? 'checked' : ''} class="editor-choice-checkbox" style="display: none;">
-                                <label for="editorChoice-${model.id}" class="editor-choice-label" style="display: none;">
-                                    <img src="thumbs.png" alt="Editor's Choice" class="editor-choice-image" data-selected="${model.editorChoice}" style="display: ${model.editorChoice ? 'inline-block' : 'none'};">
-                                </label>
+                                <input type="checkbox" id="editorChoice-${model.id}" ${model.editorChoice ? 'checked' : ''}>
+                                <label for="editorChoice-${model.id}">Editor's Choice</label>
                             </div>
                             <span class="model-tags">Tags: ${model.tags && Array.isArray(model.tags) ? model.tags.join(', ') : 'No tags available'}</span>
                         `;
-                        categoryElement.appendChild(modelElement);
-
                         // Add event listener for Editor's Choice checkbox
                         setTimeout(() => {
                             const editorCheckbox = document.getElementById(`editorChoice-${model.id}`);
@@ -568,199 +340,24 @@
                                 updateEditorChoice(model.id, e.target.checked);
                             });
                         }, 0);
+                        categoryElement.appendChild(modelElement);
                     });
 
                     modelsList.appendChild(categoryElement);
                 });
-
-                // Update UI for role-based elements
-                updateUIForRole();
             }
-
-            // Fetch suggestions for admin
-            function fetchSuggestions() {
-                if (!isAdmin) {
-                    return;
-                }
-
-                const suggestionsList = document.getElementById('suggestionsList');
-                suggestionsList.innerHTML = '';
-
-                // Fetch model suggestions
-                get(ref(db, 'suggestions/models')).then((snapshot) => {
-                    if (snapshot.exists()) {
-                        const modelsDiv = document.createElement('div');
-                        modelsDiv.innerHTML = '<h3>Model Suggestions</h3>';
-
-                        snapshot.forEach((childSnapshot) => {
-                            const suggestion = childSnapshot.val();
-                            const suggestionId = childSnapshot.key;
-
-                            const suggestionElement = document.createElement('div');
-                            suggestionElement.className = 'suggestion-item';
-                            suggestionElement.innerHTML = `
-                                <p><strong>Name:</strong> ${suggestion.name}</p>
-                                <p><strong>Categories:</strong> ${suggestion.categories.join(', ')}</p>
-                                <p><strong>License:</strong> ${suggestion.license}</p>
-                                <p><strong>Weblink:</strong> <a href="${suggestion.weblink}" target="_blank">${suggestion.weblink}</a></p>
-                                <p><strong>Tags:</strong> ${suggestion.tags.join(', ')}</p>
-                                <button onclick="acceptModelSuggestion('${suggestionId}')">Accept</button>
-                                <button onclick="deleteSuggestion('models', '${suggestionId}')">Delete</button>
-                            `;
-                            modelsDiv.appendChild(suggestionElement);
-                        });
-
-                        suggestionsList.appendChild(modelsDiv);
-                    }
-                });
-
-                // Fetch category suggestions
-                get(ref(db, 'suggestions/categories')).then((snapshot) => {
-                    if (snapshot.exists()) {
-                        const categoriesDiv = document.createElement('div');
-                        categoriesDiv.innerHTML = '<h3>Category Suggestions</h3>';
-
-                        snapshot.forEach((childSnapshot) => {
-                            const suggestion = childSnapshot.val();
-                            const suggestionId = childSnapshot.key;
-
-                            const suggestionElement = document.createElement('div');
-                            suggestionElement.className = 'suggestion-item';
-                            suggestionElement.innerHTML = `
-                                <p><strong>Name:</strong> ${suggestion.name}</p>
-                                <button onclick="acceptCategorySuggestion('${suggestionId}')">Accept</button>
-                                <button onclick="deleteSuggestion('categories', '${suggestionId}')">Delete</button>
-                            `;
-                            categoriesDiv.appendChild(suggestionElement);
-                        });
-
-                        suggestionsList.appendChild(categoriesDiv);
-                    }
-                });
-
-                // Fetch tag suggestions
-                get(ref(db, 'suggestions/tags')).then((snapshot) => {
-                    if (snapshot.exists()) {
-                        const tagsDiv = document.createElement('div');
-                        tagsDiv.innerHTML = '<h3>Tag Suggestions</h3>';
-
-                        snapshot.forEach((childSnapshot) => {
-                            const suggestion = childSnapshot.val();
-                            const suggestionId = childSnapshot.key;
-
-                            const suggestionElement = document.createElement('div');
-                            suggestionElement.className = 'suggestion-item';
-                            suggestionElement.innerHTML = `
-                                <p><strong>Name:</strong> ${suggestion.name}</p>
-                                <button onclick="acceptTagSuggestion('${suggestionId}')">Accept</button>
-                                <button onclick="deleteSuggestion('tags', '${suggestionId}')">Delete</button>
-                            `;
-                            tagsDiv.appendChild(suggestionElement);
-                        });
-
-                        suggestionsList.appendChild(tagsDiv);
-                    }
-                });
-            }
-
-            // Accept Model Suggestion
-            window.acceptModelSuggestion = function(suggestionId) {
-                const suggestionRef = ref(db, `suggestions/models/${suggestionId}`);
-                get(suggestionRef).then((snapshot) => {
-                    if (snapshot.exists()) {
-                        const suggestion = snapshot.val();
-                        // Add to models
-                        push(ref(db, 'models/'), {
-                            name: suggestion.name,
-                            categories: suggestion.categories,
-                            license: suggestion.license,
-                            weblink: suggestion.weblink,
-                            votes: 0,
-                            editorChoice: false,
-                            tags: suggestion.tags,
-                            createdAt: new Date().toISOString(),
-                            lastUpdated: new Date().toISOString()
-                        }).then(() => {
-                            // Delete the suggestion
-                            remove(suggestionRef);
-                            alert('Suggestion accepted and added to models.');
-                            fetchSuggestions(); // Refresh suggestions
-                        });
-                    }
-                }).catch((error) => {
-                    console.error('Error accepting suggestion:', error);
-                    alert('Failed to accept suggestion.');
-                });
-            };
-
-            // Accept Category Suggestion
-            window.acceptCategorySuggestion = function(suggestionId) {
-                const suggestionRef = ref(db, `suggestions/categories/${suggestionId}`);
-                get(suggestionRef).then((snapshot) => {
-                    if (snapshot.exists()) {
-                        const suggestion = snapshot.val();
-                        // Add to categories
-                        push(ref(db, 'categories/'), suggestion.name).then(() => {
-                            // Delete the suggestion
-                            remove(suggestionRef);
-                            alert('Suggestion accepted and added to categories.');
-                            fetchSuggestions(); // Refresh suggestions
-                        });
-                    }
-                }).catch((error) => {
-                    console.error('Error accepting suggestion:', error);
-                    alert('Failed to accept suggestion.');
-                });
-            };
-
-            // Accept Tag Suggestion
-            window.acceptTagSuggestion = function(suggestionId) {
-                const suggestionRef = ref(db, `suggestions/tags/${suggestionId}`);
-                get(suggestionRef).then((snapshot) => {
-                    if (snapshot.exists()) {
-                        const suggestion = snapshot.val();
-                        // Add to tags
-                        push(ref(db, 'tags/'), suggestion.name).then(() => {
-                            // Delete the suggestion
-                            remove(suggestionRef);
-                            alert('Suggestion accepted and added to tags.');
-                            fetchSuggestions(); // Refresh suggestions
-                        });
-                    }
-                }).catch((error) => {
-                    console.error('Error accepting suggestion:', error);
-                    alert('Failed to accept suggestion.');
-                });
-            };
-
-            // Delete Suggestion
-            window.deleteSuggestion = function(type, suggestionId) {
-                const suggestionRef = ref(db, `suggestions/${type}/${suggestionId}`);
-                remove(suggestionRef).then(() => {
-                    alert('Suggestion deleted.');
-                    fetchSuggestions(); // Refresh suggestions
-                }).catch((error) => {
-                    console.error('Error deleting suggestion:', error);
-                    alert('Failed to delete suggestion.');
-                });
-            };
         });
     </script>
 </head>
 <body>
     <header>
         <h1>Aipex - Generative AI Ranking</h1>
-        <!-- Authentication Buttons -->
-        <div id="authSection">
-            <button id="signInBtn">Sign In with Google</button>
-            <button id="signOutBtn" style="display: none;">Sign Out</button>
-        </div>
     </header>
     <main>
         <!-- Tag Filters Section -->
         <section id="tagFilters">
             <h2>Filter by Tags</h2>
-            <div id="tagsFilterContainer" class="checkbox-container">
+            <div id="tagsFilterContainer">
                 <!-- Tag checkboxes will be populated here -->
             </div>
         </section>
@@ -772,9 +369,8 @@
             </div>
         </section>
 
-        <!-- Suggestion Sections (Visible only when logged in) -->
-        <!-- Add Model Section (Admin Only) -->
-        <section id="addModel" class="admin-only" style="display: none;">
+        <!-- Add Model Section -->
+        <section id="addModel">
             <h2>Add a New Model</h2>
             <form id="addModelForm">
                 <div class="form-group">
@@ -783,7 +379,7 @@
                 </div>
                 <div class="form-group">
                     <label>Categories:</label>
-                    <div id="modelCategoriesContainer" class="checkbox-container">
+                    <div id="modelCategoriesContainer">
                         <!-- Category checkboxes will be populated dynamically -->
                     </div>
                     <small>Select one or more categories.</small>
@@ -803,7 +399,7 @@
                 </div>
                 <div class="form-group">
                     <label>Tags:</label>
-                    <div id="modelTagsContainer" class="checkbox-container">
+                    <div id="modelTagsContainer">
                         <!-- Tag checkboxes will be populated dynamically -->
                     </div>
                     <small>Select one or more tags.</small>
@@ -812,47 +408,8 @@
             </form>
         </section>
 
-        <!-- Suggest Model Section (Logged-in Users Only) -->
-        <section id="suggestModel" class="suggestion-section" style="display: none;">
-            <h2>Suggest a New Model</h2>
-            <form id="suggestModelForm">
-                <div class="form-group">
-                    <label for="suggestModelName">Model Name:</label>
-                    <input type="text" id="suggestModelName" placeholder="e.g., GPT-4, DALL-E 3" required>
-                </div>
-                <div class="form-group">
-                    <label>Categories:</label>
-                    <div id="suggestModelCategoriesContainer" class="checkbox-container">
-                        <!-- Category checkboxes will be populated dynamically -->
-                    </div>
-                    <small>Select one or more categories.</small>
-                </div>
-                <div class="form-group">
-                    <label for="suggestModelLicense">License:</label>
-                    <select id="suggestModelLicense" required>
-                        <option value="" disabled selected>Select a license type</option>
-                        <option value="Open Source">Open Source</option>
-                        <option value="Commercial">Commercial</option>
-                        <option value="Freemium">Freemium</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="suggestModelWeblink">Weblink:</label>
-                    <input type="text" id="suggestModelWeblink" placeholder="e.g., https://model-link.com" required>
-                </div>
-                <div class="form-group">
-                    <label>Tags:</label>
-                    <div id="suggestModelTagsContainer" class="checkbox-container">
-                        <!-- Tag checkboxes will be populated dynamically -->
-                    </div>
-                    <small>Select one or more tags.</small>
-                </div>
-                <button type="submit">Suggest Model</button>
-            </form>
-        </section>
-
-        <!-- Add Category Section (Admin Only) -->
-        <section id="addCategory" class="admin-only" style="display: none;">
+        <!-- Add Category Section -->
+        <section id="addCategory">
             <h2>Add a New Category</h2>
             <form id="addCategoryForm">
                 <div class="form-group">
@@ -863,20 +420,8 @@
             </form>
         </section>
 
-        <!-- Suggest Category Section (Logged-in Users Only) -->
-        <section id="suggestCategory" class="suggestion-section" style="display: none;">
-            <h2>Suggest a New Category</h2>
-            <form id="suggestCategoryForm">
-                <div class="form-group">
-                    <label for="suggestCategoryName">Category Name:</label>
-                    <input type="text" id="suggestCategoryName" placeholder="e.g., NLP, Vision" required>
-                </div>
-                <button type="submit">Suggest Category</button>
-            </form>
-        </section>
-
-        <!-- Add Tag Section (Admin Only) -->
-        <section id="addTag" class="admin-only" style="display: none;">
+        <!-- Add Tag Section -->
+        <section id="addTag">
             <h2>Add a New Tag</h2>
             <form id="addTagForm">
                 <div class="form-group">
@@ -886,31 +431,11 @@
                 <button type="submit">Add Tag</button>
             </form>
         </section>
-
-        <!-- Suggest Tag Section (Logged-in Users Only) -->
-        <section id="suggestTag" class="suggestion-section" style="display: none;">
-            <h2>Suggest a New Tag</h2>
-            <form id="suggestTagForm">
-                <div class="form-group">
-                    <label for="suggestTagName">Tag Name:</label>
-                    <input type="text" id="suggestTagName" placeholder="e.g., NLP, Transformer" required>
-                </div>
-                <button type="submit">Suggest Tag</button>
-            </form>
-        </section>
-
-        <!-- Admin Suggestions Review Section -->
-        <section id="adminSuggestions" class="admin-only" style="display: none;">
-            <h2>Review Suggestions</h2>
-            <div id="suggestionsList">
-                <!-- Suggestions will be populated here -->
-            </div>
-        </section>
     </main>
     <footer>
         <p>Updated: November 2024</p>
         <p>Aipex Version: v0.1.4</p>
-        <a href="admin.html" class="admin-link" style="display: none;">Admin Page</a>
+        <a href="admin.html">Admin Page</a>
     </footer>
 </body>
 </html>
