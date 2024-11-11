@@ -4,14 +4,120 @@
     <meta charset="UTF-8">
     <title>Aipex - Generative AI Ranking</title>
     <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Aipex - Generative AI Ranking</h1>
+        <!-- Authentication Buttons -->
+        <div id="authSection">
+            <button id="signInBtn">Sign In with Google</button>
+            <button id="signOutBtn" style="display: none;">Sign Out</button>
+        </div>
+    </header>
+    <main>
+        <!-- Tag Filters Section -->
+        <section id="tagFilters">
+            <h2>Filter by Tags</h2>
+            <div id="tagsFilterContainer">
+                <!-- Tag checkboxes will be populated here -->
+            </div>
+        </section>
 
-    <!-- Firebase SDKs -->
-    <script src="https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/11.0.1/firebase-analytics.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/11.0.1/firebase-database.js"></script>
+        <!-- Ranking Section -->
+        <section id="ranking">
+            <div id="toolsList" class="tools-grid">
+                <!-- Top tools will appear here in a compact format -->
+            </div>
+        </section>
 
-    <!-- Main Script -->
+        <!-- Add Tool Section (Admin Only) -->
+        <section id="addTool" class="admin-only" style="display: none;">
+            <h2>Add a New Tool</h2>
+            <form id="addToolForm">
+                <div class="form-group">
+                    <label for="toolName">Tool Name:</label>
+                    <input type="text" id="toolName" placeholder="e.g., GPT-4, DALL-E 3" required>
+                </div>
+                <div class="form-group">
+                    <label>Categories:</label>
+                    <div id="toolCategoriesContainer">
+                        <!-- Category checkboxes will be populated dynamically -->
+                    </div>
+                    <small>Select one or more categories.</small>
+                </div>
+                <div class="form-group">
+                    <label for="toolLicense">License:</label>
+                    <select id="toolLicense" required>
+                        <option value="" disabled selected>Select a license type</option>
+                        <option value="Open Source">Open Source</option>
+                        <option value="Commercial">Commercial</option>
+                        <option value="Freemium">Freemium</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="toolWeblink">Weblink:</label>
+                    <input type="text" id="toolWeblink" placeholder="e.g., https://tool-link.com" required>
+                </div>
+                <div class="form-group">
+                    <label>Tags:</label>
+                    <div id="toolTagsContainer">
+                        <!-- Tag checkboxes will be populated dynamically -->
+                    </div>
+                    <small>Select one or more tags.</small>
+                </div>
+                <button type="submit">Add Tool</button>
+            </form>
+        </section>
+
+        <!-- Suggest Tool Section (Non-Admin Users) -->
+        <section id="suggestTool" class="non-admin-only suggestion-section">
+            <h2>Suggest a New Tool</h2>
+            <p>Log in to make a suggestion.</p>
+        </section>
+
+        <!-- Add Category Section (Admin Only) -->
+        <section id="addCategory" class="admin-only" style="display: none;">
+            <h2>Add a New Category</h2>
+            <form id="addCategoryForm">
+                <div class="form-group">
+                    <label for="categoryName">Category Name:</label>
+                    <input type="text" id="categoryName" placeholder="e.g., NLP, Vision" required>
+                </div>
+                <button type="submit">Add Category</button>
+            </form>
+        </section>
+
+        <!-- Suggest Category Section (Non-Admin Users) -->
+        <section id="suggestCategory" class="non-admin-only suggestion-section">
+            <h2>Suggest a New Category</h2>
+            <p>Log in to make a suggestion.</p>
+        </section>
+
+        <!-- Add Tag Section (Admin Only) -->
+        <section id="addTag" class="admin-only" style="display: none;">
+            <h2>Add a New Tag</h2>
+            <form id="addTagForm">
+                <div class="form-group">
+                    <label for="tagName">Tag Name:</label>
+                    <input type="text" id="tagName" placeholder="e.g., NLP, Transformer" required>
+                </div>
+                <button type="submit">Add Tag</button>
+            </form>
+        </section>
+
+        <!-- Suggest Tag Section (Non-Admin Users) -->
+        <section id="suggestTag" class="non-admin-only suggestion-section">
+            <h2>Suggest a New Tag</h2>
+            <p>Log in to make a suggestion.</p>
+        </section>
+    </main>
+    <footer>
+        <p>Updated: November 2024</p>
+        <p>Aipex Version: v0.1.7</p>
+        <a href="admin.html" class="admin-link" style="display: none;">Admin Page</a>
+    </footer>
+
+    <!-- Firebase and Main Script -->
     <script type="module">
         // Import Firebase modules
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
@@ -19,7 +125,7 @@
         import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
         import { getDatabase, ref, onValue, get, update, push } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-database.js";
 
-        // Firebase configuration (use your credentials)
+        // Firebase configuration
         const firebaseConfig = {
             apiKey: "AIzaSyCrSS4lsxgSFA7SEtseW1KoiruQbUwR_xA",
             authDomain: "aipex-6d63b.firebaseapp.com",
@@ -42,9 +148,12 @@
         let tools = []; // Declare tools array globally
 
         // Authentication Functions
-        document.addEventListener('DOMContentLoaded', function () {
+        window.addEventListener('load', function () {
             // Sign-In Function
-            document.getElementById('signInBtn').addEventListener('click', () => {
+            const signInBtn = document.getElementById('signInBtn');
+            const signOutBtn = document.getElementById('signOutBtn');
+
+            signInBtn.addEventListener('click', () => {
                 const provider = new GoogleAuthProvider();
                 signInWithPopup(auth, provider)
                     .then((result) => {
@@ -57,7 +166,7 @@
             });
 
             // Sign-Out Function
-            document.getElementById('signOutBtn').addEventListener('click', () => {
+            signOutBtn.addEventListener('click', () => {
                 signOut(auth).then(() => {
                     console.log('User signed out');
                 }).catch((error) => {
@@ -70,14 +179,14 @@
             onAuthStateChanged(auth, (user) => {
                 if (user) {
                     currentUser = user;
-                    document.getElementById('signInBtn').style.display = 'none';
-                    document.getElementById('signOutBtn').style.display = 'block';
+                    signInBtn.style.display = 'none';
+                    signOutBtn.style.display = 'block';
                     checkIfAdmin(user.uid);
                 } else {
                     currentUser = null;
                     isAdmin = false;
-                    document.getElementById('signInBtn').style.display = 'block';
-                    document.getElementById('signOutBtn').style.display = 'none';
+                    signInBtn.style.display = 'block';
+                    signOutBtn.style.display = 'none';
                     updateUIForRole();
                 }
             });
@@ -108,17 +217,16 @@
                 // Update Editor's Choice checkboxes and icons
                 const editorChoiceCheckboxes = document.querySelectorAll('.editor-choice-checkbox');
                 editorChoiceCheckboxes.forEach(checkbox => {
+                    const icon = checkbox.parentElement.querySelector('.editor-choice-icon');
                     if (isAdmin) {
                         checkbox.style.display = 'inline-block';
-                        checkbox.nextElementSibling.style.display = 'inline-block'; // Label
-                        checkbox.nextElementSibling.nextElementSibling.style.display = 'none'; // Icon
+                        if (icon) icon.style.display = 'none';
                     } else {
                         checkbox.style.display = 'none';
-                        checkbox.nextElementSibling.style.display = 'none'; // Label
-                        if (checkbox.checked) {
-                            checkbox.nextElementSibling.nextElementSibling.style.display = 'inline-block'; // Icon
-                        } else {
-                            checkbox.nextElementSibling.nextElementSibling.style.display = 'none'; // Icon
+                        if (checkbox.checked && icon) {
+                            icon.style.display = 'inline-block';
+                        } else if (icon) {
+                            icon.style.display = 'none';
                         }
                     }
                 });
@@ -127,9 +235,19 @@
                 const suggestionSections = document.querySelectorAll('.suggestion-section');
                 suggestionSections.forEach(section => {
                     if (currentUser) {
-                        section.innerHTML = section.querySelector('form').outerHTML; // Show form
+                        const form = section.querySelector('form');
+                        if (form) {
+                            form.style.display = 'block';
+                        } else {
+                            // Re-insert the form if it's missing
+                            // You may need to store the form HTML elsewhere
+                        }
+                        section.querySelector('p').style.display = 'none';
                     } else {
-                        section.innerHTML = '<p>Log in to make a suggestion.</p>'; // Show message
+                        const form = section.querySelector('form');
+                        if (form) form.style.display = 'none';
+                        const message = section.querySelector('p');
+                        if (message) message.style.display = 'block';
                     }
                 });
 
@@ -298,66 +416,25 @@
             }
 
             // Add new tool function (Admin)
-            document.getElementById('addToolForm').addEventListener('submit', async function (e) {
-                e.preventDefault();
-                if (!isAdmin) {
-                    alert('You do not have permission to add tools.');
-                    return;
-                }
-                try {
-                    const toolName = document.getElementById('toolName').value.trim();
-                    const toolLicense = document.getElementById('toolLicense').value;
-                    const toolWeblink = document.getElementById('toolWeblink').value.trim();
-
-                    // Get selected categories from checkboxes
-                    const selectedCategoryCheckboxes = document.querySelectorAll('.tool-category-checkbox:checked');
-                    const toolCategories = Array.from(selectedCategoryCheckboxes).map(cb => cb.value);
-
-                    // Get selected tags from checkboxes
-                    const selectedTagCheckboxes = document.querySelectorAll('.tool-tag-checkbox:checked');
-                    const toolTags = Array.from(selectedTagCheckboxes).map(cb => cb.value);
-
-                    if (!toolName || toolCategories.length === 0 || !toolLicense || !toolWeblink || toolTags.length === 0) {
-                        throw new Error('Please fill in all fields');
-                    }
-
-                    const timestamp = new Date().toISOString();
-                    await push(ref(db, 'tools/'), {
-                        name: toolName,
-                        categories: toolCategories,
-                        license: toolLicense,
-                        weblink: toolWeblink,
-                        votes: 0,
-                        editorChoice: false,
-                        tags: toolTags,
-                        createdAt: timestamp,
-                        lastUpdated: timestamp
-                    });
-
-                    document.getElementById('addToolForm').reset();
-                    alert('Tool added successfully!');
-                } catch (error) {
-                    console.error('Error adding tool:', error);
-                    alert('Error: Failed to add tool. Please try again.');
-                }
-            });
-
-            // Suggest new tool function (Non-Admin)
-            const suggestToolSection = document.getElementById('suggestTool');
-            if (suggestToolSection) {
-                document.getElementById('suggestToolForm').addEventListener('submit', async function (e) {
+            const addToolForm = document.getElementById('addToolForm');
+            if (addToolForm) {
+                addToolForm.addEventListener('submit', async function (e) {
                     e.preventDefault();
+                    if (!isAdmin) {
+                        alert('You do not have permission to add tools.');
+                        return;
+                    }
                     try {
-                        const toolName = document.getElementById('suggestToolName').value.trim();
-                        const toolLicense = document.getElementById('suggestToolLicense').value;
-                        const toolWeblink = document.getElementById('suggestToolWeblink').value.trim();
+                        const toolName = document.getElementById('toolName').value.trim();
+                        const toolLicense = document.getElementById('toolLicense').value;
+                        const toolWeblink = document.getElementById('toolWeblink').value.trim();
 
                         // Get selected categories from checkboxes
-                        const selectedCategoryCheckboxes = document.querySelectorAll('#suggestToolCategoriesContainer .tool-category-checkbox:checked');
+                        const selectedCategoryCheckboxes = document.querySelectorAll('.tool-category-checkbox:checked');
                         const toolCategories = Array.from(selectedCategoryCheckboxes).map(cb => cb.value);
 
                         // Get selected tags from checkboxes
-                        const selectedTagCheckboxes = document.querySelectorAll('#suggestToolTagsContainer .tool-tag-checkbox:checked');
+                        const selectedTagCheckboxes = document.querySelectorAll('.tool-tag-checkbox:checked');
                         const toolTags = Array.from(selectedTagCheckboxes).map(cb => cb.value);
 
                         if (!toolName || toolCategories.length === 0 || !toolLicense || !toolWeblink || toolTags.length === 0) {
@@ -365,135 +442,23 @@
                         }
 
                         const timestamp = new Date().toISOString();
-                        await push(ref(db, 'suggestions/tools'), {
+                        await push(ref(db, 'tools/'), {
                             name: toolName,
                             categories: toolCategories,
                             license: toolLicense,
                             weblink: toolWeblink,
+                            votes: 0,
+                            editorChoice: false,
                             tags: toolTags,
-                            suggestedBy: currentUser ? currentUser.uid : 'anonymous',
-                            createdAt: timestamp
+                            createdAt: timestamp,
+                            lastUpdated: timestamp
                         });
 
-                        document.getElementById('suggestToolForm').reset();
-                        alert('Tool suggestion submitted successfully!');
+                        addToolForm.reset();
+                        alert('Tool added successfully!');
                     } catch (error) {
-                        console.error('Error suggesting tool:', error);
-                        alert('Error: Failed to submit tool suggestion. Please try again.');
-                    }
-                });
-            }
-
-            // Add new category function (Admin)
-            document.getElementById('addCategoryForm').addEventListener('submit', async function (e) {
-                e.preventDefault();
-                if (!isAdmin) {
-                    alert('You do not have permission to add categories.');
-                    return;
-                }
-                try {
-                    const categoryName = document.getElementById('categoryName').value.trim();
-                    if (!categoryName) {
-                        throw new Error('Please enter a category name');
-                    }
-
-                    await push(ref(db, 'categories/'), categoryName);
-                    document.getElementById('addCategoryForm').reset();
-                    alert('Category added successfully!');
-                } catch (error) {
-                    console.error('Error adding category:', error);
-                    alert('Error: Failed to add category. Please try again.');
-                }
-            });
-
-            // Suggest new category function (Non-Admin)
-            const suggestCategorySection = document.getElementById('suggestCategory');
-            if (suggestCategorySection) {
-                document.getElementById('suggestCategoryForm').addEventListener('submit', async function (e) {
-                    e.preventDefault();
-                    try {
-                        const categoryName = document.getElementById('suggestCategoryName').value.trim();
-                        if (!categoryName) {
-                            throw new Error('Please enter a category name');
-                        }
-
-                        const timestamp = new Date().toISOString();
-                        await push(ref(db, 'suggestions/categories'), {
-                            name: categoryName,
-                            suggestedBy: currentUser ? currentUser.uid : 'anonymous',
-                            createdAt: timestamp
-                        });
-
-                        document.getElementById('suggestCategoryForm').reset();
-                        alert('Category suggestion submitted successfully!');
-                    } catch (error) {
-                        console.error('Error suggesting category:', error);
-                        alert('Error: Failed to submit category suggestion. Please try again.');
-                    }
-                });
-            }
-
-            // Add new tag function (Admin)
-            document.getElementById('addTagForm').addEventListener('submit', async function (e) {
-                e.preventDefault();
-                if (!isAdmin) {
-                    alert('You do not have permission to add tags.');
-                    return;
-                }
-                try {
-                    const tagName = document.getElementById('tagName').value.trim();
-                    if (!tagName) {
-                        throw new Error('Please enter a tag name');
-                    }
-
-                    // Check if tag already exists
-                    const tagsSnapshot = await get(ref(db, 'tags/'));
-                    let tagExists = false;
-                    if (tagsSnapshot.exists()) {
-                        tagsSnapshot.forEach((childSnapshot) => {
-                            if (childSnapshot.val().toLowerCase() === tagName.toLowerCase()) {
-                                tagExists = true;
-                            }
-                        });
-                    }
-
-                    if (tagExists) {
-                        alert('Tag already exists.');
-                        return;
-                    }
-
-                    await push(ref(db, 'tags/'), tagName);
-                    document.getElementById('addTagForm').reset();
-                    alert('Tag added successfully!');
-                } catch (error) {
-                    console.error('Error adding tag:', error);
-                    alert('Error: Failed to add tag. Please try again.');
-                }
-            });
-
-            // Suggest new tag function (Non-Admin)
-            const suggestTagSection = document.getElementById('suggestTag');
-            if (suggestTagSection) {
-                document.getElementById('suggestTagForm').addEventListener('submit', async function (e) {
-                    e.preventDefault();
-                    try {
-                        const tagName = document.getElementById('suggestTagName').value.trim();
-                        if (!tagName) {
-                            throw new Error('Please enter a tag name');
-                        }
-
-                        const timestamp = new Date().toISOString();
-                        await push(ref(db, 'suggestions/tags'), {
-                            name: tagName,
-                            suggestedBy: currentUser ? currentUser.uid : 'anonymous',
-                            createdAt: timestamp
-                        });
-
-                        document.getElementById('suggestTagForm').reset();
-                        alert('Tag suggestion submitted successfully!');
-                    } catch (error) {
-                        console.error('Error suggesting tag:', error);
-                        alert('Error: Failed to submit tag suggestion. Please try again.');
+                        console.error('Error adding tool:', error);
+                        alert('Error: Failed to add tool. Please try again.');
                     }
                 });
             }
@@ -584,120 +549,5 @@
             }
         });
     </script>
-</head>
-<body>
-    <header>
-        <h1>Aipex - Generative AI Ranking</h1>
-        <!-- Authentication Buttons -->
-        <div id="authSection">
-            <button id="signInBtn">Sign In with Google</button>
-            <button id="signOutBtn" style="display: none;">Sign Out</button>
-        </div>
-    </header>
-    <main>
-        <!-- Tag Filters Section -->
-        <section id="tagFilters">
-            <h2>Filter by Tags</h2>
-            <div id="tagsFilterContainer">
-                <!-- Tag checkboxes will be populated here -->
-            </div>
-        </section>
-
-        <!-- Ranking Section -->
-        <section id="ranking">
-            <div id="toolsList" class="tools-grid">
-                <!-- Top tools will appear here in a compact format -->
-            </div>
-        </section>
-
-        <!-- Add Tool Section (Admin Only) -->
-        <section id="addTool" class="admin-only" style="display: none;">
-            <h2>Add a New Tool</h2>
-            <form id="addToolForm">
-                <div class="form-group">
-                    <label for="toolName">Tool Name:</label>
-                    <input type="text" id="toolName" placeholder="e.g., GPT-4, DALL-E 3" required>
-                </div>
-                <div class="form-group">
-                    <label>Categories:</label>
-                    <div id="toolCategoriesContainer">
-                        <!-- Category checkboxes will be populated dynamically -->
-                    </div>
-                    <small>Select one or more categories.</small>
-                </div>
-                <div class="form-group">
-                    <label for="toolLicense">License:</label>
-                    <select id="toolLicense" required>
-                        <option value="" disabled selected>Select a license type</option>
-                        <option value="Open Source">Open Source</option>
-                        <option value="Commercial">Commercial</option>
-                        <option value="Freemium">Freemium</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="toolWeblink">Weblink:</label>
-                    <input type="text" id="toolWeblink" placeholder="e.g., https://tool-link.com" required>
-                </div>
-                <div class="form-group">
-                    <label>Tags:</label>
-                    <div id="toolTagsContainer">
-                        <!-- Tag checkboxes will be populated dynamically -->
-                    </div>
-                    <small>Select one or more tags.</small>
-                </div>
-                <button type="submit">Add Tool</button>
-            </form>
-        </section>
-
-        <!-- Suggest Tool Section (Non-Admin Users) -->
-        <section id="suggestTool" class="non-admin-only suggestion-section">
-            <h2>Suggest a New Tool</h2>
-            <p>Log in to make a suggestion.</p>
-            <!-- Suggestion form will be inserted here when logged in -->
-        </section>
-
-        <!-- Add Category Section (Admin Only) -->
-        <section id="addCategory" class="admin-only" style="display: none;">
-            <h2>Add a New Category</h2>
-            <form id="addCategoryForm">
-                <div class="form-group">
-                    <label for="categoryName">Category Name:</label>
-                    <input type="text" id="categoryName" placeholder="e.g., NLP, Vision" required>
-                </div>
-                <button type="submit">Add Category</button>
-            </form>
-        </section>
-
-        <!-- Suggest Category Section (Non-Admin Users) -->
-        <section id="suggestCategory" class="non-admin-only suggestion-section">
-            <h2>Suggest a New Category</h2>
-            <p>Log in to make a suggestion.</p>
-            <!-- Suggestion form will be inserted here when logged in -->
-        </section>
-
-        <!-- Add Tag Section (Admin Only) -->
-        <section id="addTag" class="admin-only" style="display: none;">
-            <h2>Add a New Tag</h2>
-            <form id="addTagForm">
-                <div class="form-group">
-                    <label for="tagName">Tag Name:</label>
-                    <input type="text" id="tagName" placeholder="e.g., NLP, Transformer" required>
-                </div>
-                <button type="submit">Add Tag</button>
-            </form>
-        </section>
-
-        <!-- Suggest Tag Section (Non-Admin Users) -->
-        <section id="suggestTag" class="non-admin-only suggestion-section">
-            <h2>Suggest a New Tag</h2>
-            <p>Log in to make a suggestion.</p>
-            <!-- Suggestion form will be inserted here when logged in -->
-        </section>
-    </main>
-    <footer>
-        <p>Updated: November 2024</p>
-        <p>Aipex Version: v0.1.8</p>
-        <a href="admin.html" class="admin-link" style="display: none;">Admin Page</a>
-    </footer>
 </body>
 </html>
