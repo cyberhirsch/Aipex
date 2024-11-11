@@ -87,6 +87,7 @@
                 const adminRef = ref(db, `admins/${uid}`);
                 onValue(adminRef, (snapshot) => {
                     isAdmin = snapshot.exists();
+                    console.log('Admin status:', isAdmin);
                     updateUIForRole();
                 });
             }
