@@ -1,193 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aipex Admin - Add AI Models</title>
+    <title>Aipex - Generative AI Ranking</title>
     <link rel="stylesheet" href="style.css">
+
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.0.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.0.1/firebase-database.js"></script>
+
+    <!-- Main Script -->
     <script type="module">
+        // Import Firebase modules
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
         import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-analytics.js";
-        import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-database.js";
+        import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
+        import { getDatabase, ref, onValue, get, update, set, push } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-database.js";
 
         // Firebase configuration (use your credentials)
         const firebaseConfig = {
-            apiKey: "AIzaSyCrSS4lsxgSFA7SEtseW1KoiruQbUwR_xA",
-            authDomain: "aipex-6d63b.firebaseapp.com",
-            databaseURL: "https://aipex-6d63b-default-rtdb.europe-west1.firebasedatabase.app/",
-            projectId: "aipex-6d63b",
-            storageBucket: "aipex-6d63b.appspot.com",
-            messagingSenderId: "356818143159",
-            appId: "1:356818143159:web:49222b5a85629c4630ca32",
-            measurementId: "G-D32Z47WHQ4"
+            apiKey: "YOUR_API_KEY",
+            authDomain: "YOUR_AUTH_DOMAIN",
+            databaseURL: "YOUR_DATABASE_URL",
+            projectId: "YOUR_PROJECT_ID",
+            storageBucket: "YOUR_STORAGE_BUCKET",
+            messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+            appId: "YOUR_APP_ID",
+            measurementId: "YOUR_MEASUREMENT_ID"
         };
 
         // Initialize Firebase
         const app = initializeApp(firebaseConfig);
         const analytics = getAnalytics(app);
+        const auth = getAuth();
         const db = getDatabase();
 
-        // Form Handling
+        let isAdmin = false;
+        let currentUser = null;
+        let models = []; // Declare models array globally
+
+        // Authentication Functions
         document.addEventListener('DOMContentLoaded', function () {
-            loadModels(); // Load models when page is loaded
-
-            document.getElementById('addModelForm').addEventListener('submit', async function (e) {
-                e.preventDefault();
-                try {
-                    const modelName = document.getElementById('modelName').value.trim();
-                    const modelCategory = document.getElementById('modelCategory').value;
-                    const modelLicense = document.getElementById('modelLicense').value;
-
-                    if (!modelName || !modelCategory || !modelLicense) {
-                        throw new Error('Please fill in all fields');
-                    }
-
-                    const timestamp = new Date().toISOString();
-                    await push(ref(db, 'models/'), {
-                        name: modelName,
-                        category: modelCategory,
-                        license: modelLicense,
-                        votes: 0,
-                        editorChoice: false,
-                        createdAt: timestamp,
-                        lastUpdated: timestamp
+            // Sign-In Function
+            document.getElementById('signInBtn').addEventListener('click', () => {
+                const provider = new GoogleAuthProvider();
+                signInWithPopup(auth, provider)
+                    .then((result) => {
+                        console.log('User signed in:', result.user);
+                    })
+                    .catch((error) => {
+                        console.error('Error during sign-in:', error);
+                        alert('Error during sign-in. Please try again.');
                     });
+            });
 
-                    document.getElementById('addModelForm').reset();
-                    showNotification('Model added successfully!');
-                    loadModels(); // Reload models after adding
-                } catch (error) {
-                    console.error('Error adding model:', error);
-                    alert('Error: Failed to add model. Please try again.');
+            // Sign-Out Function
+            document.getElementById('signOutBtn').addEventListener('click', () => {
+                signOut(auth).then(() => {
+                    console.log('User signed out');
+                }).catch((error) => {
+                    console.error('Error during sign-out:', error);
+                    alert('Error during sign-out. Please try again.');
+                });
+            });
+
+            // Authentication State Listener
+            onAuthStateChanged(auth, (user) => {
+                if (user) {
+                    currentUser = user;
+                    document.getElementById('signInBtn').style.display = 'none';
+                    document.getElementById('signOutBtn').style.display = 'block';
+                    checkIfAdmin(user.uid);
+                } else {
+                    currentUser = null;
+                    isAdmin = false;
+                    document.getElementById('signInBtn').style.display = 'block';
+                    document.getElementById('signOutBtn').style.display = 'none';
+                    updateUIForRole();
                 }
             });
 
-            // Load all models for management
-            async function loadModels() {
-                const modelsList = document.getElementById('modelsList');
-                modelsList.innerHTML = '';
-
-                onValue(ref(db, 'models/'), (snapshot) => {
-                    if (!snapshot.exists()) {
-                        modelsList.innerHTML = '<p>No models available yet.</p>';
-                        return;
-                    }
-
-                    // Convert to array for display
-                    const models = [];
-                    snapshot.forEach((childSnapshot) => {
-                        models.push({
-                            id: childSnapshot.key,
-                            ...childSnapshot.val()
-                        });
-                    });
-
-                    // Display each model with controls to update
-                    models.forEach((model) => {
-                        const modelElement = document.createElement('div');
-                        modelElement.className = 'model-card';
-                        modelElement.innerHTML = `
-                            <div class="model-info">
-                                <h3>${model.name}</h3>
-                                <label>Category:</label>
-                                <input type="text" value="${model.category}" id="category-${model.id}">
-                                <label>License:</label>
-                                <span>${model.license}</span>
-                                <div>
-                                    <input type="checkbox" id="editorChoice-${model.id}" ${model.editorChoice ? 'checked' : ''}>
-                                    <label for="editorChoice-${model.id}">Editor's Choice</label>
-                                </div>
-                                <button onclick="updateModel('${model.id}')">Update</button>
-                            </div>
-                        `;
-                        modelsList.appendChild(modelElement);
-                    });
+            // Check if user is admin
+            function checkIfAdmin(uid) {
+                const adminRef = ref(db, `admins/${uid}`);
+                onValue(adminRef, (snapshot) => {
+                    isAdmin = snapshot.exists();
+                    updateUIForRole();
                 });
             }
 
-            // Update model function
-            window.updateModel = async function (modelId) {
+            // Update UI based on user role
+            function updateUIForRole() {
+                // Show or hide admin-only sections
+                const adminSections = document.querySelectorAll('.admin-only');
+                adminSections.forEach(section => {
+                    section.style.display = isAdmin ? 'block' : 'none';
+                });
+
+                // Show or hide non-admin-only sections
+                const nonAdminSections = document.querySelectorAll('.non-admin-only');
+                nonAdminSections.forEach(section => {
+                    section.style.display = isAdmin ? 'none' : 'block';
+                });
+
+                // Update Editor's Choice checkboxes
+                const editorChoiceCheckboxes = document.querySelectorAll('.editor-choice-checkbox');
+                editorChoiceCheckboxes.forEach(checkbox => {
+                    checkbox.style.display = isAdmin ? 'inline-block' : 'none';
+                });
+
+                const editorChoiceLabels = document.querySelectorAll('.editor-choice-label');
+                editorChoiceLabels.forEach(label => {
+                    label.style.display = isAdmin ? 'inline-block' : 'none';
+                });
+
+                // Update Admin Page link visibility
+                const adminLinks = document.querySelectorAll('.admin-link');
+                adminLinks.forEach(link => {
+                    link.style.display = isAdmin ? 'inline' : 'none';
+                });
+            }
+
+            // Fetch categories, tags, and models (same as before)
+            // ...
+
+            // Voting Function (Updated)
+            window.voteForModel = async function (modelId) {
                 try {
-                    const updatedCategory = document.getElementById(`category-${modelId}`).value.trim();
-                    const editorChoiceChecked = document.getElementById(`editorChoice-${modelId}`).checked;
+                    // Check if the user has already voted for this model using local storage
+                    const votedModels = JSON.parse(localStorage.getItem('votedModels')) || [];
+                    if (votedModels.includes(modelId)) {
+                        alert('You have already voted for this model.');
+                        return;
+                    }
 
-                    const modelRef = ref(db, `models/${modelId}`);
-                    await update(modelRef, {
-                        category: updatedCategory,
-                        editorChoice: editorChoiceChecked,
-                        lastUpdated: new Date().toISOString()
-                    });
+                    // Proceed with voting logic
+                    const votesRef = ref(db, `models/${modelId}/votes`);
+                    const snapshot = await get(votesRef);
 
-                    showNotification('Model updated successfully!');
+                    if (!snapshot.exists()) {
+                        throw new Error('Model not found');
+                    }
+
+                    const currentVotes = snapshot.val();
+                    await set(votesRef, currentVotes + 1);
+
+                    // Store modelId in Local Storage to mark as voted
+                    votedModels.push(modelId);
+                    localStorage.setItem('votedModels', JSON.stringify(votedModels));
+
+                    alert('Vote recorded!');
                 } catch (error) {
-                    console.error('Failed to update model:', error);
-                    alert('Failed to update model. Please try again.');
+                    console.error('Failed to record vote:', error);
+                    alert('Failed to record vote. Please try again.');
                 }
             };
 
-            // Notification system
-            function showNotification(message) {
-                const notification = document.createElement('div');
-                notification.className = 'notification';
-                notification.textContent = message;
-                document.body.appendChild(notification);
+            // Rest of your existing code for models, forms, and UI updates
+            // Ensure that only admins can add models, categories, and tags
+            // ...
 
-                setTimeout(() => {
-                    notification.classList.add('fade-out');
-                    setTimeout(() => notification.remove(), 500);
-                }, 2000);
-            }
+            // Function to apply tag filters (same as before)
+            // ...
+
         });
     </script>
 </head>
-
 <body>
     <header>
-        <h1>Aipex Admin - Manage AI Models</h1>
+        <h1>Aipex - Generative AI Ranking</h1>
+        <!-- Authentication Buttons -->
+        <div id="authSection">
+            <button id="signInBtn">Sign In with Google</button>
+            <button id="signOutBtn" style="display: none;">Sign Out</button>
+        </div>
     </header>
-
     <main>
-        <section id="adminContent">
-            <h2>Add a New Model</h2>
-            <form id="addModelForm">
-                <div class="form-group">
-                    <label for="modelName">Model Name:</label>
-                    <input type="text" id="modelName" placeholder="e.g., GPT-4, DALL-E 3" required>
-                </div>
-                <div class="form-group">
-                    <label for="modelCategory">Category:</label>
-                    <select id="modelCategory" required>
-                        <option value="" disabled selected>Select a category</option>
-                        <option value="NLP">NLP</option>
-                        <option value="Vision">Vision</option>
-                        <option value="Audio">Audio</option>
-                        <option value="Robotics">Robotics</option>
-                        <option value="Generative">Generative</option>
-                        <option value="Multimodal">Multimodal</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="modelLicense">License:</label>
-                    <select id="modelLicense" required>
-                        <option value="" disabled selected>Select a license type</option>
-                        <option value="Open Source">Open Source</option>
-                        <option value="Commercial">Commercial</option>
-                        <option value="Freemium">Freemium</option>
-                    </select>
-                </div>
-                <button type="submit">Add Model</button>
-            </form>
-
-            <h2>Manage Existing Models</h2>
-            <div id="modelsList" class="models-grid">
-                <!-- List of models for management will appear here -->
+        <!-- Tag Filters Section -->
+        <section id="tagFilters">
+            <h2>Filter by Tags</h2>
+            <div id="tagsFilterContainer">
+                <!-- Tag checkboxes will be populated here -->
             </div>
-
-            <br><br>
-            <a href="index.html">Back to Rankings Page</a>
         </section>
-    </main>
-</body>
 
+        <!-- Ranking Section -->
+        <section id="ranking">
+            <div id="modelsList" class="models-grid">
+                <!-- Top models will appear here in a compact format -->
+            </div>
+        </section>
+
+        <!-- Add Model Section (Admin Only) -->
+        <section id="addModel" class="admin-only" style="display: none;">
+            <h2>Add a New Model</h2>
+            <!-- Form for admins to add models -->
+            <!-- ... -->
+        </section>
+
+        <!-- Suggest Model Section (Non-Admin Users) -->
+        <section id="suggestModel" class="non-admin-only">
+            <h2>Suggest a New Model</h2>
+            <!-- Form for users to suggest models -->
+            <!-- ... -->
+        </section>
+
+        <!-- Add Category and Tag Sections (similar adjustments) -->
+        <!-- ... -->
+    </main>
+    <footer>
+        <p>Updated: November 2024</p>
+        <p>Aipex Version: v0.1.4</p>
+        <a href="admin.html" class="admin-link" style="display: none;">Admin Page</a>
+    </footer>
+</body>
 </html>
