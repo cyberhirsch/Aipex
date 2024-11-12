@@ -41,6 +41,19 @@
         let currentUser = null;
         let models = []; // Declare models array globally
 
+        // Function to display notifications
+        function showNotification(message, type = 'info') {
+            const notification = document.getElementById('notification');
+            notification.textContent = message;
+            notification.className = `notification ${type}`;
+            notification.style.display = 'block';
+
+            // Automatically hide after 5 seconds
+            setTimeout(() => {
+                notification.style.display = 'none';
+            }, 5000);
+        }
+
         // Authentication Functions
         document.addEventListener('DOMContentLoaded', function () {
             // Sign-In Function
@@ -49,10 +62,11 @@
                 signInWithPopup(auth, provider)
                     .then((result) => {
                         console.log('User signed in:', result.user);
+                        showNotification('Successfully signed in!', 'success');
                     })
                     .catch((error) => {
                         console.error('Error during sign-in:', error);
-                        alert('Error during sign-in. Please try again.');
+                        showNotification('Error during sign-in. Please try again.', 'error');
                     });
             });
 
@@ -60,9 +74,10 @@
             document.getElementById('signOutBtn').addEventListener('click', () => {
                 signOut(auth).then(() => {
                     console.log('User signed out');
+                    showNotification('Successfully signed out!', 'success');
                 }).catch((error) => {
                     console.error('Error during sign-out:', error);
-                    alert('Error during sign-out. Please try again.');
+                    showNotification('Error during sign-out. Please try again.', 'error');
                 });
             });
 
@@ -237,7 +252,7 @@
 
                 } catch (error) {
                     console.error('Failed to load entries:', error);
-                    alert('Failed to load entries. Please try again later.');
+                    showNotification('Failed to load entries. Please try again later.', 'error');
                 }
             });
 
@@ -247,7 +262,7 @@
                     // Check if the user has already voted for this model using local storage
                     const votedModels = JSON.parse(localStorage.getItem('votedModels')) || [];
                     if (votedModels.includes(modelId)) {
-                        alert('You have already voted for this entry.');
+                        showNotification('You have already voted for this entry.', 'warning');
                         return;
                     }
 
@@ -269,17 +284,17 @@
                     votedModels.push(modelId);
                     localStorage.setItem('votedModels', JSON.stringify(votedModels));
 
-                    alert('Vote recorded!');
+                    showNotification('Vote recorded!', 'success');
                 } catch (error) {
                     console.error('Failed to record vote:', error);
-                    alert('Failed to record vote. Please try again.');
+                    showNotification('Failed to record vote. Please try again.', 'error');
                 }
             };
 
             // Function to update Editor's Choice
             async function updateEditorChoice(modelId, isChecked) {
                 if (!isAdmin) {
-                    alert('You do not have permission to update Editor\'s Choice.');
+                    showNotification('You do not have permission to update Editor\'s Choice.', 'error');
                     return;
                 }
                 try {
@@ -288,10 +303,10 @@
                         editorChoice: isChecked,
                         lastUpdated: new Date().toISOString()
                     });
-                    alert('Editor\'s Choice updated!');
+                    showNotification('Editor\'s Choice updated!', 'success');
                 } catch (error) {
                     console.error('Failed to update Editor\'s Choice:', error);
-                    alert('Failed to update Editor\'s Choice. Please try again.');
+                    showNotification('Failed to update Editor\'s Choice. Please try again.', 'error');
                 }
             }
 
@@ -299,7 +314,7 @@
             document.getElementById('addModelForm').addEventListener('submit', async function (e) {
                 e.preventDefault();
                 if (!isAdmin) {
-                    alert('You do not have permission to add entries.');
+                    showNotification('You do not have permission to add entries.', 'error');
                     return;
                 }
                 try {
@@ -333,10 +348,10 @@
                     });
 
                     document.getElementById('addModelForm').reset();
-                    alert('Entry added successfully!');
+                    showNotification('Entry added successfully!', 'success');
                 } catch (error) {
                     console.error('Error adding entry:', error);
-                    alert('Error: Failed to add entry. Please try again.');
+                    showNotification('Error: Failed to add entry. Please try again.', 'error');
                 }
             });
 
@@ -344,7 +359,7 @@
             document.getElementById('suggestModelForm').addEventListener('submit', async function (e) {
                 e.preventDefault();
                 if (!currentUser) {
-                    alert('Please log in to make a suggestion.');
+                    showNotification('Please log in to make a suggestion.', 'warning');
                     return;
                 }
                 try {
@@ -376,10 +391,10 @@
                     });
 
                     document.getElementById('suggestModelForm').reset();
-                    alert('Entry suggestion submitted successfully!');
+                    showNotification('Entry suggestion submitted successfully!', 'success');
                 } catch (error) {
                     console.error('Error suggesting entry:', error);
-                    alert('Error: Failed to submit entry suggestion. Please try again.');
+                    showNotification('Error: Failed to submit entry suggestion. Please try again.', 'error');
                 }
             });
 
@@ -387,7 +402,7 @@
             document.getElementById('addCategoryForm').addEventListener('submit', async function (e) {
                 e.preventDefault();
                 if (!isAdmin) {
-                    alert('You do not have permission to add categories.');
+                    showNotification('You do not have permission to add categories.', 'error');
                     return;
                 }
                 try {
@@ -398,10 +413,10 @@
 
                     await push(ref(db, 'categories/'), categoryName);
                     document.getElementById('addCategoryForm').reset();
-                    alert('Category added successfully!');
+                    showNotification('Category added successfully!', 'success');
                 } catch (error) {
                     console.error('Error adding category:', error);
-                    alert('Error: Failed to add category. Please try again.');
+                    showNotification('Error: Failed to add category. Please try again.', 'error');
                 }
             });
 
@@ -409,7 +424,7 @@
             document.getElementById('suggestCategoryForm').addEventListener('submit', async function (e) {
                 e.preventDefault();
                 if (!currentUser) {
-                    alert('Please log in to make a suggestion.');
+                    showNotification('Please log in to make a suggestion.', 'warning');
                     return;
                 }
                 try {
@@ -426,10 +441,10 @@
                     });
 
                     document.getElementById('suggestCategoryForm').reset();
-                    alert('Category suggestion submitted successfully!');
+                    showNotification('Category suggestion submitted successfully!', 'success');
                 } catch (error) {
                     console.error('Error suggesting category:', error);
-                    alert('Error: Failed to submit category suggestion. Please try again.');
+                    showNotification('Error: Failed to submit category suggestion. Please try again.', 'error');
                 }
             });
 
@@ -437,7 +452,7 @@
             document.getElementById('addTagForm').addEventListener('submit', async function (e) {
                 e.preventDefault();
                 if (!isAdmin) {
-                    alert('You do not have permission to add tags.');
+                    showNotification('You do not have permission to add tags.', 'error');
                     return;
                 }
                 try {
@@ -458,16 +473,16 @@
                     }
 
                     if (tagExists) {
-                        alert('Tag already exists.');
+                        showNotification('Tag already exists.', 'warning');
                         return;
                     }
 
                     await push(ref(db, 'tags/'), tagName);
                     document.getElementById('addTagForm').reset();
-                    alert('Tag added successfully!');
+                    showNotification('Tag added successfully!', 'success');
                 } catch (error) {
                     console.error('Error adding tag:', error);
-                    alert('Error: Failed to add tag. Please try again.');
+                    showNotification('Error: Failed to add tag. Please try again.', 'error');
                 }
             });
 
@@ -475,7 +490,7 @@
             document.getElementById('suggestTagForm').addEventListener('submit', async function (e) {
                 e.preventDefault();
                 if (!currentUser) {
-                    alert('Please log in to make a suggestion.');
+                    showNotification('Please log in to make a suggestion.', 'warning');
                     return;
                 }
                 try {
@@ -492,10 +507,10 @@
                     });
 
                     document.getElementById('suggestTagForm').reset();
-                    alert('Tag suggestion submitted successfully!');
+                    showNotification('Tag suggestion submitted successfully!', 'success');
                 } catch (error) {
                     console.error('Error suggesting tag:', error);
-                    alert('Error: Failed to submit tag suggestion. Please try again.');
+                    showNotification('Error: Failed to submit tag suggestion. Please try again.', 'error');
                 }
             });
 
@@ -598,6 +613,10 @@
             <button id="signOutBtn" style="display: none;">Sign Out</button>
         </div>
     </header>
+
+    <!-- Notification Area -->
+    <div id="notification" class="notification" style="display: none;"></div>
+
     <main>
         <!-- Tag Filters Section -->
         <section id="tagFilters">
@@ -745,7 +764,7 @@
     </main>
     <footer>
         <p>Updated: November 2024</p>
-        <p>Aipex Version: v0.1.7</p>
+        <p>Aipex Version: v0.1.9</p>
         <a href="admin.html" class="admin-link" style="display: none;">Admin Page</a>
     </footer>
 </body>
