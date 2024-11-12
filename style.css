@@ -236,3 +236,30 @@ input[type="checkbox"], input[type="radio"] {
     color: #ccc;
     font-style: italic;
 }
+
+/* Notification Styles */
+.notification {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    background-color: #444;
+    color: #ccc;
+    padding: 15px;
+    border-radius: 4px;
+    z-index: 1000;
+    min-width: 200px;
+    text-align: center;
+}
+
+.notification.success {
+    background-color: #28a745;
+}
+
+.notification.error {
+    background-color: #dc3545;
+}
+
+.notification.warning {
+    background-color: #ffc107;
+    color: #1e1e1e;
+}
