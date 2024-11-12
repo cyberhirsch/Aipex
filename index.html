@@ -91,7 +91,7 @@
                 });
             }
 
-            // Update UI based on user role
+            // Update UI based on user role and login status
             function updateUIForRole() {
                 // Show or hide admin-only sections
                 const adminSections = document.querySelectorAll('.admin-only');
@@ -99,10 +99,30 @@
                     section.style.display = isAdmin ? 'block' : 'none';
                 });
 
-                // Show or hide non-admin-only sections
+                // Show or hide non-admin-only sections based on login status
                 const nonAdminSections = document.querySelectorAll('.non-admin-only');
                 nonAdminSections.forEach(section => {
-                    section.style.display = isAdmin ? 'none' : 'block';
+                    if (currentUser) {
+                        section.style.display = 'block';
+                        const loginMessage = section.querySelector('.login-message');
+                        if (loginMessage) {
+                            loginMessage.style.display = 'none';
+                        }
+                        const suggestionForm = section.querySelector('.suggestion-form');
+                        if (suggestionForm) {
+                            suggestionForm.style.display = 'block';
+                        }
+                    } else {
+                        section.style.display = 'block';
+                        const loginMessage = section.querySelector('.login-message');
+                        if (loginMessage) {
+                            loginMessage.style.display = 'block';
+                        }
+                        const suggestionForm = section.querySelector('.suggestion-form');
+                        if (suggestionForm) {
+                            suggestionForm.style.display = 'none';
+                        }
+                    }
                 });
 
                 // Update Editor's Choice checkboxes
@@ -199,7 +219,7 @@
                     modelsList.innerHTML = '';
 
                     if (!snapshot.exists()) {
-                        modelsList.innerHTML = '<p>No models available yet.</p>';
+                        modelsList.innerHTML = '<p>No entries available yet.</p>';
                         return;
                     }
 
@@ -216,8 +236,8 @@
                     applyTagFilters();
 
                 } catch (error) {
-                    console.error('Failed to load models:', error);
-                    alert('Failed to load model rankings. Please try again later.');
+                    console.error('Failed to load entries:', error);
+                    alert('Failed to load entries. Please try again later.');
                 }
             });
 
@@ -227,7 +247,7 @@
                     // Check if the user has already voted for this model using local storage
                     const votedModels = JSON.parse(localStorage.getItem('votedModels')) || [];
                     if (votedModels.includes(modelId)) {
-                        alert('You have already voted for this model.');
+                        alert('You have already voted for this entry.');
                         return;
                     }
 
@@ -236,7 +256,7 @@
                     const snapshot = await get(modelRef);
 
                     if (!snapshot.exists()) {
-                        throw new Error('Model not found');
+                        throw new Error('Entry not found');
                     }
 
                     const currentVotes = snapshot.val().votes;
@@ -275,11 +295,11 @@
                 }
             }
 
-            // Add new model function (Admin)
+            // Add new entry function (Admin)
             document.getElementById('addModelForm').addEventListener('submit', async function (e) {
                 e.preventDefault();
                 if (!isAdmin) {
-                    alert('You do not have permission to add models.');
+                    alert('You do not have permission to add entries.');
                     return;
                 }
                 try {
@@ -313,16 +333,20 @@
                     });
 
                     document.getElementById('addModelForm').reset();
-                    alert('Model added successfully!');
+                    alert('Entry added successfully!');
                 } catch (error) {
-                    console.error('Error adding model:', error);
-                    alert('Error: Failed to add model. Please try again.');
+                    console.error('Error adding entry:', error);
+                    alert('Error: Failed to add entry. Please try again.');
                 }
             });
 
-            // Suggest new model function (Non-Admin)
+            // Suggest new entry function (Non-Admin)
             document.getElementById('suggestModelForm').addEventListener('submit', async function (e) {
                 e.preventDefault();
+                if (!currentUser) {
+                    alert('Please log in to make a suggestion.');
+                    return;
+                }
                 try {
                     const modelName = document.getElementById('suggestModelName').value.trim();
                     const modelLicense = document.getElementById('suggestModelLicense').value;
@@ -347,15 +371,15 @@
                         license: modelLicense,
                         weblink: modelWeblink,
                         tags: modelTags,
-                        suggestedBy: currentUser ? currentUser.uid : 'anonymous',
+                        suggestedBy: currentUser.uid,
                         createdAt: timestamp
                     });
 
                     document.getElementById('suggestModelForm').reset();
-                    alert('Model suggestion submitted successfully!');
+                    alert('Entry suggestion submitted successfully!');
                 } catch (error) {
-                    console.error('Error suggesting model:', error);
-                    alert('Error: Failed to submit model suggestion. Please try again.');
+                    console.error('Error suggesting entry:', error);
+                    alert('Error: Failed to submit entry suggestion. Please try again.');
                 }
             });
 
@@ -384,6 +408,10 @@
             // Suggest new category function (Non-Admin)
             document.getElementById('suggestCategoryForm').addEventListener('submit', async function (e) {
                 e.preventDefault();
+                if (!currentUser) {
+                    alert('Please log in to make a suggestion.');
+                    return;
+                }
                 try {
                     const categoryName = document.getElementById('suggestCategoryName').value.trim();
                     if (!categoryName) {
@@ -393,7 +421,7 @@
                     const timestamp = new Date().toISOString();
                     await push(ref(db, 'suggestions/categories'), {
                         name: categoryName,
-                        suggestedBy: currentUser ? currentUser.uid : 'anonymous',
+                        suggestedBy: currentUser.uid,
                         createdAt: timestamp
                     });
 
@@ -446,6 +474,10 @@
             // Suggest new tag function (Non-Admin)
             document.getElementById('suggestTagForm').addEventListener('submit', async function (e) {
                 e.preventDefault();
+                if (!currentUser) {
+                    alert('Please log in to make a suggestion.');
+                    return;
+                }
                 try {
                     const tagName = document.getElementById('suggestTagName').value.trim();
                     if (!tagName) {
@@ -455,7 +487,7 @@
                     const timestamp = new Date().toISOString();
                     await push(ref(db, 'suggestions/tags'), {
                         name: tagName,
-                        suggestedBy: currentUser ? currentUser.uid : 'anonymous',
+                        suggestedBy: currentUser.uid,
                         createdAt: timestamp
                     });
 
@@ -477,7 +509,7 @@
                 modelsList.innerHTML = '';
 
                 if (models.length === 0) {
-                    modelsList.innerHTML = '<p>No models available yet.</p>';
+                    modelsList.innerHTML = '<p>No entries available yet.</p>';
                     return;
                 }
 
@@ -578,16 +610,16 @@
         <!-- Ranking Section -->
         <section id="ranking">
             <div id="modelsList" class="models-grid">
-                <!-- Top models will appear here in a compact format -->
+                <!-- Top entries will appear here in a compact format -->
             </div>
         </section>
 
-        <!-- Add Model Section (Admin Only) -->
+        <!-- Add Entry Section (Admin Only) -->
         <section id="addModel" class="admin-only" style="display: none;">
-            <h2>Add a New Model</h2>
+            <h2>Add a New Entry</h2>
             <form id="addModelForm">
                 <div class="form-group">
-                    <label for="modelName">Model Name:</label>
+                    <label for="modelName">Entry Name:</label>
                     <input type="text" id="modelName" placeholder="e.g., GPT-4, DALL-E 3" required>
                 </div>
                 <div class="form-group">
@@ -608,7 +640,7 @@
                 </div>
                 <div class="form-group">
                     <label for="modelWeblink">Weblink:</label>
-                    <input type="text" id="modelWeblink" placeholder="e.g., https://model-link.com" required>
+                    <input type="text" id="modelWeblink" placeholder="e.g., https://entry-link.com" required>
                 </div>
                 <div class="form-group">
                     <label>Tags:</label>
@@ -617,16 +649,17 @@
                     </div>
                     <small>Select one or more tags.</small>
                 </div>
-                <button type="submit">Add Model</button>
+                <button type="submit">Add Entry</button>
             </form>
         </section>
 
-        <!-- Suggest Model Section (Non-Admin Users) -->
+        <!-- Suggest Entry Section (Non-Admin Users) -->
         <section id="suggestModel" class="non-admin-only">
-            <h2>Suggest a New Model</h2>
-            <form id="suggestModelForm">
+            <h2>Suggest a New Entry</h2>
+            <p class="login-message" style="display: none;">Log in to make a suggestion.</p>
+            <form id="suggestModelForm" class="suggestion-form" style="display: none;">
                 <div class="form-group">
-                    <label for="suggestModelName">Model Name:</label>
+                    <label for="suggestModelName">Entry Name:</label>
                     <input type="text" id="suggestModelName" placeholder="e.g., GPT-4, DALL-E 3" required>
                 </div>
                 <div class="form-group">
@@ -647,7 +680,7 @@
                 </div>
                 <div class="form-group">
                     <label for="suggestModelWeblink">Weblink:</label>
-                    <input type="text" id="suggestModelWeblink" placeholder="e.g., https://model-link.com" required>
+                    <input type="text" id="suggestModelWeblink" placeholder="e.g., https://entry-link.com" required>
                 </div>
                 <div class="form-group">
                     <label>Tags:</label>
@@ -656,7 +689,7 @@
                     </div>
                     <small>Select one or more tags.</small>
                 </div>
-                <button type="submit">Suggest Model</button>
+                <button type="submit">Suggest Entry</button>
             </form>
         </section>
 
@@ -675,7 +708,8 @@
         <!-- Suggest Category Section (Non-Admin Users) -->
         <section id="suggestCategory" class="non-admin-only">
             <h2>Suggest a New Category</h2>
-            <form id="suggestCategoryForm">
+            <p class="login-message" style="display: none;">Log in to make a suggestion.</p>
+            <form id="suggestCategoryForm" class="suggestion-form" style="display: none;">
                 <div class="form-group">
                     <label for="suggestCategoryName">Category Name:</label>
                     <input type="text" id="suggestCategoryName" placeholder="e.g., NLP, Vision" required>
@@ -699,7 +733,8 @@
         <!-- Suggest Tag Section (Non-Admin Users) -->
         <section id="suggestTag" class="non-admin-only">
             <h2>Suggest a New Tag</h2>
-            <form id="suggestTagForm">
+            <p class="login-message" style="display: none;">Log in to make a suggestion.</p>
+            <form id="suggestTagForm" class="suggestion-form" style="display: none;">
                 <div class="form-group">
                     <label for="suggestTagName">Tag Name:</label>
                     <input type="text" id="suggestTagName" placeholder="e.g., NLP, Transformer" required>
