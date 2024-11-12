@@ -118,9 +118,6 @@
                 });
             }
 
-            // Rest of your existing code for fetching categories, tags, and models
-            // Modify the model rendering function to check for isAdmin
-
             // Fetch categories from database
             const modelCategoriesContainer = document.getElementById('modelCategoriesContainer');
             const suggestModelCategoriesContainer = document.getElementById('suggestModelCategoriesContainer');
@@ -528,6 +525,7 @@
                             <div class="model-info">
                                 <span class="model-index">${index + 1}.</span>
                                 <a href="${model.weblink}" target="_blank" class="model-name">${model.name}</a>
+                                ${model.editorChoice ? '<img src="thumbs.png" alt="Editor\'s Choice" class="editor-choice-icon">' : ''}
                                 <span class="model-license">${model.license}</span>
                                 <span class="model-votes">${model.votes} votes</span>
                                 <button onclick="voteForModel('${model.id}')" class="vote-button">Vote</button>
@@ -561,7 +559,10 @@
         <h1>Aipex - Generative AI Ranking</h1>
         <!-- Authentication Buttons -->
         <div id="authSection">
-            <button id="signInBtn">Sign In with Google</button>
+            <!-- Updated Sign-In Button -->
+            <button id="signInBtn" style="background: none; border: none; padding: 0;">
+                <img src="https://developers.google.com/static/identity/images/branding_guideline_sample_nt_rd_lg.svg" alt="Sign in with Google" style="height: 40px;">
+            </button>
             <button id="signOutBtn" style="display: none;">Sign Out</button>
         </div>
     </header>
