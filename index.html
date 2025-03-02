@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aipex - Generative AI Ranking</title>
     <link rel="stylesheet" href="style.css">
 
@@ -40,6 +41,7 @@
         let isAdmin = false;
         let currentUser = null;
         let models = []; // Declare models array globally
+        let selectedCategories = new Set(); // Store selected categories
 
         // Function to display notifications
         function showNotification(message, type = 'info') {
@@ -156,11 +158,13 @@
             // Fetch categories from database
             const modelCategoriesContainer = document.getElementById('modelCategoriesContainer');
             const suggestModelCategoriesContainer = document.getElementById('suggestModelCategoriesContainer');
+            const categoryFilterContainer = document.getElementById('categoryFilterContainer'); // ADDED
 
             function populateCategories() {
                 onValue(ref(db, 'categories/'), (snapshot) => {
                     modelCategoriesContainer.innerHTML = ''; // Clear existing categories
                     suggestModelCategoriesContainer.innerHTML = ''; // Clear existing categories
+                    categoryFilterContainer.innerHTML = ''; // Clear existing categories
                     if (snapshot.exists()) {
                         snapshot.forEach((childSnapshot) => {
                             const category = childSnapshot.val();
@@ -174,6 +178,26 @@
 
                             const suggestCategoryElement = categoryElement.cloneNode(true);
                             suggestModelCategoriesContainer.appendChild(suggestCategoryElement);
+
+                            // Add to category filter container
+                            const filterCategoryElement = document.createElement('div'); //ADDED
+                            filterCategoryElement.className = 'category-filter';  //ADDED
+                            filterCategoryElement.innerHTML = `  //ADDED
+                                <input type="checkbox" id="categoryFilter-${category}" value="${category}" class="category-filter-checkbox">  //ADDED
+                                <label for="categoryFilter-${category}">${category}</label>  //ADDED
+                            `;  //ADDED
+                            categoryFilterContainer.appendChild(filterCategoryElement); //ADDED
+
+                            // Event listener for Category Filter checkboxes
+                            const categoryCheckbox = filterCategoryElement.querySelector('.category-filter-checkbox');
+                            categoryCheckbox.addEventListener('change', function() {
+                                if (this.checked) {
+                                    selectedCategories.add(category);
+                                } else {
+                                    selectedCategories.delete(category);
+                                }
+                                applyFilters(); // Call applyFilters instead of applyTagFilters
+                            });
                         });
                     }
                 });
@@ -220,7 +244,7 @@
                         // Add event listener to tag filter checkboxes
                         const tagCheckboxes = document.querySelectorAll('.tag-checkbox');
                         tagCheckboxes.forEach(checkbox => {
-                            checkbox.addEventListener('change', applyTagFilters);
+                            tagCheckboxes.addEventListener('change', applyFilters); // Call applyFilters instead of applyTagFilters
                         });
                     }
                 });
@@ -247,8 +271,8 @@
                         });
                     });
 
-                    // Apply tag filters
-                    applyTagFilters();
+                    // Apply filters
+                    applyFilters(); // Call applyFilters
 
                 } catch (error) {
                     console.error('Failed to load entries:', error);
@@ -515,7 +539,7 @@
             });
 
             // Function to apply tag filters
-            function applyTagFilters() {
+            function applyFilters() {
                 // Get selected tags
                 const selectedTags = Array.from(document.querySelectorAll('.tag-checkbox:checked')).map(cb => cb.value);
 
@@ -540,12 +564,15 @@
                 // Group models by category
                 const groupedModels = {};
                 allCategories.forEach(category => {
+                    // Check if the category is selected to be displayed.
+                    const isCategorySelected = selectedCategories.size === 0 || selectedCategories.has(category);
+
                     groupedModels[category] = models.filter(model => {
                         // Check if model belongs to this category
                         const inCategory = model.categories && model.categories.includes(category);
                         // Filter models based on selected tags
                         const hasSelectedTags = selectedTags.length === 0 || (model.tags && model.tags.some(tag => selectedTags.includes(tag)));
-                        return inCategory && hasSelectedTags;
+                        return inCategory && hasSelectedTags && isCategorySelected; // Added isCategorySelected
                     });
                 });
 
@@ -600,6 +627,166 @@
             }
         });
     </script>
+    <style>
+        /* Basic Reset */
+        body, h1, h2, p, button, a, img {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-family: sans-serif;
+            box-sizing: border-box;
+        }
+
+        /* General Styling */
+        body {
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px; /* Reduced padding */
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+        }
+
+        header h1 {
+            font-size: 1.5em; /* Reduced font size */
+            margin: 0;
+            flex-basis: 100%; /* Take full width on smaller screens */
+        }
+
+        #authSection {
+            display: flex;
+            align-items: center;
+        }
+
+        #signInBtn img {
+            height: 30px; /* Reduced height */
+        }
+
+        #signOutBtn {
+            background-color: #555;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 20px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #3e8e41;
+        }
+
+        .models-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .model-info {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        /* Category and Tag Filters */
+        #categoryFilters, #tagFilters {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #categoryFilterContainer, #tagsFilterContainer {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
+        .category-filter, .tag-filter {
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+
+        .category-filter label, .tag-filter label {
+            font-weight: normal;
+            margin-left: 5px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #ddd;
+            font-size: 0.8em;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.2em;
+            }
+
+            .models-grid {
+                grid-template-columns: 1fr;
+            }
+
+            #authSection {
+                flex-basis: 100%; /* Take full width on smaller screens */
+                justify-content: center; /* Center the content */
+                margin-top: 10px; /* Add some spacing */
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -618,6 +805,14 @@
     <div id="notification" class="notification" style="display: none;"></div>
 
     <main>
+        <!-- Category Filters Section -->
+        <section id="categoryFilters">
+            <h2>Filter by Categories</h2>
+            <div id="categoryFilterContainer">
+                <!-- Category checkboxes will be populated here -->
+            </div>
+        </section>
+
         <!-- Tag Filters Section -->
         <section id="tagFilters">
             <h2>Filter by Tags</h2>
@@ -655,7 +850,7 @@
                         <option value="Unreleased">Unreleased</option>
                         <option value="Open Source">Open Source</option>
                         <option value="Commercial">Commercial</option>
-                        <option value="Freemium">Freemium</option>        
+                        <option value="Freemium">Freemium</option>
                         <option value="Free">Free</option>
                     </select>
                 </div>
@@ -694,80 +889,4 @@
                     <label for="suggestModelLicense">License:</label>
                     <select id="suggestModelLicense" required>
                         <option value="" disabled selected>Select a license type</option>
-                        <option value="Open Source">Open Source</option>
-                        <option value="Commercial">Commercial</option>
-                        <option value="Freemium">Freemium</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="suggestModelWeblink">Weblink:</label>
-                    <input type="text" id="suggestModelWeblink" placeholder="e.g., https://entry-link.com" required>
-                </div>
-                <div class="form-group">
-                    <label>Tags:</label>
-                    <div id="suggestModelTagsContainer">
-                        <!-- Tag checkboxes will be populated dynamically -->
-                    </div>
-                    <small>Select one or more tags.</small>
-                </div>
-                <button type="submit">Suggest Entry</button>
-            </form>
-        </section>
-
-        <!-- Add Category Section (Admin Only) -->
-        <section id="addCategory" class="admin-only" style="display: none;">
-            <h2>Add a New Category</h2>
-            <form id="addCategoryForm">
-                <div class="form-group">
-                    <label for="categoryName">Category Name:</label>
-                    <input type="text" id="categoryName" placeholder="e.g., NLP, Vision" required>
-                </div>
-                <button type="submit">Add Category</button>
-            </form>
-        </section>
-
-        <!-- Suggest Category Section (Non-Admin Users) -->
-        <section id="suggestCategory" class="non-admin-only">
-            <h2>Suggest a New Category</h2>
-            <p class="login-message" style="display: none;">Log in to make a suggestion.</p>
-            <form id="suggestCategoryForm" class="suggestion-form" style="display: none;">
-                <div class="form-group">
-                    <label for="suggestCategoryName">Category Name:</label>
-                    <input type="text" id="suggestCategoryName" placeholder="e.g., NLP, Vision" required>
-                </div>
-                <button type="submit">Suggest Category</button>
-            </form>
-        </section>
-
-        <!-- Add Tag Section (Admin Only) -->
-        <section id="addTag" class="admin-only" style="display: none;">
-            <h2>Add a New Tag</h2>
-            <form id="addTagForm">
-                <div class="form-group">
-                    <label for="tagName">Tag Name:</label>
-                    <input type="text" id="tagName" placeholder="e.g., NLP, Transformer" required>
-                </div>
-                <button type="submit">Add Tag</button>
-            </form>
-        </section>
-
-        <!-- Suggest Tag Section (Non-Admin Users) -->
-        <section id="suggestTag" class="non-admin-only">
-            <h2>Suggest a New Tag</h2>
-            <p class="login-message" style="display: none;">Log in to make a suggestion.</p>
-            <form id="suggestTagForm" class="suggestion-form" style="display: none;">
-                <div class="form-group">
-                    <label for="suggestTagName">Tag Name:</label>
-                    <input type="text" id="suggestTagName" placeholder="e.g., NLP, Transformer" required>
-                </div>
-                <button type="submit">Suggest Tag</button>
-            </form>
-        </section>
-    </main>
-    <footer>
-        <p>Updated: November 2024</p>
-        <p>Aipex Version: v0.1.9</p>
-        <a href="admin.html" class="admin-link" style="display: none;">Admin Page</a>
-    </footer>
-</body>
-</html>
+                        <option value="Open Source">Open Source</
