@@ -17,6 +17,6 @@ The hand-curated tools list of the original 2024-25 site (Firebase) lives in `da
 
 ## Score
 
-Within one source category, scores are rescaled so the leader is 100 and the 15th entry is 0 (lower-is-better metrics inverted). A model's score is the mean over all sources that rank it in that category.
+Within one source category, a score becomes 100 × 2^(−(leader − score) / (leader − 15th place)): the leader is 100, the 15th place 50 (lower-is-better metrics measured the other way). A model's score is the mean over all sources that rank it; in categories with several sources it is pulled down toward 50 by half a board's weight, so a leader on every board beats a leader on one.
 
-Static site: `index.html`, `style.css`, `app.js`, `data/aipex.json`. No build step for the page itself.
+Static site: `index.html`, `style.css`, `app.js`, `data/aipex.json`, `data/catalog.json`. No build step for the page itself.
