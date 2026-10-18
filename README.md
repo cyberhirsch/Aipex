@@ -11,6 +11,10 @@ Live: https://cyberhirsch.github.io/Aipex/
 3. Add open/licence/VRAM facts for new models in `data/models.json`, and name variants in `data/aliases.json`.
 4. Run `python scripts/build.py` to write `data/aipex.json`.
 
+## Tools & apps
+
+The hand-curated tools list of the original 2024-25 site (Firebase) lives in `data/catalog.json`, converted from the raw export in `data/firebase/` by `python scripts/import_firebase.py`. Edit `data/catalog.json` directly to add or change tools.
+
 ## Score
 
 Within one source category, scores are rescaled so the leader is 100 and the 15th entry is 0 (lower-is-better metrics inverted). A model's score is the mean over all sources that rank it in that category.

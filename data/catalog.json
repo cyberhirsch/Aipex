@@ -1,0 +1,1049 @@
+{
+ "source": "Aipex Firebase database (2024-2025), imported 2026-10-18",
+ "categories": [
+  "3D Generation",
+  "Image Generation",
+  "Image Manipulation",
+  "Music Generation",
+  "Realtime Generation",
+  "Text Generation",
+  "Video Generation",
+  "Video Manipulation",
+  "Voice Generation"
+ ],
+ "tags": [
+  "Controlnet",
+  "Denoising",
+  "Depth Estimation",
+  "Image-to-Image",
+  "Image-to-Video",
+  "Inpainting",
+  "Lip Syncing",
+  "Model",
+  "Motion Transfer",
+  "Multimodal",
+  "Openpose",
+  "Outpainting",
+  "Platform",
+  "Pose Estimation",
+  "Segmentation",
+  "Speech-to-Text",
+  "Stem Separation",
+  "Style Transfer",
+  "Text-to-Image",
+  "Text-to-Music",
+  "Text-to-Video",
+  "Text-to-Voice",
+  "Upscaling",
+  "Video-to-Video",
+  "Voice Cloning"
+ ],
+ "tools": [
+  {
+   "id": "-OBUrgFuxCJUF2ls9byV",
+   "name": "ComfyUI",
+   "categories": [
+    "Image Generation",
+    "Image Manipulation"
+   ],
+   "tags": [
+    "Controlnet",
+    "Depth Estimation",
+    "Image-to-Image",
+    "Image-to-Video",
+    "Inpainting",
+    "Motion Transfer",
+    "Openpose",
+    "Outpainting",
+    "Platform",
+    "Pose Estimation",
+    "Style Transfer",
+    "Text-to-Video",
+    "Upscaling"
+   ],
+   "license": "Open Source",
+   "open": true,
+   "link": "https://github.com/comfyanonymous/ComfyUI",
+   "editorChoice": true,
+   "votes": 1,
+   "created": "2024-11-12",
+   "updated": "2024-11-21"
+  },
+  {
+   "id": "-ODz4_5csGaVo0UjOjJh",
+   "name": "Google AI Studio",
+   "categories": [
+    "Text Generation"
+   ],
+   "tags": [
+    "Platform"
+   ],
+   "license": "Freemium",
+   "open": false,
+   "link": "https://aistudio.google.com/",
+   "editorChoice": true,
+   "votes": 1,
+   "created": "2024-12-13",
+   "updated": "2024-12-13"
+  },
+  {
+   "id": "-OFky0i4ZYqg95_3Dm2T",
+   "name": "Hailuo Audio",
+   "categories": [
+    "Voice Generation"
+   ],
+   "tags": [
+    "Model",
+    "Platform",
+    "Text-to-Voice"
+   ],
+   "license": "Free",
+   "open": false,
+   "link": "https://www.hailuo.ai/audio",
+   "editorChoice": true,
+   "votes": 1,
+   "created": "2025-01-04",
+   "updated": "2025-01-04"
+  },
+  {
+   "id": "-OOvFJDUxjtA5Kk_Vpzj",
+   "name": "Hunyuan3D 2.5",
+   "categories": [
+    "3D Generation"
+   ],
+   "tags": [
+    "Model",
+    "Platform"
+   ],
+   "license": "Freemium",
+   "open": false,
+   "link": "https://3d.hunyuan.tencent.com/",
+   "editorChoice": true,
+   "votes": 1,
+   "created": "2025-04-28",
+   "updated": "2025-04-28"
+  },
+  {
+   "id": "-OBX88cyC75R2gifeS1U",
+   "name": "Kling 1.5",
+   "categories": [
+    "Video Generation"
+   ],
+   "tags": [
+    "Image-to-Video",
+    "Model",
+    "Text-to-Video"
+   ],
+   "license": "Commercial",
+   "open": false,
+   "link": "https://klingai.com/",
+   "editorChoice": true,
+   "votes": 1,
+   "created": "2024-11-12",
+   "updated": "2024-11-12"
+  },
+  {
+   "id": "-ODB56QLrwUt9MypVTSh",
+   "name": "Oasis",
+   "categories": [
+    "Realtime Generation"
+   ],
+   "tags": [
+    "Model"
+   ],
+   "license": "Open Source",
+   "open": true,
+   "link": "https://oasis-model.github.io/",
+   "editorChoice": true,
+   "votes": 1,
+   "created": "2024-12-03",
+   "updated": "2024-12-03"
+  },
+  {
+   "id": "-OFfhQMk6Z4NistIq-bF",
+   "name": "Recraft AI",
+   "categories": [
+    "Image Generation",
+    "Image Manipulation"
+   ],
+   "tags": [
+    "Image-to-Image",
+    "Inpainting",
+    "Text-to-Image"
+   ],
+   "license": "Freemium",
+   "open": false,
+   "link": "https://www.recraft.ai/invite/wWFVHLk7ZS",
+   "editorChoice": true,
+   "votes": 1,
+   "created": "2025-01-03",
+   "updated": "2025-01-03"
+  },
+  {
+   "id": "-OBS45H-V6ASYbteWkVO",
+   "name": "Stable Diffusion WebUI Forge",
+   "categories": [
+    "Image Generation",
+    "Image Manipulation"
+   ],
+   "tags": [
+    "Controlnet",
+    "Depth Estimation",
+    "Image-to-Image",
+    "Image-to-Video",
+    "Inpainting",
+    "Motion Transfer",
+    "Openpose",
+    "Outpainting",
+    "Platform",
+    "Pose Estimation",
+    "Style Transfer",
+    "Text-to-Image",
+    "Text-to-Video",
+    "Upscaling"
+   ],
+   "license": "Open Source",
+   "open": true,
+   "link": "https://github.com/lllyasviel/stable-diffusion-webui-forge",
+   "editorChoice": true,
+   "votes": 1,
+   "created": "2024-11-11",
+   "updated": "2024-11-21"
+  },
+  {
+   "id": "-OBe9Yz6xSx9JikwXxWR",
+   "name": "Udio",
+   "categories": [
+    "Music Generation"
+   ],
+   "tags": [
+    "Text-to-Music"
+   ],
+   "license": "Freemium",
+   "open": false,
+   "link": "https://www.udio.com/",
+   "editorChoice": true,
+   "votes": 1,
+   "created": "2024-11-14",
+   "updated": "2024-11-14"
+  },
+  {
+   "id": "-OBUuvH6JpFc6LRnq3U0",
+   "name": "ChatGPT o1-preview",
+   "categories": [
+    "Text Generation"
+   ],
+   "tags": [
+    "Checkpoint"
+   ],
+   "license": "Commercial",
+   "open": false,
+   "link": "https://chatgpt.com/?model=o1-preview",
+   "editorChoice": false,
+   "votes": 1,
+   "created": "2024-11-12",
+   "updated": "2024-12-13"
+  },
+  {
+   "id": "-OBX6XfGZlbGTWdxsKs4",
+   "name": "Kling",
+   "categories": [
+    "Video Generation"
+   ],
+   "tags": [
+    "Image-to-Image",
+    "Image-to-Video",
+    "Platform",
+    "Text-to-Image",
+    "Text-to-Video"
+   ],
+   "license": "Commercial",
+   "open": false,
+   "link": "https://klingai.com/",
+   "editorChoice": false,
+   "votes": 1,
+   "created": "2024-11-12",
+   "updated": "2024-11-12"
+  },
+  {
+   "id": "-OBeDHcm7kT6bHk9Jr4F",
+   "name": "Krea AI",
+   "categories": [
+    "Video Manipulation"
+   ],
+   "tags": [
+    "Denoising",
+    "Upscaling"
+   ],
+   "license": "Freemium",
+   "open": false,
+   "link": "https://www.krea.ai/apps/image/enhancer",
+   "editorChoice": false,
+   "votes": 1,
+   "created": "2024-11-14",
+   "updated": "2024-11-14"
+  },
+  {
+   "id": "-OCDO4y2pmgRYzux7P8N",
+   "name": "Krea AI",
+   "categories": [
+    "Image Generation",
+    "Video Generation"
+   ],
+   "tags": [
+    "Image-to-Video",
+    "Platform",
+    "Text-to-Image",
+    "Text-to-Video",
+    "Upscaling"
+   ],
+   "license": "Freemium",
+   "open": false,
+   "link": "https://www.krea.ai/",
+   "editorChoice": false,
+   "votes": 1,
+   "created": "2024-11-21",
+   "updated": "2024-11-21"
+  },
+  {
+   "id": "-OBeB-GX70APcwqcfC5A",
+   "name": "Meshy",
+   "categories": [
+    "3D Generation"
+   ],
+   "tags": [
+    "Platform"
+   ],
+   "license": "Freemium",
+   "open": false,
+   "link": "https://www.meshy.ai/",
+   "editorChoice": false,
+   "votes": 1,
+   "created": "2024-11-14",
+   "updated": "2025-04-28"
+  },
+  {
+   "id": "-OBe8iVMy2ieuEDlZW_4",
+   "name": "Midjourney",
+   "categories": [
+    "Image Generation"
+   ],
+   "tags": [
+    "Text-to-Image"
+   ],
+   "license": "Commercial",
+   "open": false,
+   "link": "https://www.midjourney.com/",
+   "editorChoice": false,
+   "votes": 1,
+   "created": "2024-11-14",
+   "updated": "2024-11-21"
+  },
+  {
+   "id": "-ODefdE__jo0Kuq00oRa",
+   "name": "MoGe: Accurate Monocular Geometry Estimation",
+   "categories": [
+    "3D Generation"
+   ],
+   "tags": [
+    "Depth Estimation",
+    "Model"
+   ],
+   "license": "Open Source",
+   "open": true,
+   "link": "https://github.com/microsoft/moge",
+   "editorChoice": false,
+   "votes": 1,
+   "created": "2024-12-09",
+   "updated": "2024-12-27"
+  },
+  {
+   "id": "-OG-ECoPhD6lEyeE7tow",
+   "name": "Tripo",
+   "categories": [
+    "3D Generation"
+   ],
+   "tags": [
+    "Model",
+    "Platform"
+   ],
+   "license": "Freemium",
+   "open": false,
+   "link": "https://www.tripo3d.ai/",
+   "editorChoice": false,
+   "votes": 1,
+   "created": "2025-01-07",
+   "updated": "2025-01-10"
+  },
+  {
+   "id": "-OG-FQ9tC7hkTkm6XmzG",
+   "name": "Anything World",
+   "categories": [
+    "3D Generation"
+   ],
+   "tags": [
+    "Model",
+    "Platform"
+   ],
+   "license": "Freemium",
+   "open": false,
+   "link": "https://app.anything.world/",
+   "editorChoice": false,
+   "votes": 0,
+   "created": "2025-01-07",
+   "updated": "2025-01-07"
+  },
+  {
+   "id": "-OFrDM4zcGAEAgLzPaDw",
+   "name": "Backflip",
+   "categories": [
+    "3D Generation"
+   ],
+   "tags": [
+    "Model",
+    "Platform"
+   ],
+   "license": "Freemium",
+   "open": false,
+   "link": "https://app.backflip.ai/",
+   "editorChoice": false,
+   "votes": 0,
+   "created": "2025-01-05",
+   "updated": "2025-01-22"
+  },
+  {
+   "id": "-OBX-YZXGIgDvHgz62zI",
+   "name": "ChatGPT",
+   "categories": [
+    "Text Generation"
+   ],
+   "tags": [
+    "Platform"
+   ],
+   "license": "Commercial",
+   "open": false,
+   "link": "https://chatgpt.com/",
+   "editorChoice": false,
+   "votes": 0,
+   "created": "2024-11-12",
+   "updated": "2024-11-12"
+  },
+  {
+   "id": "-OBe8SktXgT1NLXqfxyF",
+   "name": "Claude 3.5 Sonnet",
+   "categories": [
+    "Text Generation"
+   ],
+   "tags": [
+    "Model",
+    "Multimodal"
+   ],
+   "license": "Freemium",
+   "open": false,
+   "link": "https://claude.ai/new",
+   "editorChoice": false,
+   "votes": 0,
+   "created": "2024-11-14",
+   "updated": "2024-11-14"
+  },
+  {
+   "id": "-ODehxWJfLDZz5lciDUE",
+   "name": "ConsiStory - Consistent Text-to-Image Generation",
+   "categories": [
+    "Image Generation"
+   ],
+   "tags": [
+    "Model",
+    "Text-to-Image"
+   ],
+   "license": "Open Source",
+   "open": true,
+   "link": "https://github.com/NVlabs/consistory",
+   "editorChoice": false,
+   "votes": 0,
+   "created": "2024-12-09",
+   "updated": "2024-12-09"
+  },
+  {
+   "id": "-OHgZKk_3cx-cKcJlEyC",
+   "name": "Deepseek R1",
+   "categories": [
+    "Text Generation"
+   ],
+   "tags": [
+    "Model"
+   ],
+   "license": "Open Source",
+   "open": true,
+   "link": "https://www.deepseek.com/",
+   "editorChoice": false,
+   "votes": 0,
+   "created": "2025-01-28",
+   "updated": "2025-01-28"
+  },
+  {
+   "id": "-ODB3M3NvWmj5CpCalnP",
+   "name": "Diamond",
+   "categories": [
+    "Realtime Generation"
+   ],
+   "tags": [
+    "Model"
+   ],
+   "license": "Open Source",
+   "open": true,
+   "link": "https://github.com/eloialonso/diamond",
+   "editorChoice": false,
+   "votes": 0,
+   "created": "2024-12-03",
+   "updated": "2024-12-03"
+  },
+  {
+   "id": "-OC2Y0fhdozCMaTKSNve",
+   "name": "DimensionX",
+   "categories": [
+    "Video Generation"
+   ],
+   "tags": [
+    "Image-to-Video",
+    "Text-to-Video"
+   ],
+   "license": "Open Source",
+   "open": true,
+   "link": "https://github.com/wenqsun/DimensionX",
+   "editorChoice": false,
+   "votes": 0,
+   "created": "2024-11-19",
+   "updated": "2024-11-19"
+  },
+  {
+   "id": "-ODeqoRZFS2RrJElXD3p",
+   "name": "F5 Text-to-Speech with Flow Matching",
+   "categories": [
+    "Voice Generation"
+   ],
+   "tags": [
+    "Model",
+    "Text-to-Voice"
+   ],
+   "license": "Open Source",
+   "open": true,
+   "link": "https://github.com/SWivid/F5-TTS",
+   "editorChoice": false,
+   "votes": 0,
+   "created": "2024-12-09",
+   "updated": "2024-12-09"
+  },
+  {
+   "id": "-OJsy6ZqJowwqCGf7Fa-",
+   "name": "Grok",
+   "categories": [
+    "Text Generation"
+   ],
+   "tags": [
+    "Platform"
+   ],
+   "license": "Freemium",
+   "open": false,
+   "link": "https://grok.com/",
+   "editorChoice": false,
+   "votes": 0,
+   "created": "2025-02-24",
+   "updated": "2025-02-24"
+  },
+  {
+   "id": "-OBaTut6_7Jk_8GRk9CO",
+   "name": "Hailuo AI Minimax",
+   "categories": [
+    "Video Generation"
+   ],
+   "tags": [
+    "Image-to-Video",
+    "Model",
+    "Text-to-Video"
+   ],
+   "license": "Freemium",
+   "open": false,
+   "link": "https://hailuoai.video/",
+   "editorChoice": false,
+   "votes": 0,
+   "created": "2024-11-13",
+   "updated": "2024-11-13"
+  },
+  {
+   "id": "-OHCWLl3Z082ku9ZIaRb",
+   "name": "Hunyuan3D 2",
+   "categories": [
+    "3D Generation"
+   ],
+   "tags": [
+    "Model"
+   ],
+   "license": "Open Source",
+   "open": true,
+   "link": "https://huggingface.co/tencent/Hunyuan3D-2",
+   "editorChoice": false,
+   "votes": 0,
+   "created": "2025-01-22",
+   "updated": "2025-01-22"
+  },
+  {
+   "id": "-ODHgKtlrgOM60KGlgbR",
+   "name": "HunyuanVideo: A Systematic Framework For Large Video Generation Model Training",
+   "categories": [
+    "Video Generation"
+   ],
+   "tags": [
+    "Image-to-Video",
+    "Text-to-Video"
+   ],
+   "license": "Open Source",
+   "open": true,
+   "link": "https://github.com/Tencent/HunyuanVideo",
+   "editorChoice": false,
+   "votes": 0,
+   "created": "2024-12-04",
+   "updated": "2024-12-04"
+  },
+  {
+   "id": "-ODeepsaR4koOn0IPtor",
+   "name": "InstantIR: Blind Image Restoration with Instant Generative Reference",
+   "categories": [
+    "Image Manipulation"
+   ],
+   "tags": [
+    "Image-to-Image",
+    "Model",
+    "Text-to-Image"
+   ],
+   "license": "Open Source",
+   "open": true,
+   "link": "https://github.com/instantX-research/InstantIR",
+   "editorChoice": false,
+   "votes": 0,
+   "created": "2024-12-09",
+   "updated": "2024-12-09"
+  },
+  {
+   "id": "-OCDQTOOqm39NEh7MRyw",
+   "name": "Leonardo AI",
+   "categories": [
+    "Image Generation"
+   ],
+   "tags": [
+    "Platform",
+    "Text-to-Image",
+    "Upscaling"
+   ],
+   "license": "Freemium",
+   "open": false,
+   "link": "https://app.leonardo.ai/",
+   "editorChoice": false,
+   "votes": 0,
+   "created": "2024-11-21",
+   "updated": "2024-11-21"
+  },
+  {
+   "id": "-OEoAa0QQI5qPgZ3Mf4t",
+   "name": "Long Volumetric Video",
+   "categories": [
+    "Video Generation",
+    "3D Generation"
+   ],
+   "tags": [
+    "Model"
+   ],
+   "license": "Open Source",
+   "open": true,
+   "link": "https://zju3dv.github.io/longvolcap/",
+   "editorChoice": false,
+   "votes": 0,
+   "created": "2024-12-23",
+   "updated": "2024-12-23"
+  },
+  {
+   "id": "-OCCgpnz7rzSCGxDQkGU",
+   "name": "MagicQuill",
+   "categories": [
+    "Image Manipulation"
+   ],
+   "tags": [
+    "Image-to-Image",
+    "Inpainting",
+    "Platform"
+   ],
+   "license": "Open Source",
+   "open": true,
+   "link": "https://magicquill.art/",
+   "editorChoice": false,
+   "votes": 0,
+   "created": "2024-11-21",
+   "updated": "2024-11-21"
+  },
+  {
+   "id": "-OJsU-I3XbVcU2U-Us1M",
+   "name": "MatAnyone - Stable Video Matting",
+   "categories": [
+    "Video Generation",
+    "Video Manipulation"
+   ],
+   "tags": [
+    "Model",
+    "Segmentation"
+   ],
+   "license": "Open Source",
+   "open": true,
+   "link": "https://github.com/pq-yang/MatAnyone",
+   "editorChoice": false,
+   "votes": 0,
+   "created": "2025-02-24",
+   "updated": "2025-02-24"
+  },
+  {
+   "id": "-OBe7hMeXM5bIhaIiwq6",
+   "name": "Nero AI Video Upscaler",
+   "categories": [
+    "Video Manipulation"
+   ],
+   "tags": [
+    "Model",
+    "Platform",
+    "Upscaling"
+   ],
+   "license": "Commercial",
+   "open": false,
+   "link": "https://pcai.nero.com/video-upscaler",
+   "editorChoice": false,
+   "votes": 0,
+   "created": "2024-11-14",
+   "updated": "2024-11-14"
+  },
+  {
+   "id": "-ODB6JwhpuounsZb-FET",
+   "name": "NVIDIA Edify",
+   "categories": [
+    "3D Generation"
+   ],
+   "tags": [
+    "Model"
+   ],
+   "license": "Commercial",
+   "open": false,
+   "link": "https://www.shutterstock.com/developers/generative-ai/documentation",
+   "editorChoice": false,
+   "votes": 0,
+   "created": "2024-12-03",
+   "updated": "2024-12-03"
+  },
+  {
+   "id": "-OCZ-zNDVZ2v6NfMDzVm",
+   "name": "Omnigen",
+   "categories": [
+    "Image Manipulation"
+   ],
+   "tags": [
+    "Controlnet",
+    "Inpainting",
+    "Model",
+    "Openpose",
+    "Platform",
+    "Style Transfer"
+   ],
+   "license": "Open Source",
+   "open": true,
+   "link": "https://huggingface.co/spaces/Shitao/OmniGen",
+   "editorChoice": false,
+   "votes": 0,
+   "created": "2024-11-25",
+   "updated": "2024-11-25"
+  },
+  {
+   "id": "-OHn9Ngcc-WlSIFVGIJN",
+   "name": "PixVerse",
+   "categories": [
+    "Video Generation"
+   ],
+   "tags": [
+    "Model",
+    "Platform",
+    "Text-to-Video"
+   ],
+   "license": "Freemium",
+   "open": false,
+   "link": "https://app.pixverse.ai/",
+   "editorChoice": false,
+   "votes": 0,
+   "created": "2025-01-29",
+   "updated": "2025-01-29"
+  },
+  {
+   "id": "-OJst38bRSHYn6ik5RC9",
+   "name": "Qwen",
+   "categories": [
+    "Text Generation"
+   ],
+   "tags": [
+    "Platform"
+   ],
+   "license": "Free",
+   "open": false,
+   "link": "https://chat.qwenlm.ai/",
+   "editorChoice": false,
+   "votes": 0,
+   "created": "2025-02-24",
+   "updated": "2025-02-24"
+  },
+  {
+   "id": "-OHn8mLF0FLvCF24MSM2",
+   "name": "Qwen 2.5",
+   "categories": [
+    "Video Generation"
+   ],
+   "tags": [
+    "Model",
+    "Multimodal"
+   ],
+   "license": "Open Source",
+   "open": true,
+   "link": "https://chat.qwenlm.ai/",
+   "editorChoice": false,
+   "votes": 0,
+   "created": "2025-01-29",
+   "updated": "2025-01-29"
+  },
+  {
+   "id": "-OItFmAcU1D5o1S8zgBg",
+   "name": "Ray 2",
+   "categories": [
+    "Video Generation"
+   ],
+   "tags": [
+    "Image-to-Video",
+    "Model",
+    "Platform",
+    "Text-to-Video"
+   ],
+   "license": "Commercial",
+   "open": false,
+   "link": "https://lumalabs.ai/ray",
+   "editorChoice": false,
+   "votes": 0,
+   "created": "2025-02-12",
+   "updated": "2025-02-12"
+  },
+  {
+   "id": "-OJsJCeGI0ullbFOulhX",
+   "name": "Riffusion",
+   "categories": [
+    "Music Generation"
+   ],
+   "tags": [
+    "Model",
+    "Platform",
+    "Text-to-Music"
+   ],
+   "license": "Freemium",
+   "open": false,
+   "link": "https://www.riffusion.com/",
+   "editorChoice": false,
+   "votes": 0,
+   "created": "2025-02-24",
+   "updated": "2025-02-24"
+  },
+  {
+   "id": "-OBaUNw5P5fxB4O61_0n",
+   "name": "Runway Gen-3 Alpha",
+   "categories": [
+    "Video Generation"
+   ],
+   "tags": [
+    "Image-to-Video",
+    "Model",
+    "Text-to-Video"
+   ],
+   "license": "Commercial",
+   "open": false,
+   "link": "https://app.runwayml.com/",
+   "editorChoice": false,
+   "votes": 0,
+   "created": "2024-11-13",
+   "updated": "2024-11-13"
+  },
+  {
+   "id": "-OBaUKEimOBMeFGSV9Ix",
+   "name": "Runway Gen-3 Alpha Turbo",
+   "categories": [
+    "Video Generation"
+   ],
+   "tags": [
+    "Image-to-Video",
+    "Model",
+    "Text-to-Video"
+   ],
+   "license": "Freemium",
+   "open": false,
+   "link": "https://app.runwayml.com/",
+   "editorChoice": false,
+   "votes": 0,
+   "created": "2024-11-13",
+   "updated": "2024-11-13"
+  },
+  {
+   "id": "-OBS3fptw_PSbhqzCP7D",
+   "name": "Stable Diffusion WebUI",
+   "categories": [
+    "Image Generation",
+    "Image Manipulation"
+   ],
+   "tags": [
+    "Controlnet",
+    "Depth Estimation",
+    "Image-to-Image",
+    "Image-to-Video",
+    "Inpainting",
+    "Motion Transfer",
+    "Openpose",
+    "Outpainting",
+    "Platform",
+    "Pose Estimation",
+    "Text-to-Image",
+    "Text-to-Video",
+    "Upscaling"
+   ],
+   "license": "Open Source",
+   "open": true,
+   "link": "https://github.com/AUTOMATIC1111/stable-diffusion-webui",
+   "editorChoice": false,
+   "votes": 0,
+   "created": "2024-11-11",
+   "updated": "2024-11-12"
+  },
+  {
+   "id": "-OChqhfetHjTcGlqRjPF",
+   "name": "Stable ProjectorZ",
+   "categories": [
+    "3D Generation"
+   ],
+   "tags": [
+    "Controlnet",
+    "Depth Estimation",
+    "Inpainting"
+   ],
+   "license": "Free",
+   "open": false,
+   "link": "https://stableprojectorz.com/",
+   "editorChoice": false,
+   "votes": 0,
+   "created": "2024-11-27",
+   "updated": "2024-11-27"
+  },
+  {
+   "id": "-OBe9I7kdeL6bTO4v9aa",
+   "name": "Suno",
+   "categories": [
+    "Music Generation"
+   ],
+   "tags": [
+    "Text-to-Music"
+   ],
+   "license": "Freemium",
+   "open": false,
+   "link": "https://suno.com/",
+   "editorChoice": false,
+   "votes": 0,
+   "created": "2024-11-14",
+   "updated": "2024-11-14"
+  },
+  {
+   "id": "-ODB49TL31XmQimyAHIe",
+   "name": "The Matrix",
+   "categories": [
+    "Realtime Generation"
+   ],
+   "tags": [
+    "Model"
+   ],
+   "license": "Unreleased",
+   "open": false,
+   "link": "https://thematrix1999.github.io/",
+   "editorChoice": false,
+   "votes": 0,
+   "created": "2024-12-03",
+   "updated": "2024-12-03"
+  },
+  {
+   "id": "-OBe8Ap2H4Q-nCupw0sc",
+   "name": "Topaz Labs Video AI",
+   "categories": [
+    "Video Manipulation"
+   ],
+   "tags": [
+    "Denoising",
+    "Model",
+    "Platform",
+    "Upscaling"
+   ],
+   "license": "Commercial",
+   "open": false,
+   "link": "https://www.topazlabs.com/topaz-video-ai",
+   "editorChoice": false,
+   "votes": 0,
+   "created": "2024-11-14",
+   "updated": "2024-11-14"
+  },
+  {
+   "id": "-OG-Cy3MELipY-Gu3Yt6",
+   "name": "Trellis",
+   "categories": [
+    "3D Generation"
+   ],
+   "tags": [
+    "Model",
+    "Platform"
+   ],
+   "license": "Open Source",
+   "open": true,
+   "link": "https://github.com/IgorAherne/trellis-stable-projectorz",
+   "editorChoice": false,
+   "votes": 0,
+   "created": "2025-01-07",
+   "updated": "2025-01-07"
+  },
+  {
+   "id": "-OIoU6Nuues6kx391pDg",
+   "name": "YuE",
+   "categories": [
+    "Music Generation"
+   ],
+   "tags": [
+    "Model"
+   ],
+   "license": "Open Source",
+   "open": true,
+   "link": "https://github.com/multimodal-art-projection/YuE",
+   "editorChoice": false,
+   "votes": 0,
+   "created": "2025-02-11",
+   "updated": "2025-02-11"
+  },
+  {
+   "id": "-OJrR22Vg-zvGQ6WhuGj",
+   "name": "Zonos",
+   "categories": [
+    "Voice Generation"
+   ],
+   "tags": [
+    "Model",
+    "Text-to-Voice",
+    "Voice Cloning"
+   ],
+   "license": "Open Source",
+   "open": true,
+   "link": "https://github.com/Zyphra/Zonos",
+   "editorChoice": false,
+   "votes": 0,
+   "created": "2025-02-24",
+   "updated": "2025-02-24"
+  }
+ ]
+}

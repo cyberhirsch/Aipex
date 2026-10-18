@@ -2,6 +2,7 @@
 (() => {
     const state = { open: 'all', vram: 0, q: '' };
     let data = null;
+    let catalog = null;
 
     const $ = (sel) => document.querySelector(sel);
     const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -62,7 +63,8 @@
             if (!groups.has(cat.group)) groups.set(cat.group, []);
             groups.get(cat.group).push({ cat, top });
         }
-        if (!groups.size) { $('#board').innerHTML = `<p class="empty-all">Nothing matches${hidden ? ` (${hidden} categories hidden by the filter)` : ''}.</p>`; $('#groupNav').innerHTML = ''; return; }
+        const tools = toolsHtml(q);
+        if (!groups.size && !tools.html) { $('#board').innerHTML = `<p class="empty-all">Nothing matches${hidden ? ` (${hidden} categories hidden by the filter)` : ''}.</p>`; $('#groupNav').innerHTML = ''; return; }
         let html = '';
         let nav = '';
         for (const [group, items] of groups) {
@@ -72,9 +74,35 @@
             nav += `<a href="#${id}">${esc(group)}<b>${items.length}</b></a>`;
             html += `<section class="group" id="${id}"><h2 class="group-title">${esc(group)}<span>${items.length} ${items.length === 1 ? 'category' : 'categories'}</span></h2><div class="grid">${items.map((x) => cardHtml(x.cat, x.top)).join('')}</div></section>`;
         }
+        if (tools.html) { html += tools.html; nav += `<a href="#tools">Tools &amp; apps<b>${tools.count}</b></a>`; }
         if (hidden) html += `<p class="hidden-note">${hidden} ${hidden === 1 ? 'category has' : 'categories have'} no ranked model that matches the filter.</p>`;
         $('#board').innerHTML = html;
         $('#groupNav').innerHTML = nav;
+    }
+
+    // the hand-curated tools list carried over from the 2024-25 Firebase site
+    function toolsHtml(q) {
+        if (!catalog || state.vram > 0) return { html: '', count: 0 };
+        const match = (t) => (state.open !== 'open' || t.open) && (!q || t.name.toLowerCase().includes(q)
+            || t.categories.some((c) => c.toLowerCase().includes(q)) || t.tags.some((g) => g.toLowerCase().includes(q)));
+        const byCat = new Map();
+        let count = 0;
+        for (const t of catalog.tools) {
+            if (!match(t)) continue;
+            count++;
+            for (const c of (t.categories.length ? t.categories : ['Other'])) {
+                if (!byCat.has(c)) byCat.set(c, []);
+                byCat.get(c).push(t);
+            }
+        }
+        if (!count) return { html: '', count: 0 };
+        const row = (t) => `<li class="tool">
+            <a class="tool-name" href="${esc(t.link)}" target="_blank" rel="noopener">${esc(t.name)}</a>
+            <span class="tags">${t.editorChoice ? '<span class="tag open">Editor&rsquo;s choice</span>' : ''}<span class="tag${t.open ? ' open' : ''}">${esc(t.license || '')}</span>${t.tags.slice(0, 6).map((g) => `<span class="tag">${esc(g)}</span>`).join('')}${t.tags.length > 6 ? `<span class="tag" title="${esc(t.tags.slice(6).join(', '))}">+${t.tags.length - 6}</span>` : ''}</span>
+        </li>`;
+        const cards = [...byCat.entries()].sort((a, b) => a[0].localeCompare(b[0])).map(([c, list]) =>
+            `<article class="card"><div class="card-head"><h3 class="card-title">${esc(c)}</h3><span class="card-meta">${list.length}</span></div><ul class="rows tools">${list.map(row).join('')}</ul></article>`).join('');
+        return { count, html: `<section class="group" id="tools"><h2 class="group-title">Tools &amp; apps<span>Curated list from the original Aipex, 2024–25</span></h2><div class="grid">${cards}</div></section>` };
     }
 
     function bindSeg(id, key, attr) {
@@ -106,8 +134,10 @@
 
     bindSeg('#licenceSeg', 'open', 'open');
     bindSeg('#vramSeg', 'vram', 'vram');
-    window.addEventListener('hashchange', () => { if (data) { state.open = 'all'; state.vram = 0; loadHash(); render(); } });
+    window.addEventListener('hashchange', () => { if (data && !/^#(g-|tools)/.test(location.hash)) { state.open = 'all'; state.vram = 0; loadHash(); render(); } });
     $('#search').addEventListener('input', (e) => { state.q = e.target.value; render(); });
+
+    fetch('data/catalog.json', { cache: 'no-cache' }).then((r) => r.json()).then((c) => { catalog = c; if (data) render(); }).catch(() => {});
 
     fetch('data/aipex.json', { cache: 'no-cache' })
         .then((r) => r.json())
