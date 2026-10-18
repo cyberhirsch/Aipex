@@ -1,0 +1,8481 @@
+{
+ "source": "Arena (arena.ai)",
+ "url": "https://arena.ai/leaderboard",
+ "retrieved": "2026-10-18",
+ "categories": [
+  {
+   "category": "Text: Overall",
+   "url": "https://arena.ai/leaderboard/chat/text",
+   "metric": "Arena score (Elo)",
+   "higher_is_better": true,
+   "data_date": "2026-10-15",
+   "entries": [
+    {
+     "rank": 1,
+     "model": "Gemini 4 Argon (High)",
+     "org": "Google",
+     "score": 1524,
+     "votes": 4904,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 2,
+     "model": "Muse Wonder (Max)",
+     "org": "Meta",
+     "score": 1509,
+     "votes": 3247,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 3,
+     "model": "Claude Opus 5.5 (High)",
+     "org": "Anthropic",
+     "score": 1508,
+     "votes": 8300,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 4,
+     "model": "Claude Fable 5 (High)",
+     "org": "Anthropic",
+     "score": 1504,
+     "votes": 42004,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 5,
+     "model": "Claude Opus 4.6 (High)",
+     "org": "Anthropic",
+     "score": 1503,
+     "votes": 81394,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 6,
+     "model": "Claude Fable 5.1 (Max)",
+     "org": "Anthropic",
+     "score": 1502,
+     "votes": 14590,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 7,
+     "model": "Claude Opus 4.7 (High)",
+     "org": "Anthropic",
+     "score": 1501,
+     "votes": 65116,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 8,
+     "model": "Claude Opus 4.6",
+     "org": "Anthropic",
+     "score": 1497,
+     "votes": 86071,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 9,
+     "model": "Gemini 3.8 Flash (High)",
+     "org": "Google",
+     "score": 1496,
+     "votes": 37454,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 10,
+     "model": "Muse Spark 1.3 (Max)",
+     "org": "Meta",
+     "score": 1494,
+     "votes": 17561,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 11,
+     "model": "Claude Opus 4.7",
+     "org": "Anthropic",
+     "score": 1494,
+     "votes": 66216,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 12,
+     "model": "Muse Spark 1.2 (xHigh)",
+     "org": "Meta",
+     "score": 1493,
+     "votes": 8248,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 13,
+     "model": "Muse Spark 1.1",
+     "org": "Meta",
+     "score": 1490,
+     "votes": 42810,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 14,
+     "model": "Claude Opus 5 (Max)",
+     "org": "Anthropic",
+     "score": 1490,
+     "votes": 32495,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 15,
+     "model": "Claude Opus 5 (High)",
+     "org": "Anthropic",
+     "score": 1490,
+     "votes": 66824,
+     "license": "Proprietary"
+    }
+   ]
+  },
+  {
+   "category": "Text: Expert",
+   "url": "https://arena.ai/leaderboard/chat/text/expert",
+   "metric": "Arena score (Elo)",
+   "higher_is_better": true,
+   "data_date": "2026-10-15",
+   "entries": [
+    {
+     "rank": 1,
+     "model": "Claude Fable 5 (High)",
+     "org": "Anthropic",
+     "score": 1550,
+     "votes": 4679,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 2,
+     "model": "Claude Opus 4.6 (High)",
+     "org": "Anthropic",
+     "score": 1546,
+     "votes": 7403,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 3,
+     "model": "Gemini 4 Argon (High)",
+     "org": "Google",
+     "score": 1541,
+     "votes": 510,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 4,
+     "model": "Claude Opus 5 (High)",
+     "org": "Anthropic",
+     "score": 1539,
+     "votes": 7467,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 5,
+     "model": "Claude Opus 5.5 (High)",
+     "org": "Anthropic",
+     "score": 1538,
+     "votes": 907,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 6,
+     "model": "Claude Sonnet 5.5 (xHigh)",
+     "org": "Anthropic",
+     "score": 1538,
+     "votes": 700,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 7,
+     "model": "Claude Opus 4.7",
+     "org": "Anthropic",
+     "score": 1534,
+     "votes": 7101,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 8,
+     "model": "Claude Opus 4.7 (High)",
+     "org": "Anthropic",
+     "score": 1534,
+     "votes": 6914,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 9,
+     "model": "Claude Opus 4.6",
+     "org": "Anthropic",
+     "score": 1534,
+     "votes": 8853,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 10,
+     "model": "Kimi K3 (Max)",
+     "org": "Moonshot",
+     "score": 1533,
+     "votes": 3003,
+     "license": "Kimi K3 license"
+    },
+    {
+     "rank": 11,
+     "model": "GPT-5.6 Sol (xHigh)",
+     "org": "OpenAI",
+     "score": 1532,
+     "votes": 4517,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 12,
+     "model": "Claude Opus 5 (Max)",
+     "org": "Anthropic",
+     "score": 1531,
+     "votes": 3490,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 13,
+     "model": "MiMo-V2.6-Pro",
+     "org": "Xiaomi",
+     "score": 1529,
+     "votes": 464,
+     "license": "MIT"
+    },
+    {
+     "rank": 14,
+     "model": "Muse Spark 1.3 (Max)",
+     "org": "Meta",
+     "score": 1528,
+     "votes": 1934,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 15,
+     "model": "Claude Fable 5.1 (Max)",
+     "org": "Anthropic",
+     "score": 1527,
+     "votes": 1264,
+     "license": "Proprietary"
+    }
+   ]
+  },
+  {
+   "category": "Text: Occupational - Software & IT Services",
+   "url": "https://arena.ai/leaderboard/chat/text/industry-software-and-it-services",
+   "metric": "Arena score (Elo)",
+   "higher_is_better": true,
+   "data_date": "2026-10-15",
+   "entries": [
+    {
+     "rank": 1,
+     "model": "Gemini 4 Argon (High)",
+     "org": "Google",
+     "score": 1562,
+     "votes": 1822,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 2,
+     "model": "Claude Opus 4.7 (High)",
+     "org": "Anthropic",
+     "score": 1541,
+     "votes": 26175,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 3,
+     "model": "Claude Fable 5 (High)",
+     "org": "Anthropic",
+     "score": 1538,
+     "votes": 15669,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 4,
+     "model": "Claude Opus 4.6 (High)",
+     "org": "Anthropic",
+     "score": 1538,
+     "votes": 30889,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 5,
+     "model": "Claude Opus 5.5 (High)",
+     "org": "Anthropic",
+     "score": 1538,
+     "votes": 2904,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 6,
+     "model": "Muse Wonder (Max)",
+     "org": "Meta",
+     "score": 1537,
+     "votes": 1158,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 7,
+     "model": "Claude Opus 4.6",
+     "org": "Anthropic",
+     "score": 1536,
+     "votes": 33580,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 8,
+     "model": "GPT-6.1 Sol (Max)",
+     "org": "OpenAI",
+     "score": 1532,
+     "votes": 2110,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 9,
+     "model": "Muse Spark 1.2 (xHigh)",
+     "org": "Meta",
+     "score": 1532,
+     "votes": 3124,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 10,
+     "model": "Claude Opus 4.7",
+     "org": "Anthropic",
+     "score": 1531,
+     "votes": 26506,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 11,
+     "model": "Claude Fable 5.1 (Max)",
+     "org": "Anthropic",
+     "score": 1530,
+     "votes": 4818,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 12,
+     "model": "MiMo-V2.6-Pro",
+     "org": "Xiaomi",
+     "score": 1528,
+     "votes": 1648,
+     "license": "MIT"
+    },
+    {
+     "rank": 13,
+     "model": "Muse Spark 1.3 (Max)",
+     "org": "Meta",
+     "score": 1528,
+     "votes": 6549,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 14,
+     "model": "Muse Spark 1.1",
+     "org": "Meta",
+     "score": 1525,
+     "votes": 16613,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 15,
+     "model": "GPT-5.6 Sol (xHigh)",
+     "org": "OpenAI",
+     "score": 1524,
+     "votes": 15703,
+     "license": "Proprietary"
+    }
+   ]
+  },
+  {
+   "category": "Text: Occupational - Writing, Literature, & Language",
+   "url": "https://arena.ai/leaderboard/chat/text/industry-writing-and-literature-and-language",
+   "metric": "Arena score (Elo)",
+   "higher_is_better": true,
+   "data_date": "2026-10-15",
+   "entries": [
+    {
+     "rank": 1,
+     "model": "Claude Opus 5.5 (High)",
+     "org": "Anthropic",
+     "score": 1522,
+     "votes": 2477,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 2,
+     "model": "Gemini 4 Argon (High)",
+     "org": "Google",
+     "score": 1520,
+     "votes": 1365,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 3,
+     "model": "Claude Fable 5 (High)",
+     "org": "Anthropic",
+     "score": 1508,
+     "votes": 11803,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 4,
+     "model": "Claude Opus 4.6 (High)",
+     "org": "Anthropic",
+     "score": 1500,
+     "votes": 21041,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 5,
+     "model": "Claude Opus 4.7 (High)",
+     "org": "Anthropic",
+     "score": 1497,
+     "votes": 16572,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 6,
+     "model": "Muse Wonder (Max)",
+     "org": "Meta",
+     "score": 1493,
+     "votes": 948,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 7,
+     "model": "Gemini 3.7 Flash (High)",
+     "org": "Google",
+     "score": 1493,
+     "votes": 7589,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 8,
+     "model": "Claude Fable 5.1 (Max)",
+     "org": "Anthropic",
+     "score": 1492,
+     "votes": 4150,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 9,
+     "model": "Gemini 3.8 Flash (High)",
+     "org": "Google",
+     "score": 1492,
+     "votes": 10501,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 10,
+     "model": "Claude Opus 4.6",
+     "org": "Anthropic",
+     "score": 1489,
+     "votes": 21420,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 11,
+     "model": "Claude Opus 4.7",
+     "org": "Anthropic",
+     "score": 1483,
+     "votes": 16989,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 12,
+     "model": "Gemini 3.1 Pro Preview",
+     "org": "Google",
+     "score": 1482,
+     "votes": 32660,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 13,
+     "model": "GPT-5.6 Sol (xHigh)",
+     "org": "OpenAI",
+     "score": 1481,
+     "votes": 10968,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 14,
+     "model": "Gemini 3 Pro",
+     "org": "Google",
+     "score": 1481,
+     "votes": 9576,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 15,
+     "model": "Claude Opus 5 (Max)",
+     "org": "Anthropic",
+     "score": 1480,
+     "votes": 9383,
+     "license": "Proprietary"
+    }
+   ]
+  },
+  {
+   "category": "Text: Occupational - Life, Physical, & Social Science",
+   "url": "https://arena.ai/leaderboard/chat/text/industry-life-and-physical-and-social-science",
+   "metric": "Arena score (Elo)",
+   "higher_is_better": true,
+   "data_date": "2026-10-15",
+   "entries": [
+    {
+     "rank": 1,
+     "model": "Gemini 4 Argon (High)",
+     "org": "Google",
+     "score": 1539,
+     "votes": 819,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 2,
+     "model": "Claude Opus 4.6 (High)",
+     "org": "Anthropic",
+     "score": 1528,
+     "votes": 13562,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 3,
+     "model": "Muse Wonder (Max)",
+     "org": "Meta",
+     "score": 1526,
+     "votes": 521,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 4,
+     "model": "Claude Opus 4.7 (High)",
+     "org": "Anthropic",
+     "score": 1525,
+     "votes": 11043,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 5,
+     "model": "Claude Fable 5 (High)",
+     "org": "Anthropic",
+     "score": 1525,
+     "votes": 6883,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 6,
+     "model": "Kimi K3 (Max)",
+     "org": "Moonshot",
+     "score": 1523,
+     "votes": 5128,
+     "license": "Kimi K3 license"
+    },
+    {
+     "rank": 7,
+     "model": "Claude Fable 5.1 (Max)",
+     "org": "Anthropic",
+     "score": 1521,
+     "votes": 2440,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 8,
+     "model": "Claude Opus 4.6",
+     "org": "Anthropic",
+     "score": 1519,
+     "votes": 14315,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 9,
+     "model": "Gemini 3.8 Flash (High)",
+     "org": "Google",
+     "score": 1517,
+     "votes": 6186,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 10,
+     "model": "Claude Opus 5.5 (High)",
+     "org": "Anthropic",
+     "score": 1517,
+     "votes": 1439,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 11,
+     "model": "Claude Opus 4.7",
+     "org": "Anthropic",
+     "score": 1514,
+     "votes": 11209,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 12,
+     "model": "Qwen3.8-Max",
+     "org": "Alibaba",
+     "score": 1514,
+     "votes": 4337,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 13,
+     "model": "Muse Spark 1.2 (xHigh)",
+     "org": "Meta",
+     "score": 1513,
+     "votes": 1327,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 14,
+     "model": "Claude Opus 5 (Max)",
+     "org": "Anthropic",
+     "score": 1513,
+     "votes": 5481,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 15,
+     "model": "Gemini 3.7 Flash (High)",
+     "org": "Google",
+     "score": 1512,
+     "votes": 4565,
+     "license": "Proprietary"
+    }
+   ]
+  },
+  {
+   "category": "Text: Occupational - Entertainment, Sports, & Media",
+   "url": "https://arena.ai/leaderboard/chat/text/industry-entertainment-and-sports-and-media",
+   "metric": "Arena score (Elo)",
+   "higher_is_better": true,
+   "data_date": "2026-10-15",
+   "entries": [
+    {
+     "rank": 1,
+     "model": "Gemini 4 Argon (High)",
+     "org": "Google",
+     "score": 1518,
+     "votes": 1233,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 2,
+     "model": "Claude Opus 5.5 (High)",
+     "org": "Anthropic",
+     "score": 1498,
+     "votes": 2212,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 3,
+     "model": "Claude Fable 5 (High)",
+     "org": "Anthropic",
+     "score": 1493,
+     "votes": 10958,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 4,
+     "model": "Claude Opus 4.6 (High)",
+     "org": "Anthropic",
+     "score": 1491,
+     "votes": 18420,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 5,
+     "model": "Claude Opus 4.7 (High)",
+     "org": "Anthropic",
+     "score": 1481,
+     "votes": 15118,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 6,
+     "model": "Gemini 3.7 Flash (High)",
+     "org": "Google",
+     "score": 1480,
+     "votes": 7249,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 7,
+     "model": "Claude Opus 4.6",
+     "org": "Anthropic",
+     "score": 1478,
+     "votes": 19203,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 8,
+     "model": "Gemini 3.8 Flash (High)",
+     "org": "Google",
+     "score": 1477,
+     "votes": 9844,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 9,
+     "model": "Claude Fable 5.1 (Max)",
+     "org": "Anthropic",
+     "score": 1476,
+     "votes": 3666,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 10,
+     "model": "Muse Wonder (Max)",
+     "org": "Meta",
+     "score": 1474,
+     "votes": 858,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 11,
+     "model": "Claude Opus 4.7",
+     "org": "Anthropic",
+     "score": 1473,
+     "votes": 15551,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 12,
+     "model": "GPT-5.6 Sol (xHigh)",
+     "org": "OpenAI",
+     "score": 1471,
+     "votes": 10300,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 13,
+     "model": "Gemini 3.1 Pro Preview",
+     "org": "Google",
+     "score": 1470,
+     "votes": 29563,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 14,
+     "model": "Gemini 3 Pro",
+     "org": "Google",
+     "score": 1469,
+     "votes": 7910,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 15,
+     "model": "Claude Opus 5 (High)",
+     "org": "Anthropic",
+     "score": 1462,
+     "votes": 17719,
+     "license": "Proprietary"
+    }
+   ]
+  },
+  {
+   "category": "Text: Occupational - Business, Management, & Financial Ops",
+   "url": "https://arena.ai/leaderboard/chat/text/industry-business-and-management-and-financial-operations",
+   "metric": "Arena score (Elo)",
+   "higher_is_better": true,
+   "data_date": "2026-10-15",
+   "entries": [
+    {
+     "rank": 1,
+     "model": "Gemini 4 Argon (High)",
+     "org": "Google",
+     "score": 1521,
+     "votes": 891,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 2,
+     "model": "Claude Opus 4.7 (High)",
+     "org": "Anthropic",
+     "score": 1508,
+     "votes": 13025,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 3,
+     "model": "Muse Spark 1.3 (Max)",
+     "org": "Meta",
+     "score": 1504,
+     "votes": 3190,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 4,
+     "model": "Claude Fable 5 (High)",
+     "org": "Anthropic",
+     "score": 1502,
+     "votes": 8357,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 5,
+     "model": "Claude Opus 4.6",
+     "org": "Anthropic",
+     "score": 1500,
+     "votes": 16968,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 6,
+     "model": "Claude Opus 4.6 (High)",
+     "org": "Anthropic",
+     "score": 1500,
+     "votes": 15952,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 7,
+     "model": "Muse Spark 1.2 (xHigh)",
+     "org": "Meta",
+     "score": 1499,
+     "votes": 1496,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 8,
+     "model": "Claude Opus 4.7",
+     "org": "Anthropic",
+     "score": 1496,
+     "votes": 13241,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 9,
+     "model": "Muse Wonder (Max)",
+     "org": "Meta",
+     "score": 1493,
+     "votes": 560,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 10,
+     "model": "Muse Spark 1.1",
+     "org": "Meta",
+     "score": 1491,
+     "votes": 8131,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 11,
+     "model": "GPT-5.5 (High)",
+     "org": "OpenAI",
+     "score": 1490,
+     "votes": 13723,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 12,
+     "model": "Claude Opus 5.5 (High)",
+     "org": "Anthropic",
+     "score": 1490,
+     "votes": 1479,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 13,
+     "model": "Muse Spark",
+     "org": "Meta",
+     "score": 1490,
+     "votes": 2867,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 14,
+     "model": "Claude Opus 4.8 (High)",
+     "org": "Anthropic",
+     "score": 1489,
+     "votes": 12750,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 15,
+     "model": "Kimi K3 (Max)",
+     "org": "Moonshot",
+     "score": 1488,
+     "votes": 6158,
+     "license": "Kimi K3 license"
+    }
+   ]
+  },
+  {
+   "category": "Text: Occupational - Mathematical",
+   "url": "https://arena.ai/leaderboard/chat/text/industry-mathematical",
+   "metric": "Arena score (Elo)",
+   "higher_is_better": true,
+   "data_date": "2026-10-15",
+   "entries": [
+    {
+     "rank": 1,
+     "model": "Gemini 4 Argon (High)",
+     "org": "Google",
+     "score": 1546,
+     "votes": 328,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 2,
+     "model": "GPT-6.1 Sol (Max)",
+     "org": "OpenAI",
+     "score": 1538,
+     "votes": 337,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 3,
+     "model": "Claude Opus 5 (High)",
+     "org": "Anthropic",
+     "score": 1532,
+     "votes": 3767,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 4,
+     "model": "Claude Fable 5.1 (Max)",
+     "org": "Anthropic",
+     "score": 1529,
+     "votes": 818,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 5,
+     "model": "Claude Opus 4.6 (High)",
+     "org": "Anthropic",
+     "score": 1526,
+     "votes": 4247,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 6,
+     "model": "Claude Opus 5 (Max)",
+     "org": "Anthropic",
+     "score": 1522,
+     "votes": 1817,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 7,
+     "model": "Claude Fable 5 (High)",
+     "org": "Anthropic",
+     "score": 1519,
+     "votes": 2424,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 8,
+     "model": "Claude Opus 4.7 (High)",
+     "org": "Anthropic",
+     "score": 1515,
+     "votes": 3651,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 9,
+     "model": "Claude Opus 4.6",
+     "org": "Anthropic",
+     "score": 1513,
+     "votes": 4842,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 10,
+     "model": "GPT-5.6 Sol (xHigh)",
+     "org": "OpenAI",
+     "score": 1513,
+     "votes": 2244,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 11,
+     "model": "Kimi K3 (Max)",
+     "org": "Moonshot",
+     "score": 1510,
+     "votes": 1737,
+     "license": "Kimi K3 license"
+    },
+    {
+     "rank": 12,
+     "model": "Claude Sonnet 5.5 (xHigh)",
+     "org": "Anthropic",
+     "score": 1509,
+     "votes": 362,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 13,
+     "model": "Claude Opus 4.8 (High)",
+     "org": "Anthropic",
+     "score": 1507,
+     "votes": 3480,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 14,
+     "model": "Gemini 3.8 Flash (High)",
+     "org": "Google",
+     "score": 1507,
+     "votes": 2221,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 15,
+     "model": "GPT-5.5 (High)",
+     "org": "OpenAI",
+     "score": 1507,
+     "votes": 3983,
+     "license": "Proprietary"
+    }
+   ]
+  },
+  {
+   "category": "Text: Occupational - Legal & Government",
+   "url": "https://arena.ai/leaderboard/chat/text/industry-legal-and-government",
+   "metric": "Arena score (Elo)",
+   "higher_is_better": true,
+   "data_date": "2026-10-15",
+   "entries": [
+    {
+     "rank": 1,
+     "model": "Gemini 4 Argon (High)",
+     "org": "Google",
+     "score": 1536,
+     "votes": 402,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 2,
+     "model": "Muse Spark 1.2 (xHigh)",
+     "org": "Meta",
+     "score": 1528,
+     "votes": 632,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 3,
+     "model": "Muse Wonder (Max)",
+     "org": "Meta",
+     "score": 1523,
+     "votes": 280,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 4,
+     "model": "Claude Fable 5 (High)",
+     "org": "Anthropic",
+     "score": 1512,
+     "votes": 3514,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 5,
+     "model": "Claude Opus 4.7 (High)",
+     "org": "Anthropic",
+     "score": 1511,
+     "votes": 5256,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 6,
+     "model": "Claude Opus 4.6 (High)",
+     "org": "Anthropic",
+     "score": 1510,
+     "votes": 6644,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 7,
+     "model": "Kimi K3 (Max)",
+     "org": "Moonshot",
+     "score": 1510,
+     "votes": 2567,
+     "license": "Kimi K3 license"
+    },
+    {
+     "rank": 8,
+     "model": "Claude Opus 4.6",
+     "org": "Anthropic",
+     "score": 1507,
+     "votes": 6897,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 9,
+     "model": "Muse Spark 1.3 (Max)",
+     "org": "Meta",
+     "score": 1504,
+     "votes": 1500,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 10,
+     "model": "Claude Opus 5 (Max)",
+     "org": "Anthropic",
+     "score": 1503,
+     "votes": 2803,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 11,
+     "model": "GPT-6.1 Sol (Max)",
+     "org": "OpenAI",
+     "score": 1503,
+     "votes": 518,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 12,
+     "model": "Gemini 3 Pro",
+     "org": "Google",
+     "score": 1501,
+     "votes": 3029,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 13,
+     "model": "Claude Opus 5 (High)",
+     "org": "Anthropic",
+     "score": 1501,
+     "votes": 5656,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 14,
+     "model": "Muse Spark",
+     "org": "Meta",
+     "score": 1500,
+     "votes": 1018,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 15,
+     "model": "Gemini 3.1 Pro Preview",
+     "org": "Google",
+     "score": 1498,
+     "votes": 10501,
+     "license": "Proprietary"
+    }
+   ]
+  },
+  {
+   "category": "Text: Occupational - Medicine & Healthcare",
+   "url": "https://arena.ai/leaderboard/chat/text/industry-medicine-and-healthcare",
+   "metric": "Arena score (Elo)",
+   "higher_is_better": true,
+   "data_date": "2026-10-15",
+   "entries": [
+    {
+     "rank": 1,
+     "model": "Gemini 4 Argon (High)",
+     "org": "Google",
+     "score": 1551,
+     "votes": 334,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 2,
+     "model": "Muse Wonder (Max)",
+     "org": "Meta",
+     "score": 1525,
+     "votes": 227,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 3,
+     "model": "Claude Fable 5.1 (Max)",
+     "org": "Anthropic",
+     "score": 1523,
+     "votes": 1134,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 4,
+     "model": "Claude Opus 4.6 (High)",
+     "org": "Anthropic",
+     "score": 1518,
+     "votes": 6131,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 5,
+     "model": "Claude Opus 4.7 (High)",
+     "org": "Anthropic",
+     "score": 1517,
+     "votes": 4959,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 6,
+     "model": "Claude Opus 5.5 (High)",
+     "org": "Anthropic",
+     "score": 1516,
+     "votes": 564,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 7,
+     "model": "Kimi K3 (Max)",
+     "org": "Moonshot",
+     "score": 1514,
+     "votes": 2230,
+     "license": "Kimi K3 license"
+    },
+    {
+     "rank": 8,
+     "model": "Claude Opus 4.6",
+     "org": "Anthropic",
+     "score": 1513,
+     "votes": 6410,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 9,
+     "model": "Claude Opus 5 (Max)",
+     "org": "Anthropic",
+     "score": 1513,
+     "votes": 2458,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 10,
+     "model": "Claude Opus 4.7",
+     "org": "Anthropic",
+     "score": 1513,
+     "votes": 4999,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 11,
+     "model": "Gemini 3 Pro",
+     "org": "Google",
+     "score": 1509,
+     "votes": 2663,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 12,
+     "model": "Gemini 3.8 Flash (High)",
+     "org": "Google",
+     "score": 1508,
+     "votes": 2687,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 13,
+     "model": "Qwen3.8-Max",
+     "org": "Alibaba",
+     "score": 1508,
+     "votes": 1860,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 14,
+     "model": "Muse Spark 1.2 (xHigh)",
+     "org": "Meta",
+     "score": 1508,
+     "votes": 558,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 15,
+     "model": "Claude Fable 5 (High)",
+     "org": "Anthropic",
+     "score": 1507,
+     "votes": 2983,
+     "license": "Proprietary"
+    }
+   ]
+  },
+  {
+   "category": "Text: Math",
+   "url": "https://arena.ai/leaderboard/chat/text/math",
+   "metric": "Arena score (Elo)",
+   "higher_is_better": true,
+   "data_date": "2026-10-15",
+   "entries": [
+    {
+     "rank": 1,
+     "model": "Gemini 4 Argon (High)",
+     "org": "Google",
+     "score": 1529,
+     "votes": 273,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 2,
+     "model": "Claude Fable 5.1 (Max)",
+     "org": "Anthropic",
+     "score": 1525,
+     "votes": 695,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 3,
+     "model": "Claude Fable 5 (High)",
+     "org": "Anthropic",
+     "score": 1523,
+     "votes": 2069,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 4,
+     "model": "Gemini 3.8 Flash (High)",
+     "org": "Google",
+     "score": 1522,
+     "votes": 1883,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 5,
+     "model": "Claude Opus 5 (High)",
+     "org": "Anthropic",
+     "score": 1522,
+     "votes": 3152,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 6,
+     "model": "Claude Opus 4.6 (High)",
+     "org": "Anthropic",
+     "score": 1518,
+     "votes": 4186,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 7,
+     "model": "Claude Opus 5 (Max)",
+     "org": "Anthropic",
+     "score": 1514,
+     "votes": 1514,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 8,
+     "model": "GLM-5.3-Flash",
+     "org": "Z.ai",
+     "score": 1506,
+     "votes": 1647,
+     "license": "MIT"
+    },
+    {
+     "rank": 9,
+     "model": "Gemini 3.7 Flash (High)",
+     "org": "Google",
+     "score": 1506,
+     "votes": 1390,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 10,
+     "model": "Claude Opus 4.6",
+     "org": "Anthropic",
+     "score": 1505,
+     "votes": 4673,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 11,
+     "model": "Muse Spark 1.3 (Max)",
+     "org": "Meta",
+     "score": 1504,
+     "votes": 854,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 12,
+     "model": "Claude Opus 4.7 (High)",
+     "org": "Anthropic",
+     "score": 1504,
+     "votes": 3286,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 13,
+     "model": "Gemini 3.6 Flash (High)",
+     "org": "Google",
+     "score": 1502,
+     "votes": 1764,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 14,
+     "model": "Claude Opus 5.5 (High)",
+     "org": "Anthropic",
+     "score": 1502,
+     "votes": 416,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 15,
+     "model": "Claude Sonnet 5.5 (xHigh)",
+     "org": "Anthropic",
+     "score": 1502,
+     "votes": 345,
+     "license": "Proprietary"
+    }
+   ]
+  },
+  {
+   "category": "Text: Instruction Following",
+   "url": "https://arena.ai/leaderboard/chat/text/instruction-following",
+   "metric": "Arena score (Elo)",
+   "higher_is_better": true,
+   "data_date": "2026-10-15",
+   "entries": [
+    {
+     "rank": 1,
+     "model": "Gemini 4 Argon (High)",
+     "org": "Google",
+     "score": 1527,
+     "votes": 1750,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 2,
+     "model": "Claude Opus 5.5 (High)",
+     "org": "Anthropic",
+     "score": 1518,
+     "votes": 2851,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 3,
+     "model": "Claude Opus 4.6 (High)",
+     "org": "Anthropic",
+     "score": 1512,
+     "votes": 26220,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 4,
+     "model": "Claude Fable 5 (High)",
+     "org": "Anthropic",
+     "score": 1508,
+     "votes": 14825,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 5,
+     "model": "Claude Opus 4.7 (High)",
+     "org": "Anthropic",
+     "score": 1502,
+     "votes": 22744,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 6,
+     "model": "Claude Opus 4.6",
+     "org": "Anthropic",
+     "score": 1499,
+     "votes": 28843,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 7,
+     "model": "Claude Fable 5.1 (Max)",
+     "org": "Anthropic",
+     "score": 1499,
+     "votes": 4370,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 8,
+     "model": "Claude Opus 5 (High)",
+     "org": "Anthropic",
+     "score": 1496,
+     "votes": 23619,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 9,
+     "model": "Claude Opus 5 (Max)",
+     "org": "Anthropic",
+     "score": 1494,
+     "votes": 11298,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 10,
+     "model": "Claude Opus 4.7",
+     "org": "Anthropic",
+     "score": 1493,
+     "votes": 23320,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 11,
+     "model": "Muse Wonder (Max)",
+     "org": "Meta",
+     "score": 1492,
+     "votes": 1104,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 12,
+     "model": "Claude Opus 4.8 (High)",
+     "org": "Anthropic",
+     "score": 1491,
+     "votes": 22679,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 13,
+     "model": "GPT-5.6 Sol (xHigh)",
+     "org": "OpenAI",
+     "score": 1491,
+     "votes": 14119,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 14,
+     "model": "Gemini 3.8 Flash (High)",
+     "org": "Google",
+     "score": 1490,
+     "votes": 13391,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 15,
+     "model": "Kimi K3 (Max)",
+     "org": "Moonshot",
+     "score": 1488,
+     "votes": 10901,
+     "license": "Kimi K3 license"
+    }
+   ]
+  },
+  {
+   "category": "Text: Multi-Turn",
+   "url": "https://arena.ai/leaderboard/chat/text/multi-turn",
+   "metric": "Arena score (Elo)",
+   "higher_is_better": true,
+   "data_date": "2026-10-15",
+   "entries": [
+    {
+     "rank": 1,
+     "model": "Gemini 4 Argon (High)",
+     "org": "Google",
+     "score": 1552,
+     "votes": 680,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 2,
+     "model": "Muse Wonder (Max)",
+     "org": "Meta",
+     "score": 1529,
+     "votes": 431,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 3,
+     "model": "Claude Fable 5 (High)",
+     "org": "Anthropic",
+     "score": 1518,
+     "votes": 6819,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 4,
+     "model": "Claude Opus 4.6 (High)",
+     "org": "Anthropic",
+     "score": 1517,
+     "votes": 13816,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 5,
+     "model": "Claude Opus 4.7 (High)",
+     "org": "Anthropic",
+     "score": 1516,
+     "votes": 11424,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 6,
+     "model": "Muse Spark 1.2 (xHigh)",
+     "org": "Meta",
+     "score": 1514,
+     "votes": 1206,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 7,
+     "model": "Claude Opus 4.7",
+     "org": "Anthropic",
+     "score": 1514,
+     "votes": 11700,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 8,
+     "model": "Claude Opus 4.6",
+     "org": "Anthropic",
+     "score": 1511,
+     "votes": 15062,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 9,
+     "model": "Gemini 3.8 Flash (High)",
+     "org": "Google",
+     "score": 1503,
+     "votes": 5601,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 10,
+     "model": "Claude Opus 5.5 (High)",
+     "org": "Anthropic",
+     "score": 1501,
+     "votes": 1088,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 11,
+     "model": "Kimi K3 (Max)",
+     "org": "Moonshot",
+     "score": 1500,
+     "votes": 5013,
+     "license": "Kimi K3 license"
+    },
+    {
+     "rank": 12,
+     "model": "Claude Opus 4.8 (High)",
+     "org": "Anthropic",
+     "score": 1496,
+     "votes": 11189,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 13,
+     "model": "Gemini 3.1 Pro Preview",
+     "org": "Google",
+     "score": 1496,
+     "votes": 21640,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 14,
+     "model": "Gemini 3 Pro",
+     "org": "Google",
+     "score": 1496,
+     "votes": 6857,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 15,
+     "model": "Muse Spark 1.1",
+     "org": "Meta",
+     "score": 1495,
+     "votes": 6502,
+     "license": "Proprietary"
+    }
+   ]
+  },
+  {
+   "category": "Text: Creative Writing",
+   "url": "https://arena.ai/leaderboard/chat/text/creative-writing",
+   "metric": "Arena score (Elo)",
+   "higher_is_better": true,
+   "data_date": "2026-10-15",
+   "entries": [
+    {
+     "rank": 1,
+     "model": "Claude Opus 5.5 (High)",
+     "org": "Anthropic",
+     "score": 1519,
+     "votes": 1945,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 2,
+     "model": "Gemini 4 Argon (High)",
+     "org": "Google",
+     "score": 1516,
+     "votes": 1057,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 3,
+     "model": "Claude Fable 5 (High)",
+     "org": "Anthropic",
+     "score": 1501,
+     "votes": 9020,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 4,
+     "model": "Claude Opus 4.6 (High)",
+     "org": "Anthropic",
+     "score": 1500,
+     "votes": 14950,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 5,
+     "model": "Gemini 3.7 Flash (High)",
+     "org": "Google",
+     "score": 1491,
+     "votes": 6003,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 6,
+     "model": "Claude Opus 4.7 (High)",
+     "org": "Anthropic",
+     "score": 1489,
+     "votes": 11806,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 7,
+     "model": "Gemini 3.8 Flash (High)",
+     "org": "Google",
+     "score": 1487,
+     "votes": 8232,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 8,
+     "model": "Muse Wonder (Max)",
+     "org": "Meta",
+     "score": 1485,
+     "votes": 710,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 9,
+     "model": "Claude Fable 5.1 (Max)",
+     "org": "Anthropic",
+     "score": 1485,
+     "votes": 3284,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 10,
+     "model": "Gemini 3 Pro",
+     "org": "Google",
+     "score": 1485,
+     "votes": 6543,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 11,
+     "model": "Claude Opus 4.7",
+     "org": "Anthropic",
+     "score": 1482,
+     "votes": 12033,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 12,
+     "model": "Gemini 3.1 Pro Preview",
+     "org": "Google",
+     "score": 1481,
+     "votes": 23619,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 13,
+     "model": "Claude Opus 4.6",
+     "org": "Anthropic",
+     "score": 1478,
+     "votes": 15116,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 14,
+     "model": "Claude Opus 5 (High)",
+     "org": "Anthropic",
+     "score": 1471,
+     "votes": 14918,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 15,
+     "model": "Gemini 3.6 Flash (High)",
+     "org": "Google",
+     "score": 1471,
+     "votes": 7583,
+     "license": "Proprietary"
+    }
+   ]
+  },
+  {
+   "category": "Text: Coding",
+   "url": "https://arena.ai/leaderboard/chat/text/coding",
+   "metric": "Arena score (Elo)",
+   "higher_is_better": true,
+   "data_date": "2026-10-15",
+   "entries": [
+    {
+     "rank": 1,
+     "model": "Gemini 4 Argon (High)",
+     "org": "Google",
+     "score": 1559,
+     "votes": 1231,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 2,
+     "model": "Claude Fable 5 (High)",
+     "org": "Anthropic",
+     "score": 1551,
+     "votes": 10844,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 3,
+     "model": "Claude Opus 4.7 (High)",
+     "org": "Anthropic",
+     "score": 1551,
+     "votes": 18573,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 4,
+     "model": "Claude Opus 4.6 (High)",
+     "org": "Anthropic",
+     "score": 1548,
+     "votes": 21082,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 5,
+     "model": "Muse Wonder (Max)",
+     "org": "Meta",
+     "score": 1548,
+     "votes": 776,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 6,
+     "model": "Claude Opus 5.5 (High)",
+     "org": "Anthropic",
+     "score": 1548,
+     "votes": 1894,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 7,
+     "model": "Claude Opus 4.6",
+     "org": "Anthropic",
+     "score": 1547,
+     "votes": 23838,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 8,
+     "model": "Claude Opus 4.7",
+     "org": "Anthropic",
+     "score": 1546,
+     "votes": 18806,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 9,
+     "model": "GPT-6 Astra (Max)",
+     "org": "OpenAI",
+     "score": 1543,
+     "votes": 2744,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 10,
+     "model": "GPT-6.1 Sol (Max)",
+     "org": "OpenAI",
+     "score": 1540,
+     "votes": 1257,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 11,
+     "model": "Muse Spark 1.2 (xHigh)",
+     "org": "Meta",
+     "score": 1539,
+     "votes": 2170,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 12,
+     "model": "Kimi K3 (Max)",
+     "org": "Moonshot",
+     "score": 1538,
+     "votes": 8306,
+     "license": "Kimi K3 license"
+    },
+    {
+     "rank": 13,
+     "model": "MiMo-V2.6-Pro",
+     "org": "Xiaomi",
+     "score": 1538,
+     "votes": 1105,
+     "license": "MIT"
+    },
+    {
+     "rank": 14,
+     "model": "Claude Fable 5.1 (Max)",
+     "org": "Anthropic",
+     "score": 1537,
+     "votes": 2900,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 15,
+     "model": "Muse Spark 1.3 (Max)",
+     "org": "Meta",
+     "score": 1535,
+     "votes": 4556,
+     "license": "Proprietary"
+    }
+   ]
+  },
+  {
+   "category": "Text: Hard Prompts",
+   "url": "https://arena.ai/leaderboard/chat/text/hard-prompts",
+   "metric": "Arena score (Elo)",
+   "higher_is_better": true,
+   "data_date": "2026-10-15",
+   "entries": [
+    {
+     "rank": 1,
+     "model": "Gemini 4 Argon (High)",
+     "org": "Google",
+     "score": 1549,
+     "votes": 3129,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 2,
+     "model": "Claude Opus 5.5 (High)",
+     "org": "Anthropic",
+     "score": 1533,
+     "votes": 5157,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 3,
+     "model": "Claude Opus 4.6 (High)",
+     "org": "Anthropic",
+     "score": 1531,
+     "votes": 51834,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 4,
+     "model": "Claude Fable 5 (High)",
+     "org": "Anthropic",
+     "score": 1529,
+     "votes": 27374,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 5,
+     "model": "Claude Opus 4.6",
+     "org": "Anthropic",
+     "score": 1527,
+     "votes": 55852,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 6,
+     "model": "Muse Wonder (Max)",
+     "org": "Meta",
+     "score": 1527,
+     "votes": 2018,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 7,
+     "model": "Claude Opus 4.7 (High)",
+     "org": "Anthropic",
+     "score": 1525,
+     "votes": 43663,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 8,
+     "model": "Claude Fable 5.1 (Max)",
+     "org": "Anthropic",
+     "score": 1521,
+     "votes": 8511,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 9,
+     "model": "Claude Opus 4.7",
+     "org": "Anthropic",
+     "score": 1519,
+     "votes": 44397,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 10,
+     "model": "Gemini 3.8 Flash (High)",
+     "org": "Google",
+     "score": 1518,
+     "votes": 24169,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 11,
+     "model": "Kimi K3 (Max)",
+     "org": "Moonshot",
+     "score": 1516,
+     "votes": 21003,
+     "license": "Kimi K3 license"
+    },
+    {
+     "rank": 12,
+     "model": "Muse Spark 1.3 (Max)",
+     "org": "Meta",
+     "score": 1515,
+     "votes": 11392,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 13,
+     "model": "Claude Opus 5 (High)",
+     "org": "Anthropic",
+     "score": 1514,
+     "votes": 43605,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 14,
+     "model": "Claude Opus 5 (Max)",
+     "org": "Anthropic",
+     "score": 1514,
+     "votes": 21001,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 15,
+     "model": "Claude Opus 4.8 (High)",
+     "org": "Anthropic",
+     "score": 1513,
+     "votes": 42534,
+     "license": "Proprietary"
+    }
+   ]
+  },
+  {
+   "category": "Text: Hard Prompts (English)",
+   "url": "https://arena.ai/leaderboard/chat/text/hard-prompts-english",
+   "metric": "Arena score (Elo)",
+   "higher_is_better": true,
+   "data_date": "2026-10-15",
+   "entries": [
+    {
+     "rank": 1,
+     "model": "Gemini 4 Argon (High)",
+     "org": "Google",
+     "score": 1551,
+     "votes": 1208,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 2,
+     "model": "Claude Opus 4.6 (High)",
+     "org": "Anthropic",
+     "score": 1536,
+     "votes": 23259,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 3,
+     "model": "Claude Opus 5.5 (High)",
+     "org": "Anthropic",
+     "score": 1532,
+     "votes": 1990,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 4,
+     "model": "Claude Fable 5 (High)",
+     "org": "Anthropic",
+     "score": 1532,
+     "votes": 11708,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 5,
+     "model": "Claude Opus 4.6",
+     "org": "Anthropic",
+     "score": 1530,
+     "votes": 25445,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 6,
+     "model": "Claude Opus 4.7 (High)",
+     "org": "Anthropic",
+     "score": 1528,
+     "votes": 20836,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 7,
+     "model": "Muse Wonder (Max)",
+     "org": "Meta",
+     "score": 1527,
+     "votes": 838,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 8,
+     "model": "Claude Opus 4.7",
+     "org": "Anthropic",
+     "score": 1521,
+     "votes": 21158,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 9,
+     "model": "Claude Fable 5.1 (Max)",
+     "org": "Anthropic",
+     "score": 1519,
+     "votes": 3454,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 10,
+     "model": "Kimi K3 (Max)",
+     "org": "Moonshot",
+     "score": 1517,
+     "votes": 8025,
+     "license": "Kimi K3 license"
+    },
+    {
+     "rank": 11,
+     "model": "Claude Opus 4.8 (High)",
+     "org": "Anthropic",
+     "score": 1517,
+     "votes": 18817,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 12,
+     "model": "Claude Sonnet 5.5 (xHigh)",
+     "org": "Anthropic",
+     "score": 1514,
+     "votes": 1606,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 13,
+     "model": "GPT-6.1 Sol (Max)",
+     "org": "OpenAI",
+     "score": 1514,
+     "votes": 1404,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 14,
+     "model": "Gemini 3.8 Flash (High)",
+     "org": "Google",
+     "score": 1513,
+     "votes": 9477,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 15,
+     "model": "Claude Opus 5 (High)",
+     "org": "Anthropic",
+     "score": 1513,
+     "votes": 17575,
+     "license": "Proprietary"
+    }
+   ]
+  },
+  {
+   "category": "Text: Longer Query",
+   "url": "https://arena.ai/leaderboard/chat/text/longer-query",
+   "metric": "Arena score (Elo)",
+   "higher_is_better": true,
+   "data_date": "2026-10-15",
+   "entries": [
+    {
+     "rank": 1,
+     "model": "Gemini 4 Argon (High)",
+     "org": "Google",
+     "score": 1543,
+     "votes": 2064,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 2,
+     "model": "Claude Opus 5.5 (High)",
+     "org": "Anthropic",
+     "score": 1523,
+     "votes": 3519,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 3,
+     "model": "Claude Opus 4.6 (High)",
+     "org": "Anthropic",
+     "score": 1522,
+     "votes": 34498,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 4,
+     "model": "Claude Fable 5 (High)",
+     "org": "Anthropic",
+     "score": 1522,
+     "votes": 19543,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 5,
+     "model": "Claude Opus 4.6",
+     "org": "Anthropic",
+     "score": 1516,
+     "votes": 37440,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 6,
+     "model": "Claude Opus 4.7 (High)",
+     "org": "Anthropic",
+     "score": 1515,
+     "votes": 30078,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 7,
+     "model": "Gemini 3.8 Flash (High)",
+     "org": "Google",
+     "score": 1510,
+     "votes": 17232,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 8,
+     "model": "Claude Fable 5.1 (Max)",
+     "org": "Anthropic",
+     "score": 1509,
+     "votes": 6028,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 9,
+     "model": "Claude Opus 4.7",
+     "org": "Anthropic",
+     "score": 1508,
+     "votes": 30849,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 10,
+     "model": "Claude Opus 4.8 (High)",
+     "org": "Anthropic",
+     "score": 1503,
+     "votes": 30215,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 11,
+     "model": "Claude Opus 5 (High)",
+     "org": "Anthropic",
+     "score": 1503,
+     "votes": 31461,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 12,
+     "model": "Kimi K3 (Max)",
+     "org": "Moonshot",
+     "score": 1502,
+     "votes": 14255,
+     "license": "Kimi K3 license"
+    },
+    {
+     "rank": 13,
+     "model": "Claude Opus 5 (Max)",
+     "org": "Anthropic",
+     "score": 1502,
+     "votes": 15315,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 14,
+     "model": "Muse Wonder (Max)",
+     "org": "Meta",
+     "score": 1500,
+     "votes": 1437,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 15,
+     "model": "Gemini 3.1 Pro Preview",
+     "org": "Google",
+     "score": 1500,
+     "votes": 56414,
+     "license": "Proprietary"
+    }
+   ]
+  },
+  {
+   "category": "Text: English",
+   "url": "https://arena.ai/leaderboard/chat/text/english",
+   "metric": "Arena score (Elo)",
+   "higher_is_better": true,
+   "data_date": "2026-10-15",
+   "entries": [
+    {
+     "rank": 1,
+     "model": "Gemini 4 Argon (High)",
+     "org": "Google",
+     "score": 1532,
+     "votes": 1902,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 2,
+     "model": "Muse Wonder (Max)",
+     "org": "Meta",
+     "score": 1518,
+     "votes": 1326,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 3,
+     "model": "Claude Opus 4.6 (High)",
+     "org": "Anthropic",
+     "score": 1514,
+     "votes": 35808,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 4,
+     "model": "Claude Fable 5 (High)",
+     "org": "Anthropic",
+     "score": 1513,
+     "votes": 17924,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 5,
+     "model": "Claude Opus 5.5 (High)",
+     "org": "Anthropic",
+     "score": 1511,
+     "votes": 3165,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 6,
+     "model": "Claude Opus 4.7 (High)",
+     "org": "Anthropic",
+     "score": 1510,
+     "votes": 30177,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 7,
+     "model": "Claude Opus 4.6",
+     "org": "Anthropic",
+     "score": 1506,
+     "votes": 38398,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 8,
+     "model": "Claude Opus 4.7",
+     "org": "Anthropic",
+     "score": 1500,
+     "votes": 30534,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 9,
+     "model": "Muse Spark 1.3 (Max)",
+     "org": "Meta",
+     "score": 1500,
+     "votes": 6959,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 10,
+     "model": "Claude Fable 5.1 (Max)",
+     "org": "Anthropic",
+     "score": 1499,
+     "votes": 5935,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 11,
+     "model": "Gemini 3.8 Flash (High)",
+     "org": "Google",
+     "score": 1499,
+     "votes": 14771,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 12,
+     "model": "Muse Spark",
+     "org": "Meta",
+     "score": 1496,
+     "votes": 6685,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 13,
+     "model": "GPT-6.1 Sol (Max)",
+     "org": "OpenAI",
+     "score": 1495,
+     "votes": 2409,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 14,
+     "model": "MiMo-V2.6-Pro",
+     "org": "Xiaomi",
+     "score": 1495,
+     "votes": 1503,
+     "license": "MIT"
+    },
+    {
+     "rank": 15,
+     "model": "Kimi K3 (Max)",
+     "org": "Moonshot",
+     "score": 1495,
+     "votes": 12464,
+     "license": "Kimi K3 license"
+    }
+   ]
+  },
+  {
+   "category": "Text: Non-English",
+   "url": "https://arena.ai/leaderboard/chat/text/non-english",
+   "metric": "Arena score (Elo)",
+   "higher_is_better": true,
+   "data_date": "2026-10-15",
+   "entries": [
+    {
+     "rank": 1,
+     "model": "Gemini 4 Argon (High)",
+     "org": "Google",
+     "score": 1511,
+     "votes": 3002,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 2,
+     "model": "Claude Opus 5.5 (High)",
+     "org": "Anthropic",
+     "score": 1497,
+     "votes": 5130,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 3,
+     "model": "Muse Wonder (Max)",
+     "org": "Meta",
+     "score": 1496,
+     "votes": 1917,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 4,
+     "model": "Claude Fable 5.1 (Max)",
+     "org": "Anthropic",
+     "score": 1495,
+     "votes": 8652,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 5,
+     "model": "Claude Fable 5 (High)",
+     "org": "Anthropic",
+     "score": 1492,
+     "votes": 24075,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 6,
+     "model": "Claude Opus 4.7 (High)",
+     "org": "Anthropic",
+     "score": 1490,
+     "votes": 34937,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 7,
+     "model": "Claude Opus 4.6 (High)",
+     "org": "Anthropic",
+     "score": 1489,
+     "votes": 45580,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 8,
+     "model": "Muse Spark 1.2 (xHigh)",
+     "org": "Meta",
+     "score": 1487,
+     "votes": 4934,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 9,
+     "model": "Gemini 3.8 Flash (High)",
+     "org": "Google",
+     "score": 1487,
+     "votes": 22675,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 10,
+     "model": "Claude Opus 4.6",
+     "org": "Anthropic",
+     "score": 1485,
+     "votes": 47669,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 11,
+     "model": "Gemini 3.7 Flash (High)",
+     "org": "Google",
+     "score": 1484,
+     "votes": 16312,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 12,
+     "model": "Muse Spark 1.3 (Max)",
+     "org": "Meta",
+     "score": 1483,
+     "votes": 10597,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 13,
+     "model": "Muse Spark 1.1",
+     "org": "Meta",
+     "score": 1483,
+     "votes": 25424,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 14,
+     "model": "Claude Opus 4.7",
+     "org": "Anthropic",
+     "score": 1483,
+     "votes": 35682,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 15,
+     "model": "Claude Opus 5 (High)",
+     "org": "Anthropic",
+     "score": 1481,
+     "votes": 39613,
+     "license": "Proprietary"
+    }
+   ]
+  },
+  {
+   "category": "Text: Chinese",
+   "url": "https://arena.ai/leaderboard/chat/text/chinese",
+   "metric": "Arena score (Elo)",
+   "higher_is_better": true,
+   "data_date": "2026-10-15",
+   "entries": [
+    {
+     "rank": 1,
+     "model": "Gemini 4 Argon (High)",
+     "org": "Google",
+     "score": 1587,
+     "votes": 363,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 2,
+     "model": "Claude Opus 5.5 (High)",
+     "org": "Anthropic",
+     "score": 1572,
+     "votes": 767,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 3,
+     "model": "Claude Fable 5.1 (Max)",
+     "org": "Anthropic",
+     "score": 1569,
+     "votes": 1111,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 4,
+     "model": "Claude Fable 5 (High)",
+     "org": "Anthropic",
+     "score": 1553,
+     "votes": 3131,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 5,
+     "model": "Claude Opus 4.6 (High)",
+     "org": "Anthropic",
+     "score": 1550,
+     "votes": 5649,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 6,
+     "model": "Claude Opus 5 (High)",
+     "org": "Anthropic",
+     "score": 1547,
+     "votes": 5347,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 7,
+     "model": "Claude Opus 5 (Max)",
+     "org": "Anthropic",
+     "score": 1546,
+     "votes": 2580,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 8,
+     "model": "Claude Opus 4.6",
+     "org": "Anthropic",
+     "score": 1545,
+     "votes": 5888,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 9,
+     "model": "Claude Sonnet 5.5 (xHigh)",
+     "org": "Anthropic",
+     "score": 1545,
+     "votes": 553,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 10,
+     "model": "Gemini 3.7 Flash (High)",
+     "org": "Google",
+     "score": 1544,
+     "votes": 2124,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 11,
+     "model": "Muse Wonder (Max)",
+     "org": "Meta",
+     "score": 1543,
+     "votes": 248,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 12,
+     "model": "GPT-5.6 Sol (xHigh)",
+     "org": "OpenAI",
+     "score": 1541,
+     "votes": 3113,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 13,
+     "model": "Kimi K3 (Max)",
+     "org": "Moonshot",
+     "score": 1541,
+     "votes": 2372,
+     "license": "Kimi K3 license"
+    },
+    {
+     "rank": 14,
+     "model": "Claude Opus 4.7 (High)",
+     "org": "Anthropic",
+     "score": 1538,
+     "votes": 4182,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 15,
+     "model": "Gemini 3.8 Flash (High)",
+     "org": "Google",
+     "score": 1536,
+     "votes": 3070,
+     "license": "Proprietary"
+    }
+   ]
+  },
+  {
+   "category": "Text: French",
+   "url": "https://arena.ai/leaderboard/chat/text/french",
+   "metric": "Arena score (Elo)",
+   "higher_is_better": true,
+   "data_date": "2026-10-15",
+   "entries": [
+    {
+     "rank": 1,
+     "model": "Muse Spark 1.3 (Max)",
+     "org": "Meta",
+     "score": 1528,
+     "votes": 549,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 2,
+     "model": "Claude Fable 5 (High)",
+     "org": "Anthropic",
+     "score": 1522,
+     "votes": 1430,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 3,
+     "model": "Muse Spark 1.2 (xHigh)",
+     "org": "Meta",
+     "score": 1521,
+     "votes": 292,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 4,
+     "model": "Muse Spark",
+     "org": "Meta",
+     "score": 1520,
+     "votes": 479,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 5,
+     "model": "Claude Fable 5.1 (Max)",
+     "org": "Anthropic",
+     "score": 1517,
+     "votes": 497,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 6,
+     "model": "Claude Opus 4.7 (High)",
+     "org": "Anthropic",
+     "score": 1517,
+     "votes": 2295,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 7,
+     "model": "GLM-5.3 (Max)",
+     "org": "Z.ai",
+     "score": 1516,
+     "votes": 736,
+     "license": "MIT"
+    },
+    {
+     "rank": 8,
+     "model": "Muse Spark 1.1",
+     "org": "Meta",
+     "score": 1514,
+     "votes": 1434,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 9,
+     "model": "GPT-6.1 Sol (Max)",
+     "org": "OpenAI",
+     "score": 1513,
+     "votes": 240,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 10,
+     "model": "Gemini 3.6 Flash (High)",
+     "org": "Google",
+     "score": 1512,
+     "votes": 1150,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 11,
+     "model": "Claude Opus 4.6 (High)",
+     "org": "Anthropic",
+     "score": 1510,
+     "votes": 2652,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 12,
+     "model": "Claude Opus 4.7",
+     "org": "Anthropic",
+     "score": 1509,
+     "votes": 2378,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 13,
+     "model": "GPT-5.6 Sol (xHigh)",
+     "org": "OpenAI",
+     "score": 1509,
+     "votes": 1298,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 14,
+     "model": "Gemini 3.7 Flash (High)",
+     "org": "Google",
+     "score": 1509,
+     "votes": 844,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 15,
+     "model": "Claude Opus 4.8 (High)",
+     "org": "Anthropic",
+     "score": 1507,
+     "votes": 2188,
+     "license": "Proprietary"
+    }
+   ]
+  },
+  {
+   "category": "Text: German",
+   "url": "https://arena.ai/leaderboard/chat/text/german",
+   "metric": "Arena score (Elo)",
+   "higher_is_better": true,
+   "data_date": "2026-10-15",
+   "entries": [
+    {
+     "rank": 1,
+     "model": "Muse Spark 1.3 (Max)",
+     "org": "Meta",
+     "score": 1525,
+     "votes": 258,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 2,
+     "model": "Gemini 3 Pro",
+     "org": "Google",
+     "score": 1521,
+     "votes": 812,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 3,
+     "model": "Muse Spark",
+     "org": "Meta",
+     "score": 1511,
+     "votes": 237,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 4,
+     "model": "Claude Opus 5 (Max)",
+     "org": "Anthropic",
+     "score": 1508,
+     "votes": 554,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 5,
+     "model": "Claude Opus 4.6 (High)",
+     "org": "Anthropic",
+     "score": 1507,
+     "votes": 1292,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 6,
+     "model": "GLM-5.3 (Max)",
+     "org": "Z.ai",
+     "score": 1506,
+     "votes": 367,
+     "license": "MIT"
+    },
+    {
+     "rank": 7,
+     "model": "Claude Opus 4.7 (High)",
+     "org": "Anthropic",
+     "score": 1505,
+     "votes": 1022,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 8,
+     "model": "Kimi K3 (Max)",
+     "org": "Moonshot",
+     "score": 1505,
+     "votes": 651,
+     "license": "Kimi K3 license"
+    },
+    {
+     "rank": 9,
+     "model": "GPT-5.6 Sol (xHigh)",
+     "org": "OpenAI",
+     "score": 1504,
+     "votes": 644,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 10,
+     "model": "Claude Fable 5 (High)",
+     "org": "Anthropic",
+     "score": 1502,
+     "votes": 650,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 11,
+     "model": "DeepSeek-V4.1-Flash (Max)",
+     "org": "DeepSeek",
+     "score": 1500,
+     "votes": 230,
+     "license": "MIT"
+    },
+    {
+     "rank": 12,
+     "model": "Gemini 3 Flash",
+     "org": "Google",
+     "score": 1499,
+     "votes": 573,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 13,
+     "model": "Gemini 3.7 Flash (High)",
+     "org": "Google",
+     "score": 1499,
+     "votes": 418,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 14,
+     "model": "Claude Opus 4.7",
+     "org": "Anthropic",
+     "score": 1498,
+     "votes": 1041,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 15,
+     "model": "Gemini 3.1 Pro Preview",
+     "org": "Google",
+     "score": 1495,
+     "votes": 2125,
+     "license": "Proprietary"
+    }
+   ]
+  },
+  {
+   "category": "Text: Spanish",
+   "url": "https://arena.ai/leaderboard/chat/text/spanish",
+   "metric": "Arena score (Elo)",
+   "higher_is_better": true,
+   "data_date": "2026-10-15",
+   "entries": [
+    {
+     "rank": 1,
+     "model": "Claude Opus 5.5 (High)",
+     "org": "Anthropic",
+     "score": 1503,
+     "votes": 294,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 2,
+     "model": "Claude Fable 5 (High)",
+     "org": "Anthropic",
+     "score": 1503,
+     "votes": 1314,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 3,
+     "model": "Claude Fable 5.1 (Max)",
+     "org": "Anthropic",
+     "score": 1501,
+     "votes": 474,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 4,
+     "model": "Claude Opus 4.6",
+     "org": "Anthropic",
+     "score": 1499,
+     "votes": 2844,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 5,
+     "model": "Claude Opus 4.7 (High)",
+     "org": "Anthropic",
+     "score": 1499,
+     "votes": 2051,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 6,
+     "model": "Gemini 4 Argon (High)",
+     "org": "Google",
+     "score": 1497,
+     "votes": 225,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 7,
+     "model": "Muse Spark 1.2 (xHigh)",
+     "org": "Meta",
+     "score": 1495,
+     "votes": 262,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 8,
+     "model": "Muse Spark 1.3 (Max)",
+     "org": "Meta",
+     "score": 1493,
+     "votes": 554,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 9,
+     "model": "Claude Opus 4.6 (High)",
+     "org": "Anthropic",
+     "score": 1493,
+     "votes": 2763,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 10,
+     "model": "Claude Opus 5 (Max)",
+     "org": "Anthropic",
+     "score": 1487,
+     "votes": 942,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 11,
+     "model": "GPT-5.5 Instant",
+     "org": "OpenAI",
+     "score": 1486,
+     "votes": 814,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 12,
+     "model": "Gemini 3.7 Flash (High)",
+     "org": "Google",
+     "score": 1485,
+     "votes": 862,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 13,
+     "model": "Gemini 3.1 Pro Preview",
+     "org": "Google",
+     "score": 1483,
+     "votes": 4053,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 14,
+     "model": "Claude Opus 5 (High)",
+     "org": "Anthropic",
+     "score": 1482,
+     "votes": 1966,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 15,
+     "model": "Claude Opus 4.8 (High)",
+     "org": "Anthropic",
+     "score": 1480,
+     "votes": 1865,
+     "license": "Proprietary"
+    }
+   ]
+  },
+  {
+   "category": "Text: Russian",
+   "url": "https://arena.ai/leaderboard/chat/text/russian",
+   "metric": "Arena score (Elo)",
+   "higher_is_better": true,
+   "data_date": "2026-10-15",
+   "entries": [
+    {
+     "rank": 1,
+     "model": "Muse Wonder (Max)",
+     "org": "Meta",
+     "score": 1531,
+     "votes": 458,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 2,
+     "model": "Gemini 4 Argon (High)",
+     "org": "Google",
+     "score": 1526,
+     "votes": 671,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 3,
+     "model": "Gemini 3.7 Flash (High)",
+     "org": "Google",
+     "score": 1521,
+     "votes": 3394,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 4,
+     "model": "Claude Opus 5.5 (High)",
+     "org": "Anthropic",
+     "score": 1516,
+     "votes": 1089,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 5,
+     "model": "Claude Fable 5 (High)",
+     "org": "Anthropic",
+     "score": 1515,
+     "votes": 4719,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 6,
+     "model": "Gemini 3.8 Flash (High)",
+     "org": "Google",
+     "score": 1514,
+     "votes": 4787,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 7,
+     "model": "Claude Fable 5.1 (Max)",
+     "org": "Anthropic",
+     "score": 1508,
+     "votes": 1902,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 8,
+     "model": "Claude Opus 4.6 (High)",
+     "org": "Anthropic",
+     "score": 1506,
+     "votes": 9363,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 9,
+     "model": "Claude Opus 4.7 (High)",
+     "org": "Anthropic",
+     "score": 1505,
+     "votes": 6866,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 10,
+     "model": "Claude Opus 4.6",
+     "org": "Anthropic",
+     "score": 1504,
+     "votes": 9729,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 11,
+     "model": "Gemini 3.1 Pro Preview",
+     "org": "Google",
+     "score": 1501,
+     "votes": 14555,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 12,
+     "model": "Gemini 3 Pro",
+     "org": "Google",
+     "score": 1500,
+     "votes": 5072,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 13,
+     "model": "Claude Opus 5 (High)",
+     "org": "Anthropic",
+     "score": 1498,
+     "votes": 8097,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 14,
+     "model": "Muse Spark 1.2 (xHigh)",
+     "org": "Meta",
+     "score": 1497,
+     "votes": 1028,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 15,
+     "model": "GPT-5.6 Sol (xHigh)",
+     "org": "OpenAI",
+     "score": 1496,
+     "votes": 4774,
+     "license": "Proprietary"
+    }
+   ]
+  },
+  {
+   "category": "Text: Japanese",
+   "url": "https://arena.ai/leaderboard/chat/text/japanese",
+   "metric": "Arena score (Elo)",
+   "higher_is_better": true,
+   "data_date": "2026-10-15",
+   "entries": [
+    {
+     "rank": 1,
+     "model": "Claude Fable 5.1 (Max)",
+     "org": "Anthropic",
+     "score": 1550,
+     "votes": 258,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 2,
+     "model": "Claude Fable 5 (High)",
+     "org": "Anthropic",
+     "score": 1521,
+     "votes": 612,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 3,
+     "model": "Gemini 3.7 Flash (High)",
+     "org": "Google",
+     "score": 1512,
+     "votes": 435,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 4,
+     "model": "GPT-5.5 (High)",
+     "org": "OpenAI",
+     "score": 1504,
+     "votes": 907,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 5,
+     "model": "Claude Opus 5 (High)",
+     "org": "Anthropic",
+     "score": 1504,
+     "votes": 1100,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 6,
+     "model": "Gemini 3.8 Flash (High)",
+     "org": "Google",
+     "score": 1504,
+     "votes": 667,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 7,
+     "model": "Gemini 3 Pro",
+     "org": "Google",
+     "score": 1503,
+     "votes": 475,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 8,
+     "model": "Kimi K3 (Max)",
+     "org": "Moonshot",
+     "score": 1503,
+     "votes": 614,
+     "license": "Kimi K3 license"
+    },
+    {
+     "rank": 9,
+     "model": "Claude Opus 5 (Max)",
+     "org": "Anthropic",
+     "score": 1501,
+     "votes": 554,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 10,
+     "model": "Claude Opus 4.6 (High)",
+     "org": "Anthropic",
+     "score": 1499,
+     "votes": 930,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 11,
+     "model": "Gemini 3.1 Pro Preview",
+     "org": "Google",
+     "score": 1496,
+     "votes": 1526,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 12,
+     "model": "GPT-5.6 Sol (xHigh)",
+     "org": "OpenAI",
+     "score": 1495,
+     "votes": 623,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 13,
+     "model": "Muse Spark 1.3 (Max)",
+     "org": "Meta",
+     "score": 1492,
+     "votes": 293,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 14,
+     "model": "Claude Opus 4.7 (High)",
+     "org": "Anthropic",
+     "score": 1489,
+     "votes": 715,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 15,
+     "model": "Gemini 3 Flash",
+     "org": "Google",
+     "score": 1488,
+     "votes": 340,
+     "license": "Proprietary"
+    }
+   ]
+  },
+  {
+   "category": "Text: Korean",
+   "url": "https://arena.ai/leaderboard/chat/text/korean",
+   "metric": "Arena score (Elo)",
+   "higher_is_better": true,
+   "data_date": "2026-10-15",
+   "entries": [
+    {
+     "rank": 1,
+     "model": "Claude Fable 5.1 (Max)",
+     "org": "Anthropic",
+     "score": 1501,
+     "votes": 237,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 2,
+     "model": "Claude Fable 5 (High)",
+     "org": "Anthropic",
+     "score": 1499,
+     "votes": 792,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 3,
+     "model": "Claude Opus 5 (Max)",
+     "org": "Anthropic",
+     "score": 1498,
+     "votes": 637,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 4,
+     "model": "Muse Spark 1.3 (Max)",
+     "org": "Meta",
+     "score": 1495,
+     "votes": 322,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 5,
+     "model": "Claude Opus 5 (High)",
+     "org": "Anthropic",
+     "score": 1493,
+     "votes": 1279,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 6,
+     "model": "Muse Spark 1.2 (xHigh)",
+     "org": "Meta",
+     "score": 1481,
+     "votes": 180,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 7,
+     "model": "Gemini 3.7 Flash (High)",
+     "org": "Google",
+     "score": 1477,
+     "votes": 503,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 8,
+     "model": "Muse Spark 1.1",
+     "org": "Meta",
+     "score": 1474,
+     "votes": 805,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 9,
+     "model": "Muse Spark",
+     "org": "Meta",
+     "score": 1474,
+     "votes": 251,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 10,
+     "model": "GLM-5.3 (Max)",
+     "org": "Z.ai",
+     "score": 1472,
+     "votes": 390,
+     "license": "MIT"
+    },
+    {
+     "rank": 11,
+     "model": "Kimi K3 (Max)",
+     "org": "Moonshot",
+     "score": 1472,
+     "votes": 700,
+     "license": "Kimi K3 license"
+    },
+    {
+     "rank": 12,
+     "model": "Claude Opus 4.7",
+     "org": "Anthropic",
+     "score": 1471,
+     "votes": 1149,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 13,
+     "model": "DeepSeek-V4-Pro (High, 20260813)",
+     "org": "DeepSeek",
+     "score": 1465,
+     "votes": 198,
+     "license": "MIT"
+    },
+    {
+     "rank": 14,
+     "model": "Claude Opus 4.6",
+     "org": "Anthropic",
+     "score": 1465,
+     "votes": 1541,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 15,
+     "model": "Claude Opus 4.7 (High)",
+     "org": "Anthropic",
+     "score": 1461,
+     "votes": 1107,
+     "license": "Proprietary"
+    }
+   ]
+  },
+  {
+   "category": "Text: Polish",
+   "url": "https://arena.ai/leaderboard/chat/text/polish",
+   "metric": "Arena score (Elo)",
+   "higher_is_better": true,
+   "data_date": "2026-10-15",
+   "entries": [
+    {
+     "rank": 1,
+     "model": "Claude Fable 5.1 (Max)",
+     "org": "Anthropic",
+     "score": 1513,
+     "votes": 224,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 2,
+     "model": "Claude Fable 5 (High)",
+     "org": "Anthropic",
+     "score": 1513,
+     "votes": 623,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 3,
+     "model": "Muse Spark 1.1",
+     "org": "Meta",
+     "score": 1508,
+     "votes": 649,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 4,
+     "model": "Gemini 3.5 Flash (High)",
+     "org": "Google",
+     "score": 1506,
+     "votes": 799,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 5,
+     "model": "Gemini 3 Pro",
+     "org": "Google",
+     "score": 1505,
+     "votes": 1354,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 6,
+     "model": "Claude Opus 4.6 (High)",
+     "org": "Anthropic",
+     "score": 1501,
+     "votes": 1535,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 7,
+     "model": "Claude Opus 4.7",
+     "org": "Anthropic",
+     "score": 1501,
+     "votes": 1122,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 8,
+     "model": "Claude Opus 5 (High)",
+     "org": "Anthropic",
+     "score": 1501,
+     "votes": 975,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 9,
+     "model": "GPT-5.6 Sol (xHigh)",
+     "org": "OpenAI",
+     "score": 1499,
+     "votes": 616,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 10,
+     "model": "Claude Opus 5 (Max)",
+     "org": "Anthropic",
+     "score": 1499,
+     "votes": 507,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 11,
+     "model": "Gemini 3.7 Flash (High)",
+     "org": "Google",
+     "score": 1498,
+     "votes": 426,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 12,
+     "model": "Gemini 3.5 Flash (Medium)",
+     "org": "Google",
+     "score": 1497,
+     "votes": 681,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 13,
+     "model": "Gemini 3.8 Flash (High)",
+     "org": "Google",
+     "score": 1496,
+     "votes": 550,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 14,
+     "model": "Gemini 3 Flash",
+     "org": "Google",
+     "score": 1496,
+     "votes": 972,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 15,
+     "model": "Gemini 3.1 Pro Preview",
+     "org": "Google",
+     "score": 1495,
+     "votes": 2442,
+     "license": "Proprietary"
+    }
+   ]
+  },
+  {
+   "category": "Text: Exclude Ties",
+   "url": "https://arena.ai/leaderboard/chat/text/exclude-ties",
+   "metric": "Arena score (Elo)",
+   "higher_is_better": true,
+   "data_date": "2026-10-15",
+   "entries": [
+    {
+     "rank": 1,
+     "model": "Gemini 4 Argon (High)",
+     "org": "Google",
+     "score": 1552,
+     "votes": 3660,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 2,
+     "model": "Muse Wonder (Max)",
+     "org": "Meta",
+     "score": 1534,
+     "votes": 2335,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 3,
+     "model": "Claude Opus 5.5 (High)",
+     "org": "Anthropic",
+     "score": 1528,
+     "votes": 6123,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 4,
+     "model": "Claude Fable 5 (High)",
+     "org": "Anthropic",
+     "score": 1523,
+     "votes": 31642,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 5,
+     "model": "Claude Opus 4.6 (High)",
+     "org": "Anthropic",
+     "score": 1523,
+     "votes": 62089,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 6,
+     "model": "Claude Fable 5.1 (Max)",
+     "org": "Anthropic",
+     "score": 1520,
+     "votes": 10807,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 7,
+     "model": "Claude Opus 4.7 (High)",
+     "org": "Anthropic",
+     "score": 1519,
+     "votes": 49646,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 8,
+     "model": "Claude Opus 4.6",
+     "org": "Anthropic",
+     "score": 1516,
+     "votes": 65377,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 9,
+     "model": "Gemini 3.8 Flash (High)",
+     "org": "Google",
+     "score": 1514,
+     "votes": 27676,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 10,
+     "model": "Muse Spark 1.3 (Max)",
+     "org": "Meta",
+     "score": 1512,
+     "votes": 12880,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 11,
+     "model": "Muse Spark 1.2 (xHigh)",
+     "org": "Meta",
+     "score": 1510,
+     "votes": 6109,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 12,
+     "model": "Claude Opus 4.7",
+     "org": "Anthropic",
+     "score": 1508,
+     "votes": 50669,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 13,
+     "model": "Muse Spark 1.1",
+     "org": "Meta",
+     "score": 1505,
+     "votes": 31718,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 14,
+     "model": "Claude Opus 5 (High)",
+     "org": "Anthropic",
+     "score": 1505,
+     "votes": 50392,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 15,
+     "model": "Claude Opus 5 (Max)",
+     "org": "Anthropic",
+     "score": 1504,
+     "votes": 24460,
+     "license": "Proprietary"
+    }
+   ]
+  },
+  {
+   "category": "WebDev",
+   "url": "https://arena.ai/leaderboard/code/webdev",
+   "metric": "Arena score (Elo)",
+   "higher_is_better": true,
+   "data_date": "2026-10-16",
+   "entries": [
+    {
+     "rank": 1,
+     "model": "Claude Opus 5.5 (Max)",
+     "org": "Anthropic",
+     "score": 1807,
+     "votes": 2775,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 2,
+     "model": "GPT-6 Astra (Max)",
+     "org": "OpenAI",
+     "score": 1777,
+     "votes": 6014,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 3,
+     "model": "Claude Sonnet 5.5 (xHigh)",
+     "org": "Anthropic",
+     "score": 1768,
+     "votes": 3182,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 4,
+     "model": "GPT-6.1 Sol (Max)",
+     "org": "OpenAI",
+     "score": 1755,
+     "votes": 2863,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 5,
+     "model": "Claude Fable 5.1 (Max)",
+     "org": "Anthropic",
+     "score": 1741,
+     "votes": 7503,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 6,
+     "model": "Claude Sonnet 5.5 (High)",
+     "org": "Anthropic",
+     "score": 1711,
+     "votes": 4914,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 7,
+     "model": "Claude Opus 5 (Max)",
+     "org": "Anthropic",
+     "score": 1689,
+     "votes": 18310,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 8,
+     "model": "GPT-6 Sol (Max)",
+     "org": "OpenAI",
+     "score": 1683,
+     "votes": 4364,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 9,
+     "model": "Gemini 4 Argon (High)",
+     "org": "Google",
+     "score": 1678,
+     "votes": 1775,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 10,
+     "model": "Qwen3.8-Max (0902)",
+     "org": "Alibaba",
+     "score": 1674,
+     "votes": 13812,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 11,
+     "model": "Qwen3.8-Max",
+     "org": "Alibaba",
+     "score": 1672,
+     "votes": 3440,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 12,
+     "model": "Muse Spark 1.3 (Max)",
+     "org": "Meta",
+     "score": 1658,
+     "votes": 9068,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 13,
+     "model": "Claude Opus 5 (High)",
+     "org": "Anthropic",
+     "score": 1657,
+     "votes": 24211,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 14,
+     "model": "Kimi K3 (Max)",
+     "org": "Moonshot",
+     "score": 1655,
+     "votes": 19220,
+     "license": "Kimi K3 license"
+    },
+    {
+     "rank": 15,
+     "model": "Muse Wonder (Max)",
+     "org": "Meta",
+     "score": 1650,
+     "votes": 1942,
+     "license": "Proprietary"
+    }
+   ]
+  },
+  {
+   "category": "Image-to-WebDev",
+   "url": "https://arena.ai/leaderboard/code/image-to-webdev",
+   "metric": "Arena score (Elo)",
+   "higher_is_better": true,
+   "data_date": "2026-10-09",
+   "entries": [
+    {
+     "rank": 1,
+     "model": "Claude Opus 5.5 (Max)",
+     "org": "Anthropic",
+     "score": 1749,
+     "votes": 493,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 2,
+     "model": "Claude Sonnet 5.5 (xHigh)",
+     "org": "Anthropic",
+     "score": 1740,
+     "votes": 1074,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 3,
+     "model": "GPT-6 Astra (Max)",
+     "org": "OpenAI",
+     "score": 1731,
+     "votes": 2739,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 4,
+     "model": "Claude Fable 5.1 (Max)",
+     "org": "Anthropic",
+     "score": 1720,
+     "votes": 2470,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 5,
+     "model": "GPT-6.1 Sol (Max)",
+     "org": "OpenAI",
+     "score": 1703,
+     "votes": 1430,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 6,
+     "model": "GPT-6 Sol (Max)",
+     "org": "OpenAI",
+     "score": 1661,
+     "votes": 2426,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 7,
+     "model": "Claude Opus 5 (Max)",
+     "org": "Anthropic",
+     "score": 1661,
+     "votes": 4250,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 8,
+     "model": "Muse Spark 1.3 (Max)",
+     "org": "Meta",
+     "score": 1642,
+     "votes": 4688,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 9,
+     "model": "Qwen3.8-Max (0902)",
+     "org": "Alibaba",
+     "score": 1638,
+     "votes": 1164,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 10,
+     "model": "Claude Fable 5 (High)",
+     "org": "Anthropic",
+     "score": 1622,
+     "votes": 5457,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 11,
+     "model": "Qwen3.8-Max",
+     "org": "Alibaba",
+     "score": 1614,
+     "votes": 3971,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 12,
+     "model": "DeepSeek-V4.1-Flash (Max)",
+     "org": "DeepSeek",
+     "score": 1609,
+     "votes": 766,
+     "license": "MIT"
+    },
+    {
+     "rank": 13,
+     "model": "GPT-5.6 Sol (xHigh, Codex Harness)",
+     "org": "OpenAI",
+     "score": 1608,
+     "votes": 4478,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 14,
+     "model": "Gemini 3.7 Flash (High)",
+     "org": "Google",
+     "score": 1603,
+     "votes": 2144,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 15,
+     "model": "Grok 4.6 (High)",
+     "org": "SpaceXAI",
+     "score": 1601,
+     "votes": 2826,
+     "license": "Proprietary"
+    }
+   ]
+  },
+  {
+   "category": "Text-to-Image: Overall",
+   "url": "https://arena.ai/leaderboard/image/text-to-image",
+   "metric": "Arena score (Elo)",
+   "higher_is_better": true,
+   "data_date": "2026-10-07",
+   "entries": [
+    {
+     "rank": 1,
+     "model": "GPT-Image-2.5 Sunburst",
+     "org": "OpenAI",
+     "score": 1425,
+     "votes": 17752,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 2,
+     "model": "GPT-Image-2.5 Flare",
+     "org": "OpenAI",
+     "score": 1398,
+     "votes": 16889,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 3,
+     "model": "GPT-Image-2 (Medium)",
+     "org": "OpenAI",
+     "score": 1383,
+     "votes": 93334,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 4,
+     "model": "Grok Imagine Image 2.0",
+     "org": "SpaceXAI",
+     "score": 1334,
+     "votes": 3113,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 5,
+     "model": "MAI-Image-2.6",
+     "org": "Microsoft AI",
+     "score": 1332,
+     "votes": 25091,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 6,
+     "model": "Gemini Nano Banana 2.1",
+     "org": "Google",
+     "score": 1328,
+     "votes": 5310,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 7,
+     "model": "Reve 2.1",
+     "org": "Reve",
+     "score": 1302,
+     "votes": 8249,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 8,
+     "model": "Grok Imagine Image 2.0 (20260801)",
+     "org": "SpaceXAI",
+     "score": 1294,
+     "votes": 14483,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 9,
+     "model": "Muse Image",
+     "org": "Meta",
+     "score": 1274,
+     "votes": 42262,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 10,
+     "model": "Reve 2.0",
+     "org": "Reve",
+     "score": 1269,
+     "votes": 15773,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 11,
+     "model": "Gemini 3.1 Flash Image (nano-banana-2, Web Search)",
+     "org": "Google",
+     "score": 1262,
+     "votes": 60515,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 12,
+     "model": "Seedream 5.0 Pro",
+     "org": "Bytedance",
+     "score": 1255,
+     "votes": 94181,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 13,
+     "model": "Qwen-Image-3.0-Pro",
+     "org": "Alibaba",
+     "score": 1255,
+     "votes": 11440,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 14,
+     "model": "MAI-Image-2.5",
+     "org": "Microsoft AI",
+     "score": 1254,
+     "votes": 61265,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 15,
+     "model": "Gemini 3.1 Flash-Lite Image (nano-banana-2-lite)",
+     "org": "Google",
+     "score": 1250,
+     "votes": 17804,
+     "license": "Proprietary"
+    }
+   ]
+  },
+  {
+   "category": "Text-to-Image: Product, Branding & Commercial Design",
+   "url": "https://arena.ai/leaderboard/image/text-to-image/commercial-design",
+   "metric": "Arena score (Elo)",
+   "higher_is_better": true,
+   "data_date": "2026-10-07",
+   "entries": [
+    {
+     "rank": 1,
+     "model": "GPT-Image-2.5 Sunburst",
+     "org": "OpenAI",
+     "score": 1419,
+     "votes": 5898,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 2,
+     "model": "GPT-Image-2.5 Flare",
+     "org": "OpenAI",
+     "score": 1391,
+     "votes": 5620,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 3,
+     "model": "GPT-Image-2 (Medium)",
+     "org": "OpenAI",
+     "score": 1386,
+     "votes": 35189,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 4,
+     "model": "Grok Imagine Image 2.0",
+     "org": "SpaceXAI",
+     "score": 1346,
+     "votes": 785,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 5,
+     "model": "MAI-Image-2.6",
+     "org": "Microsoft AI",
+     "score": 1340,
+     "votes": 7750,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 6,
+     "model": "Gemini Nano Banana 2.1",
+     "org": "Google",
+     "score": 1328,
+     "votes": 1681,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 7,
+     "model": "Reve 2.1",
+     "org": "Reve",
+     "score": 1316,
+     "votes": 2962,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 8,
+     "model": "Grok Imagine Image 2.0 (20260801)",
+     "org": "SpaceXAI",
+     "score": 1292,
+     "votes": 4595,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 9,
+     "model": "Reve 2.0",
+     "org": "Reve",
+     "score": 1279,
+     "votes": 6033,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 10,
+     "model": "Gemini 3.1 Flash Image (nano-banana-2, Web Search)",
+     "org": "Google",
+     "score": 1270,
+     "votes": 20188,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 11,
+     "model": "Muse Image",
+     "org": "Meta",
+     "score": 1264,
+     "votes": 13735,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 12,
+     "model": "MAI-Image-2.5",
+     "org": "Microsoft AI",
+     "score": 1260,
+     "votes": 22281,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 13,
+     "model": "Qwen-Image-3.0-Pro",
+     "org": "Alibaba",
+     "score": 1256,
+     "votes": 3630,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 14,
+     "model": "Gemini 3.1 Flash-Lite Image (nano-banana-2-lite)",
+     "org": "Google",
+     "score": 1249,
+     "votes": 6342,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 15,
+     "model": "Gemini 3 Pro Image (nano-banana-pro, 2K)",
+     "org": "Google",
+     "score": 1246,
+     "votes": 61326,
+     "license": "Proprietary"
+    }
+   ]
+  },
+  {
+   "category": "Text-to-Image: 3D Imaging & Modeling",
+   "url": "https://arena.ai/leaderboard/image/text-to-image/3d-modeling",
+   "metric": "Arena score (Elo)",
+   "higher_is_better": true,
+   "data_date": "2026-10-07",
+   "entries": [
+    {
+     "rank": 1,
+     "model": "GPT-Image-2.5 Sunburst",
+     "org": "OpenAI",
+     "score": 1410,
+     "votes": 1637,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 2,
+     "model": "GPT-Image-2.5 Flare",
+     "org": "OpenAI",
+     "score": 1377,
+     "votes": 1609,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 3,
+     "model": "GPT-Image-2 (Medium)",
+     "org": "OpenAI",
+     "score": 1364,
+     "votes": 8827,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 4,
+     "model": "Gemini Nano Banana 2.1",
+     "org": "Google",
+     "score": 1326,
+     "votes": 471,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 5,
+     "model": "MAI-Image-2.6",
+     "org": "Microsoft AI",
+     "score": 1326,
+     "votes": 2203,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 6,
+     "model": "Grok Imagine Image 2.0",
+     "org": "SpaceXAI",
+     "score": 1316,
+     "votes": 230,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 7,
+     "model": "Reve 2.1",
+     "org": "Reve",
+     "score": 1284,
+     "votes": 775,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 8,
+     "model": "Grok Imagine Image 2.0 (20260801)",
+     "org": "SpaceXAI",
+     "score": 1267,
+     "votes": 1211,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 9,
+     "model": "Gemini 3.1 Flash Image (nano-banana-2, Web Search)",
+     "org": "Google",
+     "score": 1257,
+     "votes": 5770,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 10,
+     "model": "Seedream 5.0 Pro",
+     "org": "Bytedance",
+     "score": 1253,
+     "votes": 8122,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 11,
+     "model": "MAI-Image-2.5",
+     "org": "Microsoft AI",
+     "score": 1251,
+     "votes": 5686,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 12,
+     "model": "Qwen-Image-3.0-Pro",
+     "org": "Alibaba",
+     "score": 1251,
+     "votes": 904,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 13,
+     "model": "Muse Image",
+     "org": "Meta",
+     "score": 1241,
+     "votes": 3697,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 14,
+     "model": "Gemini 3 Pro Image (nano-banana-pro, 2K)",
+     "org": "Google",
+     "score": 1232,
+     "votes": 17040,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 15,
+     "model": "Gemini 3.1 Flash-Lite Image (nano-banana-2-lite)",
+     "org": "Google",
+     "score": 1225,
+     "votes": 1754,
+     "license": "Proprietary"
+    }
+   ]
+  },
+  {
+   "category": "Text-to-Image: Cartoon, Anime & Fantasy",
+   "url": "https://arena.ai/leaderboard/image/text-to-image/cartoon",
+   "metric": "Arena score (Elo)",
+   "higher_is_better": true,
+   "data_date": "2026-10-07",
+   "entries": [
+    {
+     "rank": 1,
+     "model": "GPT-Image-2.5 Sunburst",
+     "org": "OpenAI",
+     "score": 1446,
+     "votes": 6601,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 2,
+     "model": "GPT-Image-2.5 Flare",
+     "org": "OpenAI",
+     "score": 1421,
+     "votes": 6424,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 3,
+     "model": "GPT-Image-2 (Medium)",
+     "org": "OpenAI",
+     "score": 1401,
+     "votes": 37649,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 4,
+     "model": "Grok Imagine Image 2.0",
+     "org": "SpaceXAI",
+     "score": 1372,
+     "votes": 1274,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 5,
+     "model": "MAI-Image-2.6",
+     "org": "Microsoft AI",
+     "score": 1351,
+     "votes": 9917,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 6,
+     "model": "Gemini Nano Banana 2.1",
+     "org": "Google",
+     "score": 1326,
+     "votes": 1879,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 7,
+     "model": "Reve 2.1",
+     "org": "Reve",
+     "score": 1311,
+     "votes": 3192,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 8,
+     "model": "Grok Imagine Image 2.0 (20260801)",
+     "org": "SpaceXAI",
+     "score": 1309,
+     "votes": 5198,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 9,
+     "model": "Muse Image",
+     "org": "Meta",
+     "score": 1280,
+     "votes": 15927,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 10,
+     "model": "Qwen-Image-3.0-Pro",
+     "org": "Alibaba",
+     "score": 1277,
+     "votes": 4269,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 11,
+     "model": "Reve 2.0",
+     "org": "Reve",
+     "score": 1276,
+     "votes": 5974,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 12,
+     "model": "MAI-Image-2.5",
+     "org": "Microsoft AI",
+     "score": 1270,
+     "votes": 24151,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 13,
+     "model": "Seedream 5.0 Pro",
+     "org": "Bytedance",
+     "score": 1267,
+     "votes": 34541,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 14,
+     "model": "Gemini 3.1 Flash Image (nano-banana-2, Web Search)",
+     "org": "Google",
+     "score": 1263,
+     "votes": 22802,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 15,
+     "model": "Gemini 3.1 Flash-Lite Image (nano-banana-2-lite)",
+     "org": "Google",
+     "score": 1256,
+     "votes": 6739,
+     "license": "Proprietary"
+    }
+   ]
+  },
+  {
+   "category": "Text-to-Image: Photorealistic & Cinematic Imagery",
+   "url": "https://arena.ai/leaderboard/image/text-to-image/photorealistic",
+   "metric": "Arena score (Elo)",
+   "higher_is_better": true,
+   "data_date": "2026-10-07",
+   "entries": [
+    {
+     "rank": 1,
+     "model": "GPT-Image-2.5 Sunburst",
+     "org": "OpenAI",
+     "score": 1430,
+     "votes": 6435,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 2,
+     "model": "GPT-Image-2.5 Flare",
+     "org": "OpenAI",
+     "score": 1414,
+     "votes": 5913,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 3,
+     "model": "GPT-Image-2 (Medium)",
+     "org": "OpenAI",
+     "score": 1382,
+     "votes": 35454,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 4,
+     "model": "Gemini Nano Banana 2.1",
+     "org": "Google",
+     "score": 1339,
+     "votes": 2055,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 5,
+     "model": "MAI-Image-2.6",
+     "org": "Microsoft AI",
+     "score": 1330,
+     "votes": 9177,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 6,
+     "model": "Grok Imagine Image 2.0",
+     "org": "SpaceXAI",
+     "score": 1323,
+     "votes": 1272,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 7,
+     "model": "Reve 2.1",
+     "org": "Reve",
+     "score": 1304,
+     "votes": 3318,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 8,
+     "model": "Grok Imagine Image 2.0 (20260801)",
+     "org": "SpaceXAI",
+     "score": 1302,
+     "votes": 5461,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 9,
+     "model": "Muse Image",
+     "org": "Meta",
+     "score": 1284,
+     "votes": 15918,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 10,
+     "model": "Seedream 5.0 Pro",
+     "org": "Bytedance",
+     "score": 1279,
+     "votes": 36403,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 11,
+     "model": "Reve 2.0",
+     "org": "Reve",
+     "score": 1279,
+     "votes": 6549,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 12,
+     "model": "Gemini 3.1 Flash Image (nano-banana-2, Web Search)",
+     "org": "Google",
+     "score": 1266,
+     "votes": 23958,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 13,
+     "model": "Qwen-Image-3.0-Pro",
+     "org": "Alibaba",
+     "score": 1262,
+     "votes": 4392,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 14,
+     "model": "Gemini 3 Pro Image (nano-banana-pro, 2K)",
+     "org": "Google",
+     "score": 1261,
+     "votes": 74550,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 15,
+     "model": "Gemini 3.1 Flash-Lite Image (nano-banana-2-lite)",
+     "org": "Google",
+     "score": 1260,
+     "votes": 7439,
+     "license": "Proprietary"
+    }
+   ]
+  },
+  {
+   "category": "Text-to-Image: Art",
+   "url": "https://arena.ai/leaderboard/image/text-to-image/art",
+   "metric": "Arena score (Elo)",
+   "higher_is_better": true,
+   "data_date": "2026-10-07",
+   "entries": [
+    {
+     "rank": 1,
+     "model": "GPT-Image-2.5 Sunburst",
+     "org": "OpenAI",
+     "score": 1394,
+     "votes": 2545,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 2,
+     "model": "GPT-Image-2.5 Flare",
+     "org": "OpenAI",
+     "score": 1372,
+     "votes": 2541,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 3,
+     "model": "GPT-Image-2 (Medium)",
+     "org": "OpenAI",
+     "score": 1366,
+     "votes": 12287,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 4,
+     "model": "MAI-Image-2.6",
+     "org": "Microsoft AI",
+     "score": 1335,
+     "votes": 3685,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 5,
+     "model": "Grok Imagine Image 2.0",
+     "org": "SpaceXAI",
+     "score": 1335,
+     "votes": 385,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 6,
+     "model": "Reve 2.1",
+     "org": "Reve",
+     "score": 1292,
+     "votes": 1189,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 7,
+     "model": "Grok Imagine Image 2.0 (20260801)",
+     "org": "SpaceXAI",
+     "score": 1288,
+     "votes": 2070,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 8,
+     "model": "MAI-Image-2.5",
+     "org": "Microsoft AI",
+     "score": 1277,
+     "votes": 9127,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 9,
+     "model": "Gemini Nano Banana 2.1",
+     "org": "Google",
+     "score": 1277,
+     "votes": 842,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 10,
+     "model": "Seedream 5.0 Pro",
+     "org": "Bytedance",
+     "score": 1265,
+     "votes": 13471,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 11,
+     "model": "Muse Image",
+     "org": "Meta",
+     "score": 1259,
+     "votes": 6086,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 12,
+     "model": "Reve 2.0",
+     "org": "Reve",
+     "score": 1258,
+     "votes": 2156,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 13,
+     "model": "Gemini 3.1 Flash-Lite Image (nano-banana-2-lite)",
+     "org": "Google",
+     "score": 1256,
+     "votes": 2506,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 14,
+     "model": "Qwen-Image-3.0-Pro",
+     "org": "Alibaba",
+     "score": 1254,
+     "votes": 1677,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 15,
+     "model": "Gemini 3.1 Flash Image (nano-banana-2, Web Search)",
+     "org": "Google",
+     "score": 1239,
+     "votes": 8951,
+     "license": "Proprietary"
+    }
+   ]
+  },
+  {
+   "category": "Text-to-Image: Portraits",
+   "url": "https://arena.ai/leaderboard/image/text-to-image/portraits",
+   "metric": "Arena score (Elo)",
+   "higher_is_better": true,
+   "data_date": "2026-10-07",
+   "entries": [
+    {
+     "rank": 1,
+     "model": "GPT-Image-2.5 Sunburst",
+     "org": "OpenAI",
+     "score": 1467,
+     "votes": 2898,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 2,
+     "model": "GPT-Image-2.5 Flare",
+     "org": "OpenAI",
+     "score": 1442,
+     "votes": 2725,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 3,
+     "model": "GPT-Image-2 (Medium)",
+     "org": "OpenAI",
+     "score": 1430,
+     "votes": 17754,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 4,
+     "model": "Grok Imagine Image 2.0",
+     "org": "SpaceXAI",
+     "score": 1353,
+     "votes": 759,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 5,
+     "model": "MAI-Image-2.6",
+     "org": "Microsoft AI",
+     "score": 1346,
+     "votes": 4700,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 6,
+     "model": "Gemini Nano Banana 2.1",
+     "org": "Google",
+     "score": 1337,
+     "votes": 1068,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 7,
+     "model": "Grok Imagine Image 2.0 (20260801)",
+     "org": "SpaceXAI",
+     "score": 1334,
+     "votes": 2808,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 8,
+     "model": "Reve 2.1",
+     "org": "Reve",
+     "score": 1319,
+     "votes": 1654,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 9,
+     "model": "Muse Image",
+     "org": "Meta",
+     "score": 1299,
+     "votes": 8010,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 10,
+     "model": "Seedream 5.0 Pro",
+     "org": "Bytedance",
+     "score": 1293,
+     "votes": 18886,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 11,
+     "model": "Reve 2.0",
+     "org": "Reve",
+     "score": 1284,
+     "votes": 3242,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 12,
+     "model": "Qwen-Image-3.0-Pro",
+     "org": "Alibaba",
+     "score": 1284,
+     "votes": 2364,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 13,
+     "model": "Gemini 3.1 Flash Image (nano-banana-2, Web Search)",
+     "org": "Google",
+     "score": 1263,
+     "votes": 12271,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 14,
+     "model": "GPT-Image-1.5 (High Fidelity)",
+     "org": "OpenAI",
+     "score": 1262,
+     "votes": 33150,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 15,
+     "model": "Gemini 3 Pro Image (nano-banana-pro, 2K)",
+     "org": "Google",
+     "score": 1259,
+     "votes": 39652,
+     "license": "Proprietary"
+    }
+   ]
+  },
+  {
+   "category": "Text-to-Image: Text Rendering",
+   "url": "https://arena.ai/leaderboard/image/text-to-image/text-rendering",
+   "metric": "Arena score (Elo)",
+   "higher_is_better": true,
+   "data_date": "2026-10-07",
+   "entries": [
+    {
+     "rank": 1,
+     "model": "GPT-Image-2.5 Sunburst",
+     "org": "OpenAI",
+     "score": 1472,
+     "votes": 5909,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 2,
+     "model": "GPT-Image-2.5 Flare",
+     "org": "OpenAI",
+     "score": 1433,
+     "votes": 5617,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 3,
+     "model": "GPT-Image-2 (Medium)",
+     "org": "OpenAI",
+     "score": 1425,
+     "votes": 34276,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 4,
+     "model": "MAI-Image-2.6",
+     "org": "Microsoft AI",
+     "score": 1371,
+     "votes": 8149,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 5,
+     "model": "Gemini Nano Banana 2.1",
+     "org": "Google",
+     "score": 1363,
+     "votes": 1598,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 6,
+     "model": "Grok Imagine Image 2.0",
+     "org": "SpaceXAI",
+     "score": 1356,
+     "votes": 911,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 7,
+     "model": "Reve 2.1",
+     "org": "Reve",
+     "score": 1340,
+     "votes": 2745,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 8,
+     "model": "Grok Imagine Image 2.0 (20260801)",
+     "org": "SpaceXAI",
+     "score": 1331,
+     "votes": 4659,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 9,
+     "model": "Reve 2.0",
+     "org": "Reve",
+     "score": 1299,
+     "votes": 5462,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 10,
+     "model": "Muse Image",
+     "org": "Meta",
+     "score": 1298,
+     "votes": 13523,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 11,
+     "model": "Gemini 3.1 Flash Image (nano-banana-2, Web Search)",
+     "org": "Google",
+     "score": 1295,
+     "votes": 19537,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 12,
+     "model": "Qwen-Image-3.0-Pro",
+     "org": "Alibaba",
+     "score": 1283,
+     "votes": 3622,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 13,
+     "model": "MAI-Image-2.5",
+     "org": "Microsoft AI",
+     "score": 1281,
+     "votes": 20868,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 14,
+     "model": "Gemini 3.1 Flash-Lite Image (nano-banana-2-lite)",
+     "org": "Google",
+     "score": 1274,
+     "votes": 5819,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 15,
+     "model": "Gemini 3 Pro Image (nano-banana-pro, 2K)",
+     "org": "Google",
+     "score": 1271,
+     "votes": 57719,
+     "license": "Proprietary"
+    }
+   ]
+  },
+  {
+   "category": "Image Edit: Single Image Edit (Overall)",
+   "url": "https://arena.ai/leaderboard/image/image-edit/single-image",
+   "metric": "Arena score (Elo)",
+   "higher_is_better": true,
+   "data_date": "2026-10-06",
+   "entries": [
+    {
+     "rank": 1,
+     "model": "GPT-Image-2.5 Sunburst",
+     "org": "OpenAI",
+     "score": 1524,
+     "votes": 59825,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 2,
+     "model": "GPT-Image-2.5 Flare",
+     "org": "OpenAI",
+     "score": 1481,
+     "votes": 57408,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 3,
+     "model": "GPT-Image-2 (Medium)",
+     "org": "OpenAI",
+     "score": 1462,
+     "votes": 305825,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 4,
+     "model": "Grok Imagine Image 2.0",
+     "org": "SpaceXAI",
+     "score": 1439,
+     "votes": 11589,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 5,
+     "model": "MAI-Image-2.6",
+     "org": "Microsoft AI",
+     "score": 1428,
+     "votes": 51384,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 6,
+     "model": "Gemini Nano Banana 2.1",
+     "org": "Google",
+     "score": 1428,
+     "votes": 12985,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 7,
+     "model": "Grok Imagine Image 2.0 (20260801)",
+     "org": "SpaceXAI",
+     "score": 1425,
+     "votes": 50427,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 8,
+     "model": "Muse Image",
+     "org": "Meta",
+     "score": 1403,
+     "votes": 142644,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 9,
+     "model": "MAI-Image-2.5",
+     "org": "Microsoft AI",
+     "score": 1401,
+     "votes": 190081,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 10,
+     "model": "Seedream 5.0 Pro",
+     "org": "Bytedance",
+     "score": 1394,
+     "votes": 282865,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 11,
+     "model": "Grok Imagine Image (Quality, 20260519)",
+     "org": "SpaceXAI",
+     "score": 1391,
+     "votes": 38195,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 12,
+     "model": "Gemini 3 Pro Image (nano-banana-pro, 2K)",
+     "org": "Google",
+     "score": 1390,
+     "votes": 651674,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 13,
+     "model": "ChatGPT Image Latest (High Fidelity, 20251216)",
+     "org": "OpenAI",
+     "score": 1389,
+     "votes": 629464,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 14,
+     "model": "Gemini 3.1 Flash Image (nano-banana-2, Web Search)",
+     "org": "Google",
+     "score": 1387,
+     "votes": 229782,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 15,
+     "model": "Gemini 3 Pro Image Preview (nano-banana-pro)",
+     "org": "Google",
+     "score": 1386,
+     "votes": 540775,
+     "license": "Proprietary"
+    }
+   ]
+  },
+  {
+   "category": "Image Edit: Single Image - Product, Branding & Commercial Design",
+   "url": "https://arena.ai/leaderboard/image/image-edit/single-image-commercial-design",
+   "metric": "Arena score (Elo)",
+   "higher_is_better": true,
+   "data_date": "2026-10-06",
+   "entries": [
+    {
+     "rank": 1,
+     "model": "GPT-Image-2.5 Sunburst",
+     "org": "OpenAI",
+     "score": 1544,
+     "votes": 12742,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 2,
+     "model": "GPT-Image-2.5 Flare",
+     "org": "OpenAI",
+     "score": 1500,
+     "votes": 12285,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 3,
+     "model": "GPT-Image-2 (Medium)",
+     "org": "OpenAI",
+     "score": 1493,
+     "votes": 55980,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 4,
+     "model": "Gemini Nano Banana 2.1",
+     "org": "Google",
+     "score": 1473,
+     "votes": 2529,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 5,
+     "model": "Grok Imagine Image 2.0",
+     "org": "SpaceXAI",
+     "score": 1470,
+     "votes": 2149,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 6,
+     "model": "MAI-Image-2.6",
+     "org": "Microsoft AI",
+     "score": 1447,
+     "votes": 10764,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 7,
+     "model": "Grok Imagine Image 2.0 (20260801)",
+     "org": "SpaceXAI",
+     "score": 1443,
+     "votes": 9380,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 8,
+     "model": "Reve 2.1",
+     "org": "Reve",
+     "score": 1424,
+     "votes": 3525,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 9,
+     "model": "Gemini 3.1 Flash Image (nano-banana-2, Web Search)",
+     "org": "Google",
+     "score": 1420,
+     "votes": 34260,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 10,
+     "model": "Muse Image",
+     "org": "Meta",
+     "score": 1418,
+     "votes": 27552,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 11,
+     "model": "Gemini 3 Pro Image (nano-banana-pro, 2K)",
+     "org": "Google",
+     "score": 1414,
+     "votes": 54515,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 12,
+     "model": "Reve 2.0",
+     "org": "Reve",
+     "score": 1406,
+     "votes": 3127,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 13,
+     "model": "MAI-Image-2.5",
+     "org": "Microsoft AI",
+     "score": 1405,
+     "votes": 41021,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 14,
+     "model": "Seedream 5.0 Pro",
+     "org": "Bytedance",
+     "score": 1404,
+     "votes": 46512,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 15,
+     "model": "ChatGPT Image Latest (High Fidelity, 20251216)",
+     "org": "OpenAI",
+     "score": 1401,
+     "votes": 53388,
+     "license": "Proprietary"
+    }
+   ]
+  },
+  {
+   "category": "Image Edit: Single Image - 3D Imaging & Modeling",
+   "url": "https://arena.ai/leaderboard/image/image-edit/single-image-3d-modeling",
+   "metric": "Arena score (Elo)",
+   "higher_is_better": true,
+   "data_date": "2026-10-06",
+   "entries": [
+    {
+     "rank": 1,
+     "model": "GPT-Image-2.5 Sunburst",
+     "org": "OpenAI",
+     "score": 1537,
+     "votes": 7450,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 2,
+     "model": "GPT-Image-2.5 Flare",
+     "org": "OpenAI",
+     "score": 1494,
+     "votes": 7203,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 3,
+     "model": "GPT-Image-2 (Medium)",
+     "org": "OpenAI",
+     "score": 1479,
+     "votes": 32227,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 4,
+     "model": "Gemini Nano Banana 2.1",
+     "org": "Google",
+     "score": 1466,
+     "votes": 1477,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 5,
+     "model": "Grok Imagine Image 2.0",
+     "org": "SpaceXAI",
+     "score": 1459,
+     "votes": 1393,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 6,
+     "model": "Grok Imagine Image 2.0 (20260801)",
+     "org": "SpaceXAI",
+     "score": 1449,
+     "votes": 5617,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 7,
+     "model": "MAI-Image-2.6",
+     "org": "Microsoft AI",
+     "score": 1449,
+     "votes": 6548,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 8,
+     "model": "MAI-Image-2.5",
+     "org": "Microsoft AI",
+     "score": 1428,
+     "votes": 22350,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 9,
+     "model": "Gemini 3 Pro Image (nano-banana-pro, 2K)",
+     "org": "Google",
+     "score": 1416,
+     "votes": 32231,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 10,
+     "model": "Muse Image",
+     "org": "Meta",
+     "score": 1414,
+     "votes": 16013,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 11,
+     "model": "Gemini 3.1 Flash Image (nano-banana-2, Web Search)",
+     "org": "Google",
+     "score": 1411,
+     "votes": 20471,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 12,
+     "model": "Seedream 5.0 Pro",
+     "org": "Bytedance",
+     "score": 1401,
+     "votes": 29103,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 13,
+     "model": "ChatGPT Image Latest (High Fidelity, 20251216)",
+     "org": "OpenAI",
+     "score": 1398,
+     "votes": 30866,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 14,
+     "model": "Grok Imagine Image (Quality, 20260519)",
+     "org": "SpaceXAI",
+     "score": 1397,
+     "votes": 3830,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 15,
+     "model": "Qwen-Image-2.1",
+     "org": "Alibaba",
+     "score": 1386,
+     "votes": 2347,
+     "license": "qwen-research"
+    }
+   ]
+  },
+  {
+   "category": "Image Edit: Single Image - Cartoon, Anime & Fantasy",
+   "url": "https://arena.ai/leaderboard/image/image-edit/single-image-cartoon",
+   "metric": "Arena score (Elo)",
+   "higher_is_better": true,
+   "data_date": "2026-10-06",
+   "entries": [
+    {
+     "rank": 1,
+     "model": "GPT-Image-2.5 Sunburst",
+     "org": "OpenAI",
+     "score": 1543,
+     "votes": 14642,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 2,
+     "model": "GPT-Image-2.5 Flare",
+     "org": "OpenAI",
+     "score": 1500,
+     "votes": 14334,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 3,
+     "model": "GPT-Image-2 (Medium)",
+     "org": "OpenAI",
+     "score": 1483,
+     "votes": 64473,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 4,
+     "model": "Gemini Nano Banana 2.1",
+     "org": "Google",
+     "score": 1462,
+     "votes": 3076,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 5,
+     "model": "Grok Imagine Image 2.0",
+     "org": "SpaceXAI",
+     "score": 1458,
+     "votes": 2682,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 6,
+     "model": "Grok Imagine Image 2.0 (20260801)",
+     "org": "SpaceXAI",
+     "score": 1448,
+     "votes": 11569,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 7,
+     "model": "MAI-Image-2.6",
+     "org": "Microsoft AI",
+     "score": 1436,
+     "votes": 12969,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 8,
+     "model": "Muse Image",
+     "org": "Meta",
+     "score": 1411,
+     "votes": 33208,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 9,
+     "model": "Gemini 3 Pro Image (nano-banana-pro, 2K)",
+     "org": "Google",
+     "score": 1407,
+     "votes": 66623,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 10,
+     "model": "MAI-Image-2.5",
+     "org": "Microsoft AI",
+     "score": 1406,
+     "votes": 43702,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 11,
+     "model": "Gemini 3.1 Flash Image (nano-banana-2, Web Search)",
+     "org": "Google",
+     "score": 1406,
+     "votes": 41475,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 12,
+     "model": "ChatGPT Image Latest (High Fidelity, 20251216)",
+     "org": "OpenAI",
+     "score": 1401,
+     "votes": 61888,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 13,
+     "model": "Seedream 5.0 Pro",
+     "org": "Bytedance",
+     "score": 1398,
+     "votes": 58729,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 14,
+     "model": "Grok Imagine Image (Quality, 20260519)",
+     "org": "SpaceXAI",
+     "score": 1393,
+     "votes": 8195,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 15,
+     "model": "Qwen-Image-2.1",
+     "org": "Alibaba",
+     "score": 1384,
+     "votes": 5123,
+     "license": "qwen-research"
+    }
+   ]
+  },
+  {
+   "category": "Image Edit: Single Image - Photorealistic & Cinematic Imagery",
+   "url": "https://arena.ai/leaderboard/image/image-edit/single-image-photorealistic",
+   "metric": "Arena score (Elo)",
+   "higher_is_better": true,
+   "data_date": "2026-10-06",
+   "entries": [
+    {
+     "rank": 1,
+     "model": "GPT-Image-2.5 Sunburst",
+     "org": "OpenAI",
+     "score": 1512,
+     "votes": 33872,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 2,
+     "model": "GPT-Image-2.5 Flare",
+     "org": "OpenAI",
+     "score": 1477,
+     "votes": 32326,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 3,
+     "model": "GPT-Image-2 (Medium)",
+     "org": "OpenAI",
+     "score": 1449,
+     "votes": 153982,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 4,
+     "model": "Grok Imagine Image 2.0",
+     "org": "SpaceXAI",
+     "score": 1432,
+     "votes": 7012,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 5,
+     "model": "MAI-Image-2.6",
+     "org": "Microsoft AI",
+     "score": 1419,
+     "votes": 29523,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 6,
+     "model": "Grok Imagine Image 2.0 (20260801)",
+     "org": "SpaceXAI",
+     "score": 1416,
+     "votes": 30743,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 7,
+     "model": "Gemini Nano Banana 2.1",
+     "org": "Google",
+     "score": 1406,
+     "votes": 7762,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 8,
+     "model": "MAI-Image-2.5",
+     "org": "Microsoft AI",
+     "score": 1403,
+     "votes": 115071,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 9,
+     "model": "Muse Image",
+     "org": "Meta",
+     "score": 1401,
+     "votes": 87283,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 10,
+     "model": "Seedream 5.0 Pro",
+     "org": "Bytedance",
+     "score": 1395,
+     "votes": 184854,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 11,
+     "model": "Grok Imagine Image (Quality, 20260519)",
+     "org": "SpaceXAI",
+     "score": 1390,
+     "votes": 24030,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 12,
+     "model": "Gemini 3 Pro Image (nano-banana-pro, 2K)",
+     "org": "Google",
+     "score": 1385,
+     "votes": 180744,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 13,
+     "model": "ChatGPT Image Latest (High Fidelity, 20251216)",
+     "org": "OpenAI",
+     "score": 1382,
+     "votes": 148545,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 14,
+     "model": "Gemini 3.1 Flash Image (nano-banana-2, Web Search)",
+     "org": "Google",
+     "score": 1377,
+     "votes": 109841,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 15,
+     "model": "Qwen-Image-2.1",
+     "org": "Alibaba",
+     "score": 1364,
+     "votes": 13710,
+     "license": "qwen-research"
+    }
+   ]
+  },
+  {
+   "category": "Image Edit: Single Image - Art",
+   "url": "https://arena.ai/leaderboard/image/image-edit/single-image-art",
+   "metric": "Arena score (Elo)",
+   "higher_is_better": true,
+   "data_date": "2026-10-06",
+   "entries": [
+    {
+     "rank": 1,
+     "model": "GPT-Image-2.5 Sunburst",
+     "org": "OpenAI",
+     "score": 1513,
+     "votes": 1805,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 2,
+     "model": "Grok Imagine Image 2.0",
+     "org": "SpaceXAI",
+     "score": 1475,
+     "votes": 359,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 3,
+     "model": "GPT-Image-2 (Medium)",
+     "org": "OpenAI",
+     "score": 1475,
+     "votes": 8061,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 4,
+     "model": "GPT-Image-2.5 Flare",
+     "org": "OpenAI",
+     "score": 1470,
+     "votes": 1628,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 5,
+     "model": "Grok Imagine Image 2.0 (20260801)",
+     "org": "SpaceXAI",
+     "score": 1425,
+     "votes": 1340,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 6,
+     "model": "Gemini Nano Banana 2.1",
+     "org": "Google",
+     "score": 1422,
+     "votes": 319,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 7,
+     "model": "MAI-Image-2.6",
+     "org": "Microsoft AI",
+     "score": 1420,
+     "votes": 1382,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 8,
+     "model": "MAI-Image-2.5",
+     "org": "Microsoft AI",
+     "score": 1406,
+     "votes": 5613,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 9,
+     "model": "ChatGPT Image Latest (High Fidelity, 20251216)",
+     "org": "OpenAI",
+     "score": 1401,
+     "votes": 7651,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 10,
+     "model": "Muse Image",
+     "org": "Meta",
+     "score": 1399,
+     "votes": 3767,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 11,
+     "model": "Gemini 3 Pro Image (nano-banana-pro, 2K)",
+     "org": "Google",
+     "score": 1397,
+     "votes": 8112,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 12,
+     "model": "Seedream 5.0 Pro",
+     "org": "Bytedance",
+     "score": 1392,
+     "votes": 6629,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 13,
+     "model": "Grok Imagine Image (Quality, 20260519)",
+     "org": "SpaceXAI",
+     "score": 1391,
+     "votes": 1081,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 14,
+     "model": "Gemini 3.1 Flash Image (nano-banana-2, Web Search)",
+     "org": "Google",
+     "score": 1388,
+     "votes": 4683,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 15,
+     "model": "GPT-Image-1.5 (High Fidelity)",
+     "org": "OpenAI",
+     "score": 1388,
+     "votes": 7721,
+     "license": "Proprietary"
+    }
+   ]
+  },
+  {
+   "category": "Image Edit: Single Image - Portraits",
+   "url": "https://arena.ai/leaderboard/image/image-edit/single-image-portraits",
+   "metric": "Arena score (Elo)",
+   "higher_is_better": true,
+   "data_date": "2026-10-06",
+   "entries": [
+    {
+     "rank": 1,
+     "model": "GPT-Image-2.5 Sunburst",
+     "org": "OpenAI",
+     "score": 1519,
+     "votes": 22466,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 2,
+     "model": "GPT-Image-2.5 Flare",
+     "org": "OpenAI",
+     "score": 1488,
+     "votes": 21192,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 3,
+     "model": "GPT-Image-2 (Medium)",
+     "org": "OpenAI",
+     "score": 1456,
+     "votes": 100071,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 4,
+     "model": "Grok Imagine Image 2.0",
+     "org": "SpaceXAI",
+     "score": 1438,
+     "votes": 4893,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 5,
+     "model": "Grok Imagine Image 2.0 (20260801)",
+     "org": "SpaceXAI",
+     "score": 1423,
+     "votes": 22278,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 6,
+     "model": "MAI-Image-2.6",
+     "org": "Microsoft AI",
+     "score": 1405,
+     "votes": 19741,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 7,
+     "model": "Muse Image",
+     "org": "Meta",
+     "score": 1402,
+     "votes": 60967,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 8,
+     "model": "Seedream 5.0 Pro",
+     "org": "Bytedance",
+     "score": 1394,
+     "votes": 139381,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 9,
+     "model": "MAI-Image-2.5",
+     "org": "Microsoft AI",
+     "score": 1393,
+     "votes": 74224,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 10,
+     "model": "Grok Imagine Image (Quality, 20260519)",
+     "org": "SpaceXAI",
+     "score": 1393,
+     "votes": 16916,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 11,
+     "model": "Gemini Nano Banana 2.1",
+     "org": "Google",
+     "score": 1387,
+     "votes": 5507,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 12,
+     "model": "ChatGPT Image Latest (High Fidelity, 20251216)",
+     "org": "OpenAI",
+     "score": 1379,
+     "votes": 95938,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 13,
+     "model": "Gemini 3 Pro Image (nano-banana-pro, 2K)",
+     "org": "Google",
+     "score": 1374,
+     "votes": 127063,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 14,
+     "model": "Gemini 3.1 Flash Image (nano-banana-2, Web Search)",
+     "org": "Google",
+     "score": 1366,
+     "votes": 77162,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 15,
+     "model": "Qwen-Image-2.1",
+     "org": "Alibaba",
+     "score": 1363,
+     "votes": 10435,
+     "license": "qwen-research"
+    }
+   ]
+  },
+  {
+   "category": "Image Edit: Single Image - Text Rendering",
+   "url": "https://arena.ai/leaderboard/image/image-edit/single-image-text-rendering",
+   "metric": "Arena score (Elo)",
+   "higher_is_better": true,
+   "data_date": "2026-10-06",
+   "entries": [
+    {
+     "rank": 1,
+     "model": "GPT-Image-2.5 Sunburst",
+     "org": "OpenAI",
+     "score": 1579,
+     "votes": 9926,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 2,
+     "model": "GPT-Image-2.5 Flare",
+     "org": "OpenAI",
+     "score": 1529,
+     "votes": 9331,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 3,
+     "model": "GPT-Image-2 (Medium)",
+     "org": "OpenAI",
+     "score": 1524,
+     "votes": 42400,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 4,
+     "model": "Gemini Nano Banana 2.1",
+     "org": "Google",
+     "score": 1507,
+     "votes": 1888,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 5,
+     "model": "Grok Imagine Image 2.0",
+     "org": "SpaceXAI",
+     "score": 1499,
+     "votes": 1527,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 6,
+     "model": "Grok Imagine Image 2.0 (20260801)",
+     "org": "SpaceXAI",
+     "score": 1457,
+     "votes": 7304,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 7,
+     "model": "Reve 2.1",
+     "org": "Reve",
+     "score": 1454,
+     "votes": 2626,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 8,
+     "model": "Gemini 3.1 Flash Image (nano-banana-2, Web Search)",
+     "org": "Google",
+     "score": 1446,
+     "votes": 25722,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 9,
+     "model": "MAI-Image-2.6",
+     "org": "Microsoft AI",
+     "score": 1441,
+     "votes": 8086,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 10,
+     "model": "Muse Image",
+     "org": "Meta",
+     "score": 1432,
+     "votes": 20133,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 11,
+     "model": "Gemini 3 Pro Image (nano-banana-pro, 2K)",
+     "org": "Google",
+     "score": 1429,
+     "votes": 41185,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 12,
+     "model": "Reve 2.0",
+     "org": "Reve",
+     "score": 1429,
+     "votes": 2291,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 13,
+     "model": "ChatGPT Image Latest (High Fidelity, 20251216)",
+     "org": "OpenAI",
+     "score": 1419,
+     "votes": 39903,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 14,
+     "model": "Grok Imagine Image (Quality, 20260519)",
+     "org": "SpaceXAI",
+     "score": 1419,
+     "votes": 5353,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 15,
+     "model": "Seedream 5.0 Pro",
+     "org": "Bytedance",
+     "score": 1411,
+     "votes": 34695,
+     "license": "Proprietary"
+    }
+   ]
+  },
+  {
+   "category": "Image Edit: Multi Image Edit (Overall)",
+   "url": "https://arena.ai/leaderboard/image/image-edit/multi-image",
+   "metric": "Arena score (Elo)",
+   "higher_is_better": true,
+   "data_date": "2026-10-06",
+   "entries": [
+    {
+     "rank": 1,
+     "model": "GPT-Image-2.5 Sunburst",
+     "org": "OpenAI",
+     "score": 1527,
+     "votes": 28479,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 2,
+     "model": "GPT-Image-2.5 Flare",
+     "org": "OpenAI",
+     "score": 1476,
+     "votes": 28778,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 3,
+     "model": "GPT-Image-2 (Medium)",
+     "org": "OpenAI",
+     "score": 1454,
+     "votes": 131757,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 4,
+     "model": "Gemini Nano Banana 2.1",
+     "org": "Google",
+     "score": 1431,
+     "votes": 10328,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 5,
+     "model": "Seedream 5.0 Pro",
+     "org": "Bytedance",
+     "score": 1412,
+     "votes": 73471,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 6,
+     "model": "Muse Image",
+     "org": "Meta",
+     "score": 1402,
+     "votes": 98515,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 7,
+     "model": "Gemini 3.1 Flash Image (nano-banana-2, Web Search)",
+     "org": "Google",
+     "score": 1370,
+     "votes": 100809,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 8,
+     "model": "Gemini 3 Pro Image Preview (nano-banana-pro)",
+     "org": "Google",
+     "score": 1367,
+     "votes": 298042,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 9,
+     "model": "Gemini 3 Pro Image (nano-banana-pro, 2K)",
+     "org": "Google",
+     "score": 1364,
+     "votes": 260808,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 10,
+     "model": "ChatGPT Image Latest (High Fidelity, 20251216)",
+     "org": "OpenAI",
+     "score": 1353,
+     "votes": 246523,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 11,
+     "model": "Reve 2.0",
+     "org": "Reve",
+     "score": 1345,
+     "votes": 10321,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 12,
+     "model": "GPT-Image-1.5 (High Fidelity)",
+     "org": "OpenAI",
+     "score": 1343,
+     "votes": 228454,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 13,
+     "model": "Ideogram 4.5",
+     "org": "Ideogram",
+     "score": 1336,
+     "votes": 6741,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 14,
+     "model": "UNI-1.1 Max",
+     "org": "Luma AI",
+     "score": 1308,
+     "votes": 21983,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 15,
+     "model": "Seedream 4.5",
+     "org": "Bytedance",
+     "score": 1291,
+     "votes": 587097,
+     "license": "Proprietary"
+    }
+   ]
+  },
+  {
+   "category": "Image Edit: Multi Image - Product, Branding & Commercial Design",
+   "url": "https://arena.ai/leaderboard/image/image-edit/multi-image-commercial-design",
+   "metric": "Arena score (Elo)",
+   "higher_is_better": true,
+   "data_date": "2026-10-06",
+   "entries": [
+    {
+     "rank": 1,
+     "model": "GPT-Image-2.5 Sunburst",
+     "org": "OpenAI",
+     "score": 1557,
+     "votes": 6958,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 2,
+     "model": "GPT-Image-2.5 Flare",
+     "org": "OpenAI",
+     "score": 1503,
+     "votes": 6998,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 3,
+     "model": "Gemini Nano Banana 2.1",
+     "org": "Google",
+     "score": 1490,
+     "votes": 2389,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 4,
+     "model": "GPT-Image-2 (Medium)",
+     "org": "OpenAI",
+     "score": 1484,
+     "votes": 25342,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 5,
+     "model": "Seedream 5.0 Pro",
+     "org": "Bytedance",
+     "score": 1431,
+     "votes": 14067,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 6,
+     "model": "Muse Image",
+     "org": "Meta",
+     "score": 1422,
+     "votes": 20732,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 7,
+     "model": "Gemini 3.1 Flash Image (nano-banana-2, Web Search)",
+     "org": "Google",
+     "score": 1403,
+     "votes": 16876,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 8,
+     "model": "Ideogram 4.5",
+     "org": "Ideogram",
+     "score": 1391,
+     "votes": 1327,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 9,
+     "model": "Gemini 3 Pro Image (nano-banana-pro, 2K)",
+     "org": "Google",
+     "score": 1384,
+     "votes": 24605,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 10,
+     "model": "Reve 2.0",
+     "org": "Reve",
+     "score": 1383,
+     "votes": 1795,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 11,
+     "model": "ChatGPT Image Latest (High Fidelity, 20251216)",
+     "org": "OpenAI",
+     "score": 1376,
+     "votes": 23878,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 12,
+     "model": "GPT-Image-1.5 (High Fidelity)",
+     "org": "OpenAI",
+     "score": 1361,
+     "votes": 23742,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 13,
+     "model": "UNI-1.1 Max",
+     "org": "Luma AI",
+     "score": 1329,
+     "votes": 4363,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 14,
+     "model": "Gemini 3.1 Flash-Lite Image (nano-banana-2-lite)",
+     "org": "Google",
+     "score": 1307,
+     "votes": 6403,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 15,
+     "model": "UNI-1.1",
+     "org": "Luma AI",
+     "score": 1302,
+     "votes": 16779,
+     "license": "Proprietary"
+    }
+   ]
+  },
+  {
+   "category": "Image Edit: Multi Image - 3D Imaging & Modeling",
+   "url": "https://arena.ai/leaderboard/image/image-edit/multi-image-3d-modeling",
+   "metric": "Arena score (Elo)",
+   "higher_is_better": true,
+   "data_date": "2026-10-06",
+   "entries": [
+    {
+     "rank": 1,
+     "model": "GPT-Image-2.5 Sunburst",
+     "org": "OpenAI",
+     "score": 1532,
+     "votes": 3800,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 2,
+     "model": "GPT-Image-2.5 Flare",
+     "org": "OpenAI",
+     "score": 1479,
+     "votes": 3853,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 3,
+     "model": "Gemini Nano Banana 2.1",
+     "org": "Google",
+     "score": 1471,
+     "votes": 1205,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 4,
+     "model": "GPT-Image-2 (Medium)",
+     "org": "OpenAI",
+     "score": 1463,
+     "votes": 13062,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 5,
+     "model": "Seedream 5.0 Pro",
+     "org": "Bytedance",
+     "score": 1436,
+     "votes": 7942,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 6,
+     "model": "Muse Image",
+     "org": "Meta",
+     "score": 1406,
+     "votes": 11455,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 7,
+     "model": "Gemini 3.1 Flash Image (nano-banana-2, Web Search)",
+     "org": "Google",
+     "score": 1394,
+     "votes": 9257,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 8,
+     "model": "Ideogram 4.5",
+     "org": "Ideogram",
+     "score": 1372,
+     "votes": 758,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 9,
+     "model": "ChatGPT Image Latest (High Fidelity, 20251216)",
+     "org": "OpenAI",
+     "score": 1368,
+     "votes": 12545,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 10,
+     "model": "Gemini 3 Pro Image (nano-banana-pro, 2K)",
+     "org": "Google",
+     "score": 1366,
+     "votes": 13093,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 11,
+     "model": "GPT-Image-1.5 (High Fidelity)",
+     "org": "OpenAI",
+     "score": 1350,
+     "votes": 12569,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 12,
+     "model": "Reve 2.0",
+     "org": "Reve",
+     "score": 1342,
+     "votes": 947,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 13,
+     "model": "UNI-1.1 Max",
+     "org": "Luma AI",
+     "score": 1340,
+     "votes": 2287,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 14,
+     "model": "UNI-1.1",
+     "org": "Luma AI",
+     "score": 1318,
+     "votes": 8961,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 15,
+     "model": "Gemini 3.1 Flash-Lite Image (nano-banana-2-lite)",
+     "org": "Google",
+     "score": 1316,
+     "votes": 3294,
+     "license": "Proprietary"
+    }
+   ]
+  },
+  {
+   "category": "Image Edit: Multi Image - Cartoon, Anime & Fantasy",
+   "url": "https://arena.ai/leaderboard/image/image-edit/multi-image-cartoon",
+   "metric": "Arena score (Elo)",
+   "higher_is_better": true,
+   "data_date": "2026-10-06",
+   "entries": [
+    {
+     "rank": 1,
+     "model": "GPT-Image-2.5 Sunburst",
+     "org": "OpenAI",
+     "score": 1567,
+     "votes": 7605,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 2,
+     "model": "GPT-Image-2.5 Flare",
+     "org": "OpenAI",
+     "score": 1499,
+     "votes": 7873,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 3,
+     "model": "GPT-Image-2 (Medium)",
+     "org": "OpenAI",
+     "score": 1481,
+     "votes": 28107,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 4,
+     "model": "Gemini Nano Banana 2.1",
+     "org": "Google",
+     "score": 1453,
+     "votes": 2640,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 5,
+     "model": "Seedream 5.0 Pro",
+     "org": "Bytedance",
+     "score": 1423,
+     "votes": 16181,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 6,
+     "model": "Muse Image",
+     "org": "Meta",
+     "score": 1400,
+     "votes": 23492,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 7,
+     "model": "Gemini 3.1 Flash Image (nano-banana-2, Web Search)",
+     "org": "Google",
+     "score": 1385,
+     "votes": 18885,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 8,
+     "model": "ChatGPT Image Latest (High Fidelity, 20251216)",
+     "org": "OpenAI",
+     "score": 1383,
+     "votes": 26768,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 9,
+     "model": "Gemini 3 Pro Image (nano-banana-pro, 2K)",
+     "org": "Google",
+     "score": 1371,
+     "votes": 28702,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 10,
+     "model": "GPT-Image-1.5 (High Fidelity)",
+     "org": "OpenAI",
+     "score": 1368,
+     "votes": 27134,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 11,
+     "model": "Ideogram 4.5",
+     "org": "Ideogram",
+     "score": 1350,
+     "votes": 1549,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 12,
+     "model": "UNI-1.1 Max",
+     "org": "Luma AI",
+     "score": 1336,
+     "votes": 5239,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 13,
+     "model": "Reve 2.0",
+     "org": "Reve",
+     "score": 1336,
+     "votes": 2345,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 14,
+     "model": "UNI-1.1",
+     "org": "Luma AI",
+     "score": 1314,
+     "votes": 19310,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 15,
+     "model": "Gemini 3.1 Flash-Lite Image (nano-banana-2-lite)",
+     "org": "Google",
+     "score": 1313,
+     "votes": 6877,
+     "license": "Proprietary"
+    }
+   ]
+  },
+  {
+   "category": "Image Edit: Multi Image - Photorealistic & Cinematic Imagery",
+   "url": "https://arena.ai/leaderboard/image/image-edit/multi-image-photorealistic",
+   "metric": "Arena score (Elo)",
+   "higher_is_better": true,
+   "data_date": "2026-10-06",
+   "entries": [
+    {
+     "rank": 1,
+     "model": "GPT-Image-2.5 Sunburst",
+     "org": "OpenAI",
+     "score": 1514,
+     "votes": 17283,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 2,
+     "model": "GPT-Image-2.5 Flare",
+     "org": "OpenAI",
+     "score": 1470,
+     "votes": 17447,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 3,
+     "model": "GPT-Image-2 (Medium)",
+     "org": "OpenAI",
+     "score": 1448,
+     "votes": 65504,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 4,
+     "model": "Gemini Nano Banana 2.1",
+     "org": "Google",
+     "score": 1422,
+     "votes": 6498,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 5,
+     "model": "Seedream 5.0 Pro",
+     "org": "Bytedance",
+     "score": 1418,
+     "votes": 50035,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 6,
+     "model": "Muse Image",
+     "org": "Meta",
+     "score": 1412,
+     "votes": 65483,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 7,
+     "model": "Gemini 3.1 Flash Image (nano-banana-2, Web Search)",
+     "org": "Google",
+     "score": 1371,
+     "votes": 49249,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 8,
+     "model": "Gemini 3 Pro Image (nano-banana-pro, 2K)",
+     "org": "Google",
+     "score": 1364,
+     "votes": 75571,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 9,
+     "model": "Reve 2.0",
+     "org": "Reve",
+     "score": 1349,
+     "votes": 7144,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 10,
+     "model": "GPT-Image-1.5 (High Fidelity)",
+     "org": "OpenAI",
+     "score": 1349,
+     "votes": 63190,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 11,
+     "model": "ChatGPT Image Latest (High Fidelity, 20251216)",
+     "org": "OpenAI",
+     "score": 1349,
+     "votes": 61973,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 12,
+     "model": "Ideogram 4.5",
+     "org": "Ideogram",
+     "score": 1332,
+     "votes": 4509,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 13,
+     "model": "UNI-1.1 Max",
+     "org": "Luma AI",
+     "score": 1302,
+     "votes": 14617,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 14,
+     "model": "Seedream 4.5",
+     "org": "Bytedance",
+     "score": 1298,
+     "votes": 176292,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 15,
+     "model": "Reve v1.1",
+     "org": "Reve",
+     "score": 1282,
+     "votes": 22453,
+     "license": "Proprietary"
+    }
+   ]
+  },
+  {
+   "category": "Image Edit: Multi Image - Art",
+   "url": "https://arena.ai/leaderboard/image/image-edit/multi-image-art",
+   "metric": "Arena score (Elo)",
+   "higher_is_better": true,
+   "data_date": "2026-10-06",
+   "entries": [
+    {
+     "rank": 1,
+     "model": "GPT-Image-2.5 Sunburst",
+     "org": "OpenAI",
+     "score": 1543,
+     "votes": 476,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 2,
+     "model": "GPT-Image-2.5 Flare",
+     "org": "OpenAI",
+     "score": 1501,
+     "votes": 499,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 3,
+     "model": "GPT-Image-2 (Medium)",
+     "org": "OpenAI",
+     "score": 1484,
+     "votes": 2151,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 4,
+     "model": "Seedream 5.0 Pro",
+     "org": "Bytedance",
+     "score": 1404,
+     "votes": 1155,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 5,
+     "model": "GPT-Image-1.5 (High Fidelity)",
+     "org": "OpenAI",
+     "score": 1395,
+     "votes": 2077,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 6,
+     "model": "ChatGPT Image Latest (High Fidelity, 20251216)",
+     "org": "OpenAI",
+     "score": 1391,
+     "votes": 2068,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 7,
+     "model": "Muse Image",
+     "org": "Meta",
+     "score": 1384,
+     "votes": 1548,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 8,
+     "model": "Gemini 3 Pro Image (nano-banana-pro, 2K)",
+     "org": "Google",
+     "score": 1356,
+     "votes": 2216,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 9,
+     "model": "Gemini 3.1 Flash Image (nano-banana-2, Web Search)",
+     "org": "Google",
+     "score": 1351,
+     "votes": 1225,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 10,
+     "model": "UNI-1.1 Max",
+     "org": "Luma AI",
+     "score": 1348,
+     "votes": 498,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 11,
+     "model": "Reve 2.0",
+     "org": "Reve",
+     "score": 1339,
+     "votes": 253,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 12,
+     "model": "UNI-1.1",
+     "org": "Luma AI",
+     "score": 1318,
+     "votes": 1513,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 13,
+     "model": "Seedream 5.0 Lite",
+     "org": "Bytedance",
+     "score": 1288,
+     "votes": 4206,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 14,
+     "model": "Gemini 3.1 Flash-Lite Image (nano-banana-2-lite)",
+     "org": "Google",
+     "score": 1286,
+     "votes": 571,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 15,
+     "model": "Seedream 4.5",
+     "org": "Bytedance",
+     "score": 1281,
+     "votes": 4300,
+     "license": "Proprietary"
+    }
+   ]
+  },
+  {
+   "category": "Image Edit: Multi Image - Portraits",
+   "url": "https://arena.ai/leaderboard/image/image-edit/multi-image-portraits",
+   "metric": "Arena score (Elo)",
+   "higher_is_better": true,
+   "data_date": "2026-10-06",
+   "entries": [
+    {
+     "rank": 1,
+     "model": "GPT-Image-2.5 Sunburst",
+     "org": "OpenAI",
+     "score": 1526,
+     "votes": 12452,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 2,
+     "model": "GPT-Image-2.5 Flare",
+     "org": "OpenAI",
+     "score": 1484,
+     "votes": 12424,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 3,
+     "model": "GPT-Image-2 (Medium)",
+     "org": "OpenAI",
+     "score": 1461,
+     "votes": 46626,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 4,
+     "model": "Muse Image",
+     "org": "Meta",
+     "score": 1417,
+     "votes": 50476,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 5,
+     "model": "Seedream 5.0 Pro",
+     "org": "Bytedance",
+     "score": 1416,
+     "votes": 39289,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 6,
+     "model": "Gemini Nano Banana 2.1",
+     "org": "Google",
+     "score": 1403,
+     "votes": 4885,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 7,
+     "model": "Gemini 3.1 Flash Image (nano-banana-2, Web Search)",
+     "org": "Google",
+     "score": 1366,
+     "votes": 36831,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 8,
+     "model": "Gemini 3 Pro Image (nano-banana-pro, 2K)",
+     "org": "Google",
+     "score": 1362,
+     "votes": 56810,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 9,
+     "model": "GPT-Image-1.5 (High Fidelity)",
+     "org": "OpenAI",
+     "score": 1355,
+     "votes": 45084,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 10,
+     "model": "ChatGPT Image Latest (High Fidelity, 20251216)",
+     "org": "OpenAI",
+     "score": 1354,
+     "votes": 43675,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 11,
+     "model": "Reve 2.0",
+     "org": "Reve",
+     "score": 1352,
+     "votes": 5745,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 12,
+     "model": "Ideogram 4.5",
+     "org": "Ideogram",
+     "score": 1325,
+     "votes": 3498,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 13,
+     "model": "Seedream 4.5",
+     "org": "Bytedance",
+     "score": 1309,
+     "votes": 140798,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 14,
+     "model": "UNI-1.1 Max",
+     "org": "Luma AI",
+     "score": 1298,
+     "votes": 11093,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 15,
+     "model": "UNI-1.1",
+     "org": "Luma AI",
+     "score": 1278,
+     "votes": 43033,
+     "license": "Proprietary"
+    }
+   ]
+  },
+  {
+   "category": "Image Edit: Multi Image - Text Rendering",
+   "url": "https://arena.ai/leaderboard/image/image-edit/multi-image-text-rendering",
+   "metric": "Arena score (Elo)",
+   "higher_is_better": true,
+   "data_date": "2026-10-06",
+   "entries": [
+    {
+     "rank": 1,
+     "model": "GPT-Image-2.5 Sunburst",
+     "org": "OpenAI",
+     "score": 1592,
+     "votes": 5362,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 2,
+     "model": "GPT-Image-2.5 Flare",
+     "org": "OpenAI",
+     "score": 1537,
+     "votes": 5431,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 3,
+     "model": "GPT-Image-2 (Medium)",
+     "org": "OpenAI",
+     "score": 1507,
+     "votes": 19611,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 4,
+     "model": "Gemini Nano Banana 2.1",
+     "org": "Google",
+     "score": 1497,
+     "votes": 1813,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 5,
+     "model": "Muse Image",
+     "org": "Meta",
+     "score": 1424,
+     "votes": 15197,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 6,
+     "model": "Seedream 5.0 Pro",
+     "org": "Bytedance",
+     "score": 1424,
+     "votes": 10613,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 7,
+     "model": "Gemini 3.1 Flash Image (nano-banana-2, Web Search)",
+     "org": "Google",
+     "score": 1409,
+     "votes": 12631,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 8,
+     "model": "Reve 2.0",
+     "org": "Reve",
+     "score": 1398,
+     "votes": 1403,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 9,
+     "model": "Gemini 3 Pro Image (nano-banana-pro, 2K)",
+     "org": "Google",
+     "score": 1397,
+     "votes": 19056,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 10,
+     "model": "ChatGPT Image Latest (High Fidelity, 20251216)",
+     "org": "OpenAI",
+     "score": 1390,
+     "votes": 18243,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 11,
+     "model": "Ideogram 4.5",
+     "org": "Ideogram",
+     "score": 1385,
+     "votes": 1022,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 12,
+     "model": "GPT-Image-1.5 (High Fidelity)",
+     "org": "OpenAI",
+     "score": 1370,
+     "votes": 18281,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 13,
+     "model": "UNI-1.1 Max",
+     "org": "Luma AI",
+     "score": 1335,
+     "votes": 3432,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 14,
+     "model": "UNI-1.1",
+     "org": "Luma AI",
+     "score": 1309,
+     "votes": 12604,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 15,
+     "model": "Gemini 3.1 Flash-Lite Image (nano-banana-2-lite)",
+     "org": "Google",
+     "score": 1308,
+     "votes": 4750,
+     "license": "Proprietary"
+    }
+   ]
+  },
+  {
+   "category": "Text-to-Video",
+   "url": "https://arena.ai/leaderboard/video/text-to-video",
+   "metric": "Arena score (Elo)",
+   "higher_is_better": true,
+   "data_date": "2026-09-21",
+   "entries": [
+    {
+     "rank": 1,
+     "model": "Gemini Omni 1.1 Flash",
+     "org": "Google",
+     "score": 1516,
+     "votes": 1784,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 2,
+     "model": "gemini-omni-flash",
+     "org": "Google",
+     "score": 1513,
+     "votes": 26576,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 3,
+     "model": "FLUX 3 Video",
+     "org": "Black Forest Labs",
+     "score": 1493,
+     "votes": 1302,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 4,
+     "model": "Grok Imagine Video 1.5",
+     "org": "SpaceXAI",
+     "score": 1492,
+     "votes": 1218,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 5,
+     "model": "Dreamina Seedance 2.0 (720p)",
+     "org": "Bytedance",
+     "score": 1479,
+     "votes": 56318,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 6,
+     "model": "Wan 3.0",
+     "org": "Alibaba",
+     "score": 1476,
+     "votes": 2598,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 7,
+     "model": "Dreamina Seedance 2.5 (720p)",
+     "org": "Bytedance",
+     "score": 1474,
+     "votes": 8001,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 8,
+     "model": "MiniMax H3",
+     "org": "MiniMax",
+     "score": 1460,
+     "votes": 11417,
+     "license": "minimax-h3-community-license-agreement"
+    },
+    {
+     "rank": 9,
+     "model": "Muse Video",
+     "org": "Meta",
+     "score": 1456,
+     "votes": 2188,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 10,
+     "model": "HappyHorse 1.0",
+     "org": "Alibaba-ATH",
+     "score": 1427,
+     "votes": 22264,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 11,
+     "model": "Sora 2 Pro",
+     "org": "OpenAI",
+     "score": 1368,
+     "votes": 54167,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 12,
+     "model": "Veo 3.1 (Audio)",
+     "org": "Google",
+     "score": 1364,
+     "votes": 13741,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 13,
+     "model": "Veo 3.1 (Audio, 1080p)",
+     "org": "Google",
+     "score": 1362,
+     "votes": 25076,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 14,
+     "model": "Veo 3.1 Fast (Audio)",
+     "org": "Google",
+     "score": 1362,
+     "votes": 39484,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 15,
+     "model": "Veo 3.1 Fast (Audio, 1080p)",
+     "org": "Google",
+     "score": 1358,
+     "votes": 25870,
+     "license": "Proprietary"
+    }
+   ]
+  },
+  {
+   "category": "Image-to-Video",
+   "url": "https://arena.ai/leaderboard/video/image-to-video",
+   "metric": "Arena score (Elo)",
+   "higher_is_better": true,
+   "data_date": "2026-09-21",
+   "entries": [
+    {
+     "rank": 1,
+     "model": "MiniMax H3",
+     "org": "MiniMax",
+     "score": 1495,
+     "votes": 57112,
+     "license": "minimax-h3-community-license-agreement"
+    },
+    {
+     "rank": 2,
+     "model": "Gemini Omni 1.1 Flash",
+     "org": "Google",
+     "score": 1488,
+     "votes": 3734,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 3,
+     "model": "Wan 3.0",
+     "org": "Alibaba",
+     "score": 1480,
+     "votes": 3442,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 4,
+     "model": "Dreamina Seedance 2.5 (720p)",
+     "org": "Bytedance",
+     "score": 1477,
+     "votes": 15729,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 5,
+     "model": "Dreamina Seedance 2.0 (720p)",
+     "org": "Bytedance",
+     "score": 1475,
+     "votes": 121427,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 6,
+     "model": "gemini-omni-flash",
+     "org": "Google",
+     "score": 1465,
+     "votes": 87155,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 7,
+     "model": "HiDream-O1-Video-1.0",
+     "org": "HiDream",
+     "score": 1456,
+     "votes": 6488,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 8,
+     "model": "Grok Imagine Video 1.5 (720p)",
+     "org": "SpaceXAI",
+     "score": 1456,
+     "votes": 137459,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 9,
+     "model": "FLUX 3 Video (20260811)",
+     "org": "Black Forest Labs",
+     "score": 1449,
+     "votes": 37042,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 10,
+     "model": "HappyHorse 1.0",
+     "org": "Alibaba-ATH",
+     "score": 1442,
+     "votes": 70640,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 11,
+     "model": "Wan 2.7",
+     "org": "Alibaba",
+     "score": 1428,
+     "votes": 85521,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 12,
+     "model": "Grok Imagine Video (720p)",
+     "org": "SpaceXAI",
+     "score": 1415,
+     "votes": 554050,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 13,
+     "model": "Veo 3.1 (Audio)",
+     "org": "Google",
+     "score": 1398,
+     "votes": 25116,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 14,
+     "model": "Veo 3.1 (Audio, 1080p)",
+     "org": "Google",
+     "score": 1390,
+     "votes": 53089,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 15,
+     "model": "Veo 3.1 Fast (Audio)",
+     "org": "Google",
+     "score": 1385,
+     "votes": 99804,
+     "license": "Proprietary"
+    }
+   ]
+  },
+  {
+   "category": "Video Edit",
+   "url": "https://arena.ai/leaderboard/video/video-edit",
+   "metric": "Arena score (Elo)",
+   "higher_is_better": true,
+   "data_date": "2026-08-26",
+   "entries": [
+    {
+     "rank": 1,
+     "model": "Wan 3.0",
+     "org": "Alibaba",
+     "score": 1414,
+     "votes": 463,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 2,
+     "model": "Dreamina Seedance 2.5 (720p)",
+     "org": "Bytedance",
+     "score": 1410,
+     "votes": 429,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 3,
+     "model": "MiniMax H3",
+     "org": "MiniMax",
+     "score": 1392,
+     "votes": 962,
+     "license": "minimax-h3-community-license-agreement"
+    },
+    {
+     "rank": 4,
+     "model": "gemini-omni-flash",
+     "org": "Google",
+     "score": 1367,
+     "votes": 2109,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 5,
+     "model": "Dreamina Seedance 2.0 (720p)",
+     "org": "Bytedance",
+     "score": 1365,
+     "votes": 3852,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 6,
+     "model": "HappyHorse 1.0",
+     "org": "Alibaba-ATH",
+     "score": 1307,
+     "votes": 3116,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 7,
+     "model": "Grok Imagine Video",
+     "org": "SpaceXAI",
+     "score": 1258,
+     "votes": 13724,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 8,
+     "model": "Kling O3 Pro",
+     "org": "KlingAI",
+     "score": 1255,
+     "votes": 7540,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 9,
+     "model": "Kling O1 Pro",
+     "org": "KlingAI",
+     "score": 1197,
+     "votes": 10542,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 10,
+     "model": "Runway Gen-4 Aleph",
+     "org": "Runway",
+     "score": 1182,
+     "votes": 9818,
+     "license": "Proprietary"
+    }
+   ]
+  },
+  {
+   "category": "Document",
+   "url": "https://arena.ai/leaderboard/chat/document",
+   "metric": "Arena score (Elo)",
+   "higher_is_better": true,
+   "data_date": "2026-09-13",
+   "entries": [
+    {
+     "rank": 1,
+     "model": "Claude Opus 5 (High)",
+     "org": "Anthropic",
+     "score": 1516,
+     "votes": 8794,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 2,
+     "model": "Claude Fable 5.1 (Max)",
+     "org": "Anthropic",
+     "score": 1513,
+     "votes": 1403,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 3,
+     "model": "Claude Opus 4.6 (High)",
+     "org": "Anthropic",
+     "score": 1507,
+     "votes": 27929,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 4,
+     "model": "Claude Opus 4.6",
+     "org": "Anthropic",
+     "score": 1507,
+     "votes": 41260,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 5,
+     "model": "Claude Fable 5 (High)",
+     "org": "Anthropic",
+     "score": 1496,
+     "votes": 8497,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 6,
+     "model": "Claude Opus 4.7",
+     "org": "Anthropic",
+     "score": 1495,
+     "votes": 22192,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 7,
+     "model": "Claude Opus 4.7 (High)",
+     "org": "Anthropic",
+     "score": 1495,
+     "votes": 21957,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 8,
+     "model": "GPT-5.5",
+     "org": "OpenAI",
+     "score": 1486,
+     "votes": 21279,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 9,
+     "model": "GPT-5.5 (High)",
+     "org": "OpenAI",
+     "score": 1484,
+     "votes": 20944,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 10,
+     "model": "GPT-5.6 Sol (xHigh)",
+     "org": "OpenAI",
+     "score": 1483,
+     "votes": 4818,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 11,
+     "model": "Claude Sonnet 4.6",
+     "org": "Anthropic",
+     "score": 1482,
+     "votes": 57813,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 12,
+     "model": "Claude Opus 4.8 (High)",
+     "org": "Anthropic",
+     "score": 1475,
+     "votes": 11551,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 13,
+     "model": "GPT-5.6 Terra (xHigh)",
+     "org": "OpenAI",
+     "score": 1472,
+     "votes": 5787,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 14,
+     "model": "GPT-5.4",
+     "org": "OpenAI",
+     "score": 1471,
+     "votes": 33331,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 15,
+     "model": "Muse Spark 1.3 (Max)",
+     "org": "Meta",
+     "score": 1471,
+     "votes": 1006,
+     "license": "Proprietary"
+    }
+   ]
+  },
+  {
+   "category": "Search",
+   "url": "https://arena.ai/leaderboard/chat/search",
+   "metric": "Arena score (Elo)",
+   "higher_is_better": true,
+   "data_date": "2026-10-13",
+   "entries": [
+    {
+     "rank": 1,
+     "model": "GPT-5.6 Sol (xHigh)",
+     "org": "OpenAI",
+     "score": 1261,
+     "votes": 60437,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 2,
+     "model": "Qwen3.8-Max",
+     "org": "Alibaba",
+     "score": 1261,
+     "votes": 1870,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 3,
+     "model": "Claude Opus 4.6 (Search)",
+     "org": "Anthropic",
+     "score": 1251,
+     "votes": 173191,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 4,
+     "model": "GPT-5.5 (Search)",
+     "org": "OpenAI",
+     "score": 1247,
+     "votes": 125957,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 5,
+     "model": "Claude Fable 5.1 (High)",
+     "org": "Anthropic",
+     "score": 1246,
+     "votes": 12782,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 6,
+     "model": "Claude Opus 5 (High)",
+     "org": "Anthropic",
+     "score": 1242,
+     "votes": 13285,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 7,
+     "model": "GPT-6 Astra (Max)",
+     "org": "OpenAI",
+     "score": 1234,
+     "votes": 18483,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 8,
+     "model": "GPT-6.1 Sol (Max)",
+     "org": "OpenAI",
+     "score": 1233,
+     "votes": 5555,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 9,
+     "model": "Claude Opus 4.7",
+     "org": "Anthropic",
+     "score": 1230,
+     "votes": 127506,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 10,
+     "model": "Claude Fable 5 (High)",
+     "org": "Anthropic",
+     "score": 1229,
+     "votes": 73596,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 11,
+     "model": "ERNIE 5.1",
+     "org": "Baidu",
+     "score": 1227,
+     "votes": 4024,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 12,
+     "model": "Claude Sonnet 4.6 (Search)",
+     "org": "Anthropic",
+     "score": 1221,
+     "votes": 173986,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 13,
+     "model": "Grok 4.5",
+     "org": "SpaceXAI",
+     "score": 1216,
+     "votes": 76458,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 14,
+     "model": "Claude Opus 5.5 (Medium)",
+     "org": "Anthropic",
+     "score": 1213,
+     "votes": 10842,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 15,
+     "model": "Gemini 3.1 Pro (Grounding)",
+     "org": "Google",
+     "score": 1209,
+     "votes": 151436,
+     "license": "Proprietary"
+    }
+   ]
+  },
+  {
+   "category": "Vision: Overall",
+   "url": "https://arena.ai/leaderboard/chat/vision",
+   "metric": "Arena score (Elo)",
+   "higher_is_better": true,
+   "data_date": "2026-10-09",
+   "entries": [
+    {
+     "rank": 1,
+     "model": "Claude Fable 5 (High)",
+     "org": "Anthropic",
+     "score": 1308,
+     "votes": 14175,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 2,
+     "model": "Qwen3.8-Max",
+     "org": "Alibaba",
+     "score": 1301,
+     "votes": 10017,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 3,
+     "model": "Claude Opus 4.6 (High)",
+     "org": "Anthropic",
+     "score": 1299,
+     "votes": 22304,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 4,
+     "model": "Claude Opus 4.7",
+     "org": "Anthropic",
+     "score": 1298,
+     "votes": 23165,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 5,
+     "model": "Claude Opus 4.7 (High)",
+     "org": "Anthropic",
+     "score": 1298,
+     "votes": 22733,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 6,
+     "model": "Gemini 3.7 Flash (High)",
+     "org": "Google",
+     "score": 1297,
+     "votes": 4524,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 7,
+     "model": "Claude Opus 4.6",
+     "org": "Anthropic",
+     "score": 1294,
+     "votes": 26853,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 8,
+     "model": "GPT-6.1 Sol (Max)",
+     "org": "OpenAI",
+     "score": 1294,
+     "votes": 1813,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 9,
+     "model": "Muse Spark",
+     "org": "Meta",
+     "score": 1294,
+     "votes": 5872,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 10,
+     "model": "Muse Spark 1.2 (xHigh)",
+     "org": "Meta",
+     "score": 1293,
+     "votes": 1954,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 11,
+     "model": "Claude Opus 5.5 (High)",
+     "org": "Anthropic",
+     "score": 1293,
+     "votes": 2508,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 12,
+     "model": "Muse Spark 1.3 (Max)",
+     "org": "Meta",
+     "score": 1290,
+     "votes": 4550,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 13,
+     "model": "Gemini 3 Pro",
+     "org": "Google",
+     "score": 1289,
+     "votes": 13639,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 14,
+     "model": "Gemini 3.8 Flash (High)",
+     "org": "Google",
+     "score": 1289,
+     "votes": 3792,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 15,
+     "model": "Claude Opus 5 (High)",
+     "org": "Anthropic",
+     "score": 1287,
+     "votes": 16665,
+     "license": "Proprietary"
+    }
+   ]
+  },
+  {
+   "category": "Vision: English",
+   "url": "https://arena.ai/leaderboard/chat/vision/english",
+   "metric": "Arena score (Elo)",
+   "higher_is_better": true,
+   "data_date": "2026-10-09",
+   "entries": [
+    {
+     "rank": 1,
+     "model": "Claude Fable 5 (High)",
+     "org": "Anthropic",
+     "score": 1305,
+     "votes": 5721,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 2,
+     "model": "Claude Opus 4.7 (High)",
+     "org": "Anthropic",
+     "score": 1302,
+     "votes": 9702,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 3,
+     "model": "Claude Opus 4.7",
+     "org": "Anthropic",
+     "score": 1302,
+     "votes": 9843,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 4,
+     "model": "Claude Opus 4.6 (High)",
+     "org": "Anthropic",
+     "score": 1301,
+     "votes": 9251,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 5,
+     "model": "Claude Opus 4.6",
+     "org": "Anthropic",
+     "score": 1296,
+     "votes": 11327,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 6,
+     "model": "Qwen3.8-Max",
+     "org": "Alibaba",
+     "score": 1294,
+     "votes": 3299,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 7,
+     "model": "Muse Spark",
+     "org": "Meta",
+     "score": 1290,
+     "votes": 2429,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 8,
+     "model": "GPT-6 Astra (Max)",
+     "org": "OpenAI",
+     "score": 1288,
+     "votes": 1205,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 9,
+     "model": "GPT-6.1 Sol (Max)",
+     "org": "OpenAI",
+     "score": 1287,
+     "votes": 606,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 10,
+     "model": "Claude Opus 5.5 (High)",
+     "org": "Anthropic",
+     "score": 1286,
+     "votes": 818,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 11,
+     "model": "Gemini 3.7 Flash (High)",
+     "org": "Google",
+     "score": 1286,
+     "votes": 1554,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 12,
+     "model": "Gemini 3.8 Flash (High)",
+     "org": "Google",
+     "score": 1286,
+     "votes": 1275,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 13,
+     "model": "GPT-5.6 Sol (xHigh)",
+     "org": "OpenAI",
+     "score": 1284,
+     "votes": 3715,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 14,
+     "model": "Claude Sonnet 4.6",
+     "org": "Anthropic",
+     "score": 1282,
+     "votes": 11555,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 15,
+     "model": "GPT-5.4 (High)",
+     "org": "OpenAI",
+     "score": 1282,
+     "votes": 11832,
+     "license": "Proprietary"
+    }
+   ]
+  },
+  {
+   "category": "Vision: Chinese",
+   "url": "https://arena.ai/leaderboard/chat/vision/chinese",
+   "metric": "Arena score (Elo)",
+   "higher_is_better": true,
+   "data_date": "2026-10-09",
+   "entries": [
+    {
+     "rank": 1,
+     "model": "Gemini 3.8 Flash (High)",
+     "org": "Google",
+     "score": 1380,
+     "votes": 182,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 2,
+     "model": "Gemini 3.7 Flash (High)",
+     "org": "Google",
+     "score": 1367,
+     "votes": 246,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 3,
+     "model": "Claude Opus 5 (High)",
+     "org": "Anthropic",
+     "score": 1367,
+     "votes": 985,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 4,
+     "model": "Muse Spark 1.3 (xHigh)",
+     "org": "Meta",
+     "score": 1361,
+     "votes": 226,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 5,
+     "model": "GPT-6 Astra (Max)",
+     "org": "OpenAI",
+     "score": 1357,
+     "votes": 230,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 6,
+     "model": "Claude Fable 5 (High)",
+     "org": "Anthropic",
+     "score": 1355,
+     "votes": 765,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 7,
+     "model": "Qwen3.8-Max",
+     "org": "Alibaba",
+     "score": 1353,
+     "votes": 546,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 8,
+     "model": "Claude Opus 4.6 (High)",
+     "org": "Anthropic",
+     "score": 1352,
+     "votes": 1488,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 9,
+     "model": "Gemini 3.5 Flash (High)",
+     "org": "Google",
+     "score": 1348,
+     "votes": 820,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 10,
+     "model": "Claude Opus 4.6",
+     "org": "Anthropic",
+     "score": 1348,
+     "votes": 1685,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 11,
+     "model": "Claude Opus 4.7",
+     "org": "Anthropic",
+     "score": 1346,
+     "votes": 1505,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 12,
+     "model": "Gemini 3.5 Flash (Medium)",
+     "org": "Google",
+     "score": 1345,
+     "votes": 777,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 13,
+     "model": "GLM-5.3-Flash",
+     "org": "Z.ai",
+     "score": 1343,
+     "votes": 453,
+     "license": "MIT"
+    },
+    {
+     "rank": 14,
+     "model": "Muse Spark 1.3 (Max)",
+     "org": "Meta",
+     "score": 1342,
+     "votes": 253,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 15,
+     "model": "Gemini 3 Pro",
+     "org": "Google",
+     "score": 1342,
+     "votes": 1687,
+     "license": "Proprietary"
+    }
+   ]
+  },
+  {
+   "category": "Vision: Captioning",
+   "url": "https://arena.ai/leaderboard/chat/vision/captioning",
+   "metric": "Arena score (Elo)",
+   "higher_is_better": true,
+   "data_date": "2026-10-09",
+   "entries": [
+    {
+     "rank": 1,
+     "model": "Gemini 3.1 Pro Preview",
+     "org": "Google",
+     "score": 1282,
+     "votes": 138,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 2,
+     "model": "Gemini 3 Pro",
+     "org": "Google",
+     "score": 1276,
+     "votes": 219,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 3,
+     "model": "GPT-5.2 (High)",
+     "org": "OpenAI",
+     "score": 1263,
+     "votes": 94,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 4,
+     "model": "Gemini 2.5 Pro",
+     "org": "Google",
+     "score": 1251,
+     "votes": 795,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 5,
+     "model": "GPT-5.1 (High)",
+     "org": "OpenAI",
+     "score": 1248,
+     "votes": 101,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 6,
+     "model": "Gemma 4 26B A4B",
+     "org": "Google",
+     "score": 1241,
+     "votes": 63,
+     "license": "Apache 2.0"
+    },
+    {
+     "rank": 7,
+     "model": "Gemini 3 Flash",
+     "org": "Google",
+     "score": 1234,
+     "votes": 191,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 8,
+     "model": "Gemini 3.1 Flash-Lite Preview",
+     "org": "Google",
+     "score": 1227,
+     "votes": 73,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 9,
+     "model": "ChatGPT-4o Latest (20250326)",
+     "org": "OpenAI",
+     "score": 1213,
+     "votes": 273,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 10,
+     "model": "Gemini 2.5 Flash",
+     "org": "Google",
+     "score": 1212,
+     "votes": 581,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 11,
+     "model": "Qwen3-VL-235B-A22B-Instruct",
+     "org": "Alibaba",
+     "score": 1211,
+     "votes": 146,
+     "license": "Apache 2.0"
+    },
+    {
+     "rank": 12,
+     "model": "GPT-4.1 (2025-04-14)",
+     "org": "OpenAI",
+     "score": 1210,
+     "votes": 422,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 13,
+     "model": "Gemini 3 Flash (Minimal)",
+     "org": "Google",
+     "score": 1210,
+     "votes": 173,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 14,
+     "model": "Kimi K2.5 (Thinking)",
+     "org": "Moonshot",
+     "score": 1199,
+     "votes": 125,
+     "license": "Modified MIT"
+    },
+    {
+     "rank": 15,
+     "model": "GPT-5 (High)",
+     "org": "OpenAI",
+     "score": 1195,
+     "votes": 357,
+     "license": "Proprietary"
+    }
+   ]
+  },
+  {
+   "category": "Vision: Creative Writing",
+   "url": "https://arena.ai/leaderboard/chat/vision/creative-writing",
+   "metric": "Arena score (Elo)",
+   "higher_is_better": true,
+   "data_date": "2026-10-09",
+   "entries": [
+    {
+     "rank": 1,
+     "model": "Gemini 3 Pro",
+     "org": "Google",
+     "score": 1325,
+     "votes": 1102,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 2,
+     "model": "Claude Fable 5 (High)",
+     "org": "Anthropic",
+     "score": 1320,
+     "votes": 1115,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 3,
+     "model": "Claude Opus 4.6 (High)",
+     "org": "Anthropic",
+     "score": 1309,
+     "votes": 1405,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 4,
+     "model": "Claude Opus 4.7 (High)",
+     "org": "Anthropic",
+     "score": 1302,
+     "votes": 1448,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 5,
+     "model": "Claude Opus 5.5 (High)",
+     "org": "Anthropic",
+     "score": 1301,
+     "votes": 219,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 6,
+     "model": "Muse Spark",
+     "org": "Meta",
+     "score": 1300,
+     "votes": 345,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 7,
+     "model": "Gemini 3.1 Pro Preview",
+     "org": "Google",
+     "score": 1300,
+     "votes": 3200,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 8,
+     "model": "Claude Opus 4.6",
+     "org": "Anthropic",
+     "score": 1298,
+     "votes": 1731,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 9,
+     "model": "Claude Opus 4.7",
+     "org": "Anthropic",
+     "score": 1297,
+     "votes": 1391,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 10,
+     "model": "Gemini 3 Flash",
+     "org": "Google",
+     "score": 1297,
+     "votes": 2983,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 11,
+     "model": "Gemini 3.7 Flash (High)",
+     "org": "Google",
+     "score": 1293,
+     "votes": 427,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 12,
+     "model": "GPT-5.6 Sol (xHigh)",
+     "org": "OpenAI",
+     "score": 1292,
+     "votes": 986,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 13,
+     "model": "Qwen3.8-Max",
+     "org": "Alibaba",
+     "score": 1290,
+     "votes": 748,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 14,
+     "model": "Claude Fable 5.1 (Max)",
+     "org": "Anthropic",
+     "score": 1290,
+     "votes": 476,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 15,
+     "model": "GPT-6 Astra (Max)",
+     "org": "OpenAI",
+     "score": 1289,
+     "votes": 367,
+     "license": "Proprietary"
+    }
+   ]
+  },
+  {
+   "category": "Vision: Diagram",
+   "url": "https://arena.ai/leaderboard/chat/vision/diagram",
+   "metric": "Arena score (Elo)",
+   "higher_is_better": true,
+   "data_date": "2026-10-09",
+   "entries": [
+    {
+     "rank": 1,
+     "model": "Claude Fable 5 (High)",
+     "org": "Anthropic",
+     "score": 1351,
+     "votes": 3815,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 2,
+     "model": "Gemini 3.8 Flash (High)",
+     "org": "Google",
+     "score": 1333,
+     "votes": 979,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 3,
+     "model": "Claude Opus 4.7 (High)",
+     "org": "Anthropic",
+     "score": 1333,
+     "votes": 6251,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 4,
+     "model": "Claude Opus 4.6",
+     "org": "Anthropic",
+     "score": 1331,
+     "votes": 7260,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 5,
+     "model": "Claude Opus 4.7",
+     "org": "Anthropic",
+     "score": 1331,
+     "votes": 6424,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 6,
+     "model": "Claude Opus 5 (High)",
+     "org": "Anthropic",
+     "score": 1329,
+     "votes": 4254,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 7,
+     "model": "Claude Fable 5.1 (Max)",
+     "org": "Anthropic",
+     "score": 1326,
+     "votes": 1100,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 8,
+     "model": "Claude Opus 4.6 (High)",
+     "org": "Anthropic",
+     "score": 1325,
+     "votes": 5999,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 9,
+     "model": "Claude Opus 5.5 (High)",
+     "org": "Anthropic",
+     "score": 1324,
+     "votes": 589,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 10,
+     "model": "Qwen3.8-Max",
+     "org": "Alibaba",
+     "score": 1323,
+     "votes": 2509,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 11,
+     "model": "GPT-5.5",
+     "org": "OpenAI",
+     "score": 1323,
+     "votes": 7612,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 12,
+     "model": "GPT-5.4 (High)",
+     "org": "OpenAI",
+     "score": 1321,
+     "votes": 8005,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 13,
+     "model": "Muse Spark 1.3 (Max)",
+     "org": "Meta",
+     "score": 1321,
+     "votes": 1139,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 14,
+     "model": "Gemini 3.7 Flash (High)",
+     "org": "Google",
+     "score": 1321,
+     "votes": 1167,
+     "license": "Proprietary"
+    },
+    {
+     "rank": 15,
+     "model": "Claude Sonnet 5.5 (xHigh)",
+     "org": "Anthropic",
+     "score": 1320,
+     "votes": 514,
+     "license": "Proprietary"
+    }
+   ]
+  }
+ ]
+}

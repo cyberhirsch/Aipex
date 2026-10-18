@@ -1,0 +1,431 @@
+{
+ "categories": [
+  {
+   "id": "text",
+   "name": "Overall chat",
+   "group": "Text & reasoning"
+  },
+  {
+   "id": "expert",
+   "name": "Expert questions",
+   "group": "Text & reasoning"
+  },
+  {
+   "id": "hard",
+   "name": "Hard prompts",
+   "group": "Text & reasoning"
+  },
+  {
+   "id": "math",
+   "name": "Math",
+   "group": "Text & reasoning"
+  },
+  {
+   "id": "instr",
+   "name": "Instruction following",
+   "group": "Text & reasoning"
+  },
+  {
+   "id": "multiturn",
+   "name": "Multi-turn conversation",
+   "group": "Text & reasoning"
+  },
+  {
+   "id": "long",
+   "name": "Long queries",
+   "group": "Text & reasoning"
+  },
+  {
+   "id": "writing",
+   "name": "Creative writing",
+   "group": "Text & reasoning"
+  },
+  {
+   "id": "document",
+   "name": "Document understanding",
+   "group": "Text & reasoning"
+  },
+  {
+   "id": "search",
+   "name": "Search & web answers",
+   "group": "Text & reasoning"
+  },
+  {
+   "id": "science",
+   "name": "Science",
+   "group": "Text & reasoning"
+  },
+  {
+   "id": "medicine",
+   "name": "Medicine & health",
+   "group": "Text & reasoning"
+  },
+  {
+   "id": "legal",
+   "name": "Law & government",
+   "group": "Text & reasoning"
+  },
+  {
+   "id": "business",
+   "name": "Business & finance",
+   "group": "Text & reasoning"
+  },
+  {
+   "id": "media",
+   "name": "Entertainment & media",
+   "group": "Text & reasoning"
+  },
+  {
+   "id": "coding",
+   "name": "Coding",
+   "group": "Code"
+  },
+  {
+   "id": "agents",
+   "name": "Coding agents (harness + model)",
+   "group": "Code"
+  },
+  {
+   "id": "webdev",
+   "name": "Web development",
+   "group": "Code"
+  },
+  {
+   "id": "img2web",
+   "name": "Screenshot to website",
+   "group": "Code"
+  },
+  {
+   "id": "multilingual",
+   "name": "Non-English overall",
+   "group": "Languages"
+  },
+  {
+   "id": "german",
+   "name": "German",
+   "group": "Languages"
+  },
+  {
+   "id": "french",
+   "name": "French",
+   "group": "Languages"
+  },
+  {
+   "id": "spanish",
+   "name": "Spanish",
+   "group": "Languages"
+  },
+  {
+   "id": "russian",
+   "name": "Russian",
+   "group": "Languages"
+  },
+  {
+   "id": "polish",
+   "name": "Polish",
+   "group": "Languages"
+  },
+  {
+   "id": "chinese",
+   "name": "Chinese",
+   "group": "Languages"
+  },
+  {
+   "id": "japanese",
+   "name": "Japanese",
+   "group": "Languages"
+  },
+  {
+   "id": "korean",
+   "name": "Korean",
+   "group": "Languages"
+  },
+  {
+   "id": "vision",
+   "name": "Image understanding",
+   "group": "Vision"
+  },
+  {
+   "id": "caption",
+   "name": "Image captioning",
+   "group": "Vision"
+  },
+  {
+   "id": "diagram",
+   "name": "Diagrams & charts",
+   "group": "Vision"
+  },
+  {
+   "id": "visionwriting",
+   "name": "Writing about images",
+   "group": "Vision"
+  },
+  {
+   "id": "t2i",
+   "name": "Text to image",
+   "group": "Image generation"
+  },
+  {
+   "id": "t2i-photo",
+   "name": "Photoreal & cinematic",
+   "group": "Image generation"
+  },
+  {
+   "id": "t2i-portrait",
+   "name": "Portraits",
+   "group": "Image generation"
+  },
+  {
+   "id": "t2i-text",
+   "name": "Text in images",
+   "group": "Image generation"
+  },
+  {
+   "id": "t2i-art",
+   "name": "Art",
+   "group": "Image generation"
+  },
+  {
+   "id": "t2i-anime",
+   "name": "Cartoon, anime & fantasy",
+   "group": "Image generation"
+  },
+  {
+   "id": "t2i-product",
+   "name": "Product & branding",
+   "group": "Image generation"
+  },
+  {
+   "id": "t2i-3d",
+   "name": "3D-style imagery",
+   "group": "Image generation"
+  },
+  {
+   "id": "edit",
+   "name": "Image editing",
+   "group": "Image editing"
+  },
+  {
+   "id": "edit-multi",
+   "name": "Multi-image editing",
+   "group": "Image editing"
+  },
+  {
+   "id": "edit-photo",
+   "name": "Photo retouching",
+   "group": "Image editing"
+  },
+  {
+   "id": "edit-portrait",
+   "name": "Portrait editing",
+   "group": "Image editing"
+  },
+  {
+   "id": "edit-text",
+   "name": "Text editing in images",
+   "group": "Image editing"
+  },
+  {
+   "id": "edit-product",
+   "name": "Product shots",
+   "group": "Image editing"
+  },
+  {
+   "id": "bgremoval",
+   "name": "Background removal",
+   "group": "Image editing"
+  },
+  {
+   "id": "t2v",
+   "name": "Text to video",
+   "group": "Video"
+  },
+  {
+   "id": "i2v",
+   "name": "Image to video",
+   "group": "Video"
+  },
+  {
+   "id": "vedit",
+   "name": "Video editing",
+   "group": "Video"
+  },
+  {
+   "id": "tts",
+   "name": "Text to speech",
+   "group": "Audio & music"
+  },
+  {
+   "id": "stt",
+   "name": "Speech to text",
+   "group": "Audio & music"
+  },
+  {
+   "id": "stt-multi",
+   "name": "Speech to text, multilingual",
+   "group": "Audio & music"
+  },
+  {
+   "id": "stt-long",
+   "name": "Long-form transcription",
+   "group": "Audio & music"
+  },
+  {
+   "id": "music-vocal",
+   "name": "Songs with vocals",
+   "group": "Audio & music"
+  },
+  {
+   "id": "music-inst",
+   "name": "Instrumental music",
+   "group": "Audio & music"
+  },
+  {
+   "id": "img23d",
+   "name": "Image to 3D",
+   "group": "3D"
+  },
+  {
+   "id": "scene3d",
+   "name": "3D scene coding (three.js)",
+   "group": "3D"
+  },
+  {
+   "id": "emb-en",
+   "name": "Text embeddings, English",
+   "group": "Embeddings & retrieval"
+  },
+  {
+   "id": "emb-multi",
+   "name": "Text embeddings, multilingual",
+   "group": "Embeddings & retrieval"
+  },
+  {
+   "id": "emb-code",
+   "name": "Code embeddings",
+   "group": "Embeddings & retrieval"
+  },
+  {
+   "id": "emb-img",
+   "name": "Image-text embeddings",
+   "group": "Embeddings & retrieval"
+  },
+  {
+   "id": "emb-mm",
+   "name": "Multimodal embeddings",
+   "group": "Embeddings & retrieval"
+  },
+  {
+   "id": "vidore",
+   "name": "Visual document retrieval",
+   "group": "Embeddings & retrieval"
+  }
+ ],
+ "map": {
+  "Arena (arena.ai) :: Text: Hard Prompts (English)": null,
+  "Arena (arena.ai) :: Text: English": null,
+  "Arena (arena.ai) :: Text: Exclude Ties": null,
+  "Arena (arena.ai) :: Vision: English": null,
+  "Arena (arena.ai) :: Vision: Chinese": null,
+  "OpenCompass Open VLM Leaderboard (Hugging Face) :: Vision-Language Models (OpenVLM avg)": null,
+  "OpenCompass Open VLM Leaderboard (Hugging Face) :: OCR (OCRBench v1 column of OpenVLM)": null,
+  "OCRBench v2 Leaderboard (Hugging Face) :: OCR / Document VQA (OCRBench v2, English)": null,
+  "olmOCR-Bench (Ai2, GitHub README) :: OCR / PDF-to-text (olmOCR-Bench)": null,
+  "SWE-bench :: Coding agents (SWE-bench Multilingual)": null,
+  "SWE-bench :: Coding agents (SWE-bench Verified)": null,
+  "SWE-bench :: Coding agents (SWE-bench Multimodal)": null,
+  "Aider Polyglot Leaderboard :: Code editing (Aider polyglot)": null,
+  "Berkeley Function Calling Leaderboard (BFCL v4) :: Tool use / function calling (BFCL)": null,
+  "Hugging Face Open ASR Leaderboard :: Speech-to-Text (English short-form, open weights only)": null,
+  "Arena (arena.ai) :: Image Edit: Single Image - Product, Branding & Commercial Design": "edit-product",
+  "Arena (arena.ai) :: Image Edit: Single Image - 3D Imaging & Modeling": null,
+  "Arena (arena.ai) :: Image Edit: Single Image - Cartoon, Anime & Fantasy": null,
+  "Arena (arena.ai) :: Image Edit: Single Image - Photorealistic & Cinematic Imagery": "edit-photo",
+  "Arena (arena.ai) :: Image Edit: Single Image - Art": null,
+  "Arena (arena.ai) :: Image Edit: Single Image - Portraits": "edit-portrait",
+  "Arena (arena.ai) :: Image Edit: Single Image - Text Rendering": "edit-text",
+  "Arena (arena.ai) :: Image Edit: Multi Image - Product, Branding & Commercial Design": null,
+  "Arena (arena.ai) :: Image Edit: Multi Image - 3D Imaging & Modeling": null,
+  "Arena (arena.ai) :: Image Edit: Multi Image - Cartoon, Anime & Fantasy": null,
+  "Arena (arena.ai) :: Image Edit: Multi Image - Photorealistic & Cinematic Imagery": null,
+  "Arena (arena.ai) :: Image Edit: Multi Image - Art": null,
+  "Arena (arena.ai) :: Image Edit: Multi Image - Portraits": null,
+  "Arena (arena.ai) :: Image Edit: Multi Image - Text Rendering": null,
+  "Arena (arena.ai) :: Text: Overall": "text",
+  "Artificial Analysis :: LLM Intelligence Index": "text",
+  "LiveBench 2.0 :: LLM overall (LiveBench 2.0)": "text",
+  "Arena (arena.ai) :: Text: Expert": "expert",
+  "Arena (arena.ai) :: Text: Hard Prompts": "hard",
+  "Arena (arena.ai) :: Text: Math": "math",
+  "Arena (arena.ai) :: Text: Occupational - Mathematical": "math",
+  "Arena (arena.ai) :: Text: Instruction Following": "instr",
+  "Arena (arena.ai) :: Text: Multi-Turn": "multiturn",
+  "Arena (arena.ai) :: Text: Longer Query": "long",
+  "Arena (arena.ai) :: Text: Creative Writing": "writing",
+  "Arena (arena.ai) :: Text: Occupational - Writing, Literature, & Language": "writing",
+  "Arena (arena.ai) :: Document": "document",
+  "Arena (arena.ai) :: Search": "search",
+  "Arena (arena.ai) :: Text: Occupational - Life, Physical, & Social Science": "science",
+  "Arena (arena.ai) :: Text: Occupational - Medicine & Healthcare": "medicine",
+  "Arena (arena.ai) :: Text: Occupational - Legal & Government": "legal",
+  "Arena (arena.ai) :: Text: Occupational - Business, Management, & Financial Ops": "business",
+  "Arena (arena.ai) :: Text: Occupational - Entertainment, Sports, & Media": "media",
+  "Arena (arena.ai) :: Text: Coding": "coding",
+  "Arena (arena.ai) :: Text: Occupational - Software & IT Services": "coding",
+  "LiveBench 2.0 :: LLM coding (LiveBench 2.0)": "coding",
+  "Artificial Analysis :: Coding Agent Index": "agents",
+  "Arena (arena.ai) :: WebDev": "webdev",
+  "Arena (arena.ai) :: Image-to-WebDev": "img2web",
+  "Arena (arena.ai) :: Text: Non-English": "multilingual",
+  "Arena (arena.ai) :: Text: German": "german",
+  "Arena (arena.ai) :: Text: French": "french",
+  "Arena (arena.ai) :: Text: Spanish": "spanish",
+  "Arena (arena.ai) :: Text: Russian": "russian",
+  "Arena (arena.ai) :: Text: Polish": "polish",
+  "Arena (arena.ai) :: Text: Chinese": "chinese",
+  "Arena (arena.ai) :: Text: Japanese": "japanese",
+  "Arena (arena.ai) :: Text: Korean": "korean",
+  "Arena (arena.ai) :: Vision: Overall": "vision",
+  "Arena (arena.ai) :: Vision: Captioning": "caption",
+  "Arena (arena.ai) :: Vision: Diagram": "diagram",
+  "Arena (arena.ai) :: Vision: Creative Writing": "visionwriting",
+  "Arena (arena.ai) :: Text-to-Image: Overall": "t2i",
+  "Artificial Analysis :: Text-to-Image": "t2i",
+  "Arena (arena.ai) :: Text-to-Image: Photorealistic & Cinematic Imagery": "t2i-photo",
+  "Arena (arena.ai) :: Text-to-Image: Portraits": "t2i-portrait",
+  "Arena (arena.ai) :: Text-to-Image: Text Rendering": "t2i-text",
+  "Arena (arena.ai) :: Text-to-Image: Art": "t2i-art",
+  "Arena (arena.ai) :: Text-to-Image: Cartoon, Anime & Fantasy": "t2i-anime",
+  "Arena (arena.ai) :: Text-to-Image: Product, Branding & Commercial Design": "t2i-product",
+  "Arena (arena.ai) :: Text-to-Image: 3D Imaging & Modeling": "t2i-3d",
+  "Arena (arena.ai) :: Image Edit: Single Image Edit (Overall)": "edit",
+  "Artificial Analysis :: Image Editing": "edit",
+  "Arena (arena.ai) :: Image Edit: Multi Image Edit (Overall)": "edit-multi",
+  "Background Removal Arena (Hugging Face) :: Background Removal": "bgremoval",
+  "Arena (arena.ai) :: Text-to-Video": "t2v",
+  "Artificial Analysis :: Text-to-Video (with audio, default view)": "t2v",
+  "VBench Leaderboard (Hugging Face) :: Text-to-Video (VBench automatic metrics)": "t2v",
+  "Arena (arena.ai) :: Image-to-Video": "i2v",
+  "Artificial Analysis :: Image-to-Video (default view)": "i2v",
+  "Arena (arena.ai) :: Video Edit": "vedit",
+  "Artificial Analysis :: Video Editing": "vedit",
+  "Artificial Analysis :: Text-to-Speech": "tts",
+  "TTS Arena V2 (Hugging Face, TTS-AGI) :: Text-to-Speech": "tts",
+  "Artificial Analysis :: Speech-to-Text": "stt",
+  "Hugging Face Open ASR Leaderboard :: Speech-to-Text (English short-form)": "stt",
+  "Hugging Face Open ASR Leaderboard :: Speech-to-Text (multilingual, 7 languages)": "stt-multi",
+  "Hugging Face Open ASR Leaderboard :: Speech-to-Text (English long-form)": "stt-long",
+  "Artificial Analysis :: Music (vocals)": "music-vocal",
+  "Music Arena (CMU G-CLef, Hugging Face) :: Music (vocal)": "music-vocal",
+  "Artificial Analysis :: Music (instrumental)": "music-inst",
+  "Music Arena (CMU G-CLef, Hugging Face) :: Music (instrumental)": "music-inst",
+  "3D Arena (Hugging Face) :: Image-to-3D": "img23d",
+  "Artificial Analysis :: LLM 3D scene building (AA-3D v1.0)": "scene3d",
+  "MTEB Leaderboard (Hugging Face) :: Text Embeddings (MTEB English v2)": "emb-en",
+  "MTEB Leaderboard (Hugging Face) :: Text Embeddings (MTEB Multilingual v2)": "emb-multi",
+  "MTEB Leaderboard (Hugging Face) :: Code Embeddings (MTEB Code v1)": "emb-code",
+  "MTEB Leaderboard (Hugging Face) :: Image-Text Embeddings (MIEB Multilingual)": "emb-img",
+  "MMEB Leaderboard (TIGER-Lab, Hugging Face) :: Multimodal Embeddings (MMEB)": "emb-mm",
+  "MTEB Leaderboard (Hugging Face) :: Visual Document Retrieval (ViDoRe v3)": "vidore"
+ }
+}
