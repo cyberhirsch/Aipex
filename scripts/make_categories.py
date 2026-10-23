@@ -64,6 +64,7 @@ add("music-inst", "Instrumental music", Au, f"{AA} :: Music (instrumental)", "Mu
 D = "3D"
 add("img23d", "Image to 3D", D, "3D Arena (Hugging Face) :: Image-to-3D")
 add("scene3d", "3D scene coding (three.js)", D, f"{AA} :: LLM 3D scene building (AA-3D v1.0)")
+add("depth", "Depth from a single image", D, "Marigold V2 paper, Table 1 :: Monocular depth (mean AbsRel, 5 datasets)")
 R = "Embeddings & retrieval"
 M = "MTEB Leaderboard (Hugging Face)"
 add("emb-en", "Text embeddings, English", R, f"{M} :: Text Embeddings (MTEB English v2)")

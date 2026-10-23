@@ -1,0 +1,44 @@
+{
+ "Marigold V2": {
+  "open": true,
+  "license": "Apache-2.0",
+  "vram_gb": 17,
+  "vram_note": "Model card: about 17 GB at 1024², 29 GB at 2048² (4-bit DiT + QLoRA, based on Qwen-Image-Edit-2509). huawei-bayerlab/marigold-v2-0"
+ },
+ "π3": {
+  "open": true,
+  "license": "BSD-2-Clause",
+  "vram_gb": 4,
+  "vram_note": "estimate for 1024² inference. yyfz233/Pi3, ~1B params"
+ },
+ "MoGe-2": {
+  "open": true,
+  "license": "MIT",
+  "vram_gb": 3,
+  "vram_note": "estimate for 1024² inference. Ruicheng/moge-2-vitl"
+ },
+ "MoGe": {
+  "open": true,
+  "license": "MIT",
+  "vram_gb": 3,
+  "vram_note": "estimate for 1024² inference. Ruicheng/moge-vitl"
+ },
+ "Depth Anything V2": {
+  "open": true,
+  "license": "CC BY-NC 4.0 (Large); Small is Apache-2.0",
+  "vram_gb": 3,
+  "vram_note": "estimate for 1024² inference. depth-anything/Depth-Anything-V2-Large"
+ },
+ "Marigold Depth V1": {
+  "open": true,
+  "license": "OpenRAIL++",
+  "vram_gb": 6,
+  "vram_note": "estimate for 1024² inference. prs-eth/marigold-depth-v1-1, Stable Diffusion 2 based"
+ },
+ "Lotus": {
+  "open": true,
+  "license": "Apache-2.0",
+  "vram_gb": 6,
+  "vram_note": "estimate for 1024² inference. jingheya/lotus-depth-g-v2-1-disparity, Stable Diffusion 2 based"
+ }
+}

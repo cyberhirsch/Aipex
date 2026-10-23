@@ -291,6 +291,11 @@
    "group": "3D"
   },
   {
+   "id": "depth",
+   "name": "Depth from a single image",
+   "group": "3D"
+  },
+  {
    "id": "emb-en",
    "name": "Text embeddings, English",
    "group": "Embeddings & retrieval"
@@ -421,6 +426,7 @@
   "Music Arena (CMU G-CLef, Hugging Face) :: Music (instrumental)": "music-inst",
   "3D Arena (Hugging Face) :: Image-to-3D": "img23d",
   "Artificial Analysis :: LLM 3D scene building (AA-3D v1.0)": "scene3d",
+  "Marigold V2 paper, Table 1 :: Monocular depth (mean AbsRel, 5 datasets)": "depth",
   "MTEB Leaderboard (Hugging Face) :: Text Embeddings (MTEB English v2)": "emb-en",
   "MTEB Leaderboard (Hugging Face) :: Text Embeddings (MTEB Multilingual v2)": "emb-multi",
   "MTEB Leaderboard (Hugging Face) :: Code Embeddings (MTEB Code v1)": "emb-code",

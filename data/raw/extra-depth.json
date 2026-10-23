@@ -1,0 +1,103 @@
+{
+ "sources": [
+  {
+   "source": "Marigold V2 paper, Table 1",
+   "url": "https://arxiv.org/html/2609.08084v1",
+   "categories": [
+    {
+     "category": "Monocular depth (mean AbsRel, 5 datasets)",
+     "url": "https://arxiv.org/html/2609.08084v1",
+     "metric": "mean AbsRel %, NYUv2/KITTI/ETH3D/ScanNet/DIODE (π3 trained on ScanNet)",
+     "higher_is_better": false,
+     "data_date": "2026-09-08",
+     "entries": [
+      {
+       "model": "π3",
+       "org": "Shanghai AI Lab",
+       "score": 3.64,
+       "rank": 1
+      },
+      {
+       "model": "Marigold V2",
+       "org": "HUAWEI Bayer Lab",
+       "score": 4.14,
+       "rank": 2
+      },
+      {
+       "model": "FE2E",
+       "org": null,
+       "score": 4.8,
+       "rank": 3
+      },
+      {
+       "model": "Lotus-2",
+       "org": "HKUST",
+       "score": 5.0,
+       "rank": 4
+      },
+      {
+       "model": "Pixel-Perfect Depth (1024)",
+       "org": "Zhejiang University",
+       "score": 5.36,
+       "rank": 5
+      },
+      {
+       "model": "MoGe-2",
+       "org": "Microsoft",
+       "score": 5.54,
+       "rank": 6
+      },
+      {
+       "model": "Pixel-Perfect Depth (512)",
+       "org": "Zhejiang University",
+       "score": 5.66,
+       "rank": 7
+      },
+      {
+       "model": "InfiniDepth",
+       "org": null,
+       "score": 6.04,
+       "rank": 8
+      },
+      {
+       "model": "DepthMaster",
+       "org": null,
+       "score": 6.62,
+       "rank": 9
+      },
+      {
+       "model": "Lotus",
+       "org": "HKUST",
+       "score": 7.1,
+       "rank": 10
+      },
+      {
+       "model": "Depth Anything V2",
+       "org": "ByteDance / HKU",
+       "score": 7.62,
+       "rank": 11
+      },
+      {
+       "model": "Marigold Depth V1",
+       "org": "ETH Zurich",
+       "score": 7.66,
+       "rank": 12
+      },
+      {
+       "model": "GeoWizard",
+       "org": "HKUST",
+       "score": 7.88,
+       "rank": 13
+      },
+      {
+       "model": "MoGe",
+       "org": "Microsoft",
+       "score": 10.52,
+       "rank": 14
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
