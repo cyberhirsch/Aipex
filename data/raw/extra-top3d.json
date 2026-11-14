@@ -1,0 +1,559 @@
+{
+ "sources": [
+  {
+   "source": "Top3D",
+   "url": "https://www.top3d.ai/leaderboard",
+   "categories": [
+    {
+     "category": "Textured (overall quality)",
+     "url": "https://www.top3d.ai/leaderboard",
+     "metric": "Elo (blind pairwise votes, season Nov 2026, start 1000)",
+     "higher_is_better": true,
+     "data_date": "2026-11-14",
+     "entries": [
+      {
+       "rank": 1,
+       "model": "Tripo AI v3.1",
+       "org": "Tripo AI",
+       "score": 1103,
+       "votes": 367,
+       "license": "proprietary"
+      },
+      {
+       "rank": 2,
+       "model": "Meshy 7.1",
+       "org": "Meshy",
+       "score": 1099,
+       "votes": 293,
+       "license": "proprietary"
+      },
+      {
+       "rank": 3,
+       "model": "Hi3D v3.0",
+       "org": "Hitem3D",
+       "score": 1090,
+       "votes": 391,
+       "license": "proprietary"
+      },
+      {
+       "rank": 4,
+       "model": "Hunyuan 3D v3.1",
+       "org": "Tencent",
+       "score": 1082,
+       "votes": 398,
+       "license": "proprietary"
+      },
+      {
+       "rank": 5,
+       "model": "Meshy 7",
+       "org": "Meshy",
+       "score": 1078,
+       "votes": 418,
+       "license": "proprietary"
+      },
+      {
+       "rank": 6,
+       "model": "Lychee Gen 2",
+       "org": "Lychee",
+       "score": 1045,
+       "votes": 399,
+       "license": "proprietary"
+      },
+      {
+       "rank": 7,
+       "model": "Seed3D v2.0",
+       "org": "ByteDance Seed",
+       "score": 1035,
+       "votes": 710,
+       "license": "proprietary"
+      },
+      {
+       "rank": 8,
+       "model": "Rodin Gen 2.5",
+       "org": "Hyper3D",
+       "score": 1023,
+       "votes": 368,
+       "license": "proprietary"
+      },
+      {
+       "rank": 9,
+       "model": "VARCO 3D 2.0",
+       "org": "NC AI",
+       "score": 1022,
+       "votes": 418,
+       "license": "proprietary"
+      },
+      {
+       "rank": 10,
+       "model": "YVO3D 2.5",
+       "org": "YVO3D",
+       "score": 1020,
+       "votes": 213,
+       "license": "proprietary"
+      },
+      {
+       "rank": 11,
+       "model": "Alpha3D 5",
+       "org": "Alpha3D",
+       "score": 1015,
+       "votes": 387,
+       "license": "proprietary"
+      },
+      {
+       "rank": 12,
+       "model": "N4D-2.5",
+       "org": "Neural4D",
+       "score": 1009,
+       "votes": 288,
+       "license": "proprietary"
+      },
+      {
+       "rank": 13,
+       "model": "Meshy 6",
+       "org": "Meshy",
+       "score": 985,
+       "votes": 373,
+       "license": "proprietary"
+      },
+      {
+       "rank": 14,
+       "model": "Sloyd AI v3",
+       "org": "Sloyd",
+       "score": 983,
+       "votes": 325,
+       "license": "proprietary"
+      },
+      {
+       "rank": 15,
+       "model": "Hi3D v2.0",
+       "org": "Hitem3D",
+       "score": 977,
+       "votes": 379,
+       "license": "proprietary"
+      },
+      {
+       "rank": 16,
+       "model": "Hi3D v2.1",
+       "org": "Hitem3D",
+       "score": 974,
+       "votes": 338,
+       "license": "proprietary"
+      },
+      {
+       "rank": 17,
+       "model": "Triverse 3.0",
+       "org": "Triverse",
+       "score": 951,
+       "votes": 415,
+       "license": "proprietary"
+      },
+      {
+       "rank": 18,
+       "model": "Pixal3D",
+       "org": null,
+       "score": 931,
+       "votes": 368,
+       "license": "open source"
+      },
+      {
+       "rank": 19,
+       "model": "TRELLIS.2",
+       "org": "Microsoft",
+       "score": 902,
+       "votes": 319,
+       "license": "MIT",
+       "hf_id": "microsoft/TRELLIS.2"
+      },
+      {
+       "rank": 20,
+       "model": "Wonder3D",
+       "org": "Autodesk",
+       "score": 899,
+       "votes": 314,
+       "license": "proprietary"
+      },
+      {
+       "rank": 21,
+       "model": "SAM 3D",
+       "org": "Meta",
+       "score": 786,
+       "votes": 385,
+       "license": "SAM License",
+       "hf_id": "facebook/sam-3d-objects"
+      }
+     ]
+    },
+    {
+     "category": "Geometry",
+     "url": "https://www.top3d.ai/leaderboard?type=geometry",
+     "metric": "Elo (blind pairwise votes, season Nov 2026, start 1000)",
+     "higher_is_better": true,
+     "data_date": "2026-11-14",
+     "entries": [
+      {
+       "rank": 1,
+       "model": "Tripo AI v3.1",
+       "org": "Tripo AI",
+       "score": 1086,
+       "votes": 367,
+       "license": "proprietary"
+      },
+      {
+       "rank": 2,
+       "model": "Lychee Gen 2",
+       "org": "Lychee",
+       "score": 1077,
+       "votes": 399,
+       "license": "proprietary"
+      },
+      {
+       "rank": 3,
+       "model": "Meshy 7.1",
+       "org": "Meshy",
+       "score": 1076,
+       "votes": 293,
+       "license": "proprietary"
+      },
+      {
+       "rank": 4,
+       "model": "Meshy 7",
+       "org": "Meshy",
+       "score": 1046,
+       "votes": 418,
+       "license": "proprietary"
+      },
+      {
+       "rank": 5,
+       "model": "Hi3D v3.0",
+       "org": "Hitem3D",
+       "score": 1046,
+       "votes": 391,
+       "license": "proprietary"
+      },
+      {
+       "rank": 6,
+       "model": "Hunyuan 3D v3.1",
+       "org": "Tencent",
+       "score": 1045,
+       "votes": 398,
+       "license": "proprietary"
+      },
+      {
+       "rank": 7,
+       "model": "YVO3D 2.5",
+       "org": "YVO3D",
+       "score": 1042,
+       "votes": 213,
+       "license": "proprietary"
+      },
+      {
+       "rank": 8,
+       "model": "Alpha3D 5",
+       "org": "Alpha3D",
+       "score": 1022,
+       "votes": 387,
+       "license": "proprietary"
+      },
+      {
+       "rank": 9,
+       "model": "Seed3D v2.0",
+       "org": "ByteDance Seed",
+       "score": 1017,
+       "votes": 710,
+       "license": "proprietary"
+      },
+      {
+       "rank": 10,
+       "model": "Sloyd AI v3",
+       "org": "Sloyd",
+       "score": 1017,
+       "votes": 325,
+       "license": "proprietary"
+      },
+      {
+       "rank": 11,
+       "model": "Hi3D v2.1",
+       "org": "Hitem3D",
+       "score": 1016,
+       "votes": 338,
+       "license": "proprietary"
+      },
+      {
+       "rank": 12,
+       "model": "Rodin Gen 2.5",
+       "org": "Hyper3D",
+       "score": 1002,
+       "votes": 368,
+       "license": "proprietary"
+      },
+      {
+       "rank": 13,
+       "model": "Hi3D v2.0",
+       "org": "Hitem3D",
+       "score": 999,
+       "votes": 379,
+       "license": "proprietary"
+      },
+      {
+       "rank": 14,
+       "model": "Meshy 6",
+       "org": "Meshy",
+       "score": 990,
+       "votes": 373,
+       "license": "proprietary"
+      },
+      {
+       "rank": 15,
+       "model": "N4D-2.5",
+       "org": "Neural4D",
+       "score": 979,
+       "votes": 288,
+       "license": "proprietary"
+      },
+      {
+       "rank": 16,
+       "model": "TRELLIS.2",
+       "org": "Microsoft",
+       "score": 950,
+       "votes": 319,
+       "license": "MIT",
+       "hf_id": "microsoft/TRELLIS.2"
+      },
+      {
+       "rank": 17,
+       "model": "Triverse 3.0",
+       "org": "Triverse",
+       "score": 947,
+       "votes": 415,
+       "license": "proprietary"
+      },
+      {
+       "rank": 18,
+       "model": "Pixal3D",
+       "org": null,
+       "score": 946,
+       "votes": 368,
+       "license": "open source"
+      },
+      {
+       "rank": 19,
+       "model": "VARCO 3D 2.0",
+       "org": "NC AI",
+       "score": 945,
+       "votes": 418,
+       "license": "proprietary"
+      },
+      {
+       "rank": 20,
+       "model": "Wonder3D",
+       "org": "Autodesk",
+       "score": 902,
+       "votes": 314,
+       "license": "proprietary"
+      },
+      {
+       "rank": 21,
+       "model": "SAM 3D",
+       "org": "Meta",
+       "score": 894,
+       "votes": 385,
+       "license": "SAM License",
+       "hf_id": "facebook/sam-3d-objects"
+      }
+     ]
+    },
+    {
+     "category": "Low Poly",
+     "url": "https://www.top3d.ai/leaderboard?type=low-poly",
+     "metric": "Elo (blind pairwise votes, season Nov 2026, start 1000)",
+     "higher_is_better": true,
+     "data_date": "2026-11-14",
+     "entries": [
+      {
+       "rank": 1,
+       "model": "Tripo P2.0",
+       "org": "Tripo AI",
+       "score": 1109,
+       "votes": 114,
+       "license": "proprietary"
+      },
+      {
+       "rank": 2,
+       "model": "Hyper3D Rodin Gen-2.5",
+       "org": "Hyper3D",
+       "score": 1061,
+       "votes": 103,
+       "license": "proprietary"
+      },
+      {
+       "rank": 3,
+       "model": "Tripo P1.0",
+       "org": "Tripo AI",
+       "score": 1048,
+       "votes": 157,
+       "license": "proprietary"
+      },
+      {
+       "rank": 4,
+       "model": "Meshy T2",
+       "org": "Meshy",
+       "score": 1029,
+       "votes": 144,
+       "license": "proprietary"
+      },
+      {
+       "rank": 5,
+       "model": "YVO3D 2.5",
+       "org": "YVO3D",
+       "score": 1023,
+       "votes": 130,
+       "license": "proprietary"
+      },
+      {
+       "rank": 6,
+       "model": "Tripo 3.1 Retopo",
+       "org": "Tripo AI",
+       "score": 998,
+       "votes": 159,
+       "license": "proprietary"
+      },
+      {
+       "rank": 7,
+       "model": "Hunyuan 3D Retopo",
+       "org": "Tencent",
+       "score": 955,
+       "votes": 159,
+       "license": "proprietary"
+      },
+      {
+       "rank": 8,
+       "model": "Triverse 3.0 Artist Mesh",
+       "org": "Triverse",
+       "score": 932,
+       "votes": 139,
+       "license": "proprietary"
+      },
+      {
+       "rank": 9,
+       "model": "Alpha3D 5",
+       "org": "Alpha3D",
+       "score": 930,
+       "votes": 160,
+       "license": "proprietary"
+      },
+      {
+       "rank": 10,
+       "model": "N4D-2.5 Retopo",
+       "org": "Neural4D",
+       "score": 925,
+       "votes": 169,
+       "license": "proprietary"
+      }
+     ]
+    },
+    {
+     "category": "Segmentation",
+     "url": "https://www.top3d.ai/leaderboard?type=segmentation",
+     "metric": "Elo (blind pairwise votes, season Nov 2026, start 1000)",
+     "higher_is_better": true,
+     "data_date": "2026-11-14",
+     "entries": [
+      {
+       "rank": 1,
+       "model": "Tripo Segmentation v2.1",
+       "org": "Tripo AI",
+       "score": 1110,
+       "votes": 82,
+       "license": "proprietary"
+      },
+      {
+       "rank": 2,
+       "model": "Hunyuan 3D v3.1 Part Splitter",
+       "org": "Tencent",
+       "score": 1102,
+       "votes": 95,
+       "license": "proprietary"
+      },
+      {
+       "rank": 3,
+       "model": "Meshy 6 Auto Split",
+       "org": "Meshy",
+       "score": 1033,
+       "votes": 101,
+       "license": "proprietary"
+      },
+      {
+       "rank": 4,
+       "model": "Hi3D 2.1 Split to print",
+       "org": "Hitem3D",
+       "score": 963,
+       "votes": 73,
+       "license": "proprietary"
+      },
+      {
+       "rank": 5,
+       "model": "Alpha3D 5",
+       "org": "Alpha3D",
+       "score": 961,
+       "votes": 85,
+       "license": "proprietary"
+      },
+      {
+       "rank": 6,
+       "model": "Roblox CubePart",
+       "org": "Roblox",
+       "score": 942,
+       "votes": 104,
+       "license": "open source"
+      },
+      {
+       "rank": 7,
+       "model": "Rodin Gen-2.5",
+       "org": "Hyper3D",
+       "score": 899,
+       "votes": 108,
+       "license": "proprietary"
+      }
+     ]
+    },
+    {
+     "category": "Smart UV",
+     "url": "https://www.top3d.ai/leaderboard?type=smart-uv",
+     "metric": "Elo (blind pairwise votes, season Nov 2026, start 1000)",
+     "higher_is_better": true,
+     "data_date": "2026-11-14",
+     "entries": [
+      {
+       "rank": 1,
+       "model": "Tripo Smart UV",
+       "org": "Tripo AI",
+       "score": 1090,
+       "votes": 143,
+       "license": "proprietary"
+      },
+      {
+       "rank": 2,
+       "model": "Hunyuan Semantic UV",
+       "org": "Tencent",
+       "score": 910,
+       "votes": 143,
+       "license": "proprietary"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "open_models": [
+  {
+   "model": "TRELLIS.2",
+   "license": "MIT",
+   "hf_id": "microsoft/TRELLIS.2"
+  },
+  {
+   "model": "SAM 3D",
+   "license": "SAM License",
+   "hf_id": "facebook/sam-3d-objects"
+  }
+ ]
+}

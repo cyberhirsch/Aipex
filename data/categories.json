@@ -286,6 +286,21 @@
    "group": "3D"
   },
   {
+   "id": "geo3d",
+   "name": "3D geometry quality",
+   "group": "3D"
+  },
+  {
+   "id": "lowpoly",
+   "name": "Low poly & retopology",
+   "group": "3D"
+  },
+  {
+   "id": "seg3d",
+   "name": "3D part segmentation",
+   "group": "3D"
+  },
+  {
    "id": "scene3d",
    "name": "3D scene coding (three.js)",
    "group": "3D"
@@ -432,6 +447,11 @@
   "MTEB Leaderboard (Hugging Face) :: Code Embeddings (MTEB Code v1)": "emb-code",
   "MTEB Leaderboard (Hugging Face) :: Image-Text Embeddings (MIEB Multilingual)": "emb-img",
   "MMEB Leaderboard (TIGER-Lab, Hugging Face) :: Multimodal Embeddings (MMEB)": "emb-mm",
-  "MTEB Leaderboard (Hugging Face) :: Visual Document Retrieval (ViDoRe v3)": "vidore"
+  "MTEB Leaderboard (Hugging Face) :: Visual Document Retrieval (ViDoRe v3)": "vidore",
+  "Top3D :: Textured (overall quality)": "img23d",
+  "Top3D :: Geometry": "geo3d",
+  "Top3D :: Low Poly": "lowpoly",
+  "Top3D :: Segmentation": "seg3d",
+  "Top3D :: Smart UV": null
  }
 }

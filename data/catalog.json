@@ -1044,6 +1044,25 @@
    "votes": 0,
    "created": "2025-02-24",
    "updated": "2025-02-24"
+  },
+  {
+   "id": "relayvsr-2026",
+   "name": "RelayVSR",
+   "categories": [
+    "Video Manipulation"
+   ],
+   "tags": [
+    "Model",
+    "Upscaling",
+    "Video-to-Video"
+   ],
+   "license": "Open Source",
+   "open": true,
+   "link": "https://kopperx.github.io/RelayVSR/",
+   "editorChoice": false,
+   "votes": 0,
+   "created": "2026-11-08",
+   "updated": "2026-11-08"
   }
  ]
 }
